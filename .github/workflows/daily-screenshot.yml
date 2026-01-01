@@ -1,0 +1,41 @@
+name: Daily Recon (Screenshot)
+
+on:
+  # Run automatically every day at midnight UTC
+  schedule:
+    - cron: '0 0 * * *'
+  # Allow manual trigger from the Actions tab for testing
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install shot-scraper
+        run: |
+          pip install shot-scraper
+          playwright install chromium
+
+      - name: Capture Sector Sector (Screenshot)
+        run: |
+          # --height 600 limits it to the "Dashboard" area mostly
+          # --wait 2000 ensures animations/fonts load before snapping
+          shot-scraper https://tralsesec.github.io -o assets/img/dashboard_live.png --width 1200 --height 800 --wait 2000
+
+      - name: Commit and Push
+        run: |
+          git config user.name "Automated Drone"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/img/dashboard_live.png
+          git commit -m "LOG: Daily surveillance update" || exit 0
+          git push
