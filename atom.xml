@@ -1,28 +1,65 @@
 ---
 layout: null
 ---
-
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>{{ site.title }}</title>
- <link href="{{ site.url }}/atom.xml" rel="self"/>
- <link href="{{ site.url }}/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url }}</id>
- <author>
-   <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
- </author>
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <link href="{{ site.url }}/atom.xml" rel="self"/>
+  <link href="{{ site.url }}/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
+  <author>
+    <name>{{ site.author.name | default: site.title | xml_escape }}</name>
+    <email>{{ site.author.email | xml_escape }}</email>
+  </author>
 
- {% for post in site.posts %}
- <entry>
-   <title>{{ post.title }}</title>
-   <link href="{{ site.url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
- </entry>
- {% endfor %}
+  {% comment %} 
+    1. AGGREGATION: Alle Collections einsammeln 
+  {% endcomment %}
+  {% assign all_intel = site.posts %}
+  
+  {% if site.projects %}
+    {% assign all_intel = all_intel | concat: site.projects %}
+  {% endif %}
+  
+  {% if site['anatomy-of-a-bug'] %}
+    {% assign all_intel = all_intel | concat: site['anatomy-of-a-bug'] %}
+  {% endif %}
+
+  {% if site.ctfs %}
+    {% assign all_intel = all_intel | concat: site.ctfs %}
+  {% endif %}
+
+  {% comment %} 
+    2. SORTIERUNG: Neueste zuerst 
+  {% endcomment %}
+  {% assign sorted_intel = all_intel | sort: 'date' | reverse %}
+
+  {% for entry in sorted_intel limit: 20 %}
+  <entry>
+    <title>{{ entry.title | xml_escape }}</title>
+    
+    <link href="{{ site.url }}{{ entry.url }}"/>
+    <updated>{{ entry.date | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}{{ entry.url }}</id>
+
+    {% comment %} 
+      3. FILTER-TAGS: Automatische Kategorisierung für deinen Reader
+    {% endcomment %}
+    {% if entry.collection == 'posts' %}
+      <category term="System Log" label="SysLog" />
+    {% elsif entry.collection == 'anatomy-of-a-bug' %}
+      <category term="Intelligence" label="AnatomyOfABug" />
+    {% elsif entry.collection == 'projects' %}
+      <category term="Dossier" label="Project" />
+    {% elsif entry.collection == 'ctfs' %}
+      <category term="Mission Log" label="CTF" />
+    {% endif %}
+    
+    <content type="html">{{ entry.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
 
 </feed>
