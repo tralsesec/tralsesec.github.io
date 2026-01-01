@@ -17,7 +17,7 @@ It is safe advice. It is financially prudent advice. **It is also the fastest wa
 
 A couple of days ago, I made a decision that goes against the typical student budget. I upgraded to the **Hack The Box Academy Gold Annual** subscription.
 
-The price tag? It starts with the **$1,000** for the subscription itself. But that is just the entry fee.
+The price tag? It starts with **$1,000** for the subscription itself. But that is just the entry fee.
 
 When factoring in the additional exam vouchers (**$250** for CPTS, **$350** for CWEE) and the operational costs for **ProLabs** (Enterprise Infrastructure: **$90** fee + **$50**/month), the total projected investment for this year exceeds the **$2,000** mark.
 
@@ -27,7 +27,7 @@ Here is why I took it.
 
 ## Breaking the Cycle
 
-The cybersecurity industry suffers from a painful "Chicken and Egg" contradiction:
+The cybersecurity industry suffers from a painful "Chicken and Egg" dilemma:
 
 1. You need real operational depth to access serious roles.
 
@@ -68,7 +68,7 @@ Instead of studying to pass, I am overfitting my skillset to real attack surface
 - Code paths instead of endpoints
     
 
-When you solve Tier II problems with Tier III tools and mental models, the exam stops being a hurdle. It becomes validation.
+When you solve Tier II problems with Tier III tools and mental models, the exam stops being a hurdle. It becomes a validation.
 
 ## The ROI.
 
