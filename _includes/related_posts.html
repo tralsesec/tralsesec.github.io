@@ -42,11 +42,13 @@
         {% assign post = site.posts[post_index] %}
 
         <li style="margin-bottom: 1.2rem;">
-          <a href="{{ post.url }}" style="text-decoration: none; border: none; display: block;">
+          <a href="{{ post.url }}" style="border: none; display: block;">
             <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #666; margin-bottom: 2px;">
               {{ post.date | date: "%Y-%m-%d" }}
             </div>
-            <div style="font-size: 1.1rem; font-weight: bold; color: #eee; transition: color 0.2s;">
+            <div style="font-size: 1.1rem; font-weight: bold; color: #eee; transition: color 0.2s;"
+              onmouseover="this.style.color='var(--accent)'"
+              onmouseout="this.style.color='var(--fg-primary)'">
               {{ post.title }}
               <span style="color: var(--accent); font-size: 0.8em; margin-left: 5px;">&rarr;</span>
             </div>
