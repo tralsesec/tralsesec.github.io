@@ -35,8 +35,9 @@ layout: default
 <div class="page">
 
   <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
-    
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
       <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
         {% if page.title_prefix %}
           <span class="text-green" style="font-style: normal;">{{ page.title_prefix }}</span>
@@ -46,7 +47,7 @@ layout: default
       
       {% if page.pdf_file %}
         {% assign pdf_url = "/anatomy-of-a-bug/pdf/" | append: page.pdf_file | relative_url %}
-        <a href="{{ pdf_url }}" class="tactical-btn" download style="margin-left: 20px; white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
+        <a href="{{ pdf_url }}" class="tactical-btn" download style="white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
           <span class="tactical-icon" style="margin-right:5px;">⬇</span> PDF REPORT
         </a>
       {% endif %}
