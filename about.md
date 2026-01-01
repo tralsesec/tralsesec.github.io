@@ -8,7 +8,7 @@ title: Profile
 <div style="border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; background: #0f0f0f;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
     <div>
-      <span class="fg-dim">ROLE</span><br>
+      <span class="fg-dim">CURRENT ROLE</span><br>
       <span class="text-green">DevSecOps Engineer</span>
     </div>
     <div>
