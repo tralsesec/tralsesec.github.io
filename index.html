@@ -3,9 +3,27 @@ layout: default
 title: Home
 ---
 
-<meta property="og:image" content="https://tralsesec.github.io/assets/dashboard_live.png" />
-<meta property="twitter:image" content="https://tralsesec.github.io/assets/dashboard_live.png" />
-<meta property="twitter:card" content="summary_large_image" />
+<meta name="description" content="{{ description }}">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ description }}">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="twitter:description" content="{{ description }}">
+
+{% if page.url == "/" %}
+  <meta property="og:image" content="https://tralsesec.github.io/assets/dashboard_live.png">
+  <meta property="twitter:image" content="https://tralsesec.github.io/assets/dashboard_live.png">
+{% elsif page.images %}
+   <meta property="og:image" content="{{ page.images[0].url }}">
+   <meta property="twitter:image" content="{{ page.images[0].url }}">
+{% else %}
+   {% endif %}
+
+<meta name="theme-color" content="#2100e1">
 
 <div style="border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 3rem; background: #050505;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
