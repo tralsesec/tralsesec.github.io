@@ -7,10 +7,18 @@
     {% assign score = 0 %}
     {% assign matched_tags = "" %}
     
-    {% for tag in aoab.tags %}
+    {% comment %} Sort tags alphabetically before iterating {% endcomment %}
+    {% assign sorted_tags = aoab.tags | sort %}
+
+    {% for tag in sorted_tags %}
       {% if page.tags contains tag %}
         {% capture matched_tags %}{{ matched_tags }}{{ tag }} {% endcapture %}
-        {% comment %} Boost specific high-value tags {% endcomment %}
+        
+        {% comment %} 
+           SCORE BOOSTING: 
+           Wir geben RCE/Kernel mehr Punkte für die SORTIERUNG,
+           aber wir nutzen das später NICHT mehr für die Prozentanzeige!
+        {% endcomment %}
         {% if tag == "Kernel" or tag == "RCE" or tag == "LPE" or tag == "Heap" %}
           {% assign score = score | plus: 3 %}
         {% else %}
@@ -52,16 +60,16 @@
         {% assign aoab_index = parts[1] | plus: 0 %}
         {% assign current_matches = parts[2] %}
         
-        {% comment %} Access the specific AOAB item {% endcomment %}
         {% assign aoab = site['anatomy-of-a-bug'][aoab_index] %}
 
-        {% comment %} Reconstruct Image URL (Same logic as page.html) {% endcomment %}
         {% assign raw_id = aoab.id | split: "/" | last %}
         {% assign clean_id = raw_id | plus: 0 %}
         {% assign img_url = "/anatomy-of-a-bug/assets/og/" | append: clean_id | append: ".png" | relative_url %}
 
+        {% comment %} FIX: Calculate Percentage based on COUNT, not SCORE {% endcomment %}
         {% assign total_tags = page.tags | size | fallback: 1 %}
-        {% assign match_percent = score | times: 100 | divided_by: total_tags | at_most: 100 %}
+        {% assign real_match_count = current_matches | split: " " | size %}
+        {% assign match_percent = real_match_count | times: 100 | divided_by: total_tags | at_most: 100 %}
 
         <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
           
