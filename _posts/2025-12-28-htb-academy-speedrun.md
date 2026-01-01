@@ -3,7 +3,7 @@ layout: post
 title: "HTB Academy Speedrun: Technical Retrospective on CWES & CPTS"
 date: 2025-12-28 10:00:00 +0100
 categories: [research, training]
-tags: [CPTS, CWEE, HackTheBox, Certifications]
+tags: [CPTS, CWES, HackTheBox, Certifications]
 images:
   - url: "/assets/img/28-12-2025-cpts.png"
     ref: "CPTS_100_VERIFIED"
