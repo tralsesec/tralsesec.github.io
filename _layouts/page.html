@@ -4,16 +4,16 @@ layout: default
 
 {% assign FORCE_DOMAIN = "https://tralsesec.github.io" %}
 
-{% comment %} 2. CALCULATE ID (Turn "/anatomy-of-a-bug/md/7" into "7") {% endcomment %}
+{% comment %} 2. CALCULATE ID {% endcomment %}
 {% assign raw_id = page.id | split: "/" | last %}
 {% assign clean_id = raw_id | plus: 0 %}
 
-{% comment %} 3. MANUALLY BUILD THE URL (No "absolute_url" filter) {% endcomment %}
+{% comment %} 3. BUILD URL {% endcomment %}
 {% assign final_img_url = FORCE_DOMAIN | append: "/anatomy-of-a-bug/assets/og/" | append: clean_id | append: ".png" %}
 
-{% comment %} 4. BUILD TEXT (Beautiful Hierarchy) {% endcomment %}
+{% comment %} 4. BUILD TEXT (Applied strip_html to fix meta tags) {% endcomment %}
 {% assign series_name = "#! Anatomy of a Bug" %}
-{% assign social_title = page.title | append: " (#" | append: clean_id | append: ")" %}
+{% assign social_title = page.title | strip_html | append: " (#" | append: clean_id | append: ")" %}
 {% assign social_desc = page.summary | default: page.excerpt | strip_html | strip_newlines | truncate: 200 %}
 
 <meta property="og:type" content="article" />
@@ -37,7 +37,12 @@ layout: default
   <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
     
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
-      <h1 class="page-title" style="margin: 0; line-height: 0; padding-bottom: 0rem;">{{ page.title }}</h1>
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        {% if page.title_prefix %}
+          <span class="text-green" style="font-style: normal;">{{ page.title_prefix }}</span>
+        {% endif %}
+        {{ page.title }}
+      </h1>
       
       {% if page.pdf_file %}
         {% assign pdf_url = "/anatomy-of-a-bug/pdf/" | append: page.pdf_file | relative_url %}

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "<span class='text-green'>#!</span> Anatomy of a Bug"
+title: "Anatomy of a Bug"
+title_prefix: "#!"
 sidebar_link: true
 order: 1
 permalink: /anatomy-of-a-bug/

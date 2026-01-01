@@ -24,42 +24,36 @@ title: Home
   </div>
 </div>
 
-<!--<div style="margin-bottom: 5px;">
-  <span class="fg-dim">CERT_STATUS:</span> 
-  <span style="color: var(--accent); font-weight: bold;">CWES/CPTS_COURSE_COMPLETE</span>
-</div>
-<div style="width: 100%; background: #222; height: 4px; margin-top: 10px; position: relative; border-radius: 2px;">
-  <div style="width: 100%; background: var(--accent); height: 100%; border-radius: 2px;"></div>
-  <span style="position: absolute; right: 0; top: -18px; font-size: 0.65rem; color: var(--accent);">PATH_STATUS: 100%</span>
-</div>-->
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
   
-  <div style="background: #0a0a0a; border: 1px solid var(--border); padding: 1.5rem;">
-    <h3 style="margin-top: 0; font-size: 1rem;"><span class="text-green">#!</span> ANATOMY_OF_A_BUG</h3>
-    <p style="font-size: 0.85rem;" class="fg-dim">The latest deep-dive intelligence on vulnerability research.</p>
-    
-    {% assign latest_bug = site['anatomy-of-a-bug'] | sort: 'date' | reverse | first %}
-    <div style="border: 1px solid #222; padding: 1rem; margin-top: 2rem;">
-       <span class="text-green" style="font-family: var(--font-mono); font-size: 0.75rem;">LATEST_ENTRY:</span><br>
-       <a href="{{ latest_bug.url }}" style="font-weight: bold; border: none;">{{ latest_bug.title }}</a>
+  <div style="background: #0a0a0a; border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column;">
+    <div style="margin-bottom: 2rem;">
+      <h3 style="margin-top: 0; font-size: 1rem;"><span class="text-green">#!</span> ANATOMY_OF_A_BUG</h3>
+      <p style="font-size: 0.85rem;" class="fg-dim">The latest deep-dive intelligence on vulnerability research.</p>
+      
+      {% assign latest_bug = site['anatomy-of-a-bug'] | sort: 'date' | reverse | first %}
+      <div style="border: 1px solid #222; padding: 1rem; margin-top: 2rem;">
+        <span class="text-green" style="font-family: var(--font-mono); font-size: 0.75rem;">LATEST_ENTRY:</span><br>
+        <a href="{{ latest_bug.url }}" style="font-weight: bold; border: none;">{{ latest_bug.title }}</a>
+      </div>
     </div>
-    <br>
-    <a href="/anatomy-of-a-bug/" class="tactical-btn" style="display: block; text-align: center; margin-top: .5rem;">ACCESS_FULL_ARCHIVE</a>
+    
+    <a href="{{ '/anatomy-of-a-bug/' | relative_url }}" class="tactical-btn" style="display: block; text-align: center; margin-top: auto;">ACCESS_FULL_ARCHIVE</a>
   </div>
 
-  <div style="background: #0a0a0a; border: 1px solid var(--border); padding: 1.5rem;">
-    <h3 style="margin-top: 0; font-size: 1rem;"><span class="text-green">⚔️</span> ACTIVE_STATS</h3>
-    <p style="font-size: 0.85rem;" class="fg-dim">Operational ranking on external infrastructure.</p>
-    
-    <div style="font-family: var(--font-mono); font-size: 0.85rem; line-height: 2;">
-      <span class="fg-dim">HTB:</span> <span class="text-green">Elite Hacker</span><br>
-      <span class="fg-dim">RANK_GLOBAL:</span><span style="font-weight: bold; color: #fff;">TOP 50</span><br>
-      <span class="fg-dim">RANK_GERMANY:</span><span class="text-green" style="font-weight: bold; margin-left: 10px;">RANK #1</span><br>
-      <span class="fg-dim">CERT:</span> <span style="background: #333; padding: 1px 5px;">CPTS (IN_PROGRESS)</span>
+  <div style="background: #0a0a0a; border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column;">
+    <div style="margin-bottom: 2rem;">
+      <h3 style="margin-top: 0; font-size: 1rem;"><span class="text-green">⚔️</span> ACTIVE_STATS</h3>
+      <p style="font-size: 0.85rem;" class="fg-dim">Operational ranking on external infrastructure.</p>
+      
+      <div style="font-family: var(--font-mono); font-size: 0.85rem; line-height: 2;">
+        <span class="fg-dim">HTB:</span> <span class="text-green">Elite Hacker</span><br>
+        <span class="fg-dim">RANK_GLOBAL:</span> <span style="font-weight: bold; color: #fff;">TOP 60</span><br>
+        <span class="fg-dim">RANK_GERMANY:</span><span class="text-green" style="font-weight: bold; margin-left: 10px;">RANK #3</span><br>
+      </div>
     </div>
-    <br>
-    <a href="/ctfs/" class="tactical-btn" style="display: block; text-align: center;">VIEW_MISSION_LOG</a>
+
+    <a href="{{ '/ctfs/' | relative_url }}" class="tactical-btn" style="display: block; text-align: center; margin-top: auto;">VIEW_MISSION_LOG</a>
   </div>
 </div>
 

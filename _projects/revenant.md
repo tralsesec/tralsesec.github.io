@@ -31,10 +31,10 @@ The following logs document the development milestones, research breakthroughs, 
 {% endfor %}
 
 ### Technical Roadmap
-- [x] Pipeline implementation.
+- [ ] Pipeline implementation.
 - [ ] Initial trace collector implementation.
 - [ ] Initial Pre-Lifter implementation.
-- [x] Initial x86_64 Lifter implementation.
+- [ ] Initial x86_64 Lifter implementation.
 - [ ] Integration of Z3 for automated SMT-based opaque predicate solving.
-- [x] Exporter implementation.
+- [ ] Exporter implementation.
 - [ ] Language bindings (Py, JS, Java, C, C++).
