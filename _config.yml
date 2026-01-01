@@ -1,31 +1,39 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
-
 # Setup
-title:            BlackDoc
-tagline:          Black Theme for Jekyll
-description:      "A two-column black theme with a scrolling sidebar. Ideal for sites requiring a master-detail layout, e.g. documentation, cheatsheets, lyrics, notes..."
-url:              https://github.com/karloespiritu/BlackDoc/
-baseurl:          "/BlackDoc/"
-                  # the optional subpath of your site, e.g. "/my-jekyll-site/"
-                  # This will apply to all pages in your Jekyll site.
+title:          "tralsesec"
+tagline:        "Operator // Researcher"
+description:    "Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player"
+url:            "https://tralsesec.github.io" # Change if using a custom domain
+baseurl:        "" # Keep empty if this is your main User Page (tralsesec.github.io). If it's a project page, use "/repo-name"
 
 author:
-  name:           Karlo Espiritu
-  url:            https://twitter.com/karloespiritu
+  name:         "tralsesec"
+  url:          "https://github.com/tralsesec"
 
-paginate:         5
-# paginate_path:    '/page:num'
-                    # Or '/my-jekyll-site/page:num' if you want to move your index pages
+paginate:       5
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
 
-# Custom vars
-version:            3.0.0
+# Custom Collections
+collections:
+  anatomy-of-a-bug:
+    output: true
+    permalink: /anatomy-of-a-bug/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+  ctfs:
+    output: true
+    future: true
+    permalink: /ctfs/:path/
 
-github:
-  repo:             https://github.com/karloespiritu/BlackDoc
+#kramdown:
+#  input: GFM
+#  syntax_highlighter_opts:
+#    block:
+#      line_numbers: true  # <--- This turns on the numbers
+#      span:
+#        line_numbers: false

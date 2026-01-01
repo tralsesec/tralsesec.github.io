@@ -1,0 +1,293 @@
+/* OPERATOR THEME - MERGED & FIXED
+   Based on Poole (Layout) + Custom Operator Aesthetic (Visuals)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;600&display=swap');
+
+/* --- 1. VARIABLES (The Control Panel) --- */
+:root {
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+  
+  --bg-core: #0a0a0a;       /* Deepest Black */
+  --bg-sidebar: #050505;    /* Sidebar Black */
+  --fg-primary: #e0e0e0;    /* Text White */
+  --fg-dim: #888888;        /* Meta Text */
+  
+  /*--accent: #9fef00;        /* Hacker Green */
+  --accent: #433af3;
+  --danger: #ff5555;        /* Critical Red */
+  --border: #222222;        /* Subtle Borders */
+  
+  --width-sidebar: 18rem;   /* Fixed sidebar width */
+  --width-content: 56rem;   /* WIDER than original 38rem */
+}
+
+/* --- 2. RESET & BASE (From Poole) --- */
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  color: var(--fg-primary);
+  background-color: var(--bg-core);
+}
+
+/* Links */
+a { color: var(--fg-primary); text-decoration: none; border-bottom: 1px solid var(--border); transition: 0.2s; }
+a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  letter-spacing: -0.05em;
+}
+h1 { font-size: 2.5rem; margin-top: 0; border-bottom: 0px solid var(--border); padding-bottom: 15px; }
+h2 { font-size: 1.75rem; margin-top: 2rem; }
+h3 { font-size: 1.4rem; margin-top: 1.5rem; color: var(--accent); }
+
+p { margin-bottom: 1.25rem; }
+
+/* --- 3. LAYOUT & SIDEBAR (The Fix) --- */
+
+/* Mobile First: Sidebar sits on top */
+.sidebar {
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.container {
+  max-width: var(--width-content);
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.content { padding-top: 3rem; padding-bottom: 3rem; }
+
+/* Desktop: Sidebar moves to the left (Media Query from Poole) */
+@media (min-width: 48em) {
+  .sidebar {
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    width: var(--width-sidebar);
+    text-align: left; /* Reset alignment */
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    padding: 2rem;
+    overflow-y: auto; /* Scrollable if tall */
+  }
+
+  .content {
+    margin-left: var(--width-sidebar); /* PUSH CONTENT RIGHT */
+    max-width: none; /* Let it fill the remaining space */
+    padding: 4rem 6rem; /* Big spacing for breathing room */
+  }
+}
+
+/* --- 4. COMPONENTS --- */
+
+/* Sidebar Navigation */
+.sidebar-about h1 {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  line-height: 1;
+}
+.sidebar-nav { margin-bottom: 1rem; margin-top: 2rem; }
+.sidebar-nav-item {
+  display: block;
+  line-height: 2;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--fg-dim);
+  border: none;
+}
+.sidebar-nav-item:hover { color: #fff; padding-left: 5px; border: none; }
+.sidebar-nav-item.active { color: var(--accent); font-weight: bold; }
+
+/* --- CARBON.SH STYLE CODE BLOCKS --- */
+
+/* 1. The Container (The Window) */
+pre {
+  position: relative; /* Establish context for the "buttons" */
+  background-color: #1e1e1e !important; /* VS Code / Carbon Dark BG */
+  border-radius: 8px; /* Rounded corners */
+  padding: 50px 20px 20px 20px !important; /* Top padding is huge to make room for buttons */
+  margin: 40px 0; /* Breathing room */
+  
+  /* The "Carbon" Drop Shadow */
+  box-shadow: 0 20px 68px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden; /* Keeps the rounded corners clean */
+}
+
+/* 2. The "Traffic Lights" (Red/Yellow/Green Buttons) */
+/* We create the Red button, then use shadow cloning for Yellow and Green */
+pre::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 2;
+  
+  /* The Red Button */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  
+  /* The Yellow and Green Buttons (Cloned via Shadow) */
+  box-shadow: 
+    20px 0 0 #ffbd2e, 
+    40px 0 0 #27c93f;
+}
+
+/* 3. The Code Text */
+code {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background-color: transparent !important; /* Let the pre background show through */
+  color: #d4d4d4; /* Default text color */
+  border: none !important;
+}
+
+/* 4. Scrollbar for long code lines (Sleek look) */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+/* Tables (AOAB Style) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+th { text-align: left; padding: 10px; border-bottom: 1px solid #444; color: var(--fg-dim); text-transform: uppercase; }
+td { padding: 10px; border-bottom: 1px solid #222; }
+tr:hover td { background-color: #111; color: #fff; }
+
+/* Images */
+img { border: 1px solid var(--border); border-radius: 4px; max-width: 100%; }
+
+/* --- 5. UTILITIES (For your Transpiler) --- */
+.text-red { color: var(--danger) !important; font-weight: bold; }
+.text-green { color: var(--accent) !important; font-weight: bold; }
+
+.pdf-frame {
+  width: 100%;
+  height: 600px; /* Tall enough for a slide */
+  border: none;
+  background-color: #1a1a1a; /* Matches the theme while loading */
+}
+
+/* --- TACTICAL DOWNLOAD BUTTON (Minimalist) --- */
+.intel-footer {
+  background-color: #111; /* Darker, blends into background */
+  border-top: 1px solid var(--border);
+  padding: 12px 15px; /* Reduced vertical space */
+  text-align: left; /* Aligns button to the right like a dialog action */
+}
+
+.tactical-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* No fixed width - lets content dictate size */
+  padding: 6px 14px; 
+  
+  background-color: transparent;
+  color: var(--fg-dim); /* Start distinct but dim (gray) */
+  border: 1px solid var(--border); /* Subtle border */
+  border-radius: 4px; /* Slight rounding */
+  
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* Precise, small text */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tactical-btn:hover {
+  color: var(--accent); /* Lights up Green on hover */
+  border-color: var(--accent);
+  background-color: rgba(159, 239, 0, 0.05); /* Very faint tint */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tactical-icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+  line-height: 0;
+}
+
+/* Style for Markdown checkboxes */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--accent); /* Your terminal green */
+  background: transparent;
+  border-radius: 2px;
+  position: relative;
+  cursor: default;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Style for the "X" when checked */
+input[type="checkbox"]:checked::after {
+  content: "X";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Force disabled checkboxes to remain bright */
+input[type="checkbox"]:disabled {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* Remove bullets from checkbox lists */
+li:has(input[type="checkbox"]) {
+  list-style-type: none;
+  margin-left: -1.2rem; /* Pull back to align with text */
+}
+
+/* Ensure the UL doesn't add extra padding */
+ul:has(input[type="checkbox"]) {
+  padding-left: 1.5rem;
+}

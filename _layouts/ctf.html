@@ -20,21 +20,6 @@ layout: default
     {% endif %}
   </div>
 
-  {% if page.images %}
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 2rem 0;">
-    {% for img in page.images %}
-    <div class="intel-frame" style="border: 1px solid var(--border); padding: 5px; background: #000; transition: transform 0.2s ease;">
-      <a href="{{ img.url }}" target="_blank" style="border: none; display: block;">
-        <img src="{{ img.url }}" alt="{{ img.ref }}" style="width: 100%; display: block; cursor: zoom-in;">
-      </a>
-      <p style="font-family: var(--font-mono); font-size: 0.65rem; text-align: center; margin-top: 1rem; margin-bottom: 5px;" class="fg-dim">
-        // IMG_REF: {{ img.ref }}
-      </p>
-    </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
   {% if page.image %}
      <div class="intel-frame" style="padding: 5px; background: #000; transition: transform 0.2s ease;">
       <a href="{{ page.image }}" target="_blank" style="border: none; display: block;">
@@ -46,18 +31,4 @@ layout: default
   {{ content }}
 </div>
 
-<div class="related">
-  <h2>Other Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+{% include related_ctfs.html %}

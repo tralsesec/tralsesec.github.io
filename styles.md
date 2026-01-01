@@ -228,6 +228,25 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 <div><iframe class="speakerdeck-iframe" frameborder="0" src="//speakerdeck.com/player/88f09170c0e60131e0fe72c781b73270?" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; margin: 0px; padding: 0px; border-radius: 5px; width: 710px; height: 461.37499999999955px; background: transparent;"></iframe></div>
 
+<div class="intel-viewer-container" id="briefing">
+  <div class="intel-header">
+    <div class="intel-status">
+      <span style="color:var(--accent);">●</span> CLASSIFIED // SLIDE DECK
+    </div>
+    <div class="intel-controls">
+      <a href="https://raw.githubusercontent.com/tralsesec/AnatomyOfABug/main/pdfs/{{ page.pdf_file | uri_escape }}" download>
+        [ ⬇ Download ]
+      </a>
+    </div>
+  </div>
+  
+  <iframe 
+    src="{{ site.baseurl }}public/pdfs/#! Anatomy of a Bug #1 - React2Shell (CVE-2025-55182).pdf" 
+    class="pdf-frame" 
+    frameborder="0">
+  </iframe>
+</div>
+
 Culpa qui officia deserunt mollit anim id est laborum.
 
 ### Audio

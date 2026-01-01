@@ -1,0 +1,95 @@
+{% assign max_related = 3 %}
+{% assign all_scores = "" %}
+
+{% comment %} 1. Calculate scores and gather matches {% endcomment %}
+{% for ctf in site.ctfs %}
+  {% if ctf.url != page.url %}
+    {% assign score = 0 %}
+    {% assign matched_tags = "" %}
+    
+    {% for tag in ctf.tags %}
+      {% if page.tags contains tag %}
+        {% capture matched_tags %}{{ matched_tags }}{{ tag }} {% endcapture %}
+        {% if tag == "Kernel" or tag == "Buffer Overflow" or tag == "AD" %}
+          {% assign score = score | plus: 3 %}
+        {% else %}
+          {% assign score = score | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if score > 0 %}
+      {% capture score_item %}{{ score | prepend: '00' | slice: -3, 3 }}|{{ forloop.index0 }}|{{ matched_tags | rstrip }}{% endcapture %}
+      {% assign all_scores = all_scores | append: score_item | append: ":::" %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} 2. Only render the container if matches actually exist {% endcomment %}
+{% if all_scores != "" %}
+  {% assign sorted_scores = all_scores | split: ":::" | sort | reverse %}
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-ctfs" style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// SIMILAR_OPERATIONS</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      {% for entry in sorted_scores limit:max_related %}
+        {% assign parts = entry | split: "|" %}
+        {% assign score = parts[0] | plus: 0 %}
+        {% assign ctf_index = parts[1] | plus: 0 %}
+        {% assign current_matches = parts[2] %}
+        {% assign ctf = site.ctfs[ctf_index] %}
+
+        {% assign total_tags = page.tags | size | fallback: 1 %}
+        {% assign match_percent = score | times: 100 | divided_by: total_tags | at_most: 100 %}
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="{{ ctf.image }}" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">{{ ctf.platform | upcase }}</span>
+              <span style="color: {% if ctf.difficulty == 'Insane' %}#ffffff{% elsif ctf.difficulty == 'Hard' %}#ff4d4d{% elsif ctf.difficulty == 'Medium' %}#ffa500{% elsif ctf.difficulty == 'Easy' %}#00ff00{% elsif ctf.difficulty == 'Very Easy' %}#a333ff{% else %}#888{% endif %}; font-weight: bold;">
+                {{ ctf.difficulty | upcase }}
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="{{ ctf.url }}" style="border: none; font-size: 0.95rem;">{{ ctf.title }}</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: {{ match_percent }}%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                {{ match_percent }}% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  {{ current_matches | replace: " ", "<br>• " | prepend: "• " }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

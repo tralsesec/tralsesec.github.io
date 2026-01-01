@@ -2,7 +2,112 @@
 layout: default
 ---
 
+{% comment %} 1. PASTE YOUR CURRENT NGROK URL HERE (No trailing slash) {% endcomment %}
+{% assign FORCE_DOMAIN = "https://e92c905da6b9.ngrok-free.app" %}
+
+{% comment %} 2. CALCULATE ID (Turn "/anatomy-of-a-bug/md/7" into "7") {% endcomment %}
+{% assign raw_id = page.id | split: "/" | last %}
+{% assign clean_id = raw_id | plus: 0 %}
+
+{% comment %} 3. MANUALLY BUILD THE URL (No "absolute_url" filter) {% endcomment %}
+{% assign final_img_url = FORCE_DOMAIN | append: "/anatomy-of-a-bug/assets/og/" | append: clean_id | append: ".png" %}
+
+{% comment %} 4. BUILD TEXT (Beautiful Hierarchy) {% endcomment %}
+{% assign series_name = "#! Anatomy of a Bug" %}
+{% assign social_title = page.title | append: " (#" | append: clean_id | append: ")" %}
+{% assign social_desc = page.summary | default: page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="{{ series_name }}" />
+<meta property="og:title" content="{{ social_title }}" />
+<meta property="og:description" content="{{ social_desc }}" />
+<meta property="og:url" content="{{ FORCE_DOMAIN }}{{ page.url }}" />
+
+<meta name="theme-color" content="#2100e1">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="{{ social_title }}">
+<meta property="twitter:description" content="{{ social_desc }}">
+<meta name="twitter:site" content="{{ series_name }}">
+
+<meta property="og:image" content="{{ final_img_url }}" />
+<meta property="twitter:image" content="{{ final_img_url }}" />
+
 <div class="page">
-  <h1 class="page-title">{{ page.title }}</h1>
-  {{ content }}
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+      <h1 class="page-title" style="margin: 0; line-height: 0; padding-bottom: 0rem;">{{ page.title }}</h1>
+      
+      {% if page.pdf_file %}
+        {% assign pdf_url = "/anatomy-of-a-bug/pdf/" | append: page.pdf_file | relative_url %}
+        <a href="{{ pdf_url }}" class="tactical-btn" download style="margin-left: 20px; white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
+          <span class="tactical-icon" style="margin-right:5px;">⬇</span> PDF REPORT
+        </a>
+      {% endif %}
+    </div>
+
+    {% if page.pdf_file %}
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">{{ page.status }}</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">{{ page.severity }}</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>{{ page.date_finding | date: "%Y-%m-%d" }}</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>{{ page.date_upload | date: "%Y-%m-%d" }}</div>
+      </div>
+
+    </div>
+    {% endif %}
+
+    {% if page.tags %}
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      {% for tag in page.tags %}
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#{{ tag | upcase }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </header>
+
+  {% if page.images %}
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 2rem 0;">
+    {% for img in page.images %}
+    <div class="intel-frame" style="border: 1px solid var(--border); padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="{{ img.url }}" target="_blank" style="border: none; display: block;">
+        <img src="{{ img.url }}" alt="{{ img.ref }}" style="width: 100%; display: block; cursor: zoom-in;">
+      </a>
+      <p style="font-family: var(--font-mono); font-size: 0.65rem; text-align: center; margin-top: 1rem; margin-bottom: 5px;" class="fg-dim">
+        // IMG_REF: {{ img.ref }}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="intel-content">
+    {{ content }}
+  </div>
+
+  {% if page.credits %}
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: {{ page.credits }}</strong>
+  </div>
+  {% endif %}
+
 </div>
