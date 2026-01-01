@@ -1,0 +1,58 @@
+{% assign max_related = 3 %}
+{% assign all_scores = "" %}
+
+{% comment %} 1. Calculate scores based on tags {% endcomment %}
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% assign score = 0 %}
+    
+    {% comment %} Sort tags alphabetically {% endcomment %}
+    {% assign sorted_tags = post.tags | sort %}
+
+    {% for tag in sorted_tags %}
+      {% if page.tags contains tag %}
+        {% assign score = score | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if score > 0 %}
+      {% comment %} 
+        We save: Score | Index 
+        (We don't need matched tags string for display here)
+      {% endcomment %}
+      {% capture score_item %}{{ score | prepend: '00' | slice: -3, 3 }}|{{ forloop.index0 }}{% endcapture %}
+      {% assign all_scores = all_scores | append: score_item | append: ":::" %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} 2. Render simple list if matches exist {% endcomment %}
+{% if all_scores != "" %}
+  {% assign sorted_scores = all_scores | split: ":::" | sort | reverse %}
+
+  <div class="related-posts-container" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #333;">
+    <h3 style="color: var(--accent); margin-bottom: 1rem; font-family: var(--font-mono); font-size: 1rem;">
+      // RELATED_LOGS
+    </h3>
+    
+    <ul class="related-posts" style="list-style: none; padding-top: 1rem; margin: 0;">
+      {% for entry in sorted_scores limit:max_related %}
+        {% assign parts = entry | split: "|" %}
+        {% assign post_index = parts[1] | plus: 0 %}
+        {% assign post = site.posts[post_index] %}
+
+        <li style="margin-bottom: 1.2rem;">
+          <a href="{{ post.url }}" style="text-decoration: none; border: none; display: block;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #666; margin-bottom: 2px;">
+              {{ post.date | date: "%Y-%m-%d" }}
+            </div>
+            <div style="font-size: 1.1rem; font-weight: bold; color: #eee; transition: color 0.2s;">
+              {{ post.title }}
+              <span style="color: var(--accent); font-size: 0.8em; margin-left: 5px;">&rarr;</span>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
