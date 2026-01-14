@@ -32,12 +32,11 @@ Each report follows a strict forensic structure:
 
 | ID | Case Title | CVE(s) | Target | Severity |
 | :--- | :--- | :--- | :--- | :--- |
-{% assign sorted_cases = site['anatomy-of-a-bug'] | sort: 'id' | reverse -%}
+{% assign sorted_cases = site['anatomy-of-a-bug'] | sort: 'case_id' | reverse -%}
 {% for case in sorted_cases -%}
-  {% if case.id and case.cve -%}
-  {% assign clean_id = case.id | split: "md/" | last -%}
-  {% assign pdf_link = "/anatomy-of-a-bug/pdf/AOAB" | append: clean_id | append: ".pdf" | relative_url -%}
-| <a href="{{ case.url | relative_url }}" target="_blank">**#{{ clean_id }}**</a> | <a href="{{ case.url | relative_url }}" target="_blank">**{{ case.title }}**</a> | `{{ case.cve }}` | {{ case.target }} | **{{ case.severity }}** | <a href="{{ pdf_link }}" target="_blank">⬇</a> |
+  {% if case.case_id and case.cve -%}
+  {% assign pdf_link = "/anatomy-of-a-bug/pdf/AOAB" | append: case.case_id | append: ".pdf" | relative_url -%}
+| <a href="{{ case.url | relative_url }}" target="_blank">**#{{ case.case_id }}**</a> | <a href="{{ case.url | relative_url }}" target="_blank">**{{ case.title }}**</a> | `{{ case.cve }}` | {{ case.target }} | **{{ case.severity }}** | {% comment %}<a href="{{ pdf_link }}" target="_blank">⬇</a> | {% endcomment %}
   {% endif -%}
 {% endfor %}
 

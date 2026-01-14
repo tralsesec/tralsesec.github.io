@@ -53,7 +53,7 @@ title: Home
       <h3 style="margin-top: 0; font-size: 1rem;"><span class="text-green">#!</span> ANATOMY_OF_A_BUG</h3>
       <p style="font-size: 0.85rem;" class="fg-dim">The latest deep-dive intelligence on vulnerability research.</p>
       
-      {% assign latest_bug = site['anatomy-of-a-bug'] | sort: 'date' | reverse | first %}
+      {% assign latest_bug = site['anatomy-of-a-bug'] | sort: 'case_id' | reverse | first %}
       <div style="border: 1px solid #222; padding: 1rem; margin-top: 2rem;">
         <span class="text-green" style="font-family: var(--font-mono); font-size: 0.75rem;">LATEST_ENTRY:</span><br>
         <a href="{{ latest_bug.url }}" style="font-weight: bold; border: none;">{{ latest_bug.title }}</a>
