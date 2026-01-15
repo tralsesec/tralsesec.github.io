@@ -61,7 +61,7 @@ This work is licensed under a **Creative Commons Attribution-NoDerivatives 4.0 I
 * **Attribution:** You must give appropriate credit to **@tralsesec**, provide a link to the license, and indicate if changes were made (note: changes are not permitted under ND).
 * **NoDerivatives:** If you remix, transform, or build upon the material, you may not distribute the modified material. The integrity of the analysis must remain intact.
 
-{% comment %} See the [LICENSE](./LICENSE) file for the full legal text. {% endcomment %}
+See the [LICENSE](./LICENSE) file for the full legal text.
 
 ---
 
