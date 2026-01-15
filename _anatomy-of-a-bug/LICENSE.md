@@ -61,4 +61,4 @@ a. For the avoidance of doubt, this Public License does not reduce, limit, restr
 
 ---
 
-Copyright (c) 2026 @tralsesec. All rights reserved.
+Copyright (c) 2025-{{ site.time | date: '%Y' }}. @tralsesec. All rights reserved.
