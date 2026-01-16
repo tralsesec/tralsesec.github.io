@@ -5,6 +5,7 @@ title_prefix: "#!"
 sidebar_link: true
 order: 1
 permalink: /anatomy-of-a-bug/
+no_toc: true
 ---
 
 > **Autopsy of a Zero-Day.**

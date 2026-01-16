@@ -27,9 +27,11 @@ layout: default
       <a href="{{ img.url }}" target="_blank" style="border: none; display: block;">
         <img src="{{ img.url }}" alt="{{ img.ref }}" style="width: 100%; display: block; cursor: zoom-in;">
       </a>
+      {% if img.ref %}
       <p style="font-family: var(--font-mono); font-size: 0.65rem; text-align: center; margin-top: 1rem; margin-bottom: 5px;" class="fg-dim">
         // IMG_REF: {{ img.ref }}
       </p>
+      {% endif %}
     </div>
     {% endfor %}
   </div>

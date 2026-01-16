@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Profile
+no_toc: true
 ---
 
 <h1>The Operator & Researcher</h1>
