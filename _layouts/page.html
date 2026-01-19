@@ -53,6 +53,7 @@ layout: default
       {% endif %}
     </div>
 
+    {% unless page.case_id %}
     <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
       
       <div class="meta-block">
@@ -76,6 +77,7 @@ layout: default
       </div>
 
     </div>
+    {% endunless %}
 
     {% if page.tags %}
     <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
