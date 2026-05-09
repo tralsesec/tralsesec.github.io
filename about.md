@@ -4,27 +4,27 @@ title: Profile
 no_toc: true
 ---
 
-<h1>The Operator & Researcher</h1>
+<h1>The Architect & Operator</h1>
 
 <div style="border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; background: #0f0f0f;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
     <div>
-      <span class="fg-dim">CURRENT ROLE</span><br>
-      <span class="text-green">DevSecOps Engineer</span>
+      <span class="fg-dim">CURRENT STATUS</span><br>
+      <span class="text-green">Independent Vulnerability Researcher</span>
     </div>
     <div>
       {% assign current_year = site.time | date: '%Y' | plus: 0 %}
       {% assign total_exp = current_year | minus: 2017 %}
-      <span class="fg-dim">TOTAL EXP</span><br>
-      <span>{{ total_exp }} Years (Engineering)</span>
+      <span class="fg-dim">ENGINEERING EXP</span><br>
+      <span>{{ total_exp }} Years (Low-Level & Architecture)</span>
     </div>
     <div>
       {% assign total_sec = current_year | minus: 2020 %}
       <span class="fg-dim">SEC OPS</span><br>
-      <span>{{ total_sec }} Years (CTF/Red Team)</span>
+      <span>{{ total_sec }} Years (Adversary Simulation)</span>
     </div>
     <div>
-      <span class="fg-dim">LOCATION</span><br>
+      <span class="fg-dim">BASE OF OPERATIONS</span><br>
       <span>Germany</span>
     </div>
   </div>
@@ -33,15 +33,11 @@ no_toc: true
 <h2>// Operational Profile</h2>
 
 <p>
-  I am a <strong>DevSecOps Engineer</strong> and Dual Student at <strong>Deutsche Telekom</strong>.
+  My methodology is grounded in a software engineering background established in 2017. Current operations focus on deep-level architectural analysis, reverse engineering, and bypassing endpoint telemetry.
 </p>
 
 <p>
-  My foundation in software engineering began <strong>2017</strong>, long before I entered the professional sector. This decade-long fluency in code allows me to deconstruct systems with the mindset of an architect, not just a script-kiddie. 
-</p>
-
-<p>
-  My work operates at the intersection of robust software engineering (Cloud, Go, C++) and applied vulnerability research. I do not just find vulnerabilities; I understand the code that caused them.
+  I build the weaponry I use, leveraging languages like Python, Zig and Go to maintain absolute operational superiority in zero-day research and adversary simulation.
 </p>
 
 <h3 class="text-green">Technical Arsenal</h3>
@@ -55,34 +51,29 @@ no_toc: true
   </thead>
   <tbody>
     <tr>
-      <td><strong>Python</strong></td>
-      <td><span class="fg-dim">2017—{{ site.time | date: '%Y' }}</span></td>
-      <td>The foundation. Automation, POCs, Tooling.</td>
-    </tr>
-    <tr>
-      <td><strong>JavaScript / Java / Kotlin</strong></td>
-      <td><span class="fg-dim">2020-2022</span></td>
-      <td>Web Exploitation, Code Review, Android (Kotlin).</td>
-    </tr>
-    <tr>
       <td><strong>C / C++ / x86 asm</strong></td>
       <td><span class="fg-dim">2022—{{ site.time | date: '%Y' }}</span></td>
-      <td>Low-Level Systems, Malware Dev, PLC/SCADA.</td>
-    </tr>
-    <tr>
-      <td><strong>Clojure</strong></td>
-      <td><span class="fg-dim">2023</span></td>
-      <td>Functional Programming paradigms.</td>
-    </tr>
-    <tr>
-      <td><strong>Go (Golang)</strong></td>
-      <td><span class="fg-dim">2024—{{ site.time | date: '%Y' }}</span></td>
-      <td>High-Performance Cloud Infra & Modern C2.</td>
+      <td>Ring 0 Operations, Windows Internals, Malware Dev.</td>
     </tr>
     <tr>
       <td><strong>Zig / Nim / Rust</strong></td>
       <td><span class="fg-dim">2025—{{ site.time | date: '%Y' }}</span></td>
-      <td>Next-Gen Offensive Engineering & Evasion.</td>
+      <td>Memory-safe Custom Weaponry, EDR Evasion, Next-Gen C2.</td>
+    </tr>
+    <tr>
+      <td><strong>Go (Golang)</strong></td>
+      <td><span class="fg-dim">2024—{{ site.time | date: '%Y' }}</span></td>
+      <td>High-Performance Cloud Infra & Distributed Tooling.</td>
+    </tr>
+    <tr>
+      <td><strong>Python</strong></td>
+      <td><span class="fg-dim">2017—{{ site.time | date: '%Y' }}</span></td>
+      <td>Rapid Prototyping, Exploit Development, Automation.</td>
+    </tr>
+    <tr>
+      <td><strong>JavaScript / Java / Kotlin</strong></td>
+      <td><span class="fg-dim">2020-2022</span></td>
+      <td>Web Exploitation, Source Code Review, Android.</td>
     </tr>
   </tbody>
 </table>
@@ -94,15 +85,15 @@ no_toc: true
 <div style="margin-bottom: 2rem;">
   <h3 style="margin-bottom: 0.2rem;"><a href="https://telekom.de/" target="_blank">Deutsche Telekom</a></h3>
   <div class="fg-dim" style="font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 1rem;">
-    <span class="text-green">DevSecOps Engineer (Dual Study)</span> // Sept 2025 – Present
+    <span class="text-green">DevSecOps Engineer</span> // Sept 2025 – Feb 2026
   </div>
   <p>
-    Focusing on Cloud Security, infrastructure automation, and secure software delivery in a high-compliance enterprise environment.
+    Secured enterprise cloud environments and automated infrastructure delivery. Analyzed and hardened high-compliance pipelines before pivoting to independent research.
   </p>
   <div style="font-size: 0.85rem;">
     <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">Golang</span>
     <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">Bash</span>
-    <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">Cloud</span>
+    <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">Enterprise Cloud</span>
   </div>
 </div>
 
@@ -112,7 +103,7 @@ no_toc: true
     <span class="text-green">IDS Architect & Engineer</span> // Sept 2023 – Dec 2023
   </div>
   <p>
-    Designed and implemented Intrusion Detection Systems (IDS) for industrial environments. Worked directly with Programmable Logic Controllers (PLCs) and network security protocols.
+    Designed and implemented Intrusion Detection Systems (IDS) for critical industrial environments. Worked directly with Programmable Logic Controllers (PLCs) and low-level network security protocols.
   </p>
   <div style="font-size: 0.85rem;">
     <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">C++</span>
@@ -123,10 +114,10 @@ no_toc: true
 <div style="margin-bottom: 2rem;">
   <h3 style="margin-bottom: 0.2rem;"><a href="https://www.doctronic.de/" target="_blank">doctronic GmbH & Co. KG</a></h3>
   <div class="fg-dim" style="font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 1rem;">
-    <span class="text-green">Software Development Internship</span> // July 2023 – Aug 2023
+    <span class="text-green">Software Engineering</span> // July 2023 – Aug 2023
   </div>
   <p>
-    Backend development with a focus on functional programming paradigms.
+    Backend architecture with a strict focus on functional programming paradigms and resilient system design.
   </p>
   <div style="font-size: 0.85rem;">
     <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">Clojure</span>
@@ -135,43 +126,34 @@ no_toc: true
 
 <hr style="margin: 3rem 0; border-color: var(--border);">
 
-<h2>// Active Operations</h2>
+<h2>// Research & Methodology</h2>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
 
   <div>
-    <h3>Offensive Security</h3>
+    <h3>Offensive Research</h3>
     <p>
-      I have been competing since 2020, focusing on Active Directory exploitation, Red Teaming, and Binary Exploitation.
+      Continuous validation of offensive methodologies across diverse environments. My research focuses on the intersection of Windows Internals, Unix/Linux subsystems, and complex network architectures. 
     </p>
-    <ul style="list-style: none; padding-left: 0;">
-      <li style="margin-bottom: 0.5rem;">
-        <a href="https://app.hackthebox.com/public/users/475600" target="_blank"><span class="text-green">Hack The Box</span></a> <span class="fg-dim">// Since Dec 2020</span><br>
-        Top ranks in Reverse Engineering & AD Pivoting.
-      </li>
-      <li style="margin-bottom: 0.5rem;">
-        <a href="https://tryhackme.com/p/Tralse" target="_blank"><span class="text-green">TryHackMe</span></a> <span class="fg-dim">// Since March 2021</span><br>
-        Focus on Network Penetration Testing.
+    <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
+      <li>
+        <a href="https://app.hackthebox.com/public/users/475600" target="_blank"><span class="text-green">Hack The Box</span></a> <span class="fg-dim">// 2020—Present</span><br>
+        Global top-tier rankings. Primary focus on Binary Analysis, Advanced AD Pivoting, and hardened Linux/Windows environments.
       </li>
     </ul>
 
-    <h3>Strategic Roadmap</h3>
+    <h3>Specialized Training & Milestones</h3>
     <p>
-      Current training objectives to support my role at Telekom and personal research.
+      A selection of industry-standard benchmarks and specialized training programs used to formalize my research in vulnerability discovery and exploitation.
     </p>
-    <ul>
-      <li><span class="text-green"><strong>Active:</strong></span> <strong>HTB CPTS</strong> (Certified Penetration Testing Specialist).</li>
-      <li><span class="fg-dim">Target:</span> <strong>HTB CAPE</strong> (Certified Active Directory Penetration Exploitation).</li>
-      <li><span class="fg-dim">Target:</span> <strong>HTB CWEE</strong> (Certified Web Exploitation Expert).</li>
-      <li><span class="fg-dim">Target:</span> <strong>Maldev Academy</strong> (Certified Advanced Malware Developer).</li>
-      <li><span class="fg-dim">Target:</span> <strong>OffSec OSEP</strong> (OffSec Experienced Penetration Tester).</li>
-      <li><span class="fg-dim">Target:</span> <strong>OffSec OSED</strong> (OffSec Exploitation Developer).</li>
-      <li><span class="fg-dim">Target:</span> <strong>OffSec OSEE</strong> (OffSec Exploitation Expert).</li>
+    <ul style="margin-bottom: 0; list-style-type: none; padding-left: 0;">
+      <li style="margin-bottom: 0.6rem;"><strong>HTB CPTS</strong> — Penetration Testing Specialist</li>
+      <li style="margin-bottom: 0.6rem;"><strong>HTB CAPE</strong> — Active Directory Penetration Exploitation</li>
+      <li style="margin-bottom: 0.6rem;"><strong>HTB CWEE</strong> — Web Exploitation Expert</li>
+      <li style="margin-bottom: 0.6rem;"><strong>Maldev Academy</strong> — Advanced Malware Development</li>
+      <li style="margin-bottom: 0.6rem;"><strong>OffSec OSED</strong> — Windows User Mode Exploit Development</li>
+      <li><strong>OffSec OSEE</strong> — Windows Kernel Exploitation</li>
     </ul>
   </div>
 
 </div>
-
-<p style="text-align: center; font-family: var(--font-mono); opacity: 0.5;">
-  // END OF RECORD
-</p>
