@@ -18,9 +18,9 @@ date: 2026-05-12
 ---
 
 ## ⛓️ TL;DR / Attack Chain
-* 1. Foothold (Jenkins RCE): Discovered a hidden directory `/askjeeves` on port `50000/http` (Jetty). Exploited unauthenticated access to the `Jenkins Script Console` to execute arbitrary (Groovy) scripts, leading to a reverse shell as `jeeves\kohsuke`.
-* 2. Privilege Escalation (Token Impersonation): Identified the `SeImpersonatePrivilege` enabled on the service account. Leveraged Metasploit's `getsystem` (Named Pipe/PrintSpooler variant) to impersonate a privileged process and escalate to `NT AUTHORITY\SYSTEM`.
-* 3. Post-Exploitation (NTFS ADS): Located the final flag hidden within an `Alternate Data Stream` (ADS) on the Administrator's desktop. The flag was "attached" to `hm.txt` and required the `dir /R` command to reveal and `more <` to extract.
+1. Foothold (Jenkins RCE): Discovered a hidden directory `/askjeeves` on port `50000/http` (Jetty). Exploited unauthenticated access to the `Jenkins Script Console` to execute arbitrary (Groovy) scripts, leading to a reverse shell as `jeeves\kohsuke`.
+2. Privilege Escalation (Token Impersonation): Identified the `SeImpersonatePrivilege` enabled on the service account. Leveraged Metasploit's `getsystem` (Named Pipe/PrintSpooler variant) to impersonate a privileged process and escalate to `NT AUTHORITY\SYSTEM`.
+3. Post-Exploitation (NTFS ADS): Located the final flag hidden within an `Alternate Data Stream` (ADS) on the Administrator's desktop. The flag was "attached" to `hm.txt` and required the `dir /R` command to reveal and `more <` to extract.
 
 ---
 

@@ -18,8 +18,8 @@ date: 2026-05-09
 ---
 
 ## ⛓️ TL;DR / Attack Chain
-* 1. **Foothold:** Public share for `guest`, downloaded `overwatch.exe`, got credentials for `sqlsvc`.
-* 2. **PrivEsc:** `sqlsvc` -> MSSQL linked server execution after DNS abusing, got credentials for `sqlmgmt`. Then exploited OS-Command Injection vulnerability in local `:8000/MonitorService` and got `Administrator`.
+1. **Foothold:** Public share for `guest`, downloaded `overwatch.exe`, got credentials for `sqlsvc`.
+2. **PrivEsc:** `sqlsvc` -> MSSQL linked server execution after DNS abusing, got credentials for `sqlmgmt`. Then exploited OS-Command Injection vulnerability in local `:8000/MonitorService` and got `Administrator`.
 
 ---
 
