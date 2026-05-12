@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Easy"
 image: "/assets/img/ctf/fluffy.png"
-tags: [Windows, CVE-2025-24071, Shadow-Credentials, ESC16, ACL-Abuse]
+tags: [Windows, CVE-2025-24071, Shadow-Credentials, ESC16, ACL-Abuse, Active-Directory]
 date: 2026-05-11
 ---
 

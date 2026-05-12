@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The MAESTRO Breakout: ESXi Ring -1 Compromise &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="The MAESTRO Breakout: ESXi Ring -1 Compromise (#12)" />
+<meta property="og:description" content="A 'Perfect Storm' exploit chain allowing a Guest-to-Host escape via the VMCI interface, culminating in an invisible, non-networked backdoor (VSOCKpuppet) residing in the hypervisor's User World." />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/md/12/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="The MAESTRO Breakout: ESXi Ring -1 Compromise (#12)">
+<meta property="twitter:description" content="A 'Perfect Storm' exploit chain allowing a Guest-to-Host escape via the VMCI interface, culminating in an invisible, non-networked backdoor (VSOCKpuppet) residing in the hypervisor's User World.">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/12.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/12.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+        The MAESTRO Breakout: ESXi Ring -1 Compromise
+      </h1>
+      
+      
+    </div>
+
+    
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">PATCHED</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">9.3</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>2025-03-04</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>2026-01-20</div>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#VMWARE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#VMESCAPE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#VM</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#HYPERVISOR</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#RACECONDITION</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#TOCTOU</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#BREAKOUT</span>
+      
+    </div>
+    
+
+  </header>
+
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 2rem 0;">
+    
+    <div class="intel-frame" style="border: 1px solid var(--border); padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/anatomy-of-a-bug/assets/og/12.png" target="_blank" style="border: none; display: block;">
+        <img src="/anatomy-of-a-bug/assets/og/12.png" alt="" style="width: 100%; display: block; cursor: zoom-in;">
+      </a>
+      
+    </div>
+    
+  </div>
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h2 id="1-the-patient">1. The Patient</h2>
+
+<p><strong>Target:</strong> VMware ESXi (Type-1 Bare Metal Hypervisor)</p>
+
+<p><strong>Execution Context:</strong> <code class="language-plaintext highlighter-rouge">vmx</code> Process (User World) &amp; VMkernel</p>
+
+<p><strong>Subsystems:</strong> Virtual Machine Communication Interface (VMCI) &amp; Host-Guest File System (HGFS)</p>
+
+<p>The target is not merely the hypervisor software, but specifically the <strong>Para-Virtualized Drivers</strong> that bridge the isolation gap. The MAESTRO campaign specifically targets the high-bandwidth, low-latency channels designed to bypass the overhead of standard hardware emulation.</p>
+
+<h3 id="11-vmci-the-shared-memory-bridge">1.1 VMCI: The Shared Memory Bridge</h3>
+
+<p>The <strong>Virtual Machine Communication Interface (VMCI)</strong> is a proprietary infrastructure allowing high-speed inter-VM and Guest-to-Host communication without the overhead of the network stack (vSwitch/TCP/IP).</p>
+
+<ul>
+  <li><strong>Architecture:</strong> VMCI exposes a virtual PCI device to the guest (<code class="language-plaintext highlighter-rouge">PCI Device ID 0x0740</code>). Unlike standard IO/MMIO emulation which triggers a <code class="language-plaintext highlighter-rouge">VMEXIT</code> for every operation, VMCI is designed for performance.</li>
+  <li><strong>The Queue Pair (QP):</strong> The core primitive is the Queue Pair—a set of two circular ring buffers (Produce/Consume) stored in physical memory pages.</li>
+  <li><strong>Mapping:</strong> These physical pages are mapped <strong>simultaneously</strong> into the Guest Kernel’s virtual address space (via <code class="language-plaintext highlighter-rouge">vmci.sys</code>) and the Host’s <code class="language-plaintext highlighter-rouge">vmx</code> process user space.</li>
+  <li><strong>Mechanism:</strong> Data transfer relies on atomic updates to <code class="language-plaintext highlighter-rouge">ProduceIndex</code> and <code class="language-plaintext highlighter-rouge">ConsumeIndex</code> pointers located in the queue header.</li>
+  <li><strong>The Attack Surface:</strong> Because the queue headers exist in shared memory, the Guest has direct write access to the control structures that the Host uses to manage memory boundaries. The Host attempts to sanitize these indices, but the architecture necessitates a “Fetch-Check-Use” cycle on volatile memory, creating a structural window for <strong>Time-of-Check Time-of-Use (TOCTOU)</strong> race conditions.</li>
+</ul>
+
+<h3 id="12-hgfs-the-rpc-backdoor">1.2 HGFS: The RPC Backdoor</h3>
+
+<p>The <strong>Host-Guest File System (HGFS)</strong> acts as the transport layer for “Shared Folders” and Drag-and-Drop operations. It operates over the VMware Backdoor I/O ports (<code class="language-plaintext highlighter-rouge">0x5658</code>/<code class="language-plaintext highlighter-rouge">0x5659</code>), utilizing the <strong>TCLO (Transparent Component Learning Object)</strong> protocol.</p>
+
+<ul>
+  <li><strong>Protocol:</strong> Communication occurs via “RPC packets” passed through the Guest-Host backdoor. The Guest constructs a serialized request containing Type-Length-Value (TLV) structures.</li>
+  <li><strong>Parsing Logic:</strong> The <code class="language-plaintext highlighter-rouge">vmx</code> process on the host contains a dedicated server (<code class="language-plaintext highlighter-rouge">hgfsServer</code>) to deserialize these requests, translate them into host filesystem syscalls, and serialize the response.</li>
+  <li><strong>The Attack Surface:</strong> The <code class="language-plaintext highlighter-rouge">hgfsServer</code> implements complex state machines to handle fragmented packets and variable-length buffers. MAESTRO targets the <code class="language-plaintext highlighter-rouge">toolbox-dnd</code> (Drag-and-Drop) capability command. The parser for this specific command fails to strictly validate the user-supplied output buffer length against the actual data size during the state transition from <code class="language-plaintext highlighter-rouge">RPC_OPEN</code> to <code class="language-plaintext highlighter-rouge">RPC_READ</code>, creating a classic <strong>Heap Out-of-Bounds Read</strong> condition used for ASLR defeat.</li>
+</ul>
+
+<h3 id="13-the-architectural-inevitability-of-failure">1.3 The Architectural Inevitability of Failure</h3>
+
+<p>To characterize MAESTRO merely as a “bug” in the VMCI driver is to misunderstand the fundamental tension of virtualization. This exploit is the predictable, almost distinct, output of the Zero-Copy Fallacy.</p>
+
+<p>Modern hypervisors are evaluated primarily on their ability to minimize the “virtualization tax”—the overhead introduced by hardware emulation. To achieve near-native performance, architects utilize paravirtualization (like VMCI) which maps Host Physical Memory directly into the Guest’s Virtual Address space. This design choice creates a Shared Memory Concurrency Model between two parties with diametrically opposed security incentives.</p>
+
+<p>This architecture renders the entire class of Double-Fetch (TOCTOU) vulnerabilities structurally inevitable for three fundamental reasons:</p>
+
+<h4 id="1-volatility-of-shared-state">1. Volatility of Shared State</h4>
+
+<p>In a conventional ring-3 application, memory is coherent by ownership: a value read from the heap remains stable unless the executing thread mutates it. VMCI explicitly violates this assumption. The shared queue pages are treated by the Guest as a writable DMA region, while the Host simultaneously treats the same pages as authoritative control metadata. Because the hypervisor cannot suspend or serialize the Guest’s vCPUs for the duration of every transaction without catastrophically degrading throughput, it is forced to operate on state that is adversarially mutable between CPU cycles. The memory is not merely shared; it is inherently volatile under hostile scheduling.</p>
+
+<h4 id="2-the-atomicity-gap">2. The Atomicity Gap</h4>
+
+<p>Host-side validation inevitably follows a Fetch → Validate → Use sequence:</p>
+
+<ul>
+  <li>T₀ (Fetch): The Host reads a GPA-derived index or pointer from shared memory.</li>
+  <li>T₁ (Validate): The Host verifies that the value satisfies bounds and ownership constraints.</li>
+  <li>T₂ (Use): The Host dereferences the value during a data movement operation (e.g., memcpy).</li>
+</ul>
+
+<p>The MAESTRO race exploits the irreducible interval Δt between T₁ and T₂. During this interval, a Guest-controlled thread running on a separate vCPU can atomically substitute the validated value with a malicious one. No amount of software-side bounds checking, locking, or re-validation can eliminate this window so long as the source of truth resides in shared memory. The only sound mitigations are double-buffering (copying the data into Host-private memory prior to validation), which nullifies the zero-copy performance rationale, or hardware-enforced transactional isolation, which is not exposed at the driver or hypervisor abstraction layer.</p>
+
+<h4 id="3-semantic-asymmetry-of-trust">3. Semantic Asymmetry of Trust</h4>
+
+<p>VMCI is specified under an implicit cooperative contract: the Guest driver is assumed to behave as a rational participant that respects protocol invariants across transaction boundaries. The hypervisor’s state machines are designed around this assumption. MAESTRO deliberately violates it, mutating control fields mid-transaction in ways the protocol cannot express or defend against. This semantic asymmetry—where one side enforces invariants while the other actively subverts them—pushes the system into undefined behavior. In a hypervisor context, undefined behavior does not degrade gracefully; it collapses directly into memory corruption and, ultimately, an arbitrary write primitive.</p>
+
+<h3 id="summary-of-risk">Summary of Risk</h3>
+
+<p>The combination of VMCI and HGFS creates a deadly paradox:</p>
+
+<ol>
+  <li><strong>VMCI</strong> provides the high-frequency “Write” primitive via shared memory racing.</li>
+  <li><strong>HGFS</strong> provides the “Read” primitive via malformed RPC parsing.
+Together, they allow an unprivileged instruction in the Guest to corrupt the execution flow of the highly privileged <code class="language-plaintext highlighter-rouge">vmx</code> process in the Host’s User World.</li>
+</ol>
+
+<h2 id="2-the-diagnosis">2. The Diagnosis</h2>
+
+<p><strong>Root Cause:</strong> A synergistic chain of <strong>Heap OOB Read</strong>, <strong>DMA Double-Fetch (TOCTOU)</strong>, and <strong>Linear Heap Corruption</strong>.</p>
+
+<p>The MAESTRO toolkit demonstrates a sophisticated understanding of the ESXi memory management subsystem. It does not rely on simple stack smashing; rather, it manipulates the internal state machines of the <code class="language-plaintext highlighter-rouge">vmx</code> process to orchestrate a reliable escape.</p>
+
+<h3 id="21-the-compass-hgfs-information-disclosure-cve-2025-22226">2.1 The Compass: HGFS Information Disclosure (CVE-2025-22226)</h3>
+
+<p>Before striking, the attacker must bypass Address Space Layout Randomization (ASLR). The vulnerability facilitating this resides in the <code class="language-plaintext highlighter-rouge">hgfsServer</code>’s handling of <strong>Drag-and-Drop (DnD)</strong> capability negotiation within the User World <code class="language-plaintext highlighter-rouge">vmware-vmx</code> process. HGFS requests utilize a Type-Length-Value (TLV) format. When the Guest invokes the <code class="language-plaintext highlighter-rouge">tools.capability.hgfs_server toolbox-dnd 1</code> command, the Host allocates a heap buffer to store the incoming metadata.</p>
+
+<p>The flaw lies in the parser’s validation logic. While it correctly verifies the <em>initial</em> allocation size, it fails to re-validate the bounds during the secondary <code class="language-plaintext highlighter-rouge">RPC_READ</code> phase. If the Guest transmits a malformed packet where the <code class="language-plaintext highlighter-rouge">PayloadLength</code> header exceeds the actual allocated chunk size, the <code class="language-plaintext highlighter-rouge">memcpy</code> routine blindly continues reading past the chunk boundary. By carefully “grooming” the heap—spraying specific objects adjacent to the DnD buffer—the attacker forces the server to return adjacent chunk headers containing <strong>C++ VTable Pointers</strong>. With the leaked address, the base address of the <code class="language-plaintext highlighter-rouge">vmx</code> binary is derived via a simple calculation (<code class="language-plaintext highlighter-rouge">leak_address − offset_static = base_vmx</code>), rendering ASLR irrelevant.</p>
+
+<h3 id="22-the-hammer-vmci-dma-race-condition-cve-2025-22224">2.2 The Hammer: VMCI DMA Race Condition (CVE-2025-22224)</h3>
+
+<p>The primary exploitation primitive leverages the shared-memory architecture of the VMCI Queue Pair (QP). The setup begins when the Guest Driver allocates a Queue Pair, causing the Host to map the Guest Physical Addresses (GPAs) of the ring buffer into its own Virtual Address space. The vulnerability is a classic <strong>Time-of-Check Time-of-Use (TOCTOU)</strong> race condition, often referred to as a “Double-Fetch” in DMA contexts.</p>
+
+<p>When the Guest signals an operation like <code class="language-plaintext highlighter-rouge">vmci_q_notify</code>, the Host first verifies that the supplied GPA points to valid, Guest-owned memory (<code class="language-plaintext highlighter-rouge">time_check</code>). However, there exists a microsecond-scale window (<code class="language-plaintext highlighter-rouge">Δt</code>) between this validation and the actual data copy operation (<code class="language-plaintext highlighter-rouge">time_use</code>). Because the GPAs are stored in a structure accessible to the Guest, the attacker exploits this gap by spinning a high-priority thread on a separate vCPU. This thread executes an atomic instruction, such as <code class="language-plaintext highlighter-rouge">LOCK XCHG</code>, to swap the valid GPA with a target Host Virtual Address (HVA)—specifically, the address of a function pointer discovered via the HGFS leak. The result is that the Hypervisor validates a safe address but inadvertently writes to the target address.</p>
+
+<h3 id="23-the-anchor-arbitrary-kernel-write-cve-2025-22225">2.3 The Anchor: Arbitrary Kernel Write (CVE-2025-22225)</h3>
+
+<p>While the TOCTOU provides a write primitive, it is inherently “dirty” because the data written is often uncontrolled (e.g., the content of a network packet), which risks crashing the <code class="language-plaintext highlighter-rouge">vmx</code> process (SIGSEGV). To achieve stable execution, MAESTRO utilizes a third vulnerability: a <strong>Write-What-Where (WWW)</strong> primitive in the VMX Dispatch Table.</p>
+
+<p>This flaw, likely stemming from a logic error in the VMCI <code class="language-plaintext highlighter-rouge">QueuePair_Reset</code> routine, allows the attacker to write user-supplied 64-bit values to offsets relative to the Queue Context without proper sanitization. This grants control over the <em>content</em> of the write operation. The attacker targets the <strong>VMM Dispatch Table</strong>, overwriting a rarely used function pointer (such as <code class="language-plaintext highlighter-rouge">Vmx_Panic</code> or a specific RPC handler) with the address of their shellcode. The next time the specific RPC command is invoked, the Instruction Pointer (<code class="language-plaintext highlighter-rouge">RIP</code>) is cleanly redirected to the shellcode payload, now residing in executable memory, completing the escape without destabilizing the host.</p>
+
+<h2 id="3-the-kill-chain">3. The Kill-Chain</h2>
+
+<p>The MAESTRO exploitation methodology represents a calculated linear progression from Guest Ring 0 to Host Ring 3 (User World). The attack does not rely on simple scripted inputs; rather, it utilizes a custom-engineered driver to interface directly with the virtualized hardware, effectively bypassing the operating system’s abstraction layers.</p>
+
+<h3 id="phase-1-guest-kernel-elevation-the-byovd-bridge">Phase 1: Guest Kernel Elevation (The BYOVD Bridge)</h3>
+
+<p>Standard user-mode applications cannot interact with the raw physical memory pages or I/O ports required to trigger the VMCI race condition. To bridge this gap, the attacker must effectively become the “Hardware Driver” for the VMCI device. The chain begins with <strong>Local Administrator</strong> access, which is leveraged to bypass <strong>Driver Signature Enforcement (DSE)</strong> via the “Bring Your Own Vulnerable Driver” (BYOVD) technique.</p>
+
+<p>The toolkit deploys <code class="language-plaintext highlighter-rouge">kdu.exe</code> (Kernel Driver Utility) to load a known vulnerable signed driver (e.g., <code class="language-plaintext highlighter-rouge">iqvw64e.sys</code>). By exploiting this legitimate driver to map arbitrary kernel memory, the attacker patches the <code class="language-plaintext highlighter-rouge">g_CiOptions</code> global variable, disabling the signature checks within the Windows kernel. With DSE disabled, the toolkit loads <code class="language-plaintext highlighter-rouge">MyDriver.sys</code>. This malicious driver maps the VMCI device’s Base Address Registers (BARs) directly into the user-mode address space of the exploit orchestrator via <code class="language-plaintext highlighter-rouge">MmMapIoSpace</code>. This crucial step grants the exploit orchestrator direct Read/Write access to the Queue Pair headers in physical memory, allowing it to bypass the standard OS synchronization layers that would otherwise prevent the race condition.</p>
+
+<h3 id="phase-2-the-ring--1-escape-exploitation-logic">Phase 2: The Ring -1 Escape (Exploitation Logic)</h3>
+
+<p>With direct hardware access established, the orchestrator executes the logical exploit chain against the <code class="language-plaintext highlighter-rouge">vmx</code> process. The attack begins with <strong>Fingerprinting</strong>, querying the <code class="language-plaintext highlighter-rouge">guestlib</code> API via the backdoor port (<code class="language-plaintext highlighter-rouge">0x5658</code>) to retrieve the exact <code class="language-plaintext highlighter-rouge">vmware-vmx</code> build string. This string is cross-referenced against an embedded hash table to load specific offsets for VTable pointers and ROP gadgets.</p>
+
+<p>Once the target environment is mapped, the exploit initiates <strong>Heap Feng Shui</strong>. It sprays the HGFS heap with controlled objects—specifically <code class="language-plaintext highlighter-rouge">DnD_Request</code> structures—to groom the memory layout, ensuring that the vulnerable buffer is physically adjacent to a C++ object containing a VTable. The exploit then triggers the HGFS Out-of-Bounds read (CVE-2025-22226). The returned data is parsed to extract the VTable pointer, which allows the toolkit to calculate the runtime <code class="language-plaintext highlighter-rouge">vmx</code> base address:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// [Reconstructed Logic] ASLR Defeat</span>
+<span class="c1">// The leaked buffer contains the adjacent chunk's VTable pointer</span>
+<span class="kt">uint64_t</span> <span class="n">vtable_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">uint64_t</span><span class="o">*</span><span class="p">)(</span><span class="n">leaked_heap_buffer</span> <span class="o">+</span> <span class="n">OFFSET_CHUNK_HEADER</span><span class="p">);</span>
+<span class="kt">uint64_t</span> <span class="n">vmx_base</span>   <span class="o">=</span> <span class="n">vtable_ptr</span> <span class="o">-</span> <span class="n">STATIC_VTABLE_OFFSET_ESXI_8_0</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"[*] VMX Base: 0x%llx | ASLR Defeated</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">vmx_base</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>With ASLR defeated, the exploit moves to the <strong>Race Condition (CVE-2025-22224)</strong>. This requires precise thread scheduling to exploit the double-fetch vulnerability in the VMCI handler. The orchestrator spawns two critical threads pinned to separate vCPUs to maximize contention on the memory bus.</p>
+
+<p>The first thread (the <em>Flooder</em>) loops <code class="language-plaintext highlighter-rouge">IOCTL_VMCI_NOTIFY_RESOURCE</code> to force the Hypervisor to constantly validate the queue headers. Simultaneously, the second thread (the <em>Swapper</em>) executes an atomic <code class="language-plaintext highlighter-rouge">LOCK XCHG</code> instruction on the Queue Header’s <code class="language-plaintext highlighter-rouge">ProduceIndex</code> pointer. This instruction flips the pointer between a valid Guest Physical Address (GPA) and the target Host Virtual Address (HVA) millions of times per second.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// [Reconstructed Logic] The TOCTOU Race</span>
+<span class="c1">// Thread 2 (Swapper): Pinned to vCPU 1</span>
+<span class="kt">void</span> <span class="nf">Race_Swapper</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ctx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">g_ExploitSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ATOMIC SWAP: The heart of the exploit</span>
+        <span class="c1">// Flips the pointer between Safe (Validation) and Malicious (Write)</span>
+        <span class="n">_InterlockedExchange64</span><span class="p">(</span>
+            <span class="p">(</span><span class="k">volatile</span> <span class="kt">int64_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">qp_header</span><span class="o">-&gt;</span><span class="n">produce_index</span><span class="p">,</span> 
+            <span class="p">(</span><span class="n">g_Toggle</span> <span class="o">?</span> <span class="n">valid_gpa</span> <span class="o">:</span> <span class="n">target_hva_function_ptr</span><span class="p">)</span>
+        <span class="p">);</span>
+        <span class="n">g_Toggle</span> <span class="o">=</span> <span class="o">!</span><span class="n">g_Toggle</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Winning this race overwrites the VMX dispatch table with a pointer to a <strong>Return-Oriented Programming (ROP)</strong> chain. When the next dispatch occurs, execution is redirected to the ROP chain, which marks the shellcode memory page as <code class="language-plaintext highlighter-rouge">Executable</code> and jumps to the payload.</p>
+
+<h3 id="phase-3-the-ghost-in-the-machine-vsock-persistence">Phase 3: The Ghost in the Machine (VSOCK Persistence)</h3>
+
+<p>Post-exploitation, the payload does not drop a file to disk, ensuring minimal forensic footprint. Instead, it injects a thread into the running <code class="language-plaintext highlighter-rouge">vmx</code> process that functions as a minimal listener using the <strong>AF_VSOCK</strong> address family.</p>
+
+<p>This backdoor binds to <code class="language-plaintext highlighter-rouge">CID: 2</code> (The well-known Context ID for the Host) on a high-order ephemeral port (e.g., <code class="language-plaintext highlighter-rouge">10000</code>). Because the connection occurs entirely over the internal memory bus, the traffic never touches the Virtual Switch or the Physical NIC, rendering it invisible to network firewalls, guest-level EDR, and standard NetFlow/PCAP collection.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// [Reconstructed Logic] VSOCKpuppet Bind</span>
+<span class="k">struct</span> <span class="n">sockaddr_vm</span> <span class="n">bind_addr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="n">bind_addr</span><span class="p">.</span><span class="n">svm_family</span> <span class="o">=</span> <span class="n">AF_VSOCK</span><span class="p">;</span>
+<span class="n">bind_addr</span><span class="p">.</span><span class="n">svm_cid</span>    <span class="o">=</span> <span class="n">VMADDR_CID_HOST</span><span class="p">;</span> <span class="c1">// CID 2 (The Hypervisor)</span>
+<span class="n">bind_addr</span><span class="p">.</span><span class="n">svm_port</span>   <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>           <span class="c1">// Invisible Port</span>
+
+<span class="c1">// Binds directly to the memory bus, bypassing the vSwitch</span>
+<span class="n">bind</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">bind_addr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">bind_addr</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<p>The <strong>VSOCKpuppet</strong> implant provides two primary capabilities:</p>
+
+<ul>
+  <li><strong>Command Execution:</strong> It proxies <code class="language-plaintext highlighter-rouge">stdin</code>/<code class="language-plaintext highlighter-rouge">stdout</code> to <code class="language-plaintext highlighter-rouge">/bin/sh</code> on the ESXi host, granting full shell access.</li>
+  <li><strong>File I/O:</strong> It utilizes the hypervisor’s internal <code class="language-plaintext highlighter-rouge">VimSVC</code> APIs to manipulate VM configurations (<code class="language-plaintext highlighter-rouge">.vmx</code> files) and virtual disks (<code class="language-plaintext highlighter-rouge">.vmdk</code>) without triggering guest-level I/O filters.</li>
+</ul>
+
+<h2 id="4-the-remediation">4. The Remediation</h2>
+
+<p><strong>Status:</strong> <strong>PATCHED</strong> (March 2025).</p>
+
+<p>The vulnerabilities leveraged by the MAESTRO toolkit have been addressed in the latest update rollups from Broadcom/VMware. Given the severity of the chain (Guest-to-Host Escape), immediate application of these patches is the only definitive mitigation.</p>
+
+<h3 id="patch-levels--hardening">Patch Levels &amp; Hardening</h3>
+
+<p>Administrators must verify that their infrastructure meets the following minimum build versions. These updates specifically harden the <code class="language-plaintext highlighter-rouge">vmx</code> process memory handling and introduce strict atomic validation logic to the VMCI subsystem.</p>
+
+<ul>
+  <li><strong>ESXi 8.0:</strong> Update to build <code class="language-plaintext highlighter-rouge">ESXi80U3d-24585383</code> or later.</li>
+  <li><strong>ESXi 7.0:</strong> Update to build <code class="language-plaintext highlighter-rouge">ESXi70U3s-24585291</code> or later.</li>
+  <li><strong>Workstations / Fusion:</strong> Ensure clients are updated to versions 17.6.3+ (Windows/Linux) and 13.6.3+ (macOS).</li>
+</ul>
+
+<p><strong>Operational Warning:</strong> There are <strong>no viable configuration workarounds</strong>.
+While theoretically disabling the VMCI device in the <code class="language-plaintext highlighter-rouge">.vmx</code> configuration (<code class="language-plaintext highlighter-rouge">vmci0.present = "FALSE"</code>) would break the exploit chain, this is operational suicide for a production environment. VMCI is the backbone for VMware Tools, meaning its disablement would sever the hypervisor’s ability to perform “soft” power operations, quiesce file systems for backups, and monitor guest heartbeats. Patching is the singular path forward.</p>
+
+<h3 id="defense-in-depth-strategies">Defense in Depth Strategies</h3>
+
+<p>Beyond applying the binary patches, the following architectural controls significantly increase the cost of exploitation for attackers attempting to leverage BYOVD (Bring Your Own Vulnerable Driver) techniques.</p>
+
+<p><strong>1. Guest-Side Secure Boot Enforcement</strong>
+The exploit’s entry point relies on loading a vulnerable kernel driver to interact with the physical hardware. Enabling <strong>UEFI Secure Boot</strong> on all Guest VMs creates a cryptographic barrier at the Guest OS level.</p>
+
+<ul>
+  <li><strong>Impact:</strong> Secure Boot enforces strict signature validation for all kernel-mode drivers. While tools like <code class="language-plaintext highlighter-rouge">kdu.exe</code> attempt to patch the kernel in memory to bypass this, Secure Boot makes the initial loading of the “bridge” driver significantly more difficult and noisy, often requiring a reboot or a pre-boot kit which is easier to detect.</li>
+</ul>
+
+<p><strong>2. EDR Telemetry Tuning</strong>
+Endpoint Detection and Response (EDR) agents within the Guest VM cannot see the hypervisor exploitation, but they <em>can</em> see the preparation phase. Security teams should implement specific behavioral signatures:</p>
+
+<ul>
+  <li><strong>Driver Loading:</strong> Alert on the loading of known vulnerable drivers (e.g., <code class="language-plaintext highlighter-rouge">iqvw64e.sys</code>, <code class="language-plaintext highlighter-rouge">mhyprot2.sys</code>) often used by BYOVD toolkits.</li>
+  <li><strong>Device Manipulation:</strong> Flag invocations of <code class="language-plaintext highlighter-rouge">devcon.exe</code> (or direct API calls) attempting to disable or restart the “VMware VMCI Bus Device.” Attackers must reset this device to gain exclusive handle access.</li>
+  <li><strong>Process Anomalies:</strong> Monitor for processes querying <code class="language-plaintext highlighter-rouge">guestlib</code> stats or repeatedly attempting to open handles to <code class="language-plaintext highlighter-rouge">\\.\TDLD</code> (the VMCI backdoor interface).</li>
+</ul>
+
+<p><strong>3. Host-Side VSOCK Auditing</strong>
+Since standard network monitoring is blind to the VSOCKpuppet backdoor, defenders must query the host directly. Routine auditing of the ESXi network stack can reveal the presence of the implant.</p>
+
+<ul>
+  <li><strong>Audit Command:</strong> <code class="language-plaintext highlighter-rouge">esxcli network ip connection list | grep -i vsock</code></li>
+  <li><strong>Indicator of Compromise:</strong> Look for listening sockets bound to <strong>CID 2</strong> (The Host) on high-numbered ephemeral ports (e.g., <code class="language-plaintext highlighter-rouge">10000+</code>). Legitimate VMware services typically use well-known low ports or dynamic ports associated with known <code class="language-plaintext highlighter-rouge">vpxa</code>/<code class="language-plaintext highlighter-rouge">hostd</code> processes. Any unknown process holding a VSOCK listener is a critical alert.</li>
+</ul>
+
+<h2 id="5-developers-takeaway">5. Developer’s Takeaway</h2>
+
+<p><strong>The Asymmetry of Trust.</strong>
+The MAESTRO chain highlights a catastrophic architectural debt in modern virtualization: the assumption that the “Guest” acts as a rational, localized peer rather than a hostile, synchronized adversary. The hypervisor—and specifically its high-performance interfaces—must be engineered with the presumption that every memory page, register, and I/O packet controlled by the guest is actively malicious and volatile.</p>
+
+<p><strong>The Physics of Shared Memory (TOCTOU).</strong>
+The VMCI vulnerability demonstrates that shared memory interfaces are inherently hostile execution environments. In a standard application, memory is stable unless the program modifies it. In a virtualized shared memory context, the memory is <strong>volatile</strong>; it can change between CPU cycles due to the actions of a distinct, hostile thread running on a separate vCPU. The traditional “Fetch-Check-Use” pattern is fatal here because the “Check” provides no guarantee for the “Use.”</p>
+
+<ul>
+  <li><strong>The Lesson:</strong> Developers must enforce <strong>Transactional Atomicity</strong>. You cannot validate a pointer residing in shared memory. The data <em>must</em> be copied to a private, host-controlled buffer first (Double-Buffering). Only <em>after</em> the data is isolated in private memory can it be validated and processed. If the data is too large to copy (the “Zero-Copy” optimization trap), the mechanism is fundamentally insecure without hardware-enforced locking, which negates the performance gain.</li>
+</ul>
+
+<p><strong>The Peril of High-Privilege Parsing.</strong>
+The HGFS information leak underscores a timeless rule: complex parsers are the enemy of security. File systems, USB stacks, and 3D graphics drivers involve intricate state machines and variable-length data structures. When these parsers run in <strong>Ring -1 (VMX/Hypervisor)</strong> or <strong>Ring 0 (Kernel)</strong>, a single integer overflow or bounds-check failure becomes a system-level compromise.</p>
+
+<ul>
+  <li><strong>The Lesson:</strong> The hypervisor trusted the Guest’s <code class="language-plaintext highlighter-rouge">PayloadLength</code> header implicitly. Input validation must be context-aware and redundant. Modern secure design demands that these complex parsing components be moved out of the privileged root and into isolated “Sandbox Domains” or “Micro-VMs” (User Mode Helpers), where a crash or compromise does not result in total system failure.</li>
+</ul>
+
+<p><strong>The Failure of Digital Signatures (BYOVD).</strong>
+Finally, the ease with which the attackers bridged the gap from User Mode to Kernel Mode via <code class="language-plaintext highlighter-rouge">kdu.exe</code> exposes a systemic failure in the Windows Code Signing model. Operating Systems currently conflate <strong>Identity</strong> with <strong>Integrity</strong>.</p>
+
+<ul>
+  <li><strong>The Lesson:</strong> A valid digital signature merely proves <em>who</em> compiled the code (Origin); it offers zero guarantee regarding the <em>safety</em> or <em>quality</em> of that code. As long as the OS kernel allows the loading of legacy, signed drivers with known vulnerabilities (e.g., outdated anti-cheat or fan control drivers), the “Ring 0” boundary is purely ornamental. Security architects must move toward <strong>Measurement-Based Security</strong> (checking the hash of the driver against a blocklist) rather than relying solely on certificate chain verification.</li>
+</ul>
+
+<h2 id="6-the-verdict-a-crisis-of-trust">6. The Verdict: A Crisis of Trust</h2>
+
+<ol>
+  <li>
+    <p>The Death of Shared Memory Optimizations The era of “Zero-Copy” inter-VM communication must end for high-security environments. MAESTRO proves that you cannot secure a shared memory boundary against a hostile peer using software logic alone. The performance gain of zero-copy is effectively a security debt that has now come due. Future architectures must enforce Hardware-Assisted Isolation (e.g., Intel TDX, AMD SEV-SNP) where the Guest memory is encrypted and opaque to the Host, forcing a controlled, copied data exchange.</p>
+  </li>
+  <li>
+    <p>The “Guest” is a Hostile Actor Development lifecycles must abandon the concept of the “Guest” as a user. The Guest is a hostile binary fuzzer with direct access to your memory bus. Every hypercall, every MMIO access, and every ring buffer update must be treated with the same paranoia as an anonymous packet hitting a public-facing firewall.</p>
+  </li>
+  <li>
+    <p>Isolation over Mitigation Patching memcpy lengths (CVE-2025-22226) or adding mutexes (CVE-2025-22224) is a losing battle. The only durable solution is Architectural De-privileging. Complex parsers like HGFS and VMCI must be evicted from the vmx root process and placed into disposable, capability-limited sandboxes. If a parser crashes or is exploited, it should result in a service restart, not a hypervisor compromise. Until the hypervisor is effectively a micro-kernel that does nothing but schedule CPU and memory, the attack surface is too large to defend.</p>
+  </li>
+</ol>
+
+  </div>
+
+  
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: VMware Security Response, Mandiant, CrowdStrike</strong>
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

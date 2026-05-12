@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Firefox IPC Sandbox Escape &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="Firefox IPC Sandbox Escape (#3)" />
+<meta property="og:description" content="Firefox IPC Sandbox Escape: Involves a semantic confusion of Windows 'Pseudo-Handles' resulting in RCE." />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/md/3/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Firefox IPC Sandbox Escape (#3)">
+<meta property="twitter:description" content="Firefox IPC Sandbox Escape: Involves a semantic confusion of Windows 'Pseudo-Handles' resulting in RCE.">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/3.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/3.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+        Firefox IPC Sandbox Escape
+      </h1>
+      
+      
+        
+        <a href="/anatomy-of-a-bug/pdf/AOAB3.pdf" class="tactical-btn" download style="white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
+          <span class="tactical-icon" style="margin-right:5px;">⬇</span> PDF REPORT
+        </a>
+      
+    </div>
+
+    
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">DECLASSIFIED</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">10.0</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>2025-03-27</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>2025-12-18</div>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#FIREFOX</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WINDOWS</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#SANDBOXESCAPE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#IPC</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PSEUDOHANDLE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#RCE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#BROWSER</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#JIT</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PRIVESC</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#BINEXP</span>
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h2 id="1-the-patient">1. The Patient</h2>
+
+<p><strong>Target:</strong> Mozilla Firefox 
+<strong>Component:</strong> <code class="language-plaintext highlighter-rouge">ipc_channel_win.cc</code> (IPC Broker)
+<strong>Vector:</strong> Windows Handle Duplication (Remote)</p>
+
+<p>Firefox relies on the <strong>Electrolysis</strong> multi-process architecture to separate untrusted web content from system resources.</p>
+<ul>
+  <li><strong>The Parent (Broker):</strong> Runs with User Privileges (Medium Integrity). It manages files, network, and hardware.</li>
+  <li><strong>The Content (Renderer):</strong> Runs in a Sandbox (Low Integrity). It parses HTML/JS and renders the page.</li>
+  <li><strong>IPC:</strong> The bridge between them. Since the Renderer cannot touch resources directly, it asks the Parent to perform actions on its behalf.</li>
+</ul>
+
+<p>The vulnerability resides in the <strong>IPC Handle Sharing</strong> mechanism on Windows. The Broker blindly trusted an integer provided by the compromised Renderer, leading to a catastrophic <strong>Sandbox Escape</strong>.</p>
+
+<blockquote>
+  <p><strong>The Context:</strong> This vulnerability is rated <strong>CVSS 10.0</strong>. It implies <strong>No Authentication</strong>, <strong>No User Interaction</strong> (beyond the initial page load), and results in <strong>Full Shell Access</strong> on the host machine.</p>
+</blockquote>
+
+<h2 id="2-the-diagnosis">2. The Diagnosis</h2>
+
+<p><strong>Root Cause:</strong> Semantic Confusion regarding Windows Pseudo-Handles.</p>
+
+<p>Windows uses <strong>Handles</strong> to track resources. A handle is simply an integer index in a kernel table. Process A cannot use Process B’s handles directly; they must be <strong>Duplicated</strong> by the Kernel.</p>
+
+<p>The flaw exists in the logic that allows the Renderer to ask the Broker to “relay” a handle:</p>
+<ol>
+  <li><strong>The Request:</strong> The Renderer sends an IPC message: “Please duplicate Handle <code class="language-plaintext highlighter-rouge">X</code> to me.”</li>
+  <li><strong>The Execution:</strong> The Broker executes <code class="language-plaintext highlighter-rouge">DuplicateHandle(BrokerProcess, X, RendererProcess...)</code>.</li>
+  <li><strong>The Assumption:</strong> The Broker assumes <code class="language-plaintext highlighter-rouge">X</code> is a valid handle index that belongs to the Renderer.</li>
+  <li><strong>The Reality:</strong> The Broker failed to check if <code class="language-plaintext highlighter-rouge">X</code> was a <strong>Pseudo-Handle</strong>. In Windows, specific negative integers have magical, context-dependent meanings:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">-1</code> = Current Process</li>
+      <li><code class="language-plaintext highlighter-rouge">-2</code> = Current Thread</li>
+    </ul>
+  </li>
+</ol>
+
+<p>The danger is that <code class="language-plaintext highlighter-rouge">-2</code> means “My Thread.” When the Renderer sends <code class="language-plaintext highlighter-rouge">-2</code>, it means “Renderer Thread.” But when the <strong>Broker</strong> passes <code class="language-plaintext highlighter-rouge">-2</code> to the Kernel, the Kernel interprets it as “<strong>Broker Thread</strong>.”</p>
+
+<h2 id="3-the-kill-chain">3. The Kill-Chain</h2>
+
+<h3 id="phase-1-jit-optimization-trap-initial-rce">Phase 1: JIT Optimization Trap (Initial RCE)</h3>
+<p>The exploit begins with a JavaScript file that triggers a bug in the JIT (Just-In-Time) Compiler.</p>
+<ul>
+  <li><strong>Type Confusion:</strong> The JIT assumes a variable is always an Integer, removing safety checks. The script swaps it for an Object mid-execution.</li>
+  <li><strong>Primitives:</strong> This mismatch allows the attacker to read memory (<code class="language-plaintext highlighter-rouge">addrOf</code>) and write fake objects (<code class="language-plaintext highlighter-rouge">fakeObj</code>).</li>
+  <li><strong>Execution:</strong> A fake <code class="language-plaintext highlighter-rouge">ArrayBuffer</code> is created to write shellcode into executable WASM memory. Control flow is hijacked. The attacker now has code execution <strong>inside the Sandbox</strong>.</li>
+</ul>
+
+<h3 id="phase-2-the-ipc-pivot">Phase 2: The IPC Pivot</h3>
+<p>To escape the sandbox, the attacker pivots to the IPC layer. They construct a malicious “Relay Message” destined for the Broker.</p>
+<ul>
+  <li><strong>Payload:</strong> The handle value is set to the magic integer <strong><code class="language-plaintext highlighter-rouge">-2</code></strong> (<code class="language-plaintext highlighter-rouge">0xFFFFFFFE</code>).</li>
+</ul>
+
+<h3 id="phase-3-the-fatal-leak">Phase 3: The Fatal Leak</h3>
+<p>The Broker receives the message and calls <code class="language-plaintext highlighter-rouge">DuplicateHandle</code>.</p>
+<ul>
+  <li><strong>Input:</strong> Source=<code class="language-plaintext highlighter-rouge">BrokerProcess</code>, Handle=<code class="language-plaintext highlighter-rouge">-2</code>.</li>
+  <li><strong>Kernel Logic:</strong> The Kernel sees <code class="language-plaintext highlighter-rouge">-2</code> coming from the Broker. It resolves this to the <strong>Broker’s Main Thread</strong>.</li>
+  <li><strong>Output:</strong> The Kernel creates a <code class="language-plaintext highlighter-rouge">THREAD_ALL_ACCESS</code> handle to the Broker and sends it back to the Renderer.</li>
+</ul>
+
+<h3 id="phase-4-weaponization--system-compromise">Phase 4: Weaponization &amp; System Compromise</h3>
+<p>The compromised Renderer now holds a handle that grants full control over the Parent process.</p>
+<ol>
+  <li><strong>Freeze:</strong> Calls <code class="language-plaintext highlighter-rouge">SuspendThread()</code> to pause the Parent.</li>
+  <li><strong>Hijack:</strong> Calls <code class="language-plaintext highlighter-rouge">SetThreadContext()</code> to overwrite the <strong>Instruction Pointer (RIP)</strong> of the Parent process.</li>
+  <li><strong>Resume:</strong> Calls <code class="language-plaintext highlighter-rouge">ResumeThread()</code>.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Impact:</strong> The Parent process wakes up and immediately executes the attacker’s shellcode. The malware now runs with <strong>Medium Integrity</strong>, bypassing all sandbox restrictions and granting full access to the operating system.</p>
+</blockquote>
+
+<h2 id="4-the-fix">4. The Fix</h2>
+
+<p>The remediation requires validating the context of the handle before processing it. The Broker must explicitly reject OS “Magic Numbers.”</p>
+
+<p><strong>Vulnerable Logic (Conceptual):</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// VULNERABLE: Blindly passes user input to the Kernel.</span>
+<span class="n">HANDLE</span> <span class="n">handle_value</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">ReadInt</span><span class="p">();</span> <span class="c1">// Attacker sends -2</span>
+
+<span class="n">DuplicateHandle</span><span class="p">(</span>
+    <span class="n">GetCurrentProcess</span><span class="p">(),</span> <span class="c1">// Source: Broker</span>
+    <span class="n">handle_value</span><span class="p">,</span>        <span class="c1">// Value: -2 (Interpreted as Broker's Thread)</span>
+    <span class="n">target_process</span><span class="p">,</span>
+    <span class="o">&amp;</span><span class="n">new_handle</span><span class="p">,</span>
+    <span class="p">...</span>
+<span class="p">);</span>
+
+</code></pre></div></div>
+
+<p><strong>Patched Logic:</strong></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// PATCHED LOGIC in ipc_channel_win.cc</span>
+
+<span class="c1">// Helper to detect magic values (-1, -2, etc.)</span>
+<span class="c1">// Windows reserves the range [-12, -1] for current context pseudo-handles.</span>
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="nf">IsPseudoHandle</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">handle</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int32_t</span> <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int32_t</span><span class="p">)(</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="n">handle</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">12</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// In the IPC processing loop:</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">IsPseudoHandle</span><span class="p">(</span><span class="n">remote_handle</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// SECURITY: Renderer is trying to trick us.</span>
+    <span class="n">LOG</span><span class="p">(</span><span class="n">ERROR</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">"Security: Received pseudo-handle."</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// Abort connection</span>
+<span class="p">}</span>
+
+<span class="c1">// Safe to proceed only if it's a real index.</span>
+<span class="n">DuplicateHandle</span><span class="p">(...,</span> <span class="n">remote_handle</span><span class="p">,</span> <span class="p">...);</span>
+
+</code></pre></div></div>
+
+<h3 id="developer-takeaway">Developer Takeaway</h3>
+
+<p><strong>Context Awareness &gt; Type Safety.</strong>
+Validating that an input is an “Integer” is insufficient when that integer controls system resources. Magic numbers (like <code class="language-plaintext highlighter-rouge">-1</code> or <code class="language-plaintext highlighter-rouge">-2</code> in Windows) are powerful context-switching mechanisms. Trust boundaries in IPC must enforce that handles are strictly local indices, never interpreted execution contexts. <strong>Know your input.</strong></p>
+
+  </div>
+
+  
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: Mozilla Security Team</strong>
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-aoabs" style="margin-top: 0rem; border-top: 0px solid var(--border); padding-top: 0rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// RELATED_INTELLIGENCE</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/4.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/4/" style="border: none; font-size: 0.9rem; color: #eee;">iOS26 "Liquid Glass" Exploitation Chain</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • PrivEsc<br>• RCE
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/6.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/6/" style="border: none; font-size: 0.9rem; color: #eee;">AsyncOS Quarantine Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • PrivEsc<br>• RCE
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/5.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.8
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/5/" style="border: none; font-size: 0.9rem; color: #eee;">FortiWeb Edge Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 10%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                10% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

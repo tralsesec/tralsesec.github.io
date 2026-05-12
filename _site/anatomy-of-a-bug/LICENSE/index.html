@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Anatomy of a Bug - LICENSE &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="Anatomy of a Bug - LICENSE (#0)" />
+<meta property="og:description" content="Creative Commons Attribution-NoDerivatives 4.0 International Public License" />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/LICENSE/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Anatomy of a Bug - LICENSE (#0)">
+<meta property="twitter:description" content="Creative Commons Attribution-NoDerivatives 4.0 International Public License">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/0.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/0.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+          <span class="text-green" style="font-style: normal;">#!</span>
+        
+        Anatomy of a Bug - LICENSE
+      </h1>
+      
+      
+    </div>
+
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h1 id="creative-commons-attribution-noderivatives-40-international-public-license">Creative Commons Attribution-NoDerivatives 4.0 International Public License</h1>
+
+<p>By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-NoDerivatives 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.</p>
+
+<h2 id="section-1--definitions">Section 1 – Definitions.</h2>
+
+<p>a. <strong>Adapted Material</strong> means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor.
+b. <strong>Copyright and Similar Rights</strong> means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights.
+c. <strong>Licensed Material</strong> means the artistic or literary work, database, or other material to which the Licensor applied this Public License.
+d. <strong>Licensed Rights</strong> means the rights granted to You subject to the terms and conditions of this Public License.
+e. <strong>Licensor</strong> means the individual(s) or entity(ies) granting rights under this Public License (tralsesec).
+f. <strong>Share</strong> means to provide material to the public by any means or process that requires permission under the Licensed Rights.</p>
+
+<h2 id="section-2--scope">Section 2 – Scope.</h2>
+
+<ol>
+  <li><strong>License grant.</strong> Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:
+    <ul>
+      <li>reproduce and Share the Licensed Material, in whole or in part; and</li>
+      <li>produce and reproduce, but not Share, Adapted Material.</li>
+    </ul>
+  </li>
+  <li><strong>Exceptions and Limitations.</strong> For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply.</li>
+  <li><strong>Term.</strong> The term of this Public License is specified in Section 6(a).</li>
+  <li><strong>Media and formats; technical modifications allowed.</strong> The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so.</li>
+  <li><strong>No endorsement.</strong> Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor.</li>
+</ol>
+
+<h2 id="section-3--license-conditions">Section 3 – License Conditions.</h2>
+
+<p>Your exercise of the Licensed Rights is expressly made subject to the following conditions.</p>
+
+<ol>
+  <li><strong>Attribution.</strong>
+    <ul>
+      <li>If You Share the Licensed Material, You must retain identification of the creator(s) and any others designated to receive attribution (tralsesec), a copyright notice, a notice that refers to this Public License, and a URI or hyperlink to the Licensed Material.</li>
+      <li>You may satisfy these conditions in any reasonable manner based on the medium and context.</li>
+    </ul>
+  </li>
+  <li><strong>NoDerivatives.</strong> For the avoidance of doubt, You do not have permission under this Public License to Share Adapted Material.</li>
+</ol>
+
+<h2 id="section-4--sui-generis-database-rights">Section 4 – Sui Generis Database Rights.</h2>
+
+<p>(Applicable where Sui Generis Database Rights apply to Your use of the Licensed Material.)</p>
+
+<h2 id="section-5--disclaimer-of-warranties-and-limitation-of-liability">Section 5 – Disclaimer of Warranties and Limitation of Liability.</h2>
+
+<ol>
+  <li><strong>Unless otherwise separately undertaken by the Licensor, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind.</strong></li>
+  <li><strong>In no event will the Licensor be liable to You on any legal theory for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses.</strong></li>
+</ol>
+
+<h2 id="section-6--term-and-termination">Section 6 – Term and Termination.</h2>
+
+<p>a. This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.</p>
+
+<h2 id="section-7--other-terms-and-conditions">Section 7 – Other Terms and Conditions.</h2>
+
+<p>a. The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.</p>
+
+<h2 id="section-8--interpretation">Section 8 – Interpretation.</h2>
+
+<p>a. For the avoidance of doubt, this Public License does not reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission.</p>
+
+<hr />
+
+<p>Copyright (c) 2025-2026. @tralsesec. All rights reserved.</p>
+
+  </div>
+
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

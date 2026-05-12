@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      React2Shell RCE &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="React2Shell RCE (#1)" />
+<meta property="og:description" content="React2Shell RCE (CVE-2025-55182): A critical CVSS 10.0 insecure deserialization vulnerability, allowing an unauthenticated attacker to achive RCE." />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/md/1/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="React2Shell RCE (#1)">
+<meta property="twitter:description" content="React2Shell RCE (CVE-2025-55182): A critical CVSS 10.0 insecure deserialization vulnerability, allowing an unauthenticated attacker to achive RCE.">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/1.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/1.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+        React2Shell RCE
+      </h1>
+      
+      
+        
+        <a href="/anatomy-of-a-bug/pdf/AOAB1.pdf" class="tactical-btn" download style="white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
+          <span class="tactical-icon" style="margin-right:5px;">⬇</span> PDF REPORT
+        </a>
+      
+    </div>
+
+    
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">DECLASSIFIED</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">10.0</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>2025-12-03</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>2025-12-07</div>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WEB</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#JAVASCRIPT</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#NEXTJS</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#REACT</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#REACTSERVERCOMPONENTS</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#INSECUREDESERIALIZATION</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PROTOTYPETRAVERSAL</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#RCE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#UNAUTHENTICATED</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#CVSS10</span>
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h2 id="1-the-patient">1. The Patient</h2>
+
+<p><strong>Target:</strong> React2Shell (Next.js / React Server Components) 
+<strong>Component:</strong> Flight Protocol Parser
+<strong>Vector:</strong> HTTP Request (Insecure Deserialization)</p>
+
+<p>React2Shell is a critical vulnerability affecting the ecosystem of <strong>Next.js</strong> and <strong>React Server Components</strong>. The core issue lies in the <strong>Flight Protocol</strong>, a streaming format designed to replace static JSON for server-client communication.</p>
+
+<p>While JSON is safe because it is static, Flight allows the parser to <strong>dynamically reconstruct</strong> the object structure at runtime. This dynamic capability was exploited to create a massive Deserialization flaw.</p>
+
+<blockquote>
+  <p><strong>The Context:</strong> This is a <strong>CVSS 10.0</strong> vulnerability. It requires <strong>No Authentication</strong>, <strong>No User Interaction</strong>, and can be triggered by a single HTTP request, resulting in <strong>Full Shell Access</strong> on the server.</p>
+</blockquote>
+
+<h2 id="2-the-diagnosis">2. The Diagnosis</h2>
+
+<p><strong>Root Cause:</strong> Insecure Deserialization via Prototype Traversal.</p>
+
+<p>Attackers do not view JavaScript objects as code; they view them as a network of <strong>references</strong>. The goal is to traverse from a basic object up to the <code class="language-plaintext highlighter-rouge">Function</code> constructor, which allows arbitrary code execution.</p>
+
+<ol>
+  <li><strong>The Protocol:</strong> The Flight Protocol sends data in chunks with gaps and references (<code class="language-plaintext highlighter-rouge">$id</code>).</li>
+  <li><strong>The Flaw:</strong> When parsing these references, React used standard square bracket notation (<code class="language-plaintext highlighter-rouge">obj[key]</code>) to access properties.</li>
+  <li><strong>The Oversight:</strong> React did not check if the property belonged to the object itself. This allowed the parser to climb the <strong>Prototype Chain</strong> (<code class="language-plaintext highlighter-rouge">__proto__</code>) and access inherited properties like <code class="language-plaintext highlighter-rouge">constructor</code>.</li>
+</ol>
+
+<h2 id="3-the-kill-chain">3. The Kill-Chain</h2>
+
+<h3 id="phase-1-the-thenable-trap">Phase 1: The Thenable Trap</h3>
+<p>The parser has a specific behavior for “Thenables.” Any object containing a <code class="language-plaintext highlighter-rouge">.then</code> property is treated as a Promise. The parser <strong>automatically executes</strong> <code class="language-plaintext highlighter-rouge">.then()</code> to resolve it. Attackers use this to force the parser into specific execution paths.</p>
+
+<h3 id="phase-2-the-gadgets--and-b">Phase 2: The Gadgets ($@ and $B)</h3>
+<p>To weaponize the traversal, specific gadgets are used:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$@</code>: Requests the <strong>raw chunk</strong> (unparsed), allowing access to internal properties like <code class="language-plaintext highlighter-rouge">status</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">$B</code>: The <strong>Blob Gadget</strong>. This triggers the path <code class="language-plaintext highlighter-rouge">_response._formData.get()</code>.</li>
+</ul>
+
+<h3 id="phase-3-the-payload-logic">Phase 3: The Payload Logic</h3>
+<p>The attacker constructs a malicious chunk that combines these elements. We control <code class="language-plaintext highlighter-rouge">_response</code>, and we force the parser to call a getter on our payload.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The Official Payload Logic</span>
+<span class="nx">crafted_chunk</span><span class="p">:</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">then</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$1:__proto__:then</span><span class="dl">"</span><span class="p">,</span>        <span class="c1">// Hook the Flow</span>
+  <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">unresolved_model</span><span class="dl">"</span><span class="p">,</span>       <span class="c1">// Force Logic</span>
+  <span class="dl">"</span><span class="s2">_response</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+     <span class="dl">"</span><span class="s2">_formData</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// The Weapon: Accessing the Constructor</span>
+        <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$1:constructor:constructor</span><span class="dl">"</span> 
+     <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="phase-4-execution">Phase 4: Execution</h3>
+
+<p>The chain resolves to <code class="language-plaintext highlighter-rouge">Function("...")()</code>. The attacker passes shell commands into this function constructor, achieving Remote Code Execution.</p>
+
+<h2 id="4-the-fix">4. The Fix</h2>
+
+<p>The remediation involves restricting property access to the object’s own properties, preventing prototype traversal.</p>
+
+<p><strong>Vulnerable Logic (JavaScript):</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// BEFORE: JavaScript blindly climbs the prototype chain.</span>
+<span class="c1">// If metadata[NAME] is "constructor", it returns the Function constructor.</span>
+<span class="k">return</span> <span class="nx">moduleExports</span><span class="p">[</span><span class="nx">metadata</span><span class="p">[</span><span class="nx">NAME</span><span class="p">]];</span>
+
+</code></pre></div></div>
+
+<p><strong>Patched Logic (TypeScript):</strong></p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// PATCHED CODE in React Server Components</span>
+<span class="c1">// AFTER: Explicit Property Check using hasOwnProperty.</span>
+
+<span class="k">if </span><span class="p">(</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="nx">moduleExports</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">[</span><span class="nx">NAME</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">moduleExports</span><span class="p">[</span><span class="nx">metadata</span><span class="p">[</span><span class="nx">NAME</span><span class="p">]];</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">hasOwnProperty</code> only looks at the object itself. It stops the traversal to inherited constructors, neutralizing the attack path.</p>
+
+<h3 id="developer-takeaway">Developer Takeaway</h3>
+
+<p><strong>JavaScript is too helpful.</strong> The prototype chain is a powerful feature, but in security contexts, it is a liability. When deserializing untrusted input, never assume property access is safe. Always enforce strict boundaries using <code class="language-plaintext highlighter-rouge">hasOwnProperty</code> or <code class="language-plaintext highlighter-rouge">Object.create(null)</code>.</p>
+
+<p><strong>Immediate Action:</strong></p>
+
+<ol>
+  <li><strong>Patch:</strong> Upgrade to Next.js <strong>14.2.19+</strong> or <strong>15.0.5+</strong>.</li>
+  <li><strong>Audit:</strong> Review any custom deserialization logic in your applications.</li>
+</ol>
+
+  </div>
+
+  
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: msanft, maple3142</strong>
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-aoabs" style="margin-top: 0rem; border-top: 0px solid var(--border); padding-top: 0rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// RELATED_INTELLIGENCE</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/5.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.8
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/5/" style="border: none; font-size: 0.9rem; color: #eee;">FortiWeb Edge Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/4.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/4/" style="border: none; font-size: 0.9rem; color: #eee;">iOS26 "Liquid Glass" Exploitation Chain</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/10.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.9
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/10/" style="border: none; font-size: 0.9rem; color: #eee;">N8scape</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

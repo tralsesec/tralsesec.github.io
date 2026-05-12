@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      FortiWeb Edge Collapse &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="FortiWeb Edge Collapse (#5)" />
+<meta property="og:description" content="FortiWeb Edge Collapse (CVE-2025-64446, CVE-2025-58034): A critical CVSS 9.8 dual-vulnerability chain in the Fortinet FortiWeb WAF." />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/md/5/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="FortiWeb Edge Collapse (#5)">
+<meta property="twitter:description" content="FortiWeb Edge Collapse (CVE-2025-64446, CVE-2025-58034): A critical CVSS 9.8 dual-vulnerability chain in the Fortinet FortiWeb WAF.">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/5.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/5.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+        FortiWeb Edge Collapse
+      </h1>
+      
+      
+        
+        <a href="/anatomy-of-a-bug/pdf/AOAB5.pdf" class="tactical-btn" download style="white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
+          <span class="tactical-icon" style="margin-right:5px;">⬇</span> PDF REPORT
+        </a>
+      
+    </div>
+
+    
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">DECLASSIFIED</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">9.8</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>2025-11-14</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>2025-12-22</div>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#FORTINET</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#FORTIWEB</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WEB</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WAF</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#AUTHBYPASS</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#COMMANDINJECTION</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#CGI</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PATHTRAVERSAL</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#RCE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#ZERODAY</span>
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h2 id="1-the-patient">1. The Patient</h2>
+
+<p><strong>Target:</strong> Fortinet FortiWeb 
+<strong>Component:</strong> <code class="language-plaintext highlighter-rouge">fwbcgi</code> (Administrative CGI Binary)
+<strong>Vector:</strong> HTTP POST (Remote)</p>
+
+<p>FortiWeb is positioned as the shield for critical assets—a Web Application Firewall (WAF) designed to filter malicious traffic. However, internally, it relies on a legacy architecture: <strong>Apache</strong> coupled with <strong>CGI binaries</strong>, a model dating back decades.</p>
+
+<p>The security model relied on two fatal assumptions:</p>
+<ol>
+  <li>Requests reaching the internal CGI handlers are trusted.</li>
+  <li>Specific headers (like <code class="language-plaintext highlighter-rouge">CGIINFO</code>) originate only from internal IPC components.</li>
+</ol>
+
+<p>These assumptions crumbled when exposed to the public internet, leading to a <strong>CVSS 9.8</strong> collapse.</p>
+
+<blockquote>
+  <p><strong>The Context:</strong> This is a dual-failure chain. <strong>CVE-2025-64446</strong> allows an attacker to bypass authentication entirely by forging internal headers. <strong>CVE-2025-58034</strong> then leverages that fake identity to inject shell commands into the policy management engine.</p>
+</blockquote>
+
+<h2 id="2-the-diagnosis">2. The Diagnosis</h2>
+
+<p><strong>Root Cause:</strong> Full Authentication Collapse via Trust Boundary Violation.</p>
+
+<p>The vulnerability stems from <strong>Path Resolution</strong> issues in Apache and <strong>Implicit Trust</strong> in the <code class="language-plaintext highlighter-rouge">fwbcgi</code> binary.</p>
+
+<h3 id="part-1-the-authentication-mirage-cve-2025-64446">Part 1: The Authentication Mirage (CVE-2025-64446)</h3>
+<p>Legitimate API endpoints live under <code class="language-plaintext highlighter-rouge">/api/v2.0/cmdb/</code>. Apache processes the URL path before enforcing logical boundaries. By using path traversal (<code class="language-plaintext highlighter-rouge">../</code>), an attacker can escape the API logic and invoke <code class="language-plaintext highlighter-rouge">fwbcgi</code> directly.</p>
+
+<p>Once inside, <code class="language-plaintext highlighter-rouge">fwbcgi</code> calls <code class="language-plaintext highlighter-rouge">cgi_auth()</code>. Instead of checking a database or a cryptographic session token, it looks for a header named <code class="language-plaintext highlighter-rouge">CGIINFO</code>.</p>
+<ul>
+  <li><strong>The Logic:</strong> If <code class="language-plaintext highlighter-rouge">CGIINFO</code> exists, the system Base64-decodes it, parses the JSON, and “hydrates” the user session based on the data inside.</li>
+  <li><strong>The Failure:</strong> There is no cryptographic signature. If the attacker sends this header, they <em>become</em> the Admin.</li>
+</ul>
+
+<h3 id="part-2-the-command-injection-cve-2025-58034">Part 2: The Command Injection (CVE-2025-58034)</h3>
+<p>Once authenticated as a fake Admin, the attacker targets the <code class="language-plaintext highlighter-rouge">policy_scripting_post_handler</code>. This handler is responsible for creating automation scripts. It constructs a shell command to invoke an underlying OS utility:
+<code class="language-plaintext highlighter-rouge">/usr/local/bin/run_script --name &lt;user_input&gt;</code></p>
+
+<p>The handler builds this command using <strong>string concatenation</strong> rather than argument vectors. It inserts user-controlled JSON fields (like <code class="language-plaintext highlighter-rouge">name</code> or <code class="language-plaintext highlighter-rouge">script</code>) verbatim.</p>
+
+<h2 id="3-the-kill-chain">3. The Kill-Chain</h2>
+
+<h3 id="phase-1-path-traversal">Phase 1: Path Traversal</h3>
+<p>The attacker bypasses the application layer routing by sending a request that traverses out of the API directory:
+<code style="word-break: break-all; white-space: normal;">POST /api/v2.0/cmdb/system/admin/../../../../../cgi-bin/fwbcgi</code></p>
+
+<h3 id="phase-2-identity-forgery">Phase 2: Identity Forgery</h3>
+<p>The attacker injects the malicious <code class="language-plaintext highlighter-rouge">CGIINFO</code> header to forge a Super-Admin identity:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"profname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"super_admin"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vdom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"loginname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">fwbcgi</code> trusts this input blindly and grants full privileges.</p>
+
+<h3 id="phase-3-os-command-injection">Phase 3: OS Command Injection</h3>
+
+<p>With Admin access, the attacker sends a payload to the scripting handler:
+<code class="language-plaintext highlighter-rouge">name = "test; /bin/sh -c 'id'"</code></p>
+
+<p>The server executes:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">/usr/local/bin/run_script --name test</code> (Legitimate)</li>
+  <li><code class="language-plaintext highlighter-rouge">/bin/sh -c 'id'</code> (Malicious)</li>
+</ol>
+
+<blockquote>
+  <p><strong>Impact:</strong> The attacker gains <strong>Remote Code Execution (RCE) as Root</strong> (UID 0). Because the appliance has no privilege separation, no chroot, and no seccomp filters, the compromise is total.</p>
+</blockquote>
+
+<h3 id="phase-4-post-exploitation">Phase 4: Post-Exploitation</h3>
+
+<p>Forensic analysis indicates this vector was used as a beachhead to attack downstream infrastructure, including the <strong>Cisco AsyncOS</strong> appliances detailed in <strong>AOAB #6</strong>.</p>
+
+<h2 id="4-the-fix">4. The Fix</h2>
+
+<p>The remediation requires enforcing strict boundaries at the web server level and removing shell invocation from the code.</p>
+
+<p><strong>Vulnerable Logic (C++):</strong></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// FATAL: String concatenation allows shell metacharacters (; | &amp;)</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s">"/usr/local/bin/run_script --name "</span> <span class="o">+</span> <span class="n">user_input</span><span class="p">;</span>
+<span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+
+</code></pre></div></div>
+
+<p><strong>Patched Logic (C++):</strong></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SECURITY FIX: Use execve/fork with an argument array.</span>
+<span class="c1">// The shell is never invoked, so '; id' is treated as a filename, not a command.</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">args</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">"/usr/local/bin/run_script"</span><span class="p">,</span> <span class="s">"--name"</span><span class="p">,</span> <span class="n">user_input</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="nb">NULL</span><span class="p">};</span>
+<span class="n">execve</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">,</span> <span class="n">env</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<h3 id="developer-takeaway">Developer Takeaway</h3>
+
+<p><strong>Trust is not a boundary.</strong> Headers are user input, not a trust signal. Assuming that “only internal components set this header” is a fatal flaw in any internet-facing device. Furthermore, <strong>CGI is not sandboxed</strong>. It executes with ambient privilege. Systems must be designed to assume hostile traffic by default, verifying every claim of identity cryptographically.</p>
+
+<p><strong>Immediate Action:</strong></p>
+
+<ol>
+  <li><strong>Patch:</strong> Upgrade to FortiWeb 8.0.2+.</li>
+  <li><strong>Mitigate:</strong> Restrict access to the management interface.</li>
+  <li><strong>Sanitize:</strong> Ensure upstream load balancers block requests containing <code class="language-plaintext highlighter-rouge">/cgi-bin/</code> in the URL path.</li>
+</ol>
+
+  </div>
+
+  
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: watchTowr, Fortinet PSIRT</strong>
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-aoabs" style="margin-top: 0rem; border-top: 0px solid var(--border); padding-top: 0rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// RELATED_INTELLIGENCE</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/6.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/6/" style="border: none; font-size: 0.9rem; color: #eee;">AsyncOS Quarantine Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 40%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                40% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • AuthBypass<br>• CommandInjection<br>• RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/4.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/4/" style="border: none; font-size: 0.9rem; color: #eee;">iOS26 "Liquid Glass" Exploitation Chain</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/10.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.9
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/10/" style="border: none; font-size: 0.9rem; color: #eee;">N8scape</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 20%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                20% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

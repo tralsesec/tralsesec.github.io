@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      CTF Writeups &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item active" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h1 class="text-green">// Writeups</h1>
+<p class="fg-dim" style="margin-bottom: 3rem;">
+Detailed post-exploitation analysis and writeups for various platforms. These records document tactical execution across machines, challenges, and fortresses.
+</p>
+
+<div class="ctf-grid">
+
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-snoopy/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Snoopy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ff4d4d
+        ;
+        
+        color: 
+        #ff4d4d
+        ;
+        
+        
+      ">
+        [HARD]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-snoopy/" style="color: var(--accent); border: none;">HackTheBox: Snoopy</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-snoopy/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-ghost/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Ghost" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffffff
+        ;
+        
+        color: 
+        #ffffff
+        ;
+        
+        text-shadow: 0 0 5px rgba(255,255,255,0.6);
+      ">
+        [INSANE]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-ghost/" style="color: var(--accent); border: none;">HackTheBox: Ghost</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-ghost/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-redelegate/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Redelegate" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ff4d4d
+        ;
+        
+        color: 
+        #ff4d4d
+        ;
+        
+        
+      ">
+        [HARD]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-redelegate/" style="color: var(--accent); border: none;">HackTheBox: Redelegate</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-redelegate/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-craft/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Craft" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-craft/" style="color: var(--accent); border: none;">HackTheBox: Craft</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-craft/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-authority/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Authority" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-authority/" style="color: var(--accent); border: none;">HackTheBox: Authority</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-authority/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-vulncicada/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: VulnCicada" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-vulncicada/" style="color: var(--accent); border: none;">HackTheBox: VulnCicada</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-vulncicada/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-voleur/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Voleur" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-voleur/" style="color: var(--accent); border: none;">HackTheBox: Voleur</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-voleur/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-media/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Media" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-media/" style="color: var(--accent); border: none;">HackTheBox: Media</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-media/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-administrator/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: Administrator" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-administrator/" style="color: var(--accent); border: none;">HackTheBox: Administrator</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-administrator/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-tombwatcher/" style="color: var(--accent); border: none;"><img src="" alt="HackTheBox: TombWatcher" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-tombwatcher/" style="color: var(--accent); border: none;">HackTheBox: TombWatcher</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      Coming soon.
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-tombwatcher/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-pov/" style="color: var(--accent); border: none;"><img src="/assets/img/ctf/pov.png" alt="HackTheBox: Pov" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-pov/" style="color: var(--accent); border: none;">HackTheBox: Pov</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      🎯 Pov
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Windows
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #.NET
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #ASPX
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #ysoserial
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Local-File-Read
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Deserialization
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #RCE
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Credential-Decryption
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #SeDebugPrivilege
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Impersonation
+      </span>
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-pov/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-postman/" style="color: var(--accent); border: none;"><img src="/assets/img/ctf/postman.png" alt="HackTheBox: Postman" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #00ff00
+        ;
+        
+        color: 
+        #00ff00
+        ;
+        
+        
+      ">
+        [EASY]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-postman/" style="color: var(--accent); border: none;">HackTheBox: Postman</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      🎯 Postman
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Linux
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Redis
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #John
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Webmin
+      </span>
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-postman/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-jeeves/" style="color: var(--accent); border: none;"><img src="/assets/img/ctf/jeeves.png" alt="HackTheBox: Jeeves" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-jeeves/" style="color: var(--accent); border: none;">HackTheBox: Jeeves</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      🎯 Jeeves
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Windows
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Jenkins
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #SeImpersonatePrivilege
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Alternate-Data-Stream
+      </span>
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-jeeves/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-fluffy/" style="color: var(--accent); border: none;"><img src="/assets/img/ctf/fluffy.png" alt="HackTheBox: Fluffy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #00ff00
+        ;
+        
+        color: 
+        #00ff00
+        ;
+        
+        
+      ">
+        [EASY]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-fluffy/" style="color: var(--accent); border: none;">HackTheBox: Fluffy</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      🎯 Fluffy
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Windows
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #CVE-2025-24071
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Shadow-Credentials
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #ESC16
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #ACL-Abuse
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Active-Directory
+      </span>
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-fluffy/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="ctf-card" style="border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+  
+  <div style="width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;">
+    <a href="/ctfs/htb-overwatch/" style="color: var(--accent); border: none;"><img src="/assets/img/ctf/overwatch.png" alt="HackTheBox: Overwatch" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" /></a>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <div style="position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;">
+      <span style="
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ffa500
+        ;
+        
+        color: 
+        #ffa500
+        ;
+        
+        
+      ">
+        [MEDIUM]
+      </span>
+    </div>
+
+    <h2 style="margin: 0 0 1rem 0;"><a href="/ctfs/htb-overwatch/" style="color: var(--accent); border: none;">HackTheBox: Overwatch</a></h2>
+
+    <div style="display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+      <span><span class="fg-dim">PLATFORM:</span> HackTheBox</span>
+      <span><span class="fg-dim">TYPE:</span> Machine</span>
+    </div>
+
+    <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+      🎯 Overwatch
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Windows
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #Reverse-Engineering
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #MSSQL
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #DNS-Abuse
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #SOAP
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+        #OS-Command-Injection
+      </span>
+      
+    </div>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;">
+      <a href="/ctfs/htb-overwatch/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none;">
+        READ_FULL_REPORT -&gt;
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+
+  </body>
+</html>

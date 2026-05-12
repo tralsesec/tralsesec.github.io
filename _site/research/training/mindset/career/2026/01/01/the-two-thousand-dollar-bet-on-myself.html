@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The $2000 Bet: Why I Double Down on Offensive Operations &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title" style="line-height: 1.3; padding-bottom: 1.3rem;">The $2000 Bet: Why I Double Down on Offensive Operations</h1>
+
+  <div class="post-meta" style="font-family: var(--font-mono); font-size: 0.75em; margin-bottom: 2rem;">
+    
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CPTS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CAPE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CWEE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #HACKTHEBOX
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CERTIFICATIONS
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #MINDSET
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CAREER
+          </span>
+        
+        <span class="post-date" style="color: var(--fg-dim);">// 2026-01-01</span>
+      </div>
+    
+  </div>
+
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 2rem 0;">
+    
+    <div class="intel-frame" style="border: 1px solid var(--border); padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/2026-01-01-gold-annual.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/2026-01-01-gold-annual.png" alt="GOLD_ANNUAL" style="width: 100%; display: block; cursor: zoom-in;">
+      </a>
+      
+      <p style="font-family: var(--font-mono); font-size: 0.65rem; text-align: center; margin-top: 1rem; margin-bottom: 5px;" class="fg-dim">
+        // IMG_REF: GOLD_ANNUAL
+      </p>
+      
+    </div>
+    
+    <div class="intel-frame" style="border: 1px solid var(--border); padding: 5px; background: #000; transition: transform 0.2s ease;">
+      <a href="/assets/img/2026-01-01-paypal-payment.png" target="_blank" style="border: none; display: block;">
+        <img src="/assets/img/2026-01-01-paypal-payment.png" alt="PAYPAL_PAYMENT" style="width: 100%; display: block; cursor: zoom-in;">
+      </a>
+      
+      <p style="font-family: var(--font-mono); font-size: 0.65rem; text-align: center; margin-top: 1rem; margin-bottom: 5px;" class="fg-dim">
+        // IMG_REF: PAYPAL_PAYMENT
+      </p>
+      
+    </div>
+    
+  </div>
+  
+
+  
+
+  <p>In the corporate world, the standard advice for students is: <em>“Wait until you get hired. Let the company pay for your training.”</em></p>
+
+<p>It is safe advice. It is financially prudent advice. <strong>It is also the fastest way to remain average.</strong></p>
+
+<p>A couple of days ago, I made a decision that goes against the typical student budget. I upgraded to the <strong>Hack The Box Academy Gold Annual</strong> subscription.</p>
+
+<p>The price tag? It starts with <strong>$1,000</strong> for the subscription itself. But that is just the entry fee.</p>
+
+<p>When factoring in the additional exam vouchers (<strong>$250</strong> for CPTS, <strong>$350</strong> for CWEE) and the operational costs for <strong>ProLabs</strong> (Enterprise Infrastructure: <strong>$90</strong> fee + <strong>$50</strong>/month), the total projected investment for this year exceeds the <strong>$2,000</strong> mark.</p>
+
+<p>For a student, this is a massive bet.</p>
+
+<p>Here is why I took it.</p>
+
+<h2 id="breaking-the-cycle">Breaking the Cycle</h2>
+
+<p>The cybersecurity industry suffers from a painful “Chicken and Egg” dilemma:</p>
+
+<ol>
+  <li>
+    <p>You need real operational depth to access serious roles.</p>
+  </li>
+  <li>
+    <p>You need serious roles to be trusted with real training budgets.</p>
+  </li>
+</ol>
+
+<p>Students sit at the worst possible intersection of this loop. On paper, you are potential. In practice, you are risk. No organization wants to spend thousands on someone who is still “unproven” and early in the pipeline. Especially early in the first semester.</p>
+
+<p>Waiting is the compliant option.</p>
+
+<p>I refused it.</p>
+
+<p>And realized that if I wait for someone to hand me a training budget, I might wait forever. Or worse: I would get hired for a role I’m overqualified for, just to wait years for a promotion.</p>
+
+<p>So I decided to force the issue.
+By funding my own training stack, I am collapsing the time gap between potential and proof. I am not asking to be trained into expertise later—I am building it upfront and letting the title lag behind.</p>
+
+<h2 id="why-gold-matters-and-why-the-exam-is-not-the-point">Why Gold Matters (and why the exam is not the point)</h2>
+
+<p>The CPTS is not the core value here.</p>
+
+<p><strong>Tier III</strong> access is.</p>
+
+<p>Gold unlocks advanced material that most candidates never touch until <em>after</em> they are certified—if ever. That asymmetry enables a deliberate strategy:</p>
+
+<p>I train <strong>above</strong> the target.</p>
+
+<ul>
+  <li>
+    <p>The <em>goal</em> is CPTS (Tier II).</p>
+  </li>
+  <li>
+    <p>The <em>training environment</em> is <strong>CAPE</strong> (Active Directory tradecraft) and <strong>CWEE</strong> (white/blackbox web exploitation).</p>
+  </li>
+</ul>
+
+<p>Instead of studying to pass, I am overfitting my skillset to real attack surfaces:</p>
+
+<ul>
+  <li>
+    <p>Evasion instead of checklists</p>
+  </li>
+  <li>
+    <p>Custom wordlists instead of defaults</p>
+  </li>
+  <li>
+    <p>Code paths instead of endpoints</p>
+  </li>
+</ul>
+
+<p>When you solve Tier II problems with Tier III tools and mental models, the exam stops being a hurdle. It becomes a validation.</p>
+
+<h2 id="the-roi">The ROI.</h2>
+
+<p>Let’s look at some numbers.</p>
+
+<ul>
+  <li><strong>Cost:</strong> $2,000+ (Subs + Vouchers + ProLabs).</li>
+  <li><strong>What it buys:</strong> Depth—methodological, technical, operational.</li>
+  <li><strong>Market Value:</strong> The gap between a generic junior pentester and someone trusted with research, exploitation, or internal red-team work is not marginal. It is <strong>$20k–$30k per year</strong>, conservatively.</li>
+</ul>
+
+<p>If this investment accelerates my career velocity by even one year, the return on investment is infinite.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I am not waiting for a “Senior” title to start training like one.
+I am shifting gears from speedrunning theory to deep, operational tradecraft.</p>
+
+<p>The bill is paid. The constraint is gone. Now the work begins.</p>
+
+<p><strong>Current Status:</strong></p>
+<ul>
+  <li><strong>Active:</strong> CPTS Path (Methodology &amp; Tools)</li>
+  <li><strong>Deep Dive:</strong> Active Directory Enumeration &amp; Attacks (CAPE Modules)</li>
+  <li><strong>Reading:</strong> Windows Internals, Part 1</li>
+</ul>
+
+<p><em>See you on the leaderboards.</em></p>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <div class="related-posts-container" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #333;">
+    <h3 style="color: var(--accent); margin-bottom: 1rem; font-family: var(--font-mono); font-size: 1rem;">
+      // RELATED_LOGS
+    </h3>
+    
+    <ul class="related-posts" style="list-style: none; padding-top: 1rem; margin: 0;">
+      
+        
+        
+        
+
+        <li style="margin-bottom: 1.2rem;">
+          <a href="/research/training/2025/12/28/htb-academy-speedrun.html" style="border: none; display: block;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #666; margin-bottom: 2px;">
+              2025-12-28
+            </div>
+            <div style="font-size: 1.1rem; font-weight: bold; color: #eee; transition: color 0.2s;"
+              onmouseover="this.style.color='var(--accent)'"
+              onmouseout="this.style.color='var(--fg-primary)'">
+              HTB Academy Speedrun: Technical Retrospective on CWES & CPTS
+              <span style="color: var(--accent); font-size: 0.8em; margin-left: 5px;">&rarr;</span>
+            </div>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+    </div>
+
+  </body>
+</html>

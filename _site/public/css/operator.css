@@ -1,0 +1,92 @@
+/* OPERATOR THEME OVERRIDE 
+   Target: tralsesec / Anatomy of a Bug
+*/
+
+/* 1. Import the "Hacker" Font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --font-stack: 'JetBrains Mono', monospace; /* The Terminal Font */
+  --bg-color: #0b0c0c;     /* Deep dark grey (easier on eyes than pure #000) */
+  --text-color: #c0c5ce;   /* Soft terminal white */
+  --accent-red: #ff5555;   /* Critical / Root / Danger */
+  --accent-green: #9fef00; /* Success / User / Safe */
+  --link-color: #ffffff;   /* Links are white until hovered */
+  --code-bg: #151515;
+}
+
+/* 2. FORCE "Terminal" Typography (Overriding blackdoc.css) */
+body, h1, h2, h3, h4, h5, h6, p, a, li, .sidebar {
+  font-family: var(--font-stack) !important; 
+}
+
+/* Remove the "Book" feel from headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  letter-spacing: -0.5px;
+  border-bottom: none; /* Clean look */
+}
+
+/* 3. Base Colors */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px dotted #444;
+}
+a:hover {
+  color: var(--accent-green); /* Hover turns green */
+  border-bottom: 1px solid var(--accent-green);
+}
+
+/* 4. Sidebar Customization */
+.sidebar {
+  background-color: #000; /* Pitch black sidebar */
+  border-right: 1px solid #222;
+}
+
+.sidebar-about h1 {
+  font-family: var(--font-stack) !important;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* 5. Code Block Styling */
+pre, code {
+  font-family: var(--font-stack) !important;
+  background-color: var(--code-bg);
+  color: #a3be8c; /* Default code text green */
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+/* 6. Custom AOAB "Download Report" Button */
+.download-button {
+  display: block;
+  background-color: transparent;
+  color: var(--accent-red); 
+  border: 1px solid var(--accent-red);
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 20px 0;
+  transition: all 0.2s ease;
+}
+
+.download-button:hover {
+  background-color: var(--accent-red);
+  color: #000; /* Black text on Red background */
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 85, 85, 0.4);
+}
+
+/* 7. Markdown Color Parsers (r`text` and g`text`) */
+/* Your python script will output spans with these styles, but we add classes just in case */
+.text-red { color: var(--accent-red) !important; font-weight: bold; }
+.text-green { color: var(--accent-green) !important; font-weight: bold; }

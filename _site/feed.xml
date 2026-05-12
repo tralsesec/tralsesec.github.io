@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-05-12T22:03:54+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">tralsesec</title><subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle><author><name>tralsesec</name></author><entry><title type="html">The $2000 Bet: Why I Double Down on Offensive Operations</title><link href="http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself.html" rel="alternate" type="text/html" title="The $2000 Bet: Why I Double Down on Offensive Operations" /><published>2026-01-01T20:02:00+01:00</published><updated>2026-01-01T20:02:00+01:00</updated><id>http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself</id><content type="html" xml:base="http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself.html"><![CDATA[<p>In the corporate world, the standard advice for students is: <em>“Wait until you get hired. Let the company pay for your training.”</em></p>
+
+<p>It is safe advice. It is financially prudent advice. <strong>It is also the fastest way to remain average.</strong></p>
+
+<p>A couple of days ago, I made a decision that goes against the typical student budget. I upgraded to the <strong>Hack The Box Academy Gold Annual</strong> subscription.</p>
+
+<p>The price tag? It starts with <strong>$1,000</strong> for the subscription itself. But that is just the entry fee.</p>
+
+<p>When factoring in the additional exam vouchers (<strong>$250</strong> for CPTS, <strong>$350</strong> for CWEE) and the operational costs for <strong>ProLabs</strong> (Enterprise Infrastructure: <strong>$90</strong> fee + <strong>$50</strong>/month), the total projected investment for this year exceeds the <strong>$2,000</strong> mark.</p>
+
+<p>For a student, this is a massive bet.</p>
+
+<p>Here is why I took it.</p>
+
+<h2 id="breaking-the-cycle">Breaking the Cycle</h2>
+
+<p>The cybersecurity industry suffers from a painful “Chicken and Egg” dilemma:</p>
+
+<ol>
+  <li>
+    <p>You need real operational depth to access serious roles.</p>
+  </li>
+  <li>
+    <p>You need serious roles to be trusted with real training budgets.</p>
+  </li>
+</ol>
+
+<p>Students sit at the worst possible intersection of this loop. On paper, you are potential. In practice, you are risk. No organization wants to spend thousands on someone who is still “unproven” and early in the pipeline. Especially early in the first semester.</p>
+
+<p>Waiting is the compliant option.</p>
+
+<p>I refused it.</p>
+
+<p>And realized that if I wait for someone to hand me a training budget, I might wait forever. Or worse: I would get hired for a role I’m overqualified for, just to wait years for a promotion.</p>
+
+<p>So I decided to force the issue.
+By funding my own training stack, I am collapsing the time gap between potential and proof. I am not asking to be trained into expertise later—I am building it upfront and letting the title lag behind.</p>
+
+<h2 id="why-gold-matters-and-why-the-exam-is-not-the-point">Why Gold Matters (and why the exam is not the point)</h2>
+
+<p>The CPTS is not the core value here.</p>
+
+<p><strong>Tier III</strong> access is.</p>
+
+<p>Gold unlocks advanced material that most candidates never touch until <em>after</em> they are certified—if ever. That asymmetry enables a deliberate strategy:</p>
+
+<p>I train <strong>above</strong> the target.</p>
+
+<ul>
+  <li>
+    <p>The <em>goal</em> is CPTS (Tier II).</p>
+  </li>
+  <li>
+    <p>The <em>training environment</em> is <strong>CAPE</strong> (Active Directory tradecraft) and <strong>CWEE</strong> (white/blackbox web exploitation).</p>
+  </li>
+</ul>
+
+<p>Instead of studying to pass, I am overfitting my skillset to real attack surfaces:</p>
+
+<ul>
+  <li>
+    <p>Evasion instead of checklists</p>
+  </li>
+  <li>
+    <p>Custom wordlists instead of defaults</p>
+  </li>
+  <li>
+    <p>Code paths instead of endpoints</p>
+  </li>
+</ul>
+
+<p>When you solve Tier II problems with Tier III tools and mental models, the exam stops being a hurdle. It becomes a validation.</p>
+
+<h2 id="the-roi">The ROI.</h2>
+
+<p>Let’s look at some numbers.</p>
+
+<ul>
+  <li><strong>Cost:</strong> $2,000+ (Subs + Vouchers + ProLabs).</li>
+  <li><strong>What it buys:</strong> Depth—methodological, technical, operational.</li>
+  <li><strong>Market Value:</strong> The gap between a generic junior pentester and someone trusted with research, exploitation, or internal red-team work is not marginal. It is <strong>$20k–$30k per year</strong>, conservatively.</li>
+</ul>
+
+<p>If this investment accelerates my career velocity by even one year, the return on investment is infinite.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I am not waiting for a “Senior” title to start training like one.
+I am shifting gears from speedrunning theory to deep, operational tradecraft.</p>
+
+<p>The bill is paid. The constraint is gone. Now the work begins.</p>
+
+<p><strong>Current Status:</strong></p>
+<ul>
+  <li><strong>Active:</strong> CPTS Path (Methodology &amp; Tools)</li>
+  <li><strong>Deep Dive:</strong> Active Directory Enumeration &amp; Attacks (CAPE Modules)</li>
+  <li><strong>Reading:</strong> Windows Internals, Part 1</li>
+</ul>
+
+<p><em>See you on the leaderboards.</em></p>]]></content><author><name>tralsesec</name></author><category term="research" /><category term="training" /><category term="mindset" /><category term="career" /><category term="CPTS" /><category term="CAPE" /><category term="CWEE" /><category term="HackTheBox" /><category term="Certifications" /><category term="Mindset" /><category term="Career" /><summary type="html"><![CDATA[In the corporate world, the standard advice for students is: “Wait until you get hired. Let the company pay for your training.”]]></summary></entry><entry><title type="html">HTB Academy Speedrun: Technical Retrospective on CWES &amp;amp; CPTS</title><link href="http://localhost:4000/research/training/2025/12/28/htb-academy-speedrun.html" rel="alternate" type="text/html" title="HTB Academy Speedrun: Technical Retrospective on CWES &amp;amp; CPTS" /><published>2025-12-28T10:00:00+01:00</published><updated>2025-12-28T10:00:00+01:00</updated><id>http://localhost:4000/research/training/2025/12/28/htb-academy-speedrun</id><content type="html" xml:base="http://localhost:4000/research/training/2025/12/28/htb-academy-speedrun.html"><![CDATA[<p><strong>MISSION DEBRIEF:</strong> 100% Completion of HTB Academy CPTS &amp; CWES Paths.</p>
+
+<p>After an intense 4-week sprint—roughly 200-250 hours—I completed Hack The Box Academy’s Web Penetration Tester (CWES) and Penetration Tester (CPTS) paths. Together, they cover over 800,000 words of offensive security content, plus countless hands-on labs.</p>
+
+<h3 id="️-architecture-over-tooling">🏗️ Architecture over Tooling</h3>
+<p>The curriculum emphasizes protocol behavior and trust boundaries over simple tool usage. You learn not just how to exploit something, but <strong>why</strong> it fails.</p>
+
+<h3 id="️-difficulty--methodology">⚖️ Difficulty &amp; Methodology</h3>
+<p>The challenge isn’t CTF trickery, but disciplined enumeration and maintaining a clean methodology across long attack chains. Labs reward structure and consistency while penalizing randomness.</p>
+
+<h3 id="-learning-at-speed-tactics">🧠 Learning at Speed: Tactics</h3>
+<p>To scale at this pace (12–14 hour days), structure beats memorization:</p>
+<ul>
+  <li><strong>Concept First:</strong> Understand the attack path before the command.</li>
+  <li><strong>Selective AI:</strong> Used Gemini Pro to distill dense sections and maintain focus on decision-making.</li>
+  <li><strong>Active Inquiry:</strong> Constantly questioning the “why” behind tool capabilities to grow skills beyond the curriculum.</li>
+</ul>
+
+<h3 id="-verdict">🏁 Verdict</h3>
+<p>HTB Academy defines a strong operational baseline. Completing both paths lays the foundation for advanced tracks like OSEP or CAPE.</p>
+
+<p><strong>Next steps:</strong> Pro Labs (Dante, Zephyr, POO, RastaLabs), methodology battle-testing, then the CPTS exam 💀.</p>]]></content><author><name>tralsesec</name></author><category term="research" /><category term="training" /><category term="CPTS" /><category term="CWES" /><category term="HackTheBox" /><category term="Certifications" /><summary type="html"><![CDATA[MISSION DEBRIEF: 100% Completion of HTB Academy CPTS &amp; CWES Paths.]]></summary></entry><entry><title type="html">The Analyzer Paradigm: Why I Chose Rust for Revenant</title><link href="http://localhost:4000/revenant/2025/12/25/rust-the-analyzer-paradigm.html" rel="alternate" type="text/html" title="The Analyzer Paradigm: Why I Chose Rust for Revenant" /><published>2025-12-25T00:00:00+01:00</published><updated>2025-12-25T00:00:00+01:00</updated><id>http://localhost:4000/revenant/2025/12/25/rust-the-analyzer-paradigm</id><content type="html" xml:base="http://localhost:4000/revenant/2025/12/25/rust-the-analyzer-paradigm.html"><![CDATA[<p><strong>SITUATION REPORT:</strong> Architectural decision-making for Project Revenant.</p>
+
+<p>I don’t fight the Rust Borrow Checker. I fight <strong>WITH IT</strong>.</p>
+
+<p>I’ve written C++ for years. I enjoy Zig for its brutal simplicity. I could have built my next project in either and been productive on Day 1. But for <strong>Revenant</strong>—my upcoming malware analysis and lifting engine—I made a different choice.</p>
+
+<h3 id="the-tactical-choice">The Tactical Choice</h3>
+
+<p>Revenant isn’t a simple script. It processes massive, hostile traces to deobfuscate malware. When you’re building a tool that dissects malicious code, memory safety isn’t a “nice to have”—it’s a hard requirement.</p>
+
+<p>I made a deliberate trade-off: <strong>Short-term development velocity for long-term architectural confidence.</strong></p>
+
+<h3 id="the-reality-of-fighting-the-compiler">The Reality of “Fighting” the Compiler</h3>
+
+<p>Everyone warned me about “fighting the Borrow Checker.” But once I shifted my mindset, something clicked: I’m not fighting the compiler; the compiler is enforcing what I used to do manually.</p>
+
+<p>In C++, ensuring that a trace chunk is uniquely owned by the Analyzer thread meant:</p>
+<ul>
+  <li>Custom wrapper types</li>
+  <li>Deleted copy constructors</li>
+  <li>Carefully crafted move assignment operators</li>
+  <li>Hundreds of lines of boilerplate—just to enforce exclusive ownership.</li>
+</ul>
+
+<h3 id="comparison-manual-vs-automated-enforcement">Comparison: Manual vs. Automated Enforcement</h3>
+
+<p>In Rust, the enforcement is built into the type system:</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The analyzer takes ownership of the chunk.</span>
+<span class="n">analyzer</span><span class="nf">.process</span><span class="p">(</span><span class="n">chunk</span><span class="p">);</span>
+
+<span class="c1">// Accessing 'chunk' here results in a COMPILE-TIME error.</span>
+<span class="c1">// No boilerplate needed.</span>
+
+</code></pre></div></div>
+
+<p>The variable is gone. If I touch it again, it doesn’t compile.</p>
+
+<h3 id="realization">Realization</h3>
+
+<p>The Borrow Checker isn’t a restriction. It’s an automated QA engineer enforcing discipline I once had to maintain by hand.</p>
+
+<p>I’m not struggling with Rust. I’m relieved to finally have a partner in crime. 🦀</p>
+
+<hr />
+
+<p><strong>STATUS:</strong> Research phase continues. Revenant core architecture finalized.</p>]]></content><author><name>tralsesec</name></author><category term="revenant" /><category term="revenant" /><category term="research" /><summary type="html"><![CDATA[SITUATION REPORT: Architectural decision-making for Project Revenant.]]></summary></entry></feed>

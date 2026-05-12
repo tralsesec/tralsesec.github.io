@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Revenant – The Lucid Execution Engine &middot; tralsesec
+    
+  </title>
+
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="public/css/poole.css">-->
+  <!--<link rel="stylesheet" href="public/css/blackdoc.css">-->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/modern.css">
+  <!--<link rel="stylesheet" href="public/css/operator.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky" style="display: flex; flex-direction: column; height: 100%;">
+    
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          tralsesec
+        </a>
+      </h1>
+      <p class="lead">Offensive Security Researcher · Malware Developer & Analyst · Exploit Developer · CTF Player</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+      <a class="sidebar-nav-item" href="/about">About</a>
+      <a class="sidebar-nav-item active" href="/projects">Projects</a>
+      <a class="sidebar-nav-item" href="/anatomy-of-a-bug">Anatomy of a Bug</a>
+      <a class="sidebar-nav-item" href="/ctfs">Capture the Flags</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+
+      <a class="sidebar-nav-item" href="https://github.com/tralsesec" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+
+      <a class="sidebar-nav-item" href="https://app.hackthebox.com/public/users/475600" target="_blank" rel="noopener noreferrer">
+        <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 0l-10.4 6.02v12.01l10.4 6.02 10.4-6.02V6.02L11.99 0zM3.46 17.2V6.9l8.53-4.93 8.53 4.93v10.3l-8.53 4.93-8.53-4.93z"/><path d="M11.99 3.5L4.8 7.66v8.32l7.19 4.16 7.19-4.16V7.66L11.99 3.5zm5.72 11.53l-5.72 3.31-5.72-3.31V8.47l5.72-3.31 5.72 3.31v6.56z"/></svg>
+        HackTheBox
+      </a>
+
+    </nav>
+
+    <p style="margin-top: auto; padding-top: 2rem; margin-bottom: 0; font-size: 0.9rem;">
+      &copy; 2026. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <article style="max-width: 850px; margin: 2rem auto; padding: 0 1rem;">
+  <header style="margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem;">
+    <h1 class="text-green" style="font-size: 2.2rem; margin: 0 0 1.5rem 0;">// REVENANT – THE LUCID EXECUTION ENGINE</h1>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem;">
+      
+      <span style="font-family: var(--font-mono); font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 8px; color: #aaa;">
+        #RUST
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 8px; color: #aaa;">
+        #LLVM
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 8px; color: #aaa;">
+        #COMPILER INTERNALS
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 8px; color: #aaa;">
+        #DBT
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 8px; color: #aaa;">
+        #AARCH64
+      </span>
+      
+      <span style="font-family: var(--font-mono); font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 8px; color: #aaa;">
+        #X86_64
+      </span>
+      
+    </div>
+
+    <div style="font-family: var(--font-mono); font-size: .75rem; color: var(--fg-dim); display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+      <span>Malware Research</span>
+      <span style="opacity: 0.3;">|</span>
+      <span>Dec 2025 – Present</span>
+      <span style="opacity: 0.3;">|</span>
+      
+      <span>STATUS: 
+        <span style="color: var(--accent);">
+          [ACTIVE]
+        </span>
+      </span>
+      
+      <span style="opacity: 0.3;">|</span>
+      <span>LANG: <span style="color: #eee;">Rust / LLVM</span></span>
+
+      
+      <span style="opacity: 0.3;">|</span>
+      <a href="https://github.com/Revenant-Engine" target="_blank" class="text-green" style="border: none; display: inline-flex; align-items: center; gap: 5px;">
+        <svg height="12" width="12" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        GITHUB
+      </a>
+      
+    </div>
+  </header>
+
+  <div class="dossier-content" style="line-height: 1.8; font-size: 1.1rem; color: #eee;">
+    <h3 id="executive-summary">Executive Summary</h3>
+<p>Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs into <strong>LLVM Intermediate Representation (IR)</strong>. Unlike standard emulators, Revenant focuses on semantic recovery—stripping away junk code and mutation layers to reveal the underlying logic.</p>
+
+<h3 id="core-architecture">Core Architecture</h3>
+<ul>
+  <li><strong>Front-end (Lifting):</strong> Supports x86_64 and AArch64. Implements a custom lifter that converts machine instructions into a side-effect-aware IR.</li>
+  <li><strong>Optimization Layer:</strong> Leverages LLVM’s optimization passes (SROA, GVN, DCE) to perform “Symbolic Execution-lite,” effectively collapsing obfuscated branches and dead-store loops.</li>
+  <li><strong>Back-end:</strong> Can re-emit cleaned binaries or provide a JIT environment for high-speed analysis of unpacked payloads.</li>
+</ul>
+
+<h3 id="-project-transmissions-dev-logs">» Project Transmissions (Dev Logs)</h3>
+<p>The following logs document the development milestones, research breakthroughs, and technical hurdles encountered during the Revenant lifecycle.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">ID</th>
+      <th style="text-align: left">Case Title</th>
+      <th style="text-align: left">Focus</th>
+      <th style="text-align: left">Status</th>
+      <th style="text-align: left">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="/projects/revenant/2026-01-01-log-001/"><strong>#001</strong></a></td>
+      <td style="text-align: left"><a href="/projects/revenant/2026-01-01-log-001/"><strong>Log 001: Implementing the x86 Lifter</strong></a></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Lifting / IR Generation</code></td>
+      <td style="text-align: left">STABLE</td>
+      <td style="text-align: left"><strong>2026-01-01</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="technical-roadmap">Technical Roadmap</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pipeline implementation.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Initial trace collector implementation.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Initial Pre-Lifter implementation.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Initial x86_64 Lifter implementation.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Integration of Z3 for automated SMT-based opaque predicate solving.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Exporter implementation.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Language bindings (Py, JS, Java, C, C++).</li>
+</ul>
+
+  </div>
+
+  <div style="margin-top: 2rem; border-top: 1px solid #222; padding-top: 1rem;">
+    <a href="/projects/" class="fg-dim" style="font-family: var(--font-mono); font-size: 0.8rem; border: none;">
+      <- RETURN_TO_PROJECT_INDEX
+    </a>
+  </div>
+</article>
+
+    </div>
+
+  </body>
+</html>
