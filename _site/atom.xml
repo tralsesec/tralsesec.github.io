@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-05-12T22:03:54+02:00</updated>
+  <updated>2026-05-12T23:40:28+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -179,7 +179,7 @@
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -830,6 +830,102 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
+    &lt;a href=&quot;/ctfs/htb-pirate/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/pirate.png&quot; alt=&quot;HackTheBox: Pirate&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
+    &lt;div style=&quot;position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;&quot;&gt;
+      &lt;span style=&quot;
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ff4d4d
+        ;
+        
+        color: 
+        #ff4d4d
+        ;
+        
+        
+      &quot;&gt;
+        [HARD]
+      &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;h2 style=&quot;margin: 0 0 1rem 0;&quot;&gt;&lt;a href=&quot;/ctfs/htb-pirate/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;HackTheBox: Pirate&lt;/a&gt;&lt;/h2&gt;
+
+    &lt;div style=&quot;display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;PLATFORM:&lt;/span&gt; HackTheBox&lt;/span&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TYPE:&lt;/span&gt; Machine&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+      🎯 Pirate
+
+    &lt;/div&gt;
+
+    &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Pre2k
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Password-Spraying
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Kerberos
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #S4U
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Impersonation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Constrained-Delegation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #gMSA
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Shadow-Credentials
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #PetitPotam
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SPN-Manipulation
+      &lt;/span&gt;
+      
+    &lt;/div&gt;
+
+    &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;&quot;&gt;
+      &lt;a href=&quot;/ctfs/htb-pirate/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none;&quot;&gt;
+        READ_FULL_REPORT -&amp;gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
+  
+  &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
     &lt;a href=&quot;/ctfs/htb-jeeves/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/jeeves.png&quot; alt=&quot;HackTheBox: Jeeves&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
@@ -885,6 +981,94 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 
     &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;&quot;&gt;
       &lt;a href=&quot;/ctfs/htb-jeeves/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none;&quot;&gt;
+        READ_FULL_REPORT -&amp;gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
+  
+  &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
+    &lt;a href=&quot;/ctfs/htb-garfield/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/garfield.png&quot; alt=&quot;HackTheBox: Garfield&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
+    &lt;div style=&quot;position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;&quot;&gt;
+      &lt;span style=&quot;
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ff4d4d
+        ;
+        
+        color: 
+        #ff4d4d
+        ;
+        
+        
+      &quot;&gt;
+        [HARD]
+      &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;h2 style=&quot;margin: 0 0 1rem 0;&quot;&gt;&lt;a href=&quot;/ctfs/htb-garfield/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;HackTheBox: Garfield&lt;/a&gt;&lt;/h2&gt;
+
+    &lt;div style=&quot;display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;PLATFORM:&lt;/span&gt; HackTheBox&lt;/span&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TYPE:&lt;/span&gt; Machine&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+      🎯 Garfield
+
+    &lt;/div&gt;
+
+    &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Logon-Scripts
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #scriptPath-Hijack
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ForceChangePassword
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ACL-Abuse
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Impersonation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #RODC
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Machine-Account-Takeover
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #S4U2Self
+      &lt;/span&gt;
+      
+    &lt;/div&gt;
+
+    &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;&quot;&gt;
+      &lt;a href=&quot;/ctfs/htb-garfield/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none;&quot;&gt;
         READ_FULL_REPORT -&amp;gt;
       &lt;/a&gt;
     &lt;/div&gt;
@@ -1043,7 +1227,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -1189,7 +1373,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -1368,7 +1552,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -1478,7 +1662,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -1589,7 +1773,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -1716,7 +1900,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -1852,7 +2036,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -1988,7 +2172,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -2088,7 +2272,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -2354,7 +2538,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-05-12T22:03:54+02:00</updated>
+    <updated>2026-05-12T23:40:28+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
