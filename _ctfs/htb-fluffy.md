@@ -13,7 +13,7 @@ date: 2026-05-11
 
 **OS:** Windows | **Difficulty:** Easy | **IP:** `10.129.43.160`
 
-![overwatch.htb](/assets/img/ctf/data/fluffy-htb.png)
+![fluffy.htb](/assets/img/ctf/data/fluffy-htb.png)
 
 ---
 
