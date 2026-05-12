@@ -128,7 +128,7 @@ pre {
   background-color: #1e1e1e !important; /* VS Code / Carbon Dark BG */
   border-radius: 8px; /* Rounded corners */
   padding: 50px 20px 20px 20px !important; /* Top padding is huge to make room for buttons */
-  margin: 40px 0; /* Breathing room */
+  margin: 23px 0; /* Breathing room */
   
   /* The "Carbon" Drop Shadow */
   box-shadow: 0 20px 68px rgba(0, 0, 0, 0.55);

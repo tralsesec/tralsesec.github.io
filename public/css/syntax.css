@@ -1,5 +1,19 @@
 /* CARBON / DRACULA THEME OVERRIDE */
 
+blockquote.warning { border-left-color: #CB3A2A; } /* Red */
+blockquote.info { border-left-color: #644AC9; }    /* Cyan */
+blockquote.success { border-left-color: #14710A; } /* Green */
+
+blockquote {
+  border-left: 3px solid #6C664B; /* Dracula Pink for a subtle pop */
+  background: rgba(98, 114, 164, 0.1); /* Very faint Dracula Comment tint */
+  margin: 0.8rem 0;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
 /* 1. The "Window" Background - Deep Blue-Black */
 pre.highlight {
   background-color: #0f111a !important; /* Deep Midnight */
