@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/media.png"
-tags: [Windows, NTLM-Leak, mklink, symlink, Broken-Access-Control, Arbitrary-File-Upload, RCE, SeImpersonatePrivilege, FullPowers, Potato]
+tags: [Windows, Windows-Media-Player, NTLM-Leak, mklink, symlink, Broken-Access-Control, Arbitrary-File-Upload, RCE, SeImpersonatePrivilege, FullPowers, Potato]
 date: 2026-05-13
 ---
 
