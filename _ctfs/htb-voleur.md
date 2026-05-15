@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/voleur.png"
-tags: [Windows, Active-Directory, ACL-Abuse, Targeted-Kerberoasting, DPAPI-Abuse, Backup-Service]
+tags: [Windows, Active-Directory, Kerberos, ACL-Abuse, Targeted-Kerberoasting, DPAPI-Abuse, Backup-Service]
 date: 2026-05-13
 ---
 
