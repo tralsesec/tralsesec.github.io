@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Hard"
 image: "/assets/img/ctf/garfield.png"
-tags: [Windows, Active-Directory, Logon-Scripts, scriptPath-Hijack, ForceChangePassword, ACL-Abuse, Impersonation, RODC, Machine-Account-Takeover, S4U2Self]
+tags: [Windows, Active-Directory, WriteProperty, Logon-Scripts, scriptPath-Hijack, SYSVOL, ForceChangePassword, ACL-Abuse, Impersonation, RODC, Machine-Account-Takeover, Constraned-Delegation, Protocol-Transition, S4U2Self]
 date: 2026-05-12
 ---
 

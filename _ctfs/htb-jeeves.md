@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/jeeves.png"
-tags: [Windows, Jenkins, SeImpersonatePrivilege, Alternate-Data-Stream]
+tags: [Windows, Jenkins, Groovy, Token-Impersonation, SeImpersonatePrivilege, Alternate-Data-Stream]
 date: 2026-05-12
 ---
 

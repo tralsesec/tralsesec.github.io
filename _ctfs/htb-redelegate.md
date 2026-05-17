@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Hard"
 image: "/assets/img/ctf/redelegate.png"
-tags: [Windows, Active-Directory, Kerberos, Keepass, FTP, Weak-Passwords, MSSQL, Password-Spray, ForceChangePassword, GenericAll, SeEnableDelegationPrivilege, SeMachineAccountPrivilege, Constrained-Delegation, MachineAccountQuota, Protocol-Transition, msDS-AllowedToDelegateTo, S4U, S4U2Self, S4U2Proxy, DCSync, Pass-The-Hash, ACL-Abuse]
+tags: [Windows, Active-Directory, Kerberos, Keepass, FTP, Weak-Passwords, MSSQL, Password-Spray, ForceChangePassword, GenericAll, SeEnableDelegationPrivilege, SeMachineAccountPrivilege, Constrained-Delegation, MachineAccountQuota, Protocol-Transition, msDS-AllowedToDelegateTo, Delegation, S4U, S4U2Self, S4U2Proxy, DCSync, Pass-The-Hash, ACL-Abuse]
 date: 2026-05-14
 ---
 

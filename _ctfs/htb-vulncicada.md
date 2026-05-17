@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/vulncicada.png"
-tags: [Windows, Active-Directory, Kerberos, Relay, Kerberos-Relay, NFS, ADCS, Coercion, DCSync, Overpass-the-Hash, ESC8]
+tags: [Windows, Active-Directory, Kerberos, Relay, DNS-Spoofing, Kerberos-Relay, NFS, ADCS, Coercion, DCSync, Overpass-the-Hash, ESC8, Web-Enrollment]
 date: 2026-05-13
 ---
 

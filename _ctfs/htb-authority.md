@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/authority.png"
-tags: [Windows, Active-Directory, Kerberos, Ansible, Ansible-Vault, LDAP-Interception, ESC1, Schannel, RBCD, S4U2Proxy]
+tags: [Windows, Active-Directory, Kerberos, Ansible, Ansible-Vault, PWM, Configuration-Editor, LDAP-Interception, ESC1, PKINIT, Schannel, RBCD, S4U2Proxy]
 date: 2026-05-14
 ---
 

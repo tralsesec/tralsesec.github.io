@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/overwatch.png"
-tags: [Windows, Reverse-Engineering, MSSQL, DNS-Abuse, SOAP, OS-Command-Injection]
+tags: [Windows, Reverse-Engineering, MSSQL, DNS-Spoofing, SOAP, OS-Command-Injection]
 date: 2026-05-09
 ---
 

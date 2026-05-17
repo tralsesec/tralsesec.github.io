@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/administrator.png"
-tags: [Windows, Active-Directory, ACL-Abuse, Hash-Cracking, Shadow-Credentials, Targeted-Kerberoasting, DCSync]
+tags: [Windows, Active-Directory, GenericAll, ForceChangePassword, FTP, ACL-Abuse, Hash-Cracking, Shadow-Credentials, Targeted-Kerberoasting, DCSync]
 date: 2026-05-13
 ---
 

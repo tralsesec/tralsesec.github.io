@@ -5,7 +5,7 @@ platform: "HackTheBox"
 type: "Machine"
 difficulty: "Medium"
 image: "/assets/img/ctf/craft.png"
-tags: [Linux, Gogs, Git, Commit-History, RCE, Vault, HashiCorp-Vault]
+tags: [Linux, Virtual-Host, Gogs, Git, Commit-History, RCE, MySQL, Vault, HashiCorp-Vault]
 date: 2026-05-14
 ---
 
