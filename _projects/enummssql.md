@@ -10,7 +10,6 @@ date: 2026-05-17
 github: "https://github.com/tralsesec/EnumMSSQL"
 ---
 
-### Executive Summary
 EnumMSSQL is a weaponized, standalone post-exploitation wrapper engineered in Bash to automate the entire MSSQL enumeration and lateral movement lifecycle. Moving far beyond generic script execution, it abstracts away complex T-SQL constraints to provide zero-dependency database auditing, localized pre-flight socket management, and multi-vector hash coercion. Its signature mechanic relies on mathematical, language-agnostic Active Directory user harvesting by establishing an immutable cryptographic anchor inside the target environment.
 
 ### Core Architecture

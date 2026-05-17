@@ -10,7 +10,6 @@ date: 2025-12-01
 github: "https://github.com/Revenant-Engine"
 ---
 
-### Executive Summary
 Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs into **LLVM Intermediate Representation (IR)**. Unlike standard emulators, Revenant focuses on semantic recovery—stripping away junk code and mutation layers to reveal the underlying logic.
 
 ### Core Architecture
