@@ -5,7 +5,7 @@ permalink: /oie/
 ---
 
 <div align="center" markdown="1">
-![Version](https://img.shields.io/badge/Framework%20Version-v0.2.2-blue) [![Changelog](https://img.shields.io/badge/📝-View_Changelog-lightgrey)]({{ "CHANGELOG" }})
+  ![Version](https://img.shields.io/badge/Framework%20Version-v0.2.2-blue) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](LICENSE) [![Changelog](https://img.shields.io/badge/📝-View_Changelog-lightgrey)]({{ "CHANGELOG" }})
 </div>
 
 ## Abstract

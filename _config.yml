@@ -17,9 +17,6 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
 
-include:
-  - _oie
-
 # Custom Collections
 collections:
   anatomy-of-a-bug:
@@ -30,11 +27,9 @@ collections:
     permalink: /projects/:path/
   ctfs:
     output: true
-    future: true
     permalink: /ctfs/:path/
   oie:
     output: true
-    future: true
     permalink: /oie/:path/
 
 #kramdown:
