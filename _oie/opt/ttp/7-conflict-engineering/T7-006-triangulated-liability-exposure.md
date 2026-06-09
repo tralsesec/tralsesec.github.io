@@ -15,6 +15,6 @@ status: Active
 To force the target into a catastrophic strategic double bind. You compel Node A to either retain a compromised proxy (Node B) and inherit their systemic liabilities, or to turn their back on the proxy, triggering an internal "Triangulated Hostility Injection" where the severed relationship turns into mutual suspicion, defensive isolation, and active internal warfare.
 
 ## Operational Logic
-* **The Double Bind:** By moving the error into the light, you destroy the target's ability to maintain a neutral position. There is no path back to the status quo.
-* **Structural Liability:** If Node A stays with Node B to preserve operational continuity, they are now the public "owner" of every mistake Node B continues to make. The proxy's failure becomes the master's failure.
-* **Triangulated Hostility:** If Node A terminates the relationship to cut losses, they trigger an immediate adversarial fracture. Node B, feeling betrayed or unfairly discarded, becomes an internal disruptor. By weaponizing this severance, you ensure that the energy Node A used to spend on the organization is now redirected toward managing a hostile, disillusioned, and isolated internal proxy.
+* By moving the error into the light, you destroy the target's ability to maintain a neutral position. There is no path back to the status quo.
+* If Node A stays with Node B to preserve operational continuity, they are now the public "owner" of every mistake Node B continues to make. The proxy's failure becomes the master's failure.
+* If Node A terminates the relationship to cut losses, they trigger an immediate adversarial fracture. Node B, feeling betrayed or unfairly discarded, becomes an internal disruptor. By weaponizing this severance, you ensure that the energy Node A used to spend on the organization is now redirected toward managing a hostile, disillusioned, and isolated internal proxy.
