@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-06-09T13:58:02+02:00</updated>
+  <updated>2026-06-09T18:03:05+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -29,7 +29,7 @@
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -1537,7 +1537,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -1683,7 +1683,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -1862,7 +1862,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -1972,7 +1972,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -2083,7 +2083,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -2210,7 +2210,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -2346,7 +2346,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -2482,7 +2482,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -2582,7 +2582,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -2848,7 +2848,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
@@ -3040,7 +3040,7 @@ Software sandboxing is no longer sufficient for legacy compatibility layers.&lt;
     <title>N8scape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/10/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/10/</id>
 
     
@@ -3196,7 +3196,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>React2Shell RCE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/1/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/1/</id>
 
     
@@ -3305,7 +3305,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>Anatomy of a Bug</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/</id>
 
     
@@ -3479,7 +3479,7 @@ High-fidelity technical analyses of critical vulnerabilities, kernel exploits, a
     <title>Anatomy of a Bug - LICENSE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/LICENSE/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/LICENSE/</id>
 
     
@@ -3562,7 +3562,7 @@ f. &lt;strong&gt;Share&lt;/strong&gt; means to provide material to the public by
     <title>Projects</title>
     
     <link href="http://localhost:4000/projects/"/>
-    <updated>2026-06-09T13:58:02+02:00</updated>
+    <updated>2026-06-09T18:03:05+02:00</updated>
     <id>http://localhost:4000/projects/</id>
 
     

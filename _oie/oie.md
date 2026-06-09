@@ -5,7 +5,7 @@ permalink: /oie/
 ---
 
 <div align="center" markdown="1">
-![Version](https://img.shields.io/badge/Framework%20Version-v0.2.1-blue) [![Changelog](https://img.shields.io/badge/📝-View_Changelog-lightgrey)]({{ "CHANGELOG" }})
+![Version](https://img.shields.io/badge/Framework%20Version-v0.2.2-blue) [![Changelog](https://img.shields.io/badge/📝-View_Changelog-lightgrey)]({{ "CHANGELOG" }})
 </div>
 
 ## Abstract

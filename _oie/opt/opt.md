@@ -76,7 +76,7 @@ Below is the active registry of all standardized OPT techniques used to stress t
             {% if item.ttp_id %}
               {{ item.ttp_id }}
             {% else %}
-              T{{ folder_num }}-000
+              <span class="text-green">T{{ folder_num }}-000</span>
             {% endif %}
           </strong>
         </td>
