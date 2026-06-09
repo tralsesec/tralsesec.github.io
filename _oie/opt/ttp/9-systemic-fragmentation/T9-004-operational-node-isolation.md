@@ -11,7 +11,7 @@ status: Active
 3. Strictly compartmentalize the communication. Demand that each node responds only within their specific domain, implicitly or explicitly threatening them with regulatory violations if they cross-contaminate the discrete processes.
 
 ## Goal
-To execute a structural "Teile und Herrsche" (Divide and Conquer). By forcing allied nodes to independently manage separate but parallel crises, you destroy their ability to maintain a unified storyline. This forced isolation drastically increases the probability of them generating contradictory statements, handing you the forensic evidence needed to prove they are operating in bad faith.
+To execute a structural Divide and Conquer. By forcing allied nodes to independently manage separate but parallel crises, you destroy their ability to maintain a unified storyline. This forced isolation drastically increases the probability of them generating contradictory statements, handing you the forensic evidence needed to prove they are operating in bad faith.
 
 ## Operational Logic
 * Bureaucratic alliances survive entirely on "story-syncing", the ability to coordinate excuses before officially responding to a threat.
