@@ -17,6 +17,9 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
 
+include:
+  - _oie
+
 # Custom Collections
 collections:
   anatomy-of-a-bug:
