@@ -29,6 +29,10 @@ collections:
     output: true
     future: true
     permalink: /ctfs/:path/
+  oie:
+    output: true
+    future: true
+    permalink: /oie/:path/
 
 #kramdown:
 #  input: GFM
