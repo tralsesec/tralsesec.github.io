@@ -44,4 +44,49 @@ layout: default
       {% endfor %}
     </tbody>
   </table>
+
+  {% comment %} 4. Mathematical Navigation: Strict Filtering {% endcomment %}
+  {% comment %} Get all index.md files that are specifically inside the TTP folder structure {% endcomment %}
+  {% assign all_indices = site.oie | where: "name", "index.md" %}
+  {% assign valid_indices = "" | split: "" %}
+  {% for idx in all_indices %}
+    {% if idx.path contains "/opt/ttp/" %}
+      {% assign valid_indices = valid_indices | push: idx %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign current_folder_num = path_parts[3] | split: '-' | first | plus: 0 %}
+  {% assign prev_num = current_folder_num | minus: 1 %}
+  {% assign next_num = current_folder_num | plus: 1 %}
+
+  {% assign prev_item = nil %}
+  {% assign next_item = nil %}
+
+  {% for idx in valid_indices %}
+    {% assign idx_folder_num = idx.path | split: '/' | slice: 3 | first | split: '-' | first | plus: 0 %}
+    
+    {% if idx_folder_num == prev_num and prev_num > 0 %}
+      {% assign prev_item = idx %}
+    {% elsif idx_folder_num == next_num %}
+      {% assign next_item = idx %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="ttp-nav" style="margin-top: 3rem; width: 100%; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+    <div class="nav-prev">
+      {% if prev_item %}
+        {% assign prev_folder = prev_item.path | split: '/' | slice: 3 | first | split: '-' | first %}
+        {% assign prev_id = prev_item.ttp_id | split: '-' | first | default: "T" | append: prev_folder %}
+        <a href="{{ prev_item.url | relative_url }}">&lt; {{ prev_id }}-{{ prev_item.title }}</a>
+      {% endif %}
+    </div>
+    
+    <div class="nav-next">
+      {% if next_item %}
+        {% assign next_folder = next_item.path | split: '/' | slice: 3 | first | split: '-' | first %}
+        {% assign next_id = next_item.ttp_id | split: '-' | first | default: "T" | append: next_folder %}
+        <a href="{{ next_item.url | relative_url }}">{{ next_id }}-{{ next_item.title }} &gt;</a>
+      {% endif %}
+    </div>
+  </div>
 </div>

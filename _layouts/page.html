@@ -5,14 +5,14 @@ layout: default
 {% comment %}
 {% assign FORCE_DOMAIN = "https://tralsesec.github.io" %}
 
-{% comment %} 2. CALCULATE ID {/% endcomment %}
+{/% comment %} 2. CALCULATE ID {/% endcomment %}
 {% assign raw_id = page.id | split: "/" | last %}
 {% assign clean_id = raw_id | plus: 0 %}
 
-{% comment %} 3. BUILD URL {/% endcomment %}
+{/% comment %} 3. BUILD URL {/% endcomment %}
 {% assign final_img_url = FORCE_DOMAIN | append: "/anatomy-of-a-bug/assets/og/" | append: clean_id | append: ".png" %}
 
-{% comment %} 4. BUILD TEXT (Applied strip_html to fix meta tags) {/% endcomment %}
+{/% comment %} 4. BUILD TEXT (Applied strip_html to fix meta tags) {/% endcomment %}
 {% assign series_name = "#! Anatomy of a Bug" %}
 {% assign social_title = page.title | strip_html | append: " (#" | append: clean_id | append: ")" %}
 {% assign social_desc = page.summary | default: page.excerpt | strip_html | strip_newlines | truncate: 200 %}

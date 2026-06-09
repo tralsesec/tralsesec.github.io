@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-05-15T03:27:00+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">tralsesec</title><subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle><author><name>tralsesec</name></author><entry><title type="html">The $2000 Bet: Why I Double Down on Offensive Operations</title><link href="http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself.html" rel="alternate" type="text/html" title="The $2000 Bet: Why I Double Down on Offensive Operations" /><published>2026-01-01T20:02:00+01:00</published><updated>2026-01-01T20:02:00+01:00</updated><id>http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself</id><content type="html" xml:base="http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself.html"><![CDATA[<p>In the corporate world, the standard advice for students is: <em>“Wait until you get hired. Let the company pay for your training.”</em></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-09T13:37:03+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">tralsesec</title><subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle><author><name>tralsesec</name></author><entry><title type="html">CPTS Recap: The Academy, The Exam &amp;amp; A 200-Page Report</title><link href="http://localhost:4000/training/career/2026/06/03/cpts-recap.html" rel="alternate" type="text/html" title="CPTS Recap: The Academy, The Exam &amp;amp; A 200-Page Report" /><published>2026-06-03T22:25:00+02:00</published><updated>2026-06-03T22:25:00+02:00</updated><id>http://localhost:4000/training/career/2026/06/03/cpts-recap</id><content type="html" xml:base="http://localhost:4000/training/career/2026/06/03/cpts-recap.html"><![CDATA[<p>The CPTS is officially done.</p>
+
+<p>Before we get into the details, let’s address the basics: What is the Hack The Box Certified Penetration Testing Specialist (CPTS), how much does it cost, and how does it compare to other certifications like OSCP? Honestly, there are already 10,000 YouTube videos and Medium articles debating this. I’m not going to waste time rehashing it here. Instead, here is a breakdown of my actual experience going through the training, the exam environment, and delivering the final report.</p>
+
+<h3 id="the-htb-academy-from-zero-to-enterprise">The HTB Academy: From Zero to Enterprise</h3>
+
+<p>The associated path in the HTB Academy is massive. The material genuinely starts from absolute zero. Anyone could technically jump in and start learning but it scales up significantly. It covers the entire spectrum: Web Exploitation, Windows Internals, Linux Privilege Escalation, and deep Active Directory mechanics.</p>
+
+<p>They did not hold back. Nothing was intentionally left out, and the sheer volume of content is impressive.</p>
+
+<p>If you want to know what the exam feels like, pay close attention to the final module: <em>Attacking Enterprise Networks</em> (AEN). This module is highly representative of the actual exam environment, just on a smaller scale. If you can clear that module comfortably, you are technically ready. For comparison: AEN took me about 3-4 hours of unfocused work.</p>
+
+<h3 id="the-exam-environment--parallel-reporting">The Exam Environment &amp; Parallel Reporting</h3>
+
+<p>The exam environment is essentially a scaled-up version of the final module. To be completely honest, I found the CPTS to be very easy on a technical level. Obviously, difficulty is highly subjective, but keeping in mind that the AEN module only took me a few hours, the exam itself felt fairly trivial. There was nothing extraordinary or overly complex about it, and I completed the practical exploitation phase in about three days.</p>
+
+<p>But here is the critical detail: <strong>I did the reporting in parallel with the engagement.</strong> Those three days included writing the report. I didn’t hammer into the keyboard for three days and then spend five days writing. Every time I compromised a host or grabbed a hash, I immediately took the screenshot and wrote the text.</p>
+
+<p>However, the exam did drag on a bit at one specific point. Usually, HTB paths are logical: you enumerate, you find component A, which gives you the access needed to exploit component B. But there was one instance where logic took a back seat. There wasn’t a clean, linear path forward; I just had to try my luck. It required throwing different variations at the wall until something finally clicked. Once past that bottleneck, the momentum returned.</p>
+
+<h3 id="the-deliverable-a-200-page-report">The Deliverable: A 200+ Page Report</h3>
+
+<p>Reporting is where the real work happens. I ended up writing over 200 pages.</p>
+
+<p>Most of that was pure text and detailed descriptions. In hindsight, I probably included a few too few screenshots. If I had added more visual evidence, the report would have easily hit 250 pages. I didn’t just document the critical path required to compromise the domain, I documented <em>everything</em>. During my enumeration, I found numerous vulnerabilities that couldn’t be directly utilized for the main objective, but they were still valid security flaws. Delivering a comprehensive, commercial-grade assessment is always the better approach.</p>
+
+<p><strong>A massive time-saving tip:</strong> Write your findings directly into SysReptor as actual findings from the start. Don’t just dump raw text into a scratchpad and plan to format it into a proper finding later. Just create a “New Finding” and document it live. It might feel a bit messy in the moment, but it will save you hours of formatting later. Don’t do the same mistake as me.</p>
+
+<p>After the report is evaluated you get constructive feedback:</p>
+
+<p><img src="/assets/img/2026-06-03-feedback.png" alt="feedback" /></p>
+
+<p>Well, thank you.</p>
+
+<h3 id="operational-tips-for-the-trenches">Operational Tips for the Trenches</h3>
+
+<ul>
+  <li><strong>Ligolo-NG:</strong> Practice, practice, practice. I cannot emphasize this enough. Practice pivoting through multiple subnets across different hosts using different techniques. Local port forwarding, remote port forwarding, SOCKS proxies, etc. etc.</li>
+  <li><strong>Use a C2:</strong> Highly recommended. Even meterpreter is way easier to use than spawning 10 different shells on 6 different hosts as 4 different users.</li>
+  <li><strong>Change Your Enumeration Angle:</strong> If you find nothing.. absolutely nothing.. then you should enumerate <em>again</em>, but differently. Staring at the same output won’t magically spawn a shell. Change your perspective, switch your tooling, or look at a different protocol entirely.</li>
+  <li><strong>Design Notes for a Reboot:</strong> I had to reset the entire exam network three or four times. Your notes must be bulletproof. You need to write your documentation with one mindset: <em>“If I have to reboot the environment right now, how fast can I get back to this exact pivot point?”</em> If I hadn’t taken rigorous, structured notes as I went, the exam would have taken significantly longer.</li>
+  <li><strong>Tmux Logging:</strong> For those who need a safety net, you can use <code class="language-plaintext highlighter-rouge">tmux</code> logging to dump all terminal input and output to a file. Honestly, I didn’t use this.. I stuck to my standard workflow of taking manual screenshots. But it’s a solid backup strategy if you’re worried about losing console output.</li>
+</ul>
+
+<h3 id="the-timeline--logistics">The Timeline &amp; Logistics</h3>
+
+<p>Regarding the grading turnaround: I submitted my report on a Friday evening. Naturally, nothing happens over the weekend. I received the official “Passed” confirmation email on Wednesday afternoon.</p>
+
+<p>So, effectively, it took them 3 working days to review a 200+ page document which is impressive. The official SLA says it can take up to 20 days, but the reality was much faster.</p>
+
+<p>The CPTS is a massive milestone, but the execution engine doesn’t stop. Back to the lab.</p>]]></content><author><name>tralsesec</name></author><category term="training" /><category term="career" /><category term="CPTS" /><category term="HackTheBox" /><category term="Certifications" /><category term="Mindset" /><category term="Career" /><summary type="html"><![CDATA[The CPTS is officially done.]]></summary></entry><entry><title type="html">The $2000 Bet: Why I Double Down on Offensive Operations</title><link href="http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself.html" rel="alternate" type="text/html" title="The $2000 Bet: Why I Double Down on Offensive Operations" /><published>2026-01-01T20:02:00+01:00</published><updated>2026-01-01T20:02:00+01:00</updated><id>http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself</id><content type="html" xml:base="http://localhost:4000/research/training/mindset/career/2026/01/01/the-two-thousand-dollar-bet-on-myself.html"><![CDATA[<p>In the corporate world, the standard advice for students is: <em>“Wait until you get hired. Let the company pay for your training.”</em></p>
 
 <p>It is safe advice. It is financially prudent advice. <strong>It is also the fastest way to remain average.</strong></p>
 

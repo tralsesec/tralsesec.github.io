@@ -55,6 +55,15 @@
 
       <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
 
+
+      <a class="sidebar-nav-item" href="/oie">OIE</a>
+      <a class="sidebar-nav-item" href="/oie/cwe">OIE-CWE</a>
+      <a class="sidebar-nav-item" href="/oie/oss">O-SS</a>
+      <a class="sidebar-nav-item" href="/oie/opt">OPT</a>
+      <a class="sidebar-nav-item" href="/oie/ait">AIT</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
       <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
         <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X
@@ -92,6 +101,65 @@ Tactical development logs and architectural research. These records document the
   
   <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
     <h2 style="margin: 0; line-height: 1.2;">
+      <a href="/projects/enummssql/" style="color: var(--accent); border: none;">EnumMSSQL</a>
+    </h2>
+    
+    <div style="font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;">
+      <span style="color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px;">
+        [ACTIVE]
+      </span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;">
+    <span><span class="fg-dim">TIMELINE:</span> May 2026 – Present</span>
+    <span><span class="fg-dim">LANG:</span> Bash / SQL</span>
+  </div>
+
+  <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+    EnumMSSQL is a weaponized, standalone post-exploitation wrapper engineered in Bash to automate the entire MSSQL enumeration and lateral movement lifecycle. Moving far beyond generic script execution, it abstracts away complex...
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+    
+    <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+      Bash
+    </span>
+    
+    <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+      MSSQL
+    </span>
+    
+    <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+      T-SQL
+    </span>
+    
+    <span style="font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;">
+      mssqlclient
+    </span>
+    
+  </div>
+
+  <div style="margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;">
+    
+    <a href="/projects/enummssql/" class="text-green" style="font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;">
+      ACCESS_FULL_DOSSIER_AND_LOGS -&gt;
+    </a>
+
+    
+    <a href="https://github.com/tralsesec/EnumMSSQL" target="_blank" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); border: none; display: flex; align-items: center; gap: 5px; white-space: nowrap;">
+      <svg height="14" width="14" viewBox="0 0 16 16" fill="currentColor" style="opacity: 0.8;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+      SOURCE_CODE
+    </a>
+    
+  </div>
+  
+</div>
+
+<div class="project-card" style="border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;">
+  
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+    <h2 style="margin: 0; line-height: 1.2;">
       <a href="/projects/revenant/" style="color: var(--accent); border: none;">Revenant – The Lucid Execution Engine</a>
     </h2>
     
@@ -108,7 +176,7 @@ Tactical development logs and architectural research. These records document the
   </div>
 
   <div style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
-    Executive Summary Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs...
+    Revenant is a high-performance Dynamic Binary Translation (DBT) framework engineered in Rust. It specializes in the automated deobfuscation of polymorphic and metamorphic malware by lifting opaque binary blobs into LLVM...
   </div>
 
   <div style="display: flex; flex-wrap: wrap; gap: 8px;">

@@ -22,38 +22,66 @@ layout: default
     {{ content }}
   </div>
 
-  {% comment %} 1. Determine current ID parts {% endcomment %}
-  {% assign folder_num = path_parts[3] | split: '-' | first %}
-  {% assign id_parts = page.ttp_id | split: '-' %}
-  {% assign current_num = id_parts[1] | plus: 0 %}
+  {% comment %} 1. Create a globally sorted sequence of all indexes and TTPs {% endcomment %}
+  {% assign all_items = site.oie | where_exp: "item", "item.path contains '/opt/ttp/'" %}
+  {% assign sorted_items = "" | split: "" %}
 
-  {% comment %} 2. Calculate IDs {% endcomment %}
-  {% assign prev_num = current_num | minus: 1 %}
-  {% assign next_num = current_num | plus: 1 %}
+  {% for item in all_items %}
+    {% assign folder_str = item.path | split: '/' | slice: 3 | first %}
+    {% assign folder_num = folder_str | split: '-' | first | plus: 0 | plus: 1000 %}
+    {% assign id_str = item.ttp_id | default: "T00-000" %}
+    {% assign ttp_num = id_str | split: '-' | last | plus: 0 | plus: 1000 %}
+    
+    {% capture sort_key %}{{ folder_num }}{{ ttp_num }}{% endcapture %}
+    {% capture combined %}{{ sort_key }}::{{ item.path }}{% endcapture %}
+    {% assign sorted_items = sorted_items | push: combined %}
+  {% endfor %}
+  {% assign sorted_items = sorted_items | sort %}
 
-  {% comment %} 3. Format IDs (Pad to 3 digits) {% endcomment %}
-  {% capture prev_id %}T{{ folder_num }}-{{ prev_num | plus: 1000 | slice: 1, 3 }}{% endcapture %}
-  {% capture next_id %}T{{ folder_num }}-{{ next_num | plus: 1000 | slice: 1, 3 }}{% endcapture %}
+  {% comment %} 2. Find current position {% endcomment %}
+  {% assign current_path = page.path %}
+  {% assign current_idx = -1 %}
+  {% for entry in sorted_items %}
+    {% if entry contains current_path %}
+      {% assign current_idx = forloop.index0 %}
+    {% endif %}
+  {% endfor %}
 
-  {% comment %} 4. Find the files {% endcomment %}
-  {% assign prev_item = site.oie | where: "ttp_id", prev_id | first %}
-  {% if prev_num == 0 %}
-     {% assign prev_item = category_index %}
+  {% comment %} 3. Set Neighbors {% endcomment %}
+  {% assign prev_idx = current_idx | minus: 1 %}
+  {% assign next_idx = current_idx | plus: 1 %}
+
+  {% assign prev_item = nil %}
+  {% assign next_item = nil %}
+
+  {% if prev_idx >= 0 %}
+    {% assign prev_path = sorted_items[prev_idx] | split: "::" | last %}
+    {% assign prev_item = site.oie | where: "path", prev_path | first %}
   {% endif %}
-  {% assign next_item = site.oie | where: "ttp_id", next_id | first %}
 
-  {% comment %} 5. Navigation Bar {% endcomment %}
+  {% if next_idx < sorted_items.size %}
+    {% assign next_path = sorted_items[next_idx] | split: "::" | last %}
+    {% assign next_item = site.oie | where: "path", next_path | first %}
+  {% endif %}
+
+  {% comment %} 4. Navigation Bar {% endcomment %}
   <div class="ttp-nav" style="margin-top: 3rem; width: 100%; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;">
     
     <div class="nav-prev">
       {% if prev_item %}
-        <a href="{{ prev_item.url }}">&lt; {% if prev_item.ttp_id %}{{ prev_item.ttp_id }}{% else %}T{{ folder_num }}-000{% endif %}</a>
+        {% assign prev_folder = prev_item.path | split: '/' | slice: 3 | first | split: '-' | first %}
+        {% assign prev_id = prev_item.ttp_id %}
+        {% unless prev_id %}{% assign prev_id = "T" | append: prev_folder | append: "-000" %}{% endunless %}
+        <a href="{{ prev_item.url | relative_url }}">&lt; {{ prev_id }} {{ prev_item.title }}</a>
       {% endif %}
     </div>
     
     <div class="nav-next">
       {% if next_item %}
-        <a href="{{ next_item.url }}">{{ next_item.ttp_id }} &gt;</a>
+        {% assign next_folder = next_item.path | split: '/' | slice: 3 | first | split: '-' | first %}
+        {% assign next_id = next_item.ttp_id %}
+        {% unless next_id %}{% assign next_id = "T" | append: next_folder | append: "-000" %}{% endunless %}
+        <a href="{{ next_item.url | relative_url }}">{{ next_id }} {{ next_item.title }} &gt;</a>
       {% endif %}
     </div>
   </div>

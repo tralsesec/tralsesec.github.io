@@ -55,6 +55,15 @@
 
       <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
 
+
+      <a class="sidebar-nav-item" href="/oie">OIE</a>
+      <a class="sidebar-nav-item" href="/oie/cwe">OIE-CWE</a>
+      <a class="sidebar-nav-item" href="/oie/oss">O-SS</a>
+      <a class="sidebar-nav-item" href="/oie/opt">OPT</a>
+      <a class="sidebar-nav-item" href="/oie/ait">AIT</a>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
       <a class="sidebar-nav-item" href="https://x.com/tralsesec" target="_blank" rel="noopener noreferrer">
         <svg style="width:16px; height:16px; margin-right:8px; vertical-align:middle; fill:currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X
@@ -92,7 +101,31 @@
           </span>
         
           <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #ACTIVE-DIRECTORY
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #SHARE-WRITE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
             #CVE-2025-24071
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #NETNTLMV2
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #NETNTLMV2-CAPTURE
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #GENERICALL
+          </span>
+        
+          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
+            #CA_SVC
           </span>
         
           <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
@@ -105,10 +138,6 @@
         
           <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
             #ACL-ABUSE
-          </span>
-        
-          <span style="background: rgba(159, 239, 0, 0.05); border: 1px solid rgba(159, 239, 0, 0.2); padding: 2px 8px; border-radius: 2px; color: var(--accent);">
-            #ACTIVE-DIRECTORY
           </span>
         
         <span class="post-date" style="color: var(--fg-dim);">// 2026-05-11</span>
@@ -1018,17 +1047,61 @@ Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</s
             
             <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
               <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
-                <div style="width: 66%; height: 100%; background: var(--accent);"></div>
+                <div style="width: 45%; height: 100%; background: var(--accent);"></div>
               </div>
               <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
-                66% MATCH
+                45% MATCH
               </span>
               
               <div class="tooltip">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 <span class="tooltiptext">
                   <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
-                  • Windows<br>• Active-Directory<br>• ACL-Abuse<br>• Shadow-Credentials
+                  • Windows<br>• Active-Directory<br>• GenericAll<br>• ACL-Abuse<br>• Shadow-Credentials
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+
+        
+        
+
+        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
+          
+          <div style="width: 60px; height: 60px; flex-shrink: 0;">
+            <img src="/assets/img/ctf/redelegate.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
+              <span class="fg-dim">HACKTHEBOX</span>
+              <span style="color: #ff4d4d; font-weight: bold;">
+                HARD
+              </span>
+            </div>
+            
+            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-redelegate/" style="border: none; font-size: 0.95rem;">HackTheBox: Redelegate</a></h4>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
+                <div style="width: 36%; height: 100%; background: var(--accent);"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                36% MATCH
+              </span>
+              
+              <div class="tooltip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span class="tooltiptext">
+                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
+                  • Windows<br>• Active-Directory<br>• GenericAll<br>• ACL-Abuse
                 </span>
               </div>
             </div>
@@ -1062,10 +1135,10 @@ Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</s
             
             <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
               <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
-                <div style="width: 50%; height: 100%; background: var(--accent);"></div>
+                <div style="width: 27%; height: 100%; background: var(--accent);"></div>
               </div>
               <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
-                50% MATCH
+                27% MATCH
               </span>
               
               <div class="tooltip">
@@ -1073,50 +1146,6 @@ Certipy v5.0.4 - by Oliver Lyak <span class="o">(</span>ly4k<span class="o">)</s
                 <span class="tooltiptext">
                   <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
                   • Windows<br>• Active-Directory<br>• Shadow-Credentials
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        
-        
-        
-        
-        
-
-        
-        
-
-        <div class="related-card" style="border: 1px solid #222; background: #0a0a0a; display: flex; align-items: center; padding: 0.8rem; gap: 1rem; position: relative;">
-          
-          <div style="width: 60px; height: 60px; flex-shrink: 0;">
-            <img src="/assets/img/ctf/garfield.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-          </div>
-
-          <div style="flex-grow: 1;">
-            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem;">
-              <span class="fg-dim">HACKTHEBOX</span>
-              <span style="color: #ff4d4d; font-weight: bold;">
-                HARD
-              </span>
-            </div>
-            
-            <h4 style="margin: 3px 0;"><a href="/ctfs/htb-garfield/" style="border: none; font-size: 0.95rem;">HackTheBox: Garfield</a></h4>
-            
-            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
-              <div style="width: 80px; height: 4px; background: #222; border-radius: 2px;">
-                <div style="width: 50%; height: 100%; background: var(--accent);"></div>
-              </div>
-              <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
-                50% MATCH
-              </span>
-              
-              <div class="tooltip">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                <span class="tooltiptext">
-                  <strong style="color: var(--accent); display: block; margin-bottom: 5px;">SHARED_VECTORS:</strong>
-                  • Windows<br>• Active-Directory<br>• ACL-Abuse
                 </span>
               </div>
             </div>
