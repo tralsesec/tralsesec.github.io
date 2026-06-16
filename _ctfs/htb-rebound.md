@@ -6,7 +6,7 @@ type: "Machine"
 difficulty: "Insane"
 image: "/assets/img/ctf/rebound.png"
 tags: [Windows, Active-Directory, SID-Enumeration, AS-REP-Roasting, Kerberoasting, Password-Cracking, BloodHound, Password-Spraying, ACL-Abuse, Shadow-Credentials, Pass-the-Hash, Cross-Session-Attack, NTLM-Relay, DCOM-Coercion, gMSA-Abuse, Resource-Based-Constrained-Delegation, RBCD, Constrained-Delegation, S4U2Self, S4U2Proxy, Pass-the-Ticket, DCSync]
-date: 2026-06-17
+date: 2026-06-16
 ---
 
 # 🎯 Rebound
