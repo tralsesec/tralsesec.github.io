@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-06-16T18:24:53+02:00</updated>
+  <updated>2026-06-17T15:11:59+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -29,7 +29,7 @@
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -1673,7 +1673,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -1819,7 +1819,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -1998,7 +1998,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -2108,7 +2108,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -2219,7 +2219,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -2346,7 +2346,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -2482,7 +2482,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -2618,7 +2618,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -2718,7 +2718,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -2984,7 +2984,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
@@ -3176,7 +3176,7 @@ Software sandboxing is no longer sufficient for legacy compatibility layers.&lt;
     <title>N8scape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/10/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/10/</id>
 
     
@@ -3332,7 +3332,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>React2Shell RCE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/1/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/1/</id>
 
     
@@ -3441,7 +3441,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>Anatomy of a Bug</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/</id>
 
     
@@ -3615,7 +3615,7 @@ High-fidelity technical analyses of critical vulnerabilities, kernel exploits, a
     <title>Anatomy of a Bug - LICENSE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/LICENSE/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/LICENSE/</id>
 
     
@@ -3698,7 +3698,7 @@ f. &lt;strong&gt;Share&lt;/strong&gt; means to provide material to the public by
     <title>Projects</title>
     
     <link href="http://localhost:4000/projects/"/>
-    <updated>2026-06-16T18:24:53+02:00</updated>
+    <updated>2026-06-17T15:11:59+02:00</updated>
     <id>http://localhost:4000/projects/</id>
 
     
@@ -3713,6 +3713,65 @@ Tactical development logs and architectural research. These records document the
 
 &lt;div class=&quot;projects-grid&quot;&gt;
 
+
+&lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
+  
+  &lt;div style=&quot;display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;&quot;&gt;
+    &lt;h2 style=&quot;margin: 0; line-height: 1.2;&quot;&gt;
+      &lt;a href=&quot;/projects/enumsmb/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;EnumSMB&lt;/a&gt;
+    &lt;/h2&gt;
+    
+    &lt;div style=&quot;font-family: var(--font-mono); font-size: 0.65rem; white-space: nowrap; margin-top: 4px;&quot;&gt;
+      &lt;span style=&quot;color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px;&quot;&gt;
+        [ACTIVE]
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TIMELINE:&lt;/span&gt; June 2026 – Present&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;LANG:&lt;/span&gt; Bash&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+    EnumSMB is a weaponized, standalone wrapper written in Bash to automate the SMB file share auditing lifecycle. Moving beyond generic script execution, it abstracts away complex structural formatting constraints to...
+  &lt;/div&gt;
+
+  &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Bash
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      SMB
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      smbclient
+    &lt;/span&gt;
+    
+    &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+      Windows
+    &lt;/span&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;&quot;&gt;
+    
+    &lt;a href=&quot;/projects/enumsmb/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none; white-space: nowrap;&quot;&gt;
+      ACCESS_FULL_DOSSIER_AND_LOGS -&amp;gt;
+    &lt;/a&gt;
+
+    
+    &lt;a href=&quot;https://github.com/tralsesec/EnumSMB&quot; target=&quot;_blank&quot; style=&quot;font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); border: none; display: flex; align-items: center; gap: 5px; white-space: nowrap;&quot;&gt;
+      &lt;svg height=&quot;14&quot; width=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot; style=&quot;opacity: 0.8;&quot;&gt;&lt;path d=&quot;M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+      SOURCE_CODE
+    &lt;/a&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
 
 &lt;div class=&quot;project-card&quot; style=&quot;border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2.5rem; background: #0a0a0a;&quot;&gt;
   
@@ -4034,6 +4093,42 @@ hr {
 }
 &lt;/style&gt;
 
+</content>
+  </entry>
+  
+  <entry>
+    <title>EnumSMB</title>
+    
+    <link href="http://localhost:4000/projects/enumsmb/"/>
+    <updated>2026-06-17T00:00:00+02:00</updated>
+    <id>http://localhost:4000/projects/enumsmb/</id>
+
+    
+    
+      <category term="Dossier" label="Project" />
+    
+    
+    <content type="html">&lt;p&gt;EnumSMB is a weaponized, standalone wrapper written in Bash to automate the SMB file share auditing lifecycle. Moving beyond generic script execution, it abstracts away complex structural formatting constraints to provide zero-dependency folder auditing, deep-nested path resolution, and multi-vector authentication coercion. Its signature mechanic relies on deep recursive validation loops and embedded layout templates to evaluate background parsing behavior across hidden network layers.&lt;/p&gt;
+
+&lt;h3 id=&quot;core-architecture&quot;&gt;Core Architecture&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pre-Flight &amp;amp; Interface Engine:&lt;/strong&gt; Implements automatic non-administrative share mapping (filtering out default endpoints like C$ and ADMIN$) alongside path healing routines that strip carriage returns and trailing backslashes to safeguard subshell execution.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Coercion &amp;amp; Ingestion Layer:&lt;/strong&gt; Chains embedded template engines across multiple desktop shell and XML storage structures (including .url, .scf, and .library-ms) to inject context-aware variables like attacker IPs and custom share handles dynamically on the fly.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Enumeration Engine:&lt;/strong&gt; Integrates safe, non-destructive probing using operational mkdir/rmdir loops to explicitly map actual read/write access states deep within tree hierarchies rather than trusting superficial share-level flags.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;technical-roadmap&quot;&gt;Technical Roadmap&lt;/h3&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Automated target scope selection and administrative share filtering.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Deep-nested tree traversal via recursive parsing loops.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Operational non-destructive verification checks (mkdir/rmdir loops).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Integrated basic multi-vector coercion templates (.url, .scf, .library-ms, .search-ms, .searchConnector-ms, .search).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Dynamic parameter interfacing with automated variable expansion ($USER_IP, $SHARE).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Global multi-extension sweep capability for post-engagement clean mode (.background-image.*).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Integrate advanced binary shortcut and disk container formats (.lnk, .vhd, .vhdx, .iso).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Add Microsoft Office template and unmanaged add-in vector extensions (.xll, .dot, .dotm, .dotx).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Implement multi-threaded parallel target scanning across massive network blocks.&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   
@@ -4929,65 +5024,6 @@ delegator&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;  ms-DS-Group-Managed-S
 &lt;h3 id=&quot;whats-next&quot;&gt;What’s Next?&lt;/h3&gt;
 
 &lt;p&gt;With the local enumeration, coercion vectors, and Active Directory indexing layers stabilized, development is pivoting toward cross-instance scaling. The next milestones on the roadmap include multi-threaded concurrent targeting loops and automated JSON reporting output for programmatic pipeline consumption.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>EnumMSSQL</title>
-    
-    <link href="http://localhost:4000/projects/enummssql/"/>
-    <updated>2026-05-17T00:00:00+02:00</updated>
-    <id>http://localhost:4000/projects/enummssql/</id>
-
-    
-    
-      <category term="Dossier" label="Project" />
-    
-    
-    <content type="html">&lt;p&gt;EnumMSSQL is a weaponized, standalone post-exploitation wrapper engineered in Bash to automate the entire MSSQL enumeration and lateral movement lifecycle. Moving far beyond generic script execution, it abstracts away complex T-SQL constraints to provide zero-dependency database auditing, localized pre-flight socket management, and multi-vector hash coercion. Its signature mechanic relies on mathematical, language-agnostic Active Directory user harvesting by establishing an immutable cryptographic anchor inside the target environment.&lt;/p&gt;
-
-&lt;h3 id=&quot;core-architecture&quot;&gt;Core Architecture&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Pre-Flight &amp;amp; Interface Engine:&lt;/strong&gt; Implements advanced TTY terminal self-healing (stty sane/onlcr) alongside a proactive local socket auditor that scans, maps, and terminates conflicting processes on ports 80, 443, and 445 to guarantee a pristine execution layer.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Coercion &amp;amp; Listener Layer:&lt;/strong&gt; Chains standalone extended stored procedures (xp_dirtree, xp_subdirs, xp_fileexist) across multiple egress vectors—specifically leveraging WebDAV port 80 encapsulation—to slip past standard enterprise firewall rules while managing an automated background instance of Responder.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Enumeration Engine:&lt;/strong&gt; Integrates a flawless three-step mathematical query utilizing a recursive Common Table Expression (CTE) loop and bit-shifting logic to reconstruct Little-Endian Windows SIDs, allowing raw user harvesting entirely over low-privilege database connections.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;-project-transmissions-dev-logs&quot;&gt;» Project Transmissions (Dev Logs)&lt;/h3&gt;
-&lt;p&gt;The following logs document the development milestones, research breakthroughs, and technical hurdles encountered during the EnumMSSQL lifecycle.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;ID&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Case Title&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Focus&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Status&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Date&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/projects/enummssql/2026-05-17-log-001/&quot;&gt;&lt;strong&gt;#001&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;/projects/enummssql/2026-05-17-log-001/&quot;&gt;&lt;strong&gt;Weaponizing T-SQL – Language-Agnostic RID Cycling and Transitive Impersonation&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AD Enumeration / Identity Mapping&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;STABLE&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;2026-05-17&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;technical-roadmap&quot;&gt;Technical Roadmap&lt;/h3&gt;
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Pre-flight port audit and automation interface.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Multi-vector NTLM capture via WebDAV port 80 bypass strings.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Undocumented procedure abstraction (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sp_MSforeachdb&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sp_MSforeachtable&lt;/code&gt;) for global data dumping.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Language-agnostic Active Directory enumeration via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;krbtgt&lt;/code&gt; base SID calculation.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Parameterized –rid scope management with explicit regex input evaluation.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Implement multi-threaded parallel execution across massive IP ranges.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Integrate deep-nested recursive parsing for automated impersonation chain execution paths.&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Add standalone JSON export capabilities for programmatic post-processing pipelines.&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
   
