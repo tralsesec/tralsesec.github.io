@@ -148,7 +148,7 @@ no_toc: true
     </p>
     <ul style="margin-bottom: 0; list-style-type: none; padding-left: 0;">
       <li style="margin-bottom: 0.6rem;"><strong>HTB CPTS</strong> — Penetration Testing Specialist <span class="text-green" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: bold; margin-left: 8px;">[CERTIFIED]</span></li>
-      <li style="margin-bottom: 0.6rem;"><strong>HTB CAPE</strong> — Active Directory Penetration Exploitation</li>
+      <li style="margin-bottom: 0.6rem;"><strong>HTB CAPE</strong> — Active Directory Penetration Exploitation <span class="text-green" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: bold; margin-left: 8px;">[CERTIFIED]</span></li>
       <li style="margin-bottom: 0.6rem;"><strong>HTB CWEE</strong> — Web Exploitation Expert</li>
       <li style="margin-bottom: 0.6rem;"><strong>Maldev Academy</strong> — Advanced Malware Development</li>
       <li style="margin-bottom: 0.6rem;"><strong>OffSec OSED</strong> — Windows User Mode Exploit Development</li>
