@@ -84,7 +84,6 @@ def register_user(addr) -> (str, str, str):
         t2.start()
 
         if buffer[0]:
-            jwt_tokn = buffer[0]
             break
 
     for t in threads:
