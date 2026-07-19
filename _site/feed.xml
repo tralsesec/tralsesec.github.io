@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-07-12T00:36:37+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">tralsesec</title><subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle><author><name>tralsesec</name></author><entry><title type="html">CPTS Recap: The Academy, The Exam &amp;amp; A 200-Page Report</title><link href="http://localhost:4000/training/career/2026/06/03/cpts-recap.html" rel="alternate" type="text/html" title="CPTS Recap: The Academy, The Exam &amp;amp; A 200-Page Report" /><published>2026-06-03T22:25:00+02:00</published><updated>2026-06-03T22:25:00+02:00</updated><id>http://localhost:4000/training/career/2026/06/03/cpts-recap</id><content type="html" xml:base="http://localhost:4000/training/career/2026/06/03/cpts-recap.html"><![CDATA[<p>The CPTS is officially done.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-07-19T18:22:44+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">tralsesec</title><subtitle>Offensive Security Researcher · Malware Developer &amp; Analyst · Exploit Developer · CTF Player</subtitle><author><name>tralsesec</name></author><entry><title type="html">CAPE Review: Conquering the Multi-Domain Active Directory Forest</title><link href="http://localhost:4000/training/career/2026/07/19/cape-recap.html" rel="alternate" type="text/html" title="CAPE Review: Conquering the Multi-Domain Active Directory Forest" /><published>2026-07-19T18:22:00+02:00</published><updated>2026-07-19T18:22:00+02:00</updated><id>http://localhost:4000/training/career/2026/07/19/cape-recap</id><content type="html" xml:base="http://localhost:4000/training/career/2026/07/19/cape-recap.html"><![CDATA[<p>The Hack The Box Certified Active Directory Pentesting Expert (CAPE) is officially done.</p>
+
+<p>Let’s skip the standard introduction. If you are reading this, you already know what Active Directory is and why enterprise security revolves around it. Instead of rehashing basic course syllabi, I want to give you an honest look at what it takes to go through the grueling training path, survive a heavily defended multi-forest exam environment, and compile a massive commercial-grade engineering dossier.</p>
+
+<h3 id="the-htb-academy-the-complete-ad-blueprint">The HTB Academy: The Complete AD Blueprint</h3>
+
+<p>The academic path behind this certification is an absolute mountain of information. It leaves no stone unturned. The material systematically builds your foundational knowledge up to an expert engineering baseline, covering everything from core protocol mechanics to advanced domain exploitation.</p>
+
+<p>The curriculum gives you total coverage on:</p>
+<ul>
+  <li><strong>The Fundamentals:</strong> Masterful command over tools like <code class="language-plaintext highlighter-rouge">responder</code> and <code class="language-plaintext highlighter-rouge">ntlmrelayx</code> to execute targeted link-layer attacks.</li>
+  <li><strong>Protocol Transition &amp; Relay Loops:</strong> In-depth mechanics handling same-protocol and cross-protocol relay configurations.</li>
+  <li><strong>Access Control Exploitation:</strong> Deep parsing of Discretionary Access Control Lists (DACLs) to map, abuse, and overwrite over-privileged object permissions.</li>
+  <li><strong>Forest Subversion:</strong> Complex cross-forest attack vectors designed to systematically dismantle bidirectional trust boundaries.</li>
+  <li>and way more..</li>
+</ul>
+
+<p>To be completely fair, some modules can feel incredibly wordy or slightly too drawn out for my taste when explaining straightforward concepts. However, Hack The Box introduced a phenomenal quality-of-life feature: the AI “HTB Coach.” Whenever a section felt bogged down in text text text, I used the coach to summarize concepts and explain specific protocol interactions. It works remarkably well and keeps your learning momentum moving forward.</p>
+
+<h3 id="the-exam-environment-subnets-pivots-and-stealth">The Exam Environment: Subnets, Pivots, and Stealth</h3>
+
+<p>The practical engagement phase is challenging, but not in the chaotic, logic-defying way some exams tend to be. Where certifications like CPTS or CWEE might test your patience with creative vector guessing games, CAPE is pure, clinical Active Directory. The network paths are highly clear, logical, and structured. If you possess a deep structural understanding of AD architecture and an intuitive feel for how real-world corporate networks are laid out in the background, this exam is the ultimate validation of your skills.</p>
+
+<p>The staging layout drops you into a massive enterprise forest spanning 3 completely distinct network subnets. Each environment is fully built out with its own dedicated servers, standalone workstations, users, and master domain controllers. Your job is to completely compromise the active layer, establish secure persistence nodes, and use those footholds to pivot deeper into the next security zone.</p>
+
+<p>The real kicker? <strong>The background environment is packed with aggressive AV/EDR solutions.</strong> You cannot just blindly drop noisy public payloads onto a host and hope for a quick session check-in. Bypassing these boundaries requires preparation. You need to come into the trenches with pre-compiled, tested payloads that can be dragged and dropped into memory without raising immediate security telemetry flags.</p>
+
+<h3 id="the-deliverable-a-320-page-technical-monster">The Deliverable: A 320-Page Technical Monster</h3>
+
+<p>If you think the exploitation phase is demanding, wait until you face the reporting queue. I ended up delivering a comprehensive, commercial-grade assessment report that reached an absolute unit of 320 pages. To be fair, there are people who passed with around 100 pages. But we’re not normal, we strive for perfection gng.</p>
+
+<p>Just like my previous engagements, my documentation strategy relied entirely on parallel live logging. Every compromised computer object, mutated group parameter, or exfiltrated hash was instantly screenshotted and written directly into SysReptor as a finished finding.</p>
+
+<p>The timeline and review speed from the grading engine were incredibly impressive. I submitted the PDF on a Friday evening. Naturally, nothing moves over the weekend, but I received my official “Passed” confirmation email on Wednesday afternoon. The grading team efficiently audited a 320-page document in exactly 3 working days maintaining a staggering pace of roughly 100 pages indexed per day. Respect.</p>
+
+<p>I also got some feedback. And to be completely honest, it feels like they have a couple of templates going on because I absolutely <strong>did</strong> add comments on every command input, output and image.</p>
+
+<p><img src="/assets/img/cape-exam-feedback.png" alt="cape-exam-feedback" /></p>
+
+<h3 id="operational-tips-for-the-trenches">Operational Tips for the Trenches</h3>
+
+<ul>
+  <li><strong>Harden Your Evader Toolset:</strong> Spend quality time inside your local lab testing payload execution against modern endpoint defenses. Having clean tools ready for runtime deployment saves you an immense amount of stress when jumping hosts. I used Mythic C2 btw.</li>
+  <li><strong>Map out Trust Infrastructure:</strong> Do not rush your enumeration phase. Use visual access graphs to carefully track domain boundaries, bidirectional forest trusts, and implicit inheritance links across the subnets.</li>
+  <li><strong>Build Bulletproof Pivot Notes:</strong> Given the multi-tiered layout of the environment, a network reset or machine reboot can quickly scramble your active sessions. Document your transport layers so clearly that you can re-verify your path back to any tier in minutes.</li>
+  <li><strong>Don’t shy away from manual enumeration:</strong> Multiple vulnerabilities could not be found by “just running bloodhound.” Often you will have to carefully look for and sort things by hand. Get used to it.</li>
+</ul>
+
+<h3 id="who-is-this-for">Who Is This For?</h3>
+
+<p>CAPE is arguably the most comprehensive and challenging pure On-Premises Active Directory certification on the market today. It literally covers every major enterprise vector and directory attack configuration in existence. If you want to master Windows protocols in depth, this is your gold standard.</p>
+
+<p>However, you must keep realistic expectations regarding modern infrastructure requirements. Most contemporary enterprise environments have migrated away from isolated local infrastructures in favor of Hybrid AD and Azure cloud architectures. While the academy briefly touches on cloud frameworks near the end, it feels quite light and doesn’t dive deep enough into modern cloud exploitation.</p>
+
+<p>To bridge that real-world visibility gap, you will definitely need to pair this knowledge with a dedicated cloud security track. That is exactly why my next engineering target is the CARTE.. and I am already planning out the exam and will drop a full review here once that cert is cleared, too.</p>
+
+<p>Soon the CWEE review will drop and it will be interesting. Stay tuned.</p>]]></content><author><name>tralsesec</name></author><category term="training" /><category term="career" /><category term="CAPE" /><category term="HackTheBox" /><category term="Certifications" /><category term="Mindset" /><category term="Career" /><summary type="html"><![CDATA[The Hack The Box Certified Active Directory Pentesting Expert (CAPE) is officially done.]]></summary></entry><entry><title type="html">CPTS Recap: The Academy, The Exam &amp;amp; A 200-Page Report</title><link href="http://localhost:4000/training/career/2026/06/03/cpts-recap.html" rel="alternate" type="text/html" title="CPTS Recap: The Academy, The Exam &amp;amp; A 200-Page Report" /><published>2026-06-03T22:25:00+02:00</published><updated>2026-06-03T22:25:00+02:00</updated><id>http://localhost:4000/training/career/2026/06/03/cpts-recap</id><content type="html" xml:base="http://localhost:4000/training/career/2026/06/03/cpts-recap.html"><![CDATA[<p>The CPTS is officially done.</p>
 
 <p>Before we get into the details, let’s address the basics: What is the Hack The Box Certified Penetration Testing Specialist (CPTS), how much does it cost, and how does it compare to other certifications like OSCP? Honestly, there are already 10,000 YouTube videos and Medium articles debating this. I’m not going to waste time rehashing it here. Instead, here is a breakdown of my actual experience going through the training, the exam environment, and delivering the final report.</p>
 
