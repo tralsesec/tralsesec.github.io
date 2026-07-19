@@ -48,12 +48,13 @@ I also got some feedback. And to be completely honest, it feels like they have a
 
 ### Operational Tips for the Trenches
 
+* **Boxes for Prep:** When I prepared, there was no CAPE Track on HTB. At the time of writing, they have added a good track. But before there was none. So I focused on hard and mainly insane Windows boxes that emphasize AD and OpSec (AV/EDR), taking around 4-8 hours per box. Check out my [CTF Writeups](/ctfs) for more details.
 * **Harden Your Evader Toolset:** Spend quality time inside your local lab testing payload execution against modern endpoint defenses. Having clean tools ready for runtime deployment saves you an immense amount of stress when jumping hosts. I used Mythic C2 btw.
 * **Map out Trust Infrastructure:** Do not rush your enumeration phase. Use visual access graphs to carefully track domain boundaries, bidirectional forest trusts, and implicit inheritance links across the subnets.
 * **Build Bulletproof Pivot Notes:** Given the multi-tiered layout of the environment, a network reset or machine reboot can quickly scramble your active sessions. Document your transport layers so clearly that you can re-verify your path back to any tier in minutes.
 * **Don't shy away from manual enumeration:** Multiple vulnerabilities could not be found by "just running bloodhound." Often you will have to carefully look for and sort things by hand. Get used to it.
 
-### Who Is This For?
+### Is this for *you*?
 
 CAPE is arguably the most comprehensive and challenging pure On-Premises Active Directory certification on the market today. It literally covers every major enterprise vector and directory attack configuration in existence. If you want to master Windows protocols in depth, this is your gold standard.
 
