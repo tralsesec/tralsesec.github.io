@@ -80,7 +80,7 @@ no_toc: true
 
 <hr style="margin: 3rem 0; border-color: var(--border);">
 
-<h2>// Deployment History</h2>
+<h2>// Work History</h2>
 
 <div style="margin-bottom: 2rem;">
   <h3 style="margin-bottom: 0.2rem;"><a href="https://telekom.de/" target="_blank">Deutsche Telekom</a></h3>
@@ -88,7 +88,7 @@ no_toc: true
     <span class="text-green">DevSecOps Engineer</span> // Sept 2025 – Feb 2026
   </div>
   <p>
-    Secured enterprise cloud environments and automated infrastructure delivery. Analyzed and hardened high-compliance pipelines before pivoting to independent research.
+    Secured enterprise cloud environments and automated infrastructure delivery. Analyzed and hardened high-compliance pipelines.
   </p>
   <div style="font-size: 0.85rem;">
     <span style="border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-right: 5px;">Golang</span>
@@ -112,7 +112,7 @@ no_toc: true
 </div>
 
 <div style="margin-bottom: 2rem;">
-  <h3 style="margin-bottom: 0.2rem;"><a href="https://www.doctronic.de/" target="_blank">doctronic GmbH & Co. KG</a></h3>
+  <h3 style="margin-bottom: 0.2rem;"><a href="https://www.doctronic.de/" target="_blank">doctronic</a></h3>
   <div class="fg-dim" style="font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 1rem;">
     <span class="text-green">Software Engineering</span> // July 2023 – Aug 2023
   </div>
