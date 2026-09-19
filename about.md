@@ -4,13 +4,13 @@ title: Profile
 no_toc: true
 ---
 
-<h1>Vulnerability Research & Systems Engineering</h1>
+<h1>Systems & Vulnerability Research</h1>
 
 <div style="border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; background: #0f0f0f;">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
     <div>
       <span class="fg-dim">CURRENT STATUS</span><br>
-      <span class="text-green">Independent Vulnerability Researcher</span>
+      <span class="text-green">Independent Security Researcher</span>
     </div>
     <div>
       {% assign current_year = site.time | date: '%Y' | plus: 0 %}
@@ -24,7 +24,7 @@ no_toc: true
       <span>{{ total_sec }} Years (Adversary Simulation)</span>
     </div>
     <div>
-      <span class="fg-dim">BASE OF OPERATIONS</span><br>
+      <span class="fg-dim">LOCATION</span><br>
       <span>Germany</span>
     </div>
   </div>
@@ -33,11 +33,11 @@ no_toc: true
 <h2>// Technical Profile</h2>
 
 <p>
-  My methodology is grounded in software engineering established in 2017. Current focus lies on deep-level architectural analysis, Windows internals, kernel-level mechanics, and telemetry evasion.
+  My background is rooted in core software engineering established in 2017. Current research focuses on deep-level architectural analysis, Windows/Linux internals, kernel-level execution, and detection evasion mechanics.
 </p>
 
 <p>
-  I write custom tooling and exploitation primitives from scratch using C, Zig, Nim, and Go, targeting complex runtime environments, binary boundaries, and internal network protocols.
+  Rather than relying on off-the-shelf frameworks, I develop custom tooling, loaders, and exploit primitives from scratch using C, Zig, Nim, and Go. The goal is to analyze systems at the binary and protocol level to understand exact execution paths and defensive boundaries.
 </p>
 
 <h3 class="text-green">Technical Arsenal</h3>
@@ -53,12 +53,12 @@ no_toc: true
     <tr>
       <td><strong>C / C++ / x86 asm</strong></td>
       <td><span class="fg-dim">2022 - {{ site.time | date: '%Y' }}</span></td>
-      <td>Ring 0 Operations, Windows Internals, Malware Dev.</td>
+      <td>Ring 0 Operations, Windows Internals, Exploit & Malware Dev.</td>
     </tr>
     <tr>
       <td><strong>Zig / Nim / Rust</strong></td>
       <td><span class="fg-dim">2025 - {{ site.time | date: '%Y' }}</span></td>
-      <td>Custom Exploitation Tooling, EDR Evasion, C2 Architecture.</td>
+      <td>Custom Tooling, EDR Evasion Techniques, C2 Architecture.</td>
     </tr>
     <tr>
       <td><strong>Go (Golang)</strong></td>
@@ -112,7 +112,7 @@ no_toc: true
 </div>
 
 <div style="margin-bottom: 2rem;">
-  <h3 style="margin-bottom: 0.2rem;"><a href="https://doctronic.de/" target="_blank">doctronic</a></h3>
+  <h3 style="margin-bottom: 0.2rem;"><a href="https://www.doctronic.de/" target="_blank">doctronic</a></h3>
   <div class="fg-dim" style="font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 1rem;">
     <span class="text-green">Software Engineering</span> // July 2023 - Aug 2023
   </div>
@@ -133,7 +133,7 @@ no_toc: true
   <div>
     <h3>Offensive Research</h3>
     <p>
-      Continuous validation of offensive methodologies across complex environments. Primary focus on Windows Internals, Unix/Linux subsystems, and custom exploit primitives.
+      Continuous validation of offensive methodologies across diverse environments. My research focuses on the intersection of Windows Internals, Unix/Linux subsystems, and custom exploit primitives.
     </p>
     <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
       <li>
